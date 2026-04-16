@@ -264,6 +264,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
     <button class="nav-btn" id="nb-bewegung" onclick="showPage('bewegung')">💪 Bewegung</button>
     <button class="nav-btn" id="nb-stress" onclick="showPage('stress')">🧘 Stress</button>
     <button class="nav-btn" id="nb-erkrank" onclick="showPage('erkrank')">🔬 Erkrankungen</button>
+    <button class="nav-btn" id="nb-glossar" onclick="showPage('glossar')">📖 Glossar</button>
   </div>
 </nav>
 
@@ -868,6 +869,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
       <button class="dis-tab" id="dt-rheu" onclick="showDis('rheu')">🦴 Rheumatoide Arthritis</button>
       <button class="dis-tab" id="dt-coli" onclick="showDis('coli')">🫀 Colitis Ulcerosa</button>
+      <button class="dis-tab" id="dt-athero" onclick="showDis('athero')">❤️ Atherosklerose</button>
     </div>
 
     <!-- MCAS -->
@@ -969,6 +971,112 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
     </div>
 
+    <!-- ATHEROSKLEROSE -->
+    <div class="dis-content" id="dd-athero">
+      <div class="dis-header">
+        <div class="dis-icon">❤️</div>
+        <div class="dis-name" style="color:#c0392b">Atherosklerose</div>
+        <div class="dis-tagline">Chronische Entzündung macht LDL-Cholesterin erst gefährlich</div>
+      </div>
+
+      <div class="dis-friend" style="background:color-mix(in srgb,#c0392b 6%,var(--surface));border-left:3px solid #c0392b">
+        "Mein Arzt sagt mein LDL ist zu hoch — aber er erklärt nicht warum." LDL allein ist nicht das Problem. Entscheidend ist was in deinen Gefäßwänden passiert — und da spielt Entzündung die Hauptrolle. Das ist keine Alternative zur ärztlichen Behandlung, aber ein wichtiger Kontext der häufig fehlt.
+      </div>
+
+      <div class="mech-box" style="border-left:3px solid #c0392b;margin-bottom:20px">
+        <div class="mech-title" style="color:#c0392b">Das LDL-Missverständnis — und was wirklich passiert</div>
+        <div class="mech-text">
+          LDL transportiert Cholesterin durch das Blut — das ist seine Aufgabe. Das Problem entsteht wenn LDL in Gefäßwänden landet, die durch Entzündung bereits geschädigt oder "klebrig" geworden sind.<br><br>
+          <strong>Der entscheidende Schritt: Oxidation.</strong> Normales LDL ist weitgehend harmlos. Wenn es aber in einer entzündeten Gefäßwand verweilt, wird es durch freie Radikale oxidiert (oxLDL). <span class="claim">OxLDL wird von Makrophagen erkannt und verschluckt — die sich dann zu Schaumzellen verwandeln und Plaques bilden.<span class="source-tip">Frontiers Cardiovasc Med 2022 · NCBI Bookshelf: Lipids in Atherosclerosis</span></span><br><br>
+          <strong>Was das bedeutet:</strong> Chronische Entzündung — egal ob durch MCAS, Rheuma, Stress oder Ernährung — erhöht die Oxidationsrate von LDL und macht es damit gefährlicher. Zwei Menschen mit demselben LDL-Wert können sehr unterschiedliche Herzrisiken haben — je nachdem wie stark ihre systemische Entzündung ist.<br><br>
+          <strong>Die wichtige Einschränkung:</strong> Bei sehr hohem LDL (besonders bei genetisch erhöhtem Cholesterin) kann das Risiko auch ohne starke Entzündung steigen. LDL-Senkung und Entzündungsreduktion sind keine Alternativen — sie ergänzen sich.
+        </div>
+      </div>
+
+      <div class="cascade">
+        <div class="cas-label">Die Kaskade — Schritt für Schritt</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,#c0392b 15%,var(--surface2));color:#c0392b">1</div><div><div class="cas-name">Gefäßwand-Entzündung</div><div class="cas-desc">Chronische Entzündung (durch Ernährung, Stress, andere Erkrankungen) schädigt die Innenwand der Gefäße — die Endothelzellen werden dysfunktional</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,#c0392b 15%,var(--surface2));color:#c0392b">2</div><div><div class="cas-name">LDL dringt ein und oxidiert</div><div class="cas-desc">LDL-Partikel lagern sich in der geschädigten Gefäßwand ab und werden durch freie Radikale zu oxLDL oxidiert — jetzt erst wird LDL zum Problem</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,#c0392b 15%,var(--surface2));color:#c0392b">3</div><div><div class="cas-name">Makrophagen bilden Schaumzellen</div><div class="cas-desc">Immunzellen (Makrophagen) verschlucken oxLDL und verwandeln sich in Schaumzellen — das sind die Bausteine der atherosklerotischen Plaques</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,#c0392b 15%,var(--surface2));color:#c0392b">4</div><div><div class="cas-name">Plaque wächst — Gefäß verengt sich</div><div class="cas-desc">Der Plaque vergrößert sich, das Gefäß wird enger. Bei Ruptur des Plaques: Blutgerinnsel → Herzinfarkt oder Schlaganfall</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box">
+          <div class="ib-title">⚡ Risikofaktoren — was Entzündung in Gefäßen fördert</div>
+          <ul class="ib-list">
+            <li>Chronische systemische Entzündung (Rheuma, MCAS, etc.)</li>
+            <li>Rauchen — stärkster vermeidbarer Faktor für oxLDL</li>
+            <li>Bluthochdruck — schädigt Gefäßwände mechanisch</li>
+            <li>Blutzuckerspikes — fördern Oxidationsstress direkt</li>
+            <li>Bewegungsmangel, Übergewicht (viszerales Fett)</li>
+            <li>Genetisch erhöhtes LDL (familiäre Hypercholesterinämie)</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <div class="ib-title">🧪 Bessere Marker als nur LDL</div>
+          <ul class="ib-list">
+            <li><strong>hsCRP</strong> (hochsensitives CRP) — Entzündungsmarker, stärkerer Herzrisiko-Prädiktor als LDL allein</li>
+            <li><strong>oxLDL</strong> — das eigentlich gefährliche LDL, noch nicht Routine</li>
+            <li><strong>ApoB</strong> — Anzahl der LDL-Partikel, aussagekräftiger als LDL-Menge</li>
+            <li><strong>Lp(a)</strong> — genetisch erhöht, unabhängiger Risikofaktor</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-bottom:20px">
+        <div class="ib-title">💊 Was die Medizin tut</div>
+        <ul class="ib-list">
+          <li>Statine — senken LDL-Produktion in der Leber; wirken auch leicht antiinflammatorisch</li>
+          <li>PCSK9-Inhibitoren — senken LDL sehr stark, für Hochrisikopatienten</li>
+          <li>Canakinumab (IL-1β-Antikörper) — direkte Entzündungshemmung, senkt Herzrisiko unabhängig von LDL</li>
+          <li>ASS niedrig dosiert — verhindert Blutgerinnsel bei Plaque-Ruptur</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung & Entzündung →</button>
+        <button class="action-link" onclick="showPage('bewegung')">💪 Sport senkt Entzündung →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Stress & Gefäße →</button>
+      </div>
+
+      <div class="sources-box">
+        <div class="sources-title">📄 Quellen — Atherosklerose & Entzündung</div>
+        <div class="source-list">
+          <div class="source-item"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9199460/" target="_blank">Tsoupras et al. (2022): Mechanisms of oxLDL-Mediated Endothelial Dysfunction. Frontiers Cardiovascular Medicine</a></div>
+          <div class="source-item"><a href="https://www.ncbi.nlm.nih.gov/books/NBK343489/" target="_blank">Feingold (2019): The Role of Lipids and Lipoproteins in Atherosclerosis. NCBI Bookshelf / Endotext</a></div>
+          <div class="source-item"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9885196/" target="_blank">Bui et al. (2023): oxLDL und CVD bei chronischen Entzündungserkrankungen. PMC Meta-Analyse</a></div>
+          <div class="source-item">Ridker PM et al. (2008): JUPITER-Studie — Rosuvastatin bei erhöhtem hsCRP. NEJM 359:2195–2207</div>
+          <div class="source-item">Ridker PM et al. (2017): CANTOS-Studie — Canakinumab senkt Herzrisiko unabhängig von LDL. NEJM 377:1119–1131</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- GLOSSAR -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-glossar">
+  <div class="action-hero">
+    <div class="action-icon">📖</div>
+    <h1 class="action-title" style="color:var(--accent3)">Glossar</h1>
+    <p class="action-sub">Fachbegriffe kurz erklärt — und wo sie auf dieser Website auftauchen.</p>
+  </div>
+
+  <div class="section">
+    <div style="margin-bottom:20px">
+      <input type="text" id="glossar-search" placeholder="Begriff suchen..."
+        style="width:100%;background:var(--surface);border:1.5px solid var(--border);
+          border-radius:12px;padding:12px 16px;font-family:'DM Sans',sans-serif;
+          font-size:15px;color:var(--text);outline:none"
+        oninput="filterGlossar(this.value)">
+    </div>
+
+    <div id="glossar-list"></div>
   </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
@@ -1145,14 +1253,83 @@ function showPage(id){
   document.getElementById('p-'+id).classList.add('active');
   document.getElementById('nb-'+id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='glossar') renderGlossar('');
 }
 
 function showDis(id){
   document.querySelectorAll('.dis-tab').forEach(t=>t.className='dis-tab');
   document.querySelectorAll('.dis-content').forEach(c=>c.classList.remove('show'));
+  const colorMap={mcas:'var(--mcas)',rheu:'var(--rheu)',coli:'var(--coli)',athero:'#c0392b'};
   document.getElementById('dt-'+id).className=`dis-tab a-${id}`;
+  // Add athero style dynamically
+  if(id==='athero'){
+    const tab=document.getElementById('dt-athero');
+    tab.style.background='color-mix(in srgb,#c0392b 12%,var(--bg))';
+    tab.style.borderColor='#c0392b';
+    tab.style.color='#c0392b';
+  }
   document.getElementById('dd-'+id).classList.add('show');
 }
+
+// ── GLOSSAR ──────────────────────────────
+const GLOSSAR = [
+  { term: 'Antigen', def: 'Alles was das Immunsystem erkennen kann — ein Proteinfragment, ein Pilz, ein Virus. Das Wort bedeutet "Antikörper-Generator". Hat nichts mit DNA-Genen zu tun.', seiten: ['Erkrankungen'] },
+  { term: 'Antikörper', def: 'Y-förmige Proteine die B-Zellen produzieren. Sie binden spezifisch an ein bestimmtes Antigen — wie ein Schlüssel auf ein Schloss. Wichtigste Typen: IgE (Allergie), IgG (allgemeine Immunantwort), IgA (Schleimhäute).', seiten: ['MCAS', 'Atherosklerose'] },
+  { term: 'ApoB', def: 'Apolipoprotein B — das Hüllprotein von LDL-Partikeln. Die Anzahl der ApoB-Partikel ist aussagekräftiger für das Herzrisiko als die bloße LDL-Menge.', seiten: ['Atherosklerose'] },
+  { term: 'Atherosklerose', def: 'Chronische Entzündungserkrankung der Gefäßwände. LDL-Cholesterin oxidiert in entzündeten Gefäßen zu oxLDL, das Makrophagen zu Schaumzellen macht und Plaques bildet.', seiten: ['Erkrankungen'] },
+  { term: 'B-Zelle', def: 'Immunzellen die Antikörper produzieren. Werden durch T-Helferzellen (Th2) aktiviert. Bei Allergien produzieren sie IgE-Antikörper.', seiten: ['MCAS', 'Rheuma', 'Atherosklerose'] },
+  { term: 'CRH', def: 'Corticotropin-Releasing-Hormone — wird bei Stress vom Hypothalamus ausgeschüttet. Aktiviert die HPA-Achse und dockt direkt an Mastzellen an.', seiten: ['Stress'] },
+  { term: 'CRP / hsCRP', def: 'C-reaktives Protein — ein Entzündungsmarker im Blut. hsCRP (hochsensitiv) ist empfindlicher und ein besserer Herzrisiko-Prädiktor als LDL allein.', seiten: ['Atherosklerose', 'Schlaf'] },
+  { term: 'Cortisol', def: 'Stresshormon der Nebennierenrinde. Kurzfristig entzündungshemmend. Bei chronischem Stress hemmt es Tregs und aktiviert Mastzellen — dann wirkt es entzündungsfördernd.', seiten: ['Stress', 'Schlaf'] },
+  { term: 'Dendritische Zelle', def: 'Wächterzellen im Gewebe. Sie nehmen Antigene auf, zerlegen sie in Peptide und präsentieren diese den T-Zellen — wie ein Fahndungsplakat. Sie entscheiden mit welche T-Zell-Antwort folgt.', seiten: ['Start', 'Erkrankungen'] },
+  { term: 'Endothel', def: 'Die Innenwand der Blutgefäße — eine einzige Zellschicht. Entzündung macht diese Schicht durchlässiger ("dysfunktional"), was LDL-Ablagerung ermöglicht.', seiten: ['Atherosklerose'] },
+  { term: 'FOXP3', def: 'Transkriptionsfaktor (Gen-Schalter) der für die Entwicklung von Tregs essentiell ist. Vitamin D3 erhöht seine Expression direkt.', seiten: ['Schlaf', 'Ernährung', 'Bewegung'] },
+  { term: 'HPA-Achse', def: 'Hypothalamus-Hypophysen-Nebennierenrinden-Achse — die Stress-Achse des Körpers. Aktiviert bei Stress die Cortisol-Ausschüttung.', seiten: ['Stress'] },
+  { term: 'IgE', def: 'Immunglobulin E — ein Antikörper-Typ der Mastzellen scharf schaltet. Wird bei allergischen Reaktionen und MCAS gebildet. Bindet an FcεRI-Rezeptoren auf Mastzellen.', seiten: ['MCAS'] },
+  { term: 'IL-6 / IL-17 / IL-4', def: 'Interleukine — Botenstoffe des Immunsystems. IL-6: systemische Entzündung. IL-17: Hautentzündung (Th17). IL-4: Allergie-Typ (Th2). Zahlen bezeichnen verschiedene Moleküle mit verschiedenen Wirkungen.', seiten: ['Start', 'Schlaf', 'Erkrankungen'] },
+  { term: 'Leaky Gut', def: 'Erhöhte Durchlässigkeit der Darmschleimhaut. Bakterielle Fragmente (LPS) und unverdaute Proteine gelangen ins Blut und lösen Immunreaktionen aus. Wird durch Alkohol, Stress und schlechte Ernährung gefördert.', seiten: ['Ernährung', 'Stress'] },
+  { term: 'LDL / oxLDL', def: 'Low Density Lipoprotein — transportiert Cholesterin im Blut. Normales LDL ist weitgehend harmlos. Oxidiertes LDL (oxLDL) entsteht in entzündeten Gefäßwänden und ist der eigentliche Auslöser von Atherosklerose.', seiten: ['Atherosklerose', 'Ernährung'] },
+  { term: 'Makrophage', def: 'Große Fresszellen des Immunsystems. Verschlucken Erreger, Zelltrümmer — und bei Atherosklerose leider oxLDL, wodurch sie zu Schaumzellen werden.', seiten: ['Atherosklerose'] },
+  { term: 'Mastzelle', def: 'Gewebewächter die überall im Körper sitzen — Haut, Darm, Gelenke, Nase, Gehirn. Schütten bei Aktivierung Histamin und andere Entzündungsstoffe aus. Bei MCAS haben sie eine zu niedrige Aktivierungsschwelle.', seiten: ['MCAS', 'Stress', 'Schlaf'] },
+  { term: 'MBSR', def: 'Mindfulness-Based Stress Reduction — achtsamkeitsbasiertes 8-Wochen-Programm. Klinisch belegt bei chronischen Entzündungserkrankungen. Oft von Krankenkassen bezuschusst.', seiten: ['Stress', 'Erkrankungen'] },
+  { term: 'Mikrobiom', def: 'Die Gesamtheit aller Mikroorganismen im Darm (~38 Billionen Bakterien). Produziert kurzkettige Fettsäuren (SCFAs) die Tregs stärken. Wird durch Antibiotika, Alkohol und schlechte Ernährung geschädigt.', seiten: ['Ernährung'] },
+  { term: 'MHC-II', def: 'Major Histocompatibility Complex II — Proteinkomplex auf dendritischen Zellen der Antigen-Fragmente den T-Zellen präsentiert. Welche MHC-II-Variante jemand hat (HLA-Gene) beeinflusst das Immunrisiko genetisch.', seiten: ['Start', 'Erkrankungen'] },
+  { term: 'NF-κB', def: 'Nuclear Factor kappa B — der Haupt-Einschalter für Entzündungsgene. Wird durch Zucker, oxLDL, Stress und Infektionen aktiviert. Omega-3 und Polyphenole hemmen ihn.', seiten: ['Ernährung', 'Atherosklerose'] },
+  { term: 'NSDR', def: 'Non-Sleep Deep Rest — geführte Tiefenentspannungstechnik (basierend auf Yoga Nidra). Senkt Cortisol, erhöht Dopamin. 10-Minuten-Protokoll von Andrew Huberman.', seiten: ['Stress'] },
+  { term: 'oxLDL', def: 'Oxidiertes LDL — entsteht wenn normales LDL in entzündeten Gefäßwänden durch freie Radikale verändert wird. Das eigentlich gefährliche Cholesterin bei Atherosklerose.', seiten: ['Atherosklerose'] },
+  { term: 'Schaumzelle', def: 'Makrophagen die so viel oxLDL verschluckt haben dass sie mit Fett gefüllt sind. Schaumzellen sind der Kern atherosklerotischer Plaques.', seiten: ['Atherosklerose'] },
+  { term: 'T-Zelle', def: 'Zentrale Immunzellen die über Angriff oder Toleranz entscheiden. Verschiedene Typen: Th1 (Infektionen), Th2 (Allergie), Th17 (Hautentzündung), Treg (Bremse).', seiten: ['Start', 'Erkrankungen'] },
+  { term: 'Th17-Zelle', def: 'T-Helferzelle Typ 17 — schüttet IL-17 und IL-22 aus. Haupttreiber der Hautentzündung bei seborrhoischer Dermatitis und Psoriasis. Wird durch Omega-3 und Vitamin D3 gehemmt.', seiten: ['Start', 'Erkrankungen'] },
+  { term: 'Th2-Zelle', def: 'T-Helferzelle Typ 2 — der Allergie-Typ. Aktiviert B-Zellen zur IgE-Produktion. Hauptakteur bei Neurodermitis, Asthma und MCAS.', seiten: ['MCAS', 'Erkrankungen'] },
+  { term: 'TNF-α', def: 'Tumor Necrosis Factor alpha — ein zentraler Entzündungsbotenstoff. Wird bei Schlafmangel, Stress und Autoimmunerkrankungen erhöht. TNF-Blocker sind eine wichtige Therapie bei Rheuma.', seiten: ['Rheuma', 'Schlaf'] },
+  { term: 'Treg', def: 'Regulatorische T-Zelle — die Bremse des Immunsystems. Schüttet IL-10 und TGF-β aus und verhindert überschießende Immunreaktionen. Wird durch Vitamin D3, Omega-3 und Bewegung gestärkt, durch Stress gehemmt.', seiten: ['Start', 'Schlaf', 'Ernährung', 'Bewegung', 'Stress'] },
+  { term: 'Tryptase', def: 'Enzym das Mastzellen bei Aktivierung ausschütten. Wichtigster diagnostischer Marker für MCAS. Basalwert-Messung im Blut ist ein empfohlener diagnostischer Schritt.', seiten: ['MCAS'] },
+  { term: 'Zytokin', def: 'Oberbegriff für Botenstoffe des Immunsystems (Interleukine, TNF-α, Interferone etc.). Sie koordinieren Immunreaktionen — manche entzündungsfördernd, manche -hemmend.', seiten: ['Start', 'Erkrankungen'] },
+];
+
+function renderGlossar(query) {
+  const list = document.getElementById('glossar-list');
+  if (!list) return;
+  const filtered = query.length < 1 ? GLOSSAR :
+    GLOSSAR.filter(g =>
+      g.term.toLowerCase().includes(query.toLowerCase()) ||
+      g.def.toLowerCase().includes(query.toLowerCase())
+    );
+  list.innerHTML = filtered.map(g => `
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;
+      padding:18px 20px;margin-bottom:10px">
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;
+        color:var(--accent3);margin-bottom:6px">${g.term}</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.7;margin-bottom:8px">${g.def}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">
+        ${g.seiten.map(s=>`<span style="font-size:10px;background:var(--surface2);
+          border:1px solid var(--border);border-radius:10px;padding:2px 8px;
+          color:var(--muted)">→ ${s}</span>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function filterGlossar(q) { renderGlossar(q); }
 
 // Init nav active state
 document.getElementById('nb-home').classList.add('active');
