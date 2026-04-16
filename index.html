@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Entzündung verstehen</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#faf8f4;--surface:#f2ede4;--surface2:#e8e0d4;--border:#d8d0c4;
+  --text:#1a1714;--muted:#8a8078;--accent:#c4522a;--accent2:#4a7a5a;
+  --accent3:#4a5a7a;--gold:#b8820a;--red:#c0392b;--purple:#7a5a9a;
+  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;
+  --schlaf:#4a5a7a;--ernaehr:#4a7a5a;--bewegung:#7a5a2a;--stress:#7a5a9a;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0f0d0b;--surface:#181512;--surface2:#211d18;--border:#2e2820;
+  --text:#f0ebe0;--muted:#9a8e7e;--accent:#e07050;--accent2:#6aaa82;
+  --accent3:#7a9ab2;--gold:#d4a030;--red:#e05555;--purple:#a88bcc;
+  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;
+  --schlaf:#7a9ab2;--ernaehr:#6aaa82;--bewegung:#c4923a;--stress:#a88bcc;
+}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;
+  font-size:15px;line-height:1.7;min-height:100vh}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;
+  background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);height:56px;
+  display:flex;align-items:center;padding:0 16px;gap:0}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;
+  color:var(--text);cursor:pointer;white-space:nowrap;margin-right:16px;flex-shrink:0}
+.nav-logo em{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-btn{font-size:12px;color:var(--muted);cursor:pointer;
+  background:none;border:none;font-family:'DM Sans',sans-serif;
+  padding:6px 10px;border-radius:20px;white-space:nowrap;transition:all .15s;flex-shrink:0}
+.nav-btn:hover{color:var(--text);background:var(--surface)}
+.nav-btn.active{color:var(--text);background:var(--surface);font-weight:500}
+
+.disclaimer{font-size:11px;color:var(--muted);padding:7px 16px;
+  background:color-mix(in srgb,var(--gold) 8%,var(--surface));
+  border-bottom:1px solid color-mix(in srgb,var(--gold) 20%,var(--border));
+  text-align:center;line-height:1.4}
+
+/* ── PAGES ── */
+.page{display:none;animation:fadeUp .25s forwards}
+.page.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SHARED LAYOUT ── */
+.hero{padding:64px 24px 48px;text-align:center;max-width:720px;margin:0 auto}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:0.2em;
+  color:var(--accent);margin-bottom:16px}
+.hero-title{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;
+  letter-spacing:-0.02em;margin-bottom:20px}
+.hero-title em{font-style:italic}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:500px;
+  margin:0 auto 36px;font-weight:300}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--accent);color:#fff;border:none;border-radius:30px;
+  padding:11px 26px;font-family:'DM Sans',sans-serif;font-size:13px;
+  font-weight:500;cursor:pointer;transition:all .15s}
+.btn-p:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-s{background:none;border:1.5px solid var(--border);border-radius:30px;
+  padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:13px;
+  color:var(--text);cursor:pointer;transition:all .15s}
+.btn-s:hover{border-color:var(--text)}
+
+.section{max-width:860px;margin:0 auto;padding:48px 24px}
+.sec-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.2em;
+  color:var(--muted);margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3.5vw,2.2rem);margin-bottom:14px;line-height:1.2}
+.sec-sub{color:var(--muted);font-size:.95rem;max-width:540px;
+  margin-bottom:36px;font-weight:300;line-height:1.6}
+
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+.bg-surface{background:var(--surface)}
+
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px;cursor:pointer;transition:all .2s;position:relative}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.card-icon{font-size:1.8rem;margin-bottom:10px}
+.card-title{font-weight:500;margin-bottom:6px;font-size:14px}
+.card-text{font-size:13px;color:var(--muted);line-height:1.6}
+.card-badge{display:inline-block;font-size:10px;margin-top:8px;padding:2px 8px;
+  border-radius:10px;background:color-mix(in srgb,var(--accent2) 12%,var(--bg));
+  color:var(--accent2);border:1px solid color-mix(in srgb,var(--accent2) 30%,var(--border))}
+.card-arrow{position:absolute;top:18px;right:18px;font-size:14px;color:var(--muted)}
+
+/* ── ACTION PAGE HERO (colored) ── */
+.action-hero{padding:56px 24px 40px;text-align:center;max-width:700px;margin:0 auto}
+.action-icon{font-size:3rem;margin-bottom:16px}
+.action-title{font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:14px}
+.action-sub{font-size:1rem;color:var(--muted);font-weight:300;max-width:480px;margin:0 auto}
+
+/* ── MECHANISM BOX ── */
+.mech-box{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:24px;margin-bottom:20px}
+.mech-title{font-size:10px;text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--muted);margin-bottom:14px}
+.mech-text{font-size:14px;line-height:1.8;
+  color:color-mix(in srgb,var(--text) 90%,var(--muted))}
+
+/* ── DO LIST ── */
+.do-list{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.do-item{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.do-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;margin-top:1px}
+.do-item-title{font-size:14px;font-weight:500;margin-bottom:4px}
+.do-item-text{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── RESOURCE CHIPS ── */
+.res-box{background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:18px 20px;margin-bottom:20px}
+.res-title{font-size:10px;text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--muted);margin-bottom:12px}
+.res-chips{display:flex;flex-wrap:wrap;gap:8px}
+.res-chip{display:inline-flex;align-items:center;gap:5px;
+  background:var(--bg);border:1px solid var(--border);border-radius:20px;
+  padding:6px 14px;font-size:12px;color:var(--text);cursor:pointer;
+  transition:all .15s;text-decoration:none}
+.res-chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── SUPPORT CARDS ── */
+.support-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+@media(max-width:580px){.support-row{grid-template-columns:1fr}}
+.sup-card{border-radius:12px;padding:18px}
+.sup-card.mbsr{background:color-mix(in srgb,var(--stress) 8%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--stress) 25%,var(--border))}
+.sup-card.gruppe{background:color-mix(in srgb,var(--accent2) 8%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--accent2) 25%,var(--border))}
+.sup-title{font-size:13px;font-weight:500;margin-bottom:6px}
+.sup-card.mbsr .sup-title{color:var(--stress)}
+.sup-card.gruppe .sup-title{color:var(--accent2)}
+.sup-text{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* ── VOGEL CARDS ── */
+.vogel-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+@media(max-width:560px){.vogel-grid{grid-template-columns:1fr}}
+.vogel-card{border-radius:14px;padding:24px}
+.vogel-card.gesund{background:color-mix(in srgb,var(--accent2) 8%,var(--surface));
+  border:1.5px solid color-mix(in srgb,var(--accent2) 30%,var(--border))}
+.vogel-card.chronisch{background:color-mix(in srgb,var(--red) 6%,var(--surface));
+  border:1.5px solid color-mix(in srgb,var(--red) 25%,var(--border))}
+.vogel-card-title{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:14px}
+.vogel-card.gesund .vogel-card-title{color:var(--accent2)}
+.vogel-card.chronisch .vogel-card-title{color:var(--red)}
+.v-step{display:flex;gap:9px;margin-bottom:9px;font-size:13px}
+.v-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.vogel-card.gesund .v-dot{background:var(--accent2)}
+.vogel-card.chronisch .v-dot{background:var(--red)}
+.v-sub{font-size:11px;color:var(--muted)}
+.vogel-result{margin-top:14px;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500}
+.vogel-card.gesund .vogel-result{background:color-mix(in srgb,var(--accent2) 12%,var(--bg));color:var(--accent2)}
+.vogel-card.chronisch .vogel-result{background:color-mix(in srgb,var(--red) 10%,var(--bg));color:var(--red)}
+
+/* ── DISEASE ── */
+.dis-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.dis-tab{border-radius:30px;padding:9px 20px;font-size:13px;font-weight:500;
+  cursor:pointer;border:1.5px solid var(--border);background:none;
+  font-family:'DM Sans',sans-serif;color:var(--muted);transition:all .15s}
+.dis-tab.a-mcas{background:color-mix(in srgb,var(--mcas) 12%,var(--bg));border-color:var(--mcas);color:var(--mcas)}
+.dis-tab.a-rheu{background:color-mix(in srgb,var(--rheu) 12%,var(--bg));border-color:var(--rheu);color:var(--rheu)}
+.dis-tab.a-coli{background:color-mix(in srgb,var(--coli) 12%,var(--bg));border-color:var(--coli);color:var(--coli)}
+
+.dis-content{display:none}
+.dis-content.show{display:block;animation:fadeUp .25s forwards}
+
+.dis-header{margin-bottom:28px}
+.dis-icon{font-size:2.2rem;margin-bottom:10px}
+.dis-name{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:6px}
+.dis-tagline{color:var(--muted);font-weight:300}
+
+.dis-friend{padding:18px 22px;border-radius:12px;margin-bottom:24px;
+  font-size:.95rem;line-height:1.7;font-style:italic}
+
+.cascade{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px;margin-bottom:20px}
+.cas-label{font-size:10px;text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--muted);margin-bottom:18px}
+.cas-step{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.cas-step:last-child{border-bottom:none}
+.cas-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:2px}
+.cas-name{font-size:13px;font-weight:500;margin-bottom:3px}
+.cas-desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:560px){.two-col{grid-template-columns:1fr}}
+.info-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
+.ib-title{font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:10px}
+.ib-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.ib-list li{font-size:13px;padding-left:14px;position:relative;line-height:1.5;
+  color:color-mix(in srgb,var(--text) 85%,var(--muted))}
+.ib-list li::before{content:'·';position:absolute;left:3px;color:var(--muted)}
+
+.action-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;
+  color:var(--accent3);cursor:pointer;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));
+  border-radius:20px;padding:6px 14px;background:none;font-family:'DM Sans',sans-serif;
+  transition:all .15s;margin:4px}
+.action-link:hover{background:color-mix(in srgb,var(--accent3) 10%,var(--bg));border-color:var(--accent3)}
+
+/* ── FRIEND SECTION ── */
+.friend-section{background:var(--surface);padding:64px 24px}
+.friend-inner{max-width:640px;margin:0 auto;text-align:center}
+.friend-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);
+  margin-bottom:20px;line-height:1.2}
+.friend-title em{color:var(--accent);font-style:italic}
+.friend-text{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:16px;font-weight:300}
+.highlight-box{background:color-mix(in srgb,var(--accent2) 10%,var(--bg));
+  border-left:3px solid var(--accent2);border-radius:0 10px 10px 0;
+  padding:16px 20px;margin:20px 0;text-align:left;font-size:.95rem;line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--surface);padding:36px 24px;text-align:center;
+  border-top:1px solid var(--border);margin-top:0}
+.foot-dis{font-size:11px;color:var(--muted);max-width:560px;margin:0 auto 14px;line-height:1.6}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--muted)}
+.foot-logo em{color:var(--accent);font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">ℹ️ Diese Seite informiert — sie ersetzt keine ärztliche Diagnose oder Behandlung.</div>
+
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">entzündung<em>verstehen</em></div>
+  <div class="nav-links">
+    <button class="nav-btn" id="nb-home" onclick="showPage('home')">Start</button>
+    <button class="nav-btn" id="nb-schlaf" onclick="showPage('schlaf')">😴 Schlaf</button>
+    <button class="nav-btn" id="nb-ernaehr" onclick="showPage('ernaehr')">🥗 Ernährung</button>
+    <button class="nav-btn" id="nb-bewegung" onclick="showPage('bewegung')">💪 Bewegung</button>
+    <button class="nav-btn" id="nb-stress" onclick="showPage('stress')">🧘 Stress</button>
+    <button class="nav-btn" id="nb-erkrank" onclick="showPage('erkrank')">🔬 Erkrankungen</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HOME -->
+<!-- ══════════════════════════════════════ -->
+<div class="page active" id="p-home">
+
+  <div class="hero">
+    <div class="eyebrow">Dein Körper ist dein Freund</div>
+    <h1 class="hero-title">Chronische <em style="color:var(--accent)">Entzündung</em><br>verstehen</h1>
+    <p class="hero-sub">Nicht "warum ich?" — sondern: was passiert in meinem Körper, und was kann <em style="color:var(--accent)">ich</em> tun?</p>
+    <div class="cta-row">
+      <button class="btn-p" onclick="showPage('erkrank')">Zu meiner Erkrankung</button>
+      <button class="btn-s" onclick="document.getElementById('home-vogel').scrollIntoView({behavior:'smooth'})">Wie funktioniert das?</button>
+    </div>
+  </div>
+
+  <div class="friend-section">
+    <div class="friend-inner">
+      <h2 class="friend-title">Dein Körper kämpft<br><em>immer</em> für dich</h2>
+      <p class="friend-text">Wenn du Schmerzen hast, wenn deine Haut brennt, wenn du erschöpft bist und nicht weißt warum — dann ist die erste Reaktion oft: "Warum tut mein Körper das? Warum ich?"</p>
+      <div class="highlight-box">Dein Körper macht nichts falsch. Er tut genau das was er gelernt hat: er schützt dich. Er hat nur etwas Harmloses als Bedrohung eingestuft — und kommt aus diesem Alarm nicht mehr heraus. Das ist kein Versagen. Das ist ein Missverständnis zwischen dir und deinem Immunsystem.</div>
+      <p class="friend-text">Wenn du verstehst wie er funktioniert, kannst du anfangen ihn zu beruhigen — mit dem was dein Arzt verschreibt, und mit dem was du selbst jeden Tag tun kannst.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section" id="home-vogel">
+    <div class="sec-eyebrow">Das Grundprinzip</div>
+    <h2 class="sec-title">Entzündung — einmal gut,<br>einmal zum Problem</h2>
+    <p class="sec-sub">Entzündung ist nicht dein Feind. Sie ist dein wichtigstes Schutzsystem. Der Unterschied: hört sie wieder auf?</p>
+    <div class="vogel-grid">
+      <div class="vogel-card gesund">
+        <div class="vogel-card-title">✅ Gesunde Entzündung</div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Auslöser: echte Bedrohung</div><div class="v-sub">Wunde, Infektion, Verletzung</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Alarm geht an</div><div class="v-sub">Rötung, Schwellung, Wärme, Schmerz</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Immunzellen erledigen die Arbeit</div><div class="v-sub">Eindringlinge bekämpfen, Gewebe reparieren</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Alarm geht wieder aus</div><div class="v-sub">Bremszellen (Tregs) stoppen die Reaktion</div></div></div>
+        <div class="vogel-result">→ Heilung. Genau wie es sein soll.</div>
+      </div>
+      <div class="vogel-card chronisch">
+        <div class="vogel-card-title">⚠️ Chronische Entzündung</div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Auslöser: harmlose Dinge</div><div class="v-sub">Eigene Zellen, Pilze, Darmbakterien, Stress</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Alarm geht an</div><div class="v-sub">Dieselbe Reaktion — aber gegen den falschen Feind</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Bremse versagt</div><div class="v-sub">Treg-Zellen zu schwach — Alarm bleibt an</div></div></div>
+        <div class="v-step"><div class="v-dot"></div><div><div>Alarm läuft dauerhaft</div><div class="v-sub">Gewebeschäden, Erschöpfung, systemische Symptome</div></div></div>
+        <div class="vogel-result">→ Kein Feind, kein Ende. Das ist das Problem.</div>
+      </div>
+    </div>
+
+    <!-- ANIMATED CASCADE -->
+    <div style="margin-top:12px;margin-bottom:0">
+      <div class="sec-eyebrow" style="margin-bottom:10px;margin-top:8px">In Bewegung — so läuft die Kaskade ab</div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;overflow:hidden">
+        <div id="cascade-anim">
+          <!-- Header row -->
+          <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;margin-bottom:14px;text-align:center">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent2);font-weight:600">✅ Gesunder Mensch</div>
+            <div style="background:var(--border)"></div>
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--red);font-weight:600">⚠️ Chronische Entzündung</div>
+          </div>
+          <!-- Steps populated by JS -->
+          <div id="ca-rows"></div>
+        </div>
+        <div style="text-align:center;margin-top:16px">
+          <button id="ca-btn" onclick="startCascade()"
+            style="background:var(--accent);color:#fff;border:none;border-radius:20px;
+              padding:8px 22px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer">
+            ▶ Animation starten
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section bg-surface" style="padding-top:48px;padding-bottom:48px;max-width:100%">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="sec-eyebrow">Was du tun kannst</div>
+      <h2 class="sec-title">Vier Hebel — für jede<br>chronische Entzündung</h2>
+      <p class="sec-sub">Was du selbst tun kannst — <strong>ergänzend</strong> zu dem was dein Arzt verschreibt. Nicht statt.</p>
+      <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface));
+        border:1.5px solid color-mix(in srgb,var(--gold) 35%,var(--border));
+        border-radius:12px;padding:14px 18px;margin-bottom:28px;
+        display:flex;align-items:flex-start;gap:12px">
+        <span style="font-size:1.3rem;flex-shrink:0">⚕️</span>
+        <div style="font-size:13px;line-height:1.7;color:var(--text)">
+          <strong>Wichtig:</strong> Diese vier Bereiche ersetzen keine ärztliche Behandlung und keine Medikamente — sie machen sie wirkungsvoller. Sprich Änderungen an Ernährung, Sport oder Supplements immer mit deinem Arzt oder deiner Ärztin ab.
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="card" onclick="showPage('schlaf')">
+          <div class="card-arrow">→</div>
+          <div class="card-icon">😴</div>
+          <div class="card-title">Schlaf</div>
+          <div class="card-text">Schlaf ist die wichtigste Regenerationszeit des Immunsystems. Schon eine schlechte Nacht erhöht Entzündungsmarker messbar.</div>
+          <span class="card-badge">Klinisch belegt</span>
+        </div>
+        <div class="card" onclick="showPage('ernaehr')">
+          <div class="card-arrow">→</div>
+          <div class="card-icon">🥗</div>
+          <div class="card-title">Ernährung</div>
+          <div class="card-text">Mediterrane Kost, Omega-3 und Ballaststoffe reduzieren systemische Entzündung nachweislich. Mit Rezepten und Buchempfehlungen.</div>
+          <span class="card-badge">Klinisch belegt</span>
+        </div>
+        <div class="card" onclick="showPage('bewegung')">
+          <div class="card-arrow">→</div>
+          <div class="card-icon">💪</div>
+          <div class="card-title">Bewegung</div>
+          <div class="card-text">Moderates Training stärkt die Bremszellen des Immunsystems. Aber: Übertraining kann Entzündung verstärken.</div>
+          <span class="card-badge">Klinisch belegt</span>
+        </div>
+        <div class="card" onclick="showPage('stress')">
+          <div class="card-arrow">→</div>
+          <div class="card-icon">🧘</div>
+          <div class="card-title">Stress</div>
+          <div class="card-text">Chronischer Stress aktiviert Entzündungszellen direkt. MBSR ist klinisch erprobt und oft von Krankenkassen bezuschusst.</div>
+          <span class="card-badge">Klinisch belegt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung. Stand April 2026.</p>
+    <div class="foot-logo">entzündung<em>verstehen</em>.de</div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- SCHLAF -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-schlaf">
+  <div class="action-hero">
+    <div class="action-icon">😴</div>
+    <h1 class="action-title" style="color:var(--schlaf)">Schlaf</h1>
+    <p class="action-sub">Nicht Wellness — Medizin. Schlaf ist die wichtigste Regenerationszeit deines Immunsystems.</p>
+  </div>
+
+  <div class="section">
+    <div class="mech-box">
+      <div class="mech-title">🔬 Warum Schlaf das Immunsystem direkt beeinflusst</div>
+      <div class="mech-text">Im Tiefschlaf schüttet der Körper entzündungshemmende Zytokine aus und regeneriert die Treg-Bremszellen. Gleichzeitig sinkt Cortisol auf den Tagesstiefstwert — der einzige Moment wo das Immunsystem wirklich zur Ruhe kommt. Schon eine einzige Nacht mit unter 6 Stunden Schlaf erhöht TNF-α und IL-6 messbar. Chronischer Schlafmangel reduziert die Treg-Aktivität nachweislich — die Bremse versagt schneller.<br><br>Melatonin — das Schlafhormon — wirkt zusätzlich direkt stabilisierend auf Mastzellen. Das erklärt warum viele Menschen mit chronischen Entzündungserkrankungen abends und nachts mehr Symptome haben: der Melatoninmangel durch Blaulicht lässt Mastzellen aktiver werden.</div>
+    </div>
+
+    <div class="sec-eyebrow" style="margin-bottom:12px">Was du konkret tun kannst</div>
+    <div class="do-list">
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--schlaf) 15%,var(--surface2));color:var(--schlaf)">1</div>
+        <div>
+          <div class="do-item-title">Fester Schlafrhythmus — auch am Wochenende</div>
+          <div class="do-item-text">Jeden Tag zur gleichen Zeit ins Bett und aufstehen. Der zirkadiane Rhythmus reguliert direkt wann Mastzellen aktivierbar sind. Schwankungen von mehr als 1 Stunde stören den Rhythmus messbar.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--schlaf) 15%,var(--surface2));color:var(--schlaf)">2</div>
+        <div>
+          <div class="do-item-title">Kein Blaulicht 90 Minuten vor dem Schlafen</div>
+          <div class="do-item-text">Smartphone, TV und Laptop blockieren die Melatonin-Produktion. Nachtmodus reicht nicht — die Helligkeit ist das Problem. Blaulicht-Brille oder konsequente Bildschirmabstinenz ab 21 Uhr hilft nachweislich.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--schlaf) 15%,var(--surface2));color:var(--schlaf)">3</div>
+        <div>
+          <div class="do-item-title">Schlafzimmer kühl und dunkel</div>
+          <div class="do-item-text">Ideal: 16–18°C, vollständige Dunkelheit. Der Körpertemperaturabfall beim Einschlafen ist ein Signal für den Tiefschlaf. Wärme verhindert ihn. Verdunklungsvorhänge oder Schlafmaske machen einen messbaren Unterschied.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--schlaf) 15%,var(--surface2));color:var(--schlaf)">4</div>
+        <div>
+          <div class="do-item-title">Kein Alkohol als "Einschlafhilfe"</div>
+          <div class="do-item-text">Alkohol macht müde — stört aber den Tiefschlaf und den REM-Schlaf erheblich. Das Ergebnis: du schläfst, aber regenerierst kaum. Bei MCAS kommt hinzu: Alkohol aktiviert Mastzellen direkt.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--schlaf) 15%,var(--surface2));color:var(--schlaf)">5</div>
+        <div>
+          <div class="do-item-title">Abend-Routine als Signal ans Gehirn</div>
+          <div class="do-item-text">30 Minuten vor dem Schlafen: kein Stress, kein E-Mail, kein News. Lesen, leichtes Dehnen, warmes Bad (senkt danach die Körpertemperatur). Das Gehirn lernt: das ist das Signal für Schlaf.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-box">
+      <div class="res-title">📚 Weiterführende Ressourcen</div>
+      <div class="res-chips">
+        <span class="res-chip">📖 "Das große Buch vom Schlaf" — Matthew Walker</span>
+        <span class="res-chip">📖 "Schlaf ist die beste Medizin" — Hans-Günter Weeß</span>
+        <span class="res-chip">🎧 Podcast: "Huberman Lab — Sleep"</span>
+      </div>
+    </div>
+
+    <div class="support-row">
+      <div class="sup-card mbsr">
+        <div class="sup-title">🧘 Schlaf & MBSR</div>
+        <div class="sup-text">MBSR verbessert Schlafqualität bei chronischen Erkrankungen nachweislich — durch Reduktion der abendlichen Cortisol-Ausschüttung. Viele Krankenkassen bezuschussen MBSR-Kurse. Suchbegriff: "MBSR Kurs Krankenkasse"</div>
+      </div>
+      <div class="sup-card gruppe">
+        <div class="sup-title">📱 Tracking-Tipp</div>
+        <div class="sup-text">Tracke Schlafqualität zusammen mit deinen Symptomen über 4–6 Wochen. Das Muster das dabei sichtbar wird ist oft überraschend — und gibt dir konkrete Hebel in die Hand.</div>
+      </div>
+    </div>
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- ERNÄHRUNG -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-ernaehr">
+  <div class="action-hero">
+    <div class="action-icon">🥗</div>
+    <h1 class="action-title" style="color:var(--ernaehr)">Ernährung</h1>
+    <p class="action-sub">Du kannst mit dem was du isst direkt Einfluss auf deine Entzündungskaskade nehmen — jeden Tag.</p>
+  </div>
+
+  <div class="section">
+
+    <!-- TWO PATHWAYS OVERVIEW -->
+    <div style="margin-bottom:24px">
+      <div class="sec-eyebrow" style="margin-bottom:10px">Wie Ernährung Entzündung auslöst</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+        <div style="background:color-mix(in srgb,var(--ernaehr) 8%,var(--surface));
+          border:1.5px solid color-mix(in srgb,var(--ernaehr) 30%,var(--border));
+          border-radius:12px;padding:18px">
+          <div style="font-size:11px;font-weight:600;color:var(--ernaehr);margin-bottom:8px">🦠 Weg 1 — Darm & Mikrobiom</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.7">Falsche Ernährung → Darmbarriere wird durchlässig → Fragmente gelangen ins Blut → Immunsystem reagiert → Entzündung</div>
+        </div>
+        <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface));
+          border:1.5px solid color-mix(in srgb,var(--gold) 30%,var(--border));
+          border-radius:12px;padding:18px">
+          <div style="font-size:11px;font-weight:600;color:var(--gold);margin-bottom:8px">🩸 Weg 2 — Blutzucker</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.7">Zucker & schnelle Kohlenhydrate → Glukosespike → direkte Entzündungsaktivierung → unabhängig vom Darm</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;
+        padding:12px 16px;font-size:13px;color:var(--muted);line-height:1.6">
+        💡 Beide Wege können gleichzeitig aktiv sein — und sie verstärken sich gegenseitig. Das erklärt warum Ernährung bei so vielen chronischen Entzündungserkrankungen eine so große Rolle spielt.
+      </div>
+    </div>
+
+    <!-- WEG 1: DARM -->
+    <div class="mech-box" style="border-left:3px solid var(--ernaehr)">
+      <div class="mech-title" style="color:var(--ernaehr)">🦠 Weg 1 — Darm & Mikrobiom im Detail</div>
+      <div class="mech-text">70% des Immunsystems sitzt im Darm. Das Darmmikrobiom produziert aus Ballaststoffen kurzkettige Fettsäuren (SCFAs) — diese stärken direkt die Treg-Bremszellen.<br><br>
+      Wenn die Darmbarriere durch schlechte Ernährung, Alkohol oder Stress durchlässig wird (<em>Leaky Gut</em>), gelangen bakterielle Fragmente (LPS), unverdaute Nahrungsproteine und andere Stoffe ins Blut. Das Immunsystem erkennt sie als Fremdkörper — und startet eine Entzündungsreaktion. Nicht einmalig, sondern bei jeder Mahlzeit.<br><br>
+      Ein gesundes Mikrobiom = stärkere Bremse = weniger Überreaktion. Das ist der tiefste Hebel den Ernährung bietet.</div>
+    </div>
+
+    <!-- WEG 2: BLUTZUCKER -->
+    <div class="mech-box" style="border-left:3px solid var(--gold);margin-bottom:24px">
+      <div class="mech-title" style="color:var(--gold)">🩸 Weg 2 — Blutzucker & Glukosespikes</div>
+      <div class="mech-text">Wenn wir Zucker oder schnelle Kohlenhydrate essen, steigt der Blutzucker rasch an — ein sogenannter Glukosespike. Das ist normal und kein Problem wenn es gelegentlich passiert. Problematisch wird es wenn Spikes häufig und stark auftreten.<br><br>
+      <strong>Was bei einem Spike im Körper passiert:</strong><br>
+      Hohe Glukose aktiviert direkt den NF-κB-Signalweg — das ist der Haupt-Einschalter für Entzündungsgene. Gleichzeitig entstehen AGEs (Advanced Glycation End Products) — Zuckermoleküle die sich an Proteine binden und Gewebeschäden verursachen. Und: oxidativer Stress steigt, der freie Radikale produziert die Zellen schädigen.<br><br>
+      <strong>Der Zusammenhang mit Entzündungserkrankungen:</strong><br>
+      Bei Menschen mit chronischer Entzündung ist dieser Mechanismus besonders relevant — der Körper ist ohnehin in einem erhöhten Entzündungszustand, und Glukosespikes legen noch Benzin ins Feuer. Häufige Spikes können auch Mastzellen sensibilisieren.<br><br>
+      <strong>Kann man Blutzucker messen?</strong><br>
+      Ja — mit einem CGM (Continuous Glucose Monitor) wie Freestyle Libre oder Dexcom. Diese kleinen Sensoren am Oberarm messen Glukose kontinuierlich, 24 Stunden am Tag. Für Menschen ohne Diabetes sind sie rezeptfrei erhältlich. Sie zeigen genau welche Lebensmittel bei dir persönlich Spikes verursachen — und welche nicht. Das ist einer der seltenen Fälle wo wir wirklich dauerhaft messen können.</div>
+    </div>
+
+    <!-- PROXY SECTION -->
+    <div style="background:color-mix(in srgb,var(--accent3) 6%,var(--surface));
+      border:1.5px solid color-mix(in srgb,var(--accent3) 25%,var(--border));
+      border-radius:12px;padding:20px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:600;color:var(--accent3);margin-bottom:10px">📊 Wie misst die Medizin eigentlich Entzündung?</div>
+      <div style="font-size:13px;line-height:1.8;color:var(--text)">
+        Beim Arzt werden Entzündungsmarker gemessen — CRP, IL-6, TNF-α. Aber das sind nicht die Entzündung selbst, sondern <strong>Botenstoffe die die Entzündung auslösen oder begleiten</strong>. Einen Schritt zurück gedacht.<br><br>
+        Und man kann sie nicht dauerhaft messen — die Technologie dafür existiert noch nicht im Alltag. Blutabnahme beim Arzt ist eine Momentaufnahme, kein Film.<br><br>
+        <strong>Was das bedeutet:</strong> Du kannst dir eigene Proxys bauen. Dein Körper sendet täglich Signale die Entzündung anzeigen — ohne Labor:
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">💩 Stuhlgang (Bristol-Skala)</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">😴 Energie nach Mahlzeiten</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">🦴 Gelenkschmerzen morgens</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">🔴 Hautbild</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">💭 Stimmung & Brainfog</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">💓 Ruhepuls (Smartwatch)</span>
+        <span style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px">📉 HRV (Herzratenvariabilität)</span>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--muted);line-height:1.6">
+        Über Wochen und Monate getrackt zeigen diese Proxys Muster die kein Einzellaborwert je zeigen könnte — weil sie dein Leben abbilden, nicht einen Moment.
+      </div>
+    </div>
+
+    <div class="sec-eyebrow" style="margin-bottom:12px">Was du konkret tun kannst</div>
+    <div class="do-list">
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">1</div>
+        <div>
+          <div class="do-item-title">Omega-3 täglich — mit Fett einnehmen</div>
+          <div class="do-item-text">Fetter Fisch (Lachs, Makrele, Hering) 3x pro Woche oder hochwertiges Supplement (EPA+DHA, Triglycerid-Form). Wichtig: immer mit einer fetthaltigen Mahlzeit einnehmen — die Bioverfügbarkeit steigt um bis zu 300%.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">2</div>
+        <div>
+          <div class="do-item-title">Ballaststoffe für das Mikrobiom</div>
+          <div class="do-item-text">Gemüse, Hülsenfrüchte, Vollkorn — Ziel: 30g Ballaststoffe pro Tag. Vielfalt ist wichtiger als Menge: 30 verschiedene Pflanzensorten pro Woche verbessert die Mikrobiom-Diversität messbar.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">3</div>
+        <div>
+          <div class="do-item-title">Fermentierte Lebensmittel täglich</div>
+          <div class="do-item-text">Joghurt, Kefir, Sauerkraut, Kimchi, Kombucha — liefern lebende Bakterien die das Mikrobiom stärken. Stanford-Studie 2021: tägliche fermentierte Lebensmittel senkten Entzündungsmarker deutlicher als hochfaserreiche Ernährung allein.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">4</div>
+        <div>
+          <div class="do-item-title">Polyphenole — die natürlichen Entzündungsbremser</div>
+          <div class="do-item-text">Olivenöl (extra vergine), Beeren, grüner Tee, dunkle Schokolade — enthalten Polyphenole die NF-κB hemmen. 2 EL hochwertiges Olivenöl täglich hat messbare antiinflammatorische Wirkung.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">5</div>
+        <div>
+          <div class="do-item-title">Zucker und hochverarbeitete Lebensmittel reduzieren</div>
+          <div class="do-item-text">Freier Zucker aktiviert NF-κB direkt und fördert bei MCAS und seborrhoischer Dermatitis das Wachstum der Trigger-Organismen. Ziel: unter 25g freier Zucker pro Tag (WHO-Empfehlung).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-box">
+      <div class="res-title">📚 Empfohlene Quellen</div>
+      <div class="res-chips">
+        <a class="res-chip" href="https://www.ernaehrungs-docs.de" target="_blank">🥗 Die Ernährungs-Docs (ernaehrungs-docs.de)</a>
+        <span class="res-chip">🎥 Die Ernährungs-Docs (ARD Mediathek)</span>
+        <span class="res-chip">📖 "Der Ernährungskompass" — Bas Kast</span>
+        <span class="res-chip">📖 "Darm mit Charme" — Giulia Enders</span>
+        <span class="res-chip">📖 "Die Ernährungsfehler" — diverse Autoren</span>
+        <span class="res-chip">📖 "Medizin aus der Küche" — Rezepte gegen Entzündung</span>
+      </div>
+    </div>
+
+    <div class="support-row">
+      <div class="sup-card mbsr">
+        <div class="sup-title">🍽️ Gut-Ahead Programm</div>
+        <div class="sup-text">Das Gut-Ahead Programm mit Ernährungsberaterin Hannah bietet einen strukturierten Darm-Reset mit wissenschaftlichem Hintergrund. Besonders für MCAS, seborrhoische Dermatitis und entzündliche Darmerkrankungen.</div>
+      </div>
+      <div class="sup-card gruppe">
+        <div class="sup-title">📔 Ernährungs-Tagebuch</div>
+        <div class="sup-text">Führe 4 Wochen lang ein Ernährungs- und Symptom-Tagebuch. Die Muster die dabei sichtbar werden sind oft überraschend spezifisch — und zeigen deine persönlichen Trigger.</div>
+      </div>
+    </div>
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- BEWEGUNG -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-bewegung">
+  <div class="action-hero">
+    <div class="action-icon">💪</div>
+    <h1 class="action-title" style="color:var(--bewegung)">Bewegung</h1>
+    <p class="action-sub">Muskeln sind ein endokrines Organ — sie produzieren beim Training entzündungshemmende Botenstoffe.</p>
+  </div>
+
+  <div class="section">
+    <div class="mech-box">
+      <div class="mech-title">🔬 Warum Bewegung die Entzündungskaskade beeinflusst</div>
+      <div class="mech-text">Beim Muskeltraining werden Myokine ausgeschüttet — IL-6 aus dem Muskel (in niedriger Dosis, anders als das entzündliche IL-6 aus Fettgewebe), IL-10 und andere antiinflammatorische Botenstoffe. Diese verschieben die Treg/Th17-Balance Richtung Toleranz.<br><br>Ausdauersport erhöht nachweislich die Zahl und Aktivität der regulatorischen T-Zellen (Tregs) — direkt die Bremse stärken. Gleichzeitig verbessert regelmäßige Bewegung die Cortisol-Sensitivität: der Körper reagiert effizienter auf Stresssignale und erholt sich schneller.<br><br>Aber: Übertraining kippt den Effekt. Intensives Training ohne ausreichend Regeneration erhöht Cortisol dauerhaft — und chronisch hohes Cortisol hemmt Tregs direkt.</div>
+    </div>
+
+    <div class="sec-eyebrow" style="margin-bottom:12px">Was du konkret tun kannst</div>
+    <div class="do-list">
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--bewegung) 15%,var(--surface2));color:var(--bewegung)">1</div>
+        <div>
+          <div class="do-item-title">Krafttraining 2–3x pro Woche</div>
+          <div class="do-item-text">Moderates Krafttraining ist die wirksamste Einzelmaßnahme für die Treg-Balance. Nicht bis zur vollständigen Erschöpfung — 60–70% der Maximalbelastung, ausreichend Pausen. Wichtiger als Intensität: Regelmäßigkeit.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--bewegung) 15%,var(--surface2));color:var(--bewegung)">2</div>
+        <div>
+          <div class="do-item-title">Täglich 7.000–10.000 Schritte</div>
+          <div class="do-item-text">Alltagsbewegung ist oft wirkungsvoller als sporadisches intensives Training. Stehschreibtisch, Spaziergänge, Treppensteigen — kontinuierliche niedrigintensive Bewegung hält den Entzündungslevel niedriger als 3x Sport pro Woche mit langem Sitzen dazwischen.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--bewegung) 15%,var(--surface2));color:var(--bewegung)">3</div>
+        <div>
+          <div class="do-item-title">Ausdauer für die Tregs</div>
+          <div class="do-item-text">30 Minuten moderates Ausdauertraining (Schwimmen, Radfahren, Laufen bei 65% maximaler Herzfrequenz) erhöht Tregs nachweislich für bis zu 24 Stunden danach. Nicht täglich bis zur Erschöpfung — 150 Minuten pro Woche ist das belegte Ziel.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--bewegung) 15%,var(--surface2));color:var(--bewegung)">4</div>
+        <div>
+          <div class="do-item-title">Regeneration ist Training</div>
+          <div class="do-item-text">Mindestens 48h Pause zwischen intensiven Einheiten. Im Schub oder bei hoher Entzündungslast: nur leichte Bewegung (Spaziergang, Yoga). Der häufigste Fehler: zu viel, zu intensiv, zu wenig Pause.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-box">
+      <div class="res-title">📚 Weiterführende Ressourcen</div>
+      <div class="res-chips">
+        <span class="res-chip">📖 "Das Bewegungs-Paradox" — Daniel Lieberman</span>
+        <span class="res-chip">📖 "Younger Next Year" — Chris Crowley</span>
+        <span class="res-chip">🎧 Podcast: "Huberman Lab — Exercise"</span>
+      </div>
+    </div>
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- STRESS -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-stress">
+  <div class="action-hero">
+    <div class="action-icon">🧘</div>
+    <h1 class="action-title" style="color:var(--stress)">Stress</h1>
+    <p class="action-sub">Chronischer Stress aktiviert Mastzellen direkt — über das Nervensystem, ohne Umweg über das Immunsystem.</p>
+  </div>
+
+  <div class="section">
+    <div class="mech-box">
+      <div class="mech-title">🔬 Warum Stress die Entzündungskaskade direkt befeuert</div>
+      <div class="mech-text">Bei Stress schüttet der Hypothalamus CRH aus (Corticotropin-Releasing-Hormone). CRH dockt direkt an Mastzellen an und aktiviert sie — ohne jede T-Zell-Beteiligung. Das ist der schnellste Weg in die Entzündungskaskade.<br><br>Gleichzeitig hemmt chronisch erhöhtes Cortisol die Treg-Bremszellen — die Bremse versagt gerade dann wenn sie am meisten gebraucht wird. Akuter Stress ist kurzfristig entzündungshemmend (daher wirkt Cortison). Chronischer Stress dreht das um.<br><br>Die Darm-Hirn-Achse spielt eine besondere Rolle: Stress verändert die Darmpermeabilität direkt — "Leaky Gut" durch Stress ist biologisch real, nicht metaphorisch.</div>
+    </div>
+
+    <div class="sec-eyebrow" style="margin-bottom:12px">Was du konkret tun kannst</div>
+    <div class="do-list">
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--stress) 15%,var(--surface2));color:var(--stress)">1</div>
+        <div>
+          <div class="do-item-title">MBSR — Achtsamkeitsbasierte Stressreduktion</div>
+          <div class="do-item-text">Ein 8-Wochen-Programm das in über 30 klinischen Studien Entzündungsmarker gesenkt hat. Nicht Entspannung — aktives Nervensystemtraining. Kurse gibt es an VHS, online und über Krankenkassen (oft bezuschusst). Suchbegriff: "MBSR Kurs Krankenkasse"</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--stress) 15%,var(--surface2));color:var(--stress)">2</div>
+        <div>
+          <div class="do-item-title">Physiologisches Seufzen — 2 Minuten</div>
+          <div class="do-item-text">Doppelter Einatemzug durch die Nase, dann langsam ausatmen. Das ist der schnellste evidenzbasierte Weg zur Vagus-Aktivierung. Bringt das Nervensystem in wenigen Minuten aus dem Stressmodus — nachgewiesen durch Stanford-Studien 2023.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--stress) 15%,var(--surface2));color:var(--stress)">3</div>
+        <div>
+          <div class="do-item-title">Kältereize (kalt-warm Duschen)</div>
+          <div class="do-item-text">30 Sekunden kaltes Wasser am Ende der Dusche aktiviert den Vagusnerv und trainiert die Stressreaktion. Wirkt langfristig auf die Cortisol-Regulation — nicht als einmaliger Trick, sondern als regelmäßige Übung.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--stress) 15%,var(--surface2));color:var(--stress)">4</div>
+        <div>
+          <div class="do-item-title">Soziale Verbindung — unterschätzter Faktor</div>
+          <div class="do-item-text">Einsamkeit erhöht Entzündungsmarker ähnlich stark wie Rauchen. Qualitativ gute soziale Kontakte — auch kurze — senken Cortisol und stärken das Immunsystem messbar. Das ist Biologie, nicht Philosophie.</div>
+        </div>
+      </div>
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--stress) 15%,var(--surface2));color:var(--stress)">5</div>
+        <div>
+          <div class="do-item-title">Stressoren identifizieren — nicht nur managen</div>
+          <div class="do-item-text">Stressreduktion ohne Stressoridentifikation ist wie Ibuprofen ohne Ursachenbehandlung. Was sind deine echten chronischen Stressoren? Arbeit, Beziehung, finanzielle Sorgen? Systemisches Tracking hilft Muster zu erkennen.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-box">
+      <div class="res-title">📚 Weiterführende Ressourcen</div>
+      <div class="res-chips">
+        <span class="res-chip">📖 "Warum Zebras keine Magengeschwüre bekommen" — Robert Sapolsky</span>
+        <span class="res-chip">📖 "Das Stressbewältigungsbuch" — Gert Kaluza</span>
+        <span class="res-chip">🔗 MBSR: mbsr-verband.de</span>
+        <span class="res-chip">🎧 Podcast: "Huberman Lab — Stress"</span>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px">
+      <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:12px">🎬 Empfohlenes Video</div>
+      <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap">
+        <a href="https://youtu.be/pL02HRFk2vo" target="_blank"
+          style="display:flex;align-items:center;justify-content:center;
+            width:80px;height:52px;background:#000;border-radius:8px;
+            flex-shrink:0;text-decoration:none;font-size:22px">▶️</a>
+        <div style="flex:1;min-width:180px">
+          <div style="font-size:14px;font-weight:500;margin-bottom:4px">
+            NSDR — Non-Sleep Deep Rest
+            <span style="font-size:10px;background:color-mix(in srgb,var(--gold) 15%,var(--bg));
+              color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 30%,var(--border));
+              border-radius:10px;padding:1px 7px;margin-left:6px;vertical-align:middle">🇬🇧 Englisch</span>
+          </div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:8px">
+            Andrew Huberman · 10 Minuten · Geführte Tiefenentspannung die nachweislich Cortisol senkt, Dopamin erhöht und das Nervensystem aus dem Stressmodus holt. Wissenschaftlich fundiert, keine Esoterik. Ideal mittags oder nach dem Training.
+          </div>
+          <a href="https://youtu.be/pL02HRFk2vo" target="_blank"
+            style="display:inline-flex;align-items:center;gap:5px;font-size:12px;
+              color:var(--accent3);text-decoration:none;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));
+              border-radius:20px;padding:4px 12px;transition:all .15s"
+            onmouseover="this.style.borderColor='var(--accent3)'"
+            onmouseout="this.style.borderColor='color-mix(in srgb,var(--accent3) 30%,var(--border))'">
+            Auf YouTube ansehen →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="support-row">
+      <div class="sup-card mbsr">
+        <div class="sup-title">🧘 MBSR — Krankenkasse zahlt oft</div>
+        <div class="sup-text">Viele gesetzliche Krankenkassen bezuschussen MBSR-Kurse mit 80–100%. Frag deine Krankenkasse oder such über die Plattform "mbsr-verband.de" nach zertifizierten Kursen in deiner Nähe.</div>
+      </div>
+      <div class="sup-card gruppe">
+        <div class="sup-title">👥 Selbsthilfe & Community</div>
+        <div class="sup-text">Der Austausch mit Menschen die dasselbe erleben ist selbst ein Stressreduktions-Tool. Selbsthilfegruppen für chronische Erkrankungen gibt es lokal und online — oft über die NAKOS-Datenbank findbar.</div>
+      </div>
+    </div>
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- ERKRANKUNGEN -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-erkrank">
+  <div class="section">
+    <div class="sec-eyebrow">Spezifische Erkrankungen</div>
+    <h2 class="sec-title">Was passiert bei mir<br>im Körper?</h2>
+    <p class="sec-sub">Wähle deine Erkrankung — oder die einer Person die dir wichtig ist.</p>
+
+    <div class="dis-tabs">
+      <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
+      <button class="dis-tab" id="dt-rheu" onclick="showDis('rheu')">🦴 Rheumatoide Arthritis</button>
+      <button class="dis-tab" id="dt-coli" onclick="showDis('coli')">🫀 Colitis Ulcerosa</button>
+    </div>
+
+    <!-- MCAS -->
+    <div class="dis-content" id="dd-mcas">
+      <div class="dis-header">
+        <div class="dis-icon">💣</div>
+        <div class="dis-name" style="color:var(--mcas)">MCAS</div>
+        <div class="dis-tagline">Mastzellaktivierungssyndrom — der Alarm reagiert auf alles</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--mcas) 6%,var(--surface));border-left:3px solid var(--mcas)">
+        "Manchmal weiß ich nicht mal mehr was mich triggert." Dein Körper ist nicht kaputt — er ist extrem wachsam geworden. Mastzellen haben eine zu niedrige Schwelle, und die Bremszellen sind zu schwach um sie zu beruhigen.
+      </div>
+      <div class="cascade">
+        <div class="cas-label">Die Kaskade — Schritt für Schritt</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--mcas) 15%,var(--surface2));color:var(--mcas)">1</div><div><div class="cas-name">Harmloser Trigger</div><div class="cas-desc">Nahrungsmittel, Geruch, Stress, Temperatur — Mastzellen haben eine zu niedrige Aktivierungsschwelle</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--mcas) 15%,var(--surface2));color:var(--mcas)">2</div><div><div class="cas-name">Mastzellen feuern</div><div class="cas-desc">Histamin, Prostaglandine, Tryptase werden ausgeschüttet — zu viel, zu schnell, überall gleichzeitig</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--mcas) 15%,var(--surface2));color:var(--mcas)">3</div><div><div class="cas-name">Systemische Reaktion</div><div class="cas-desc">Haut, Darm, Nase, Gelenke, Gehirn — gleichzeitig betroffen, weil Mastzellen überall sitzen</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--mcas) 15%,var(--surface2));color:var(--mcas)">4</div><div><div class="cas-name">Chronische Erschöpfung</div><div class="cas-desc">Permanenter "Kampfmodus" verbraucht Energie — Brainfog und Fatigue sind Biologie, nicht Einbildung</div></div></div>
+      </div>
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Häufige Trigger</div><ul class="ib-list"><li>Histaminreiche Lebensmittel (Rotwein, Käse, Tomaten)</li><li>Alkohol — hemmt Histaminabbau zusätzlich</li><li>Stress — aktiviert Mastzellen direkt über CRH</li><li>Hitze, Kälte, Druck, Gerüche</li><li>ASS und Ibuprofen</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>H1-Antihistaminika (Levocetirizin)</li><li>H2-Antihistaminika (Famotidin)</li><li>Mastzellstabilisatoren (Cromoglicinsäure)</li><li>Quercetin — natürlicher Mastzellstabilisator</li></ul></div>
+      </div>
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung bei MCAS →</button>
+        <button class="action-link" onclick="showPage('schlaf')">😴 Schlaf & Mastzellen →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Stress & MCAS →</button>
+      </div>
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei MCAS</div><div class="sup-text">Stressreduktion ist bei MCAS keine Option sondern eine Kerntherapie — CRH aus dem Gehirn aktiviert Mastzellen direkt. MBSR-Kurse werden oft von Krankenkassen bezuschusst.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Community</div><div class="sup-text">MCAS wird oft spät diagnostiziert. Online-Selbsthilfe: "MCAS Selbsthilfe Deutschland" oder "Mastzellaktivierung Forum" — dort findest du Menschen die dieselben Erfahrungen kennen.</div></div>
+      </div>
+    </div>
+
+    <!-- RHEUMA -->
+    <div class="dis-content" id="dd-rheu">
+      <div class="dis-header">
+        <div class="dis-icon">🦴</div>
+        <div class="dis-name" style="color:var(--rheu)">Rheumatoide Arthritis</div>
+        <div class="dis-tagline">Das Immunsystem greift die eigenen Gelenke an</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--rheu) 6%,var(--surface));border-left:3px solid var(--rheu)">
+        "Der Arzt hat mir die Spritze gegeben — über Ernährung oder Schlaf kein Wort." Medikamente dämpfen die Entzündung. Lebensstil bestimmt wie stark sie überhaupt aufflammt. Beides gehört zusammen.
+      </div>
+      <div class="cascade">
+        <div class="cas-label">Die Kaskade — Schritt für Schritt</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">1</div><div><div class="cas-name">Fehlidentifikation</div><div class="cas-desc">Das Immunsystem erkennt körpereigenes Gelenkgewebe fälschlicherweise als Feind</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">2</div><div><div class="cas-name">T-Zellen greifen an</div><div class="cas-desc">Th1 und Th17 dringen in die Gelenkschleimhaut ein — schütten TNF-α und IL-17 aus</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">3</div><div><div class="cas-name">Autoantikörper</div><div class="cas-desc">B-Zellen produzieren RF und Anti-CCP — Antikörper gegen körpereigene Strukturen, nachweisbar im Blut</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">4</div><div><div class="cas-name">Knorpelabbau</div><div class="cas-desc">Morgensteifigkeit über 1 Stunde ist ein klassisches Zeichen — nachts akkumulieren Entzündungsbotenstoffe</div></div></div>
+      </div>
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Bekannte Trigger</div><ul class="ib-list"><li>Rauchen — stärkster vermeidbarer Risikofaktor</li><li>Parodontitis — überraschend starker Zusammenhang</li><li>Stress, Schlafmangel</li><li>Nachtschattengewächse (bei manchen Betroffenen)</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Methotrexat — Basistherapie</li><li>TNF-Blocker (Adalimumab, Etanercept)</li><li>JAK-Inhibitoren (Baricitinib)</li><li>Kortison — kurzfristig bei Schüben</li></ul></div>
+      </div>
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Mediterrane Ernährung →</button>
+        <button class="action-link" onclick="showPage('bewegung')">💪 Gelenkschonende Bewegung →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Stressreduktion →</button>
+      </div>
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei Rheuma</div><div class="sup-text">Mehrere Studien belegen: MBSR reduziert Schmerz und Erschöpfung bei RA unabhängig von der medikamentösen Therapie. Krankenkassen übernehmen oft die Kosten.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Deutsche Rheuma-Liga</div><div class="sup-text">Lokale Gruppen in fast jeder Stadt, Beratung und praktische Tipps für den Alltag. rheuma-liga.de</div></div>
+      </div>
+    </div>
+
+    <!-- COLITIS -->
+    <div class="dis-content" id="dd-coli">
+      <div class="dis-header">
+        <div class="dis-icon">🫀</div>
+        <div class="dis-name" style="color:var(--coli)">Colitis Ulcerosa</div>
+        <div class="dis-tagline">Chronische Entzündung der Darmschleimhaut</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--coli) 6%,var(--surface));border-left:3px solid var(--coli)">
+        "Ich weiß nie warum ein Schub kommt." Schübe haben Muster — sie brauchen nur Zeit und Tracking um sichtbar zu werden. Und Stress ist der unterschätzteste Auslöser überhaupt.
+      </div>
+      <div class="cascade">
+        <div class="cas-label">Die Kaskade — Schritt für Schritt</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--coli) 15%,var(--surface2));color:var(--coli)">1</div><div><div class="cas-name">Toleranzverlust</div><div class="cas-desc">Das Immunsystem verliert die Toleranz gegenüber der eigenen Darmflora — normale Bakterien werden als Feind behandelt</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--coli) 15%,var(--surface2));color:var(--coli)">2</div><div><div class="cas-name">T-Zell-Invasion</div><div class="cas-desc">T-Zellen greifen die Dickdarmschleimhaut an — bei Colitis auf den Dickdarm begrenzt (anders als Crohn)</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--coli) 15%,var(--surface2));color:var(--coli)">3</div><div><div class="cas-name">Geschwüre und Blutungen</div><div class="cas-desc">Chronische Entzündung zerstört die Schleimhaut → Durchfall, Blut, Bauchkrämpfe → Darmbarriere wird durchlässiger</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--coli) 15%,var(--surface2));color:var(--coli)">4</div><div><div class="cas-name">Systemische Folgen</div><div class="cas-desc">Schlechte Nährstoffaufnahme → Erschöpfung, Eisenmangel — Entzündungsbotenstoffe betreffen auch Gelenke und Haut</div></div></div>
+      </div>
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Bekannte Schub-Trigger</div><ul class="ib-list"><li>Stress — stärkster bekannter Auslöser</li><li>Antibiotika — stören Mikrobiom erheblich</li><li>NSAIDs (Ibuprofen, Diclofenac)</li><li>Individuelle Lebensmittel — sehr verschieden</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Mesalazin — lokale Entzündungshemmung</li><li>Azathioprin — Remissionserhaltung</li><li>Biologika (Infliximab, Vedolizumab)</li><li>Kortison — Schubtherapie</li></ul></div>
+      </div>
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Darm-Ernährung →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Darm-Hirn-Achse →</button>
+        <button class="action-link" onclick="showPage('bewegung')">💪 Bewegung bei CED →</button>
+      </div>
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei CED</div><div class="sup-text">MBSR wirkt direkt auf die Darm-Hirn-Achse — Studien zeigen reduzierte Schubhäufigkeit und verbesserte Lebensqualität bei Colitis.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 DCCV</div><div class="sup-text">Deutsche Morbus Crohn / Colitis Vereinigung — mit lokalen Gruppen, Beratungstelefon und aktivem Forum. dccv.de</div></div>
+      </div>
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<style>
+.ca-step {
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .4s, transform .4s;
+  border: 1px solid transparent;
+  position: relative;
+}
+.ca-step.visible { opacity: 1; transform: translateY(0); }
+
+.ca-step.gesund {
+  background: color-mix(in srgb, var(--accent2) 10%, var(--surface2));
+  border-color: color-mix(in srgb, var(--accent2) 25%, var(--border));
+}
+.ca-step.chronisch {
+  background: color-mix(in srgb, var(--red) 8%, var(--surface2));
+  border-color: color-mix(in srgb, var(--red) 20%, var(--border));
+}
+.ca-step.brake {
+  background: color-mix(in srgb, var(--accent2) 18%, var(--surface2));
+  border-color: var(--accent2);
+}
+.ca-step.loop {
+  background: color-mix(in srgb, var(--red) 15%, var(--surface2));
+  border-color: var(--red);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 30%, transparent); }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--red) 0%, transparent); }
+}
+
+.ca-icon { font-size: 16px; margin-right: 6px; }
+.ca-name { font-weight: 500; color: var(--text); }
+.ca-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.ca-arrow {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity .3s;
+  padding: 0;
+  line-height: 1.2;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ca-arrow.visible { opacity: 1; }
+.ca-arrow.red { color: var(--red); }
+.ca-arrow.green { color: var(--accent2); }
+
+.ca-loop-arrow {
+  opacity: 0;
+  transition: opacity .4s;
+  text-align: center;
+  font-size: 11px;
+  color: var(--red);
+  padding: 4px 0;
+  font-style: italic;
+}
+.ca-loop-arrow.visible { opacity: 1; }
+</style>
+
+<script>
+const GESUND_STEPS = [
+  { icon: '🦠', name: 'Auslöser', desc: 'Echte Bedrohung — Wunde, Infektion, Erreger' },
+  { icon: '🔬', name: 'Dendritische Zelle', desc: 'Erkennt Bedrohung, präsentiert T-Zellen' },
+  { icon: '⚔️', name: 'T-Zellen aktiviert', desc: 'Th1/Th17 bekämpfen den echten Feind' },
+  { icon: '🏭', name: 'Immunreaktion', desc: 'Antikörper, Entzündungsbotenstoffe — gezielt' },
+  { icon: '🛑', name: 'Tregs stoppen alles', desc: 'Bremszellen schalten die Reaktion ab' },
+  { icon: '✅', name: 'Heilung', desc: 'Gewebe wird repariert, Alarm aus', special: 'brake' },
+];
+
+const CHRONISCH_STEPS = [
+  { icon: '😐', name: 'Harmloser Trigger', desc: 'Pilz, Darmbakterien, Stress, Lebensmittel' },
+  { icon: '🔬', name: 'Dendritische Zelle', desc: 'Stuft Harmloses als "Bedrohung" ein' },
+  { icon: '🔥', name: 'T-Zellen aktiviert', desc: 'Th17/Th2 greifen falschen Feind an' },
+  { icon: '💣', name: 'Mastzellen feuern', desc: 'Histamin, TNF-α, Entzündung überall' },
+  { icon: '🛑', name: 'Tregs zu schwach', desc: 'Bremse versagt — Alarm bleibt an', special: 'weak' },
+  { icon: '🔄', name: 'Kein Ende', desc: 'Entzündung läuft weiter → Symptome → mehr Trigger', special: 'loop' },
+];
+
+let animRunning = false;
+
+function makeStepEl(data, side) {
+  const div = document.createElement('div');
+  div.className = `ca-step ${side}${data.special === 'brake' ? ' brake' : ''}${data.special === 'loop' ? ' loop' : ''}`;
+  div.style.cssText = 'flex:1;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s';
+  div.innerHTML = `<div><span class="ca-icon">${data.icon}</span><span class="ca-name">${data.name}</span></div><div class="ca-desc">${data.desc}</div>`;
+  return div;
+}
+
+function makeRowEl() {
+  const row = document.createElement('div');
+  row.style.cssText = 'display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;align-items:stretch';
+  return row;
+}
+
+function makeArrowRow(gColor, cColor, isLoop) {
+  const row = document.createElement('div');
+  row.style.cssText = 'display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;opacity:0;transition:opacity .3s';
+  row.innerHTML = `
+    <div style="text-align:center;color:${gColor};font-size:14px;padding:2px 0">${'↓'}</div>
+    <div style="background:var(--border)"></div>
+    <div style="text-align:center;color:${cColor};font-size:14px;padding:2px 0">${isLoop ? '↺' : '↓'}</div>
+  `;
+  return row;
+}
+
+async function startCascade() {
+  if (animRunning) return;
+  animRunning = true;
+
+  const btn = document.getElementById('ca-btn');
+  btn.textContent = '⟳ Nochmal';
+  btn.onclick = () => { animRunning = false; startCascade(); };
+
+  const container = document.getElementById('ca-rows');
+  container.innerHTML = '';
+
+  const rows = [], arrows = [];
+  const n = Math.max(GESUND_STEPS.length, CHRONISCH_STEPS.length);
+
+  for (let i = 0; i < n; i++) {
+    // Step row
+    const row = makeRowEl();
+    const gStep = makeStepEl(GESUND_STEPS[i] || { icon: '', name: '', desc: '' }, 'gesund');
+    const cStep = makeStepEl(CHRONISCH_STEPS[i] || { icon: '', name: '', desc: '' }, 'chronisch');
+    const divider = document.createElement('div');
+    divider.style.cssText = 'background:var(--border)';
+    row.appendChild(gStep);
+    row.appendChild(divider);
+    row.appendChild(cStep);
+    container.appendChild(row);
+    rows.push({ row, gStep, cStep });
+
+    // Arrow row (not after last)
+    if (i < n - 1) {
+      const isLoop = i === n - 2;
+      const aRow = makeArrowRow('var(--accent2)', 'var(--red)', isLoop);
+      container.appendChild(aRow);
+      arrows.push(aRow);
+    }
+  }
+
+  const delay = ms => new Promise(r => setTimeout(r, ms));
+
+  for (let i = 0; i < n; i++) {
+    rows[i].gStep.style.opacity = '1';
+    rows[i].gStep.style.transform = 'translateY(0)';
+    rows[i].cStep.style.opacity = '1';
+    rows[i].cStep.style.transform = 'translateY(0)';
+    await delay(500);
+    if (arrows[i]) { arrows[i].style.opacity = '1'; }
+    await delay(300);
+  }
+
+  animRunning = false;
+}
+</script>
+</body>
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('active');
+  document.getElementById('nb-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showDis(id){
+  document.querySelectorAll('.dis-tab').forEach(t=>t.className='dis-tab');
+  document.querySelectorAll('.dis-content').forEach(c=>c.classList.remove('show'));
+  document.getElementById('dt-'+id).className=`dis-tab a-${id}`;
+  document.getElementById('dd-'+id).classList.add('show');
+}
+
+// Init nav active state
+document.getElementById('nb-home').classList.add('active');
+</script>
+</body>
+</html>
