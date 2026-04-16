@@ -240,6 +240,34 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 .claim:hover .source-tip{display:block}
 
 .sources-box{background:var(--surface);border:1px solid var(--border);
+
+/* HOW-TO MEASURE BOXES */
+.howto-box{border-radius:12px;overflow:hidden;margin-bottom:8px}
+.howto-trigger{display:flex;align-items:center;gap:10px;padding:12px 16px;
+  cursor:pointer;background:var(--surface);border:1.5px solid var(--border);
+  border-radius:12px;transition:all .2s;user-select:none}
+.howto-trigger:hover{border-color:var(--accent3)}
+.howto-trigger.open{border-radius:12px 12px 0 0;border-bottom-color:transparent}
+.howto-icon{font-size:1.2rem;flex-shrink:0}
+.howto-label{font-size:13px;font-weight:500;flex:1;color:var(--text)}
+.howto-arrow{font-size:11px;color:var(--muted);transition:transform .2s}
+.howto-trigger.open .howto-arrow{transform:rotate(180deg)}
+.howto-content{display:none;background:var(--surface);
+  border:1.5px solid var(--border);border-top:none;
+  border-radius:0 0 12px 12px;padding:16px 18px}
+.howto-content.show{display:block}
+.howto-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.howto-step:last-child{margin-bottom:0}
+.howto-step-num{width:22px;height:22px;border-radius:50%;
+  background:var(--accent3);color:#fff;font-size:11px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.howto-step-text{font-size:13px;line-height:1.6;color:var(--text)}
+.howto-step-text strong{color:var(--text)}
+.howto-tip{background:color-mix(in srgb,var(--accent2) 8%,var(--surface2));
+  border-left:3px solid var(--accent2);border-radius:0 8px 8px 0;
+  padding:10px 14px;font-size:12px;color:var(--muted);line-height:1.6;margin-top:12px}
+
+.sources-box{background:var(--surface);border:1px solid var(--border);
   border-radius:10px;padding:14px 16px;margin-top:20px}
 .sources-title{font-size:9px;text-transform:uppercase;letter-spacing:0.15em;
   color:var(--muted);margin-bottom:10px}
@@ -340,6 +368,69 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         </div>
       </div>
     </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- STORY SECTION -->
+  <div class="section" id="home-story">
+    <div class="sec-eyebrow">Die Geschichte dahinter</div>
+    <h2 class="sec-title">Was in deinem Körper<br>wirklich passiert</h2>
+    <p class="sec-sub">Keine Fachbegriffe — nur die Geschichte. Du kannst dir die Namen merken oder auch nicht. Das Prinzip reicht.</p>
+
+    <div id="story-stage" style="background:var(--surface);border:1px solid var(--border);
+      border-radius:16px;padding:24px;min-height:320px;position:relative;overflow:hidden">
+
+      <!-- Scene display -->
+      <div id="story-scene" style="display:flex;flex-direction:column;gap:0"></div>
+
+      <!-- Controls -->
+      <div style="display:flex;align-items:center;justify-content:space-between;
+        margin-top:20px;padding-top:16px;border-top:1px solid var(--border);flex-wrap:wrap;gap:10px">
+        <div style="display:flex;gap:6px" id="story-dots"></div>
+        <div style="display:flex;gap:8px">
+          <button id="story-prev" onclick="storyNav(-1)"
+            style="background:var(--surface2);border:1px solid var(--border);border-radius:20px;
+              padding:7px 16px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;color:var(--text)">
+            ← Zurück
+          </button>
+          <button id="story-next" onclick="storyNav(1)"
+            style="background:var(--accent);color:#fff;border:none;border-radius:20px;
+              padding:7px 18px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer">
+            Weiter →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:14px">
+      <button onclick="showPage('erkrank')"
+        style="background:none;border:1.5px solid var(--border);border-radius:20px;
+          padding:9px 20px;font-family:'DM Sans',sans-serif;font-size:13px;
+          color:var(--muted);cursor:pointer;transition:all .15s"
+        onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">
+        Was passiert bei meiner Erkrankung? →
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WEGWEISER -->
+  <div class="section" id="home-wegweiser">
+    <div class="sec-eyebrow">Persönlicher Wegweiser</div>
+    <h2 class="sec-title">Wo stehst du<br>gerade?</h2>
+    <p class="sec-sub">Kein Diagnosetool — aber ein Orientierungspunkt. Hilft dir zu verstehen wo du nachforschen solltest.</p>
+
+    <div id="ww-container" style="background:var(--surface);border:1px solid var(--border);
+      border-radius:16px;padding:28px;min-height:200px">
+      <div id="ww-content"></div>
+    </div>
+
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6">
+      ⚕️ Dieser Wegweiser ersetzt keine ärztliche Diagnose. Er soll dir helfen das Gespräch mit deinem Arzt vorzubereiten.
+    </p>
   </div>
 
   <hr class="divider">
@@ -918,28 +1009,103 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div class="dis-tagline">Das Immunsystem greift die eigenen Gelenke an</div>
       </div>
       <div class="dis-friend" style="background:color-mix(in srgb,var(--rheu) 6%,var(--surface));border-left:3px solid var(--rheu)">
-        "Der Arzt hat mir die Spritze gegeben — über Ernährung oder Schlaf kein Wort." Medikamente dämpfen die Entzündung. Lebensstil bestimmt wie stark sie überhaupt aufflammt. Beides gehört zusammen.
+        "Der Arzt hat mir die Spritze gegeben — über Ernährung oder Schlaf kein Wort." Medikamente dämpfen die Entzündung. Was du selbst tust bestimmt wie stark sie überhaupt aufflammt. Beides gehört zusammen.
       </div>
+
       <div class="cascade">
-        <div class="cas-label">Die Kaskade — Schritt für Schritt</div>
-        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">1</div><div><div class="cas-name">Fehlidentifikation</div><div class="cas-desc">Das Immunsystem erkennt körpereigenes Gelenkgewebe fälschlicherweise als Feind</div></div></div>
-        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">2</div><div><div class="cas-name">T-Zellen greifen an</div><div class="cas-desc">Th1 und Th17 dringen in die Gelenkschleimhaut ein — schütten TNF-α und IL-17 aus</div></div></div>
-        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">3</div><div><div class="cas-name">Autoantikörper</div><div class="cas-desc">B-Zellen produzieren RF und Anti-CCP — Antikörper gegen körpereigene Strukturen, nachweisbar im Blut</div></div></div>
-        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">4</div><div><div class="cas-name">Knorpelabbau</div><div class="cas-desc">Morgensteifigkeit über 1 Stunde ist ein klassisches Zeichen — nachts akkumulieren Entzündungsbotenstoffe</div></div></div>
+        <div class="cas-label">Was in deinem Körper passiert</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">1</div><div><div class="cas-name">Das Immunsystem macht einen Fehler</div><div class="cas-desc">Es erkennt dein eigenes Gelenkgewebe fälschlicherweise als Feind — und greift es an</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">2</div><div><div class="cas-name">Angriff auf die Gelenkschleimhaut</div><div class="cas-desc">Immunzellen dringen in die Gelenke ein und lösen dort Entzündung aus — Schwellung, Wärme, Schmerz</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">3</div><div><div class="cas-name">Der Körper bildet Gegner gegen sich selbst</div><div class="cas-desc">Sogenannte Autoantikörper (RF, Anti-CCP) — nachweisbar im Blut, wichtig für die Diagnose</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">4</div><div><div class="cas-name">Knorpel wird langsam abgebaut</div><div class="cas-desc">Morgensteifigkeit über 1 Stunde ist ein klassisches Frühzeichen — nachts sammeln sich Entzündungsstoffe in den Gelenken</div></div></div>
       </div>
+
       <div class="two-col">
-        <div class="info-box"><div class="ib-title">⚡ Bekannte Trigger</div><ul class="ib-list"><li>Rauchen — stärkster vermeidbarer Risikofaktor</li><li>Parodontitis — überraschend starker Zusammenhang</li><li>Stress, Schlafmangel</li><li>Nachtschattengewächse (bei manchen Betroffenen)</li></ul></div>
-        <div class="info-box"><div class="ib-title">🌐 Symptome außerhalb der Gelenke</div><ul class="ib-list"><li><strong>Aphthen im Mund</strong> — bei erhöhter Entzündungslast</li><li>Rheumaknoten unter der Haut</li><li>Trockene Augen (Sjögren-Überlappung)</li><li>Erschöpfung, Brainfog</li><li>Erhöhtes Herzrisiko (systemische Entzündung)</li></ul></div>
-        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Methotrexat — Basistherapie</li><li>TNF-Blocker (Adalimumab, Etanercept)</li><li>JAK-Inhibitoren (Baricitinib)</li><li>Kortison — kurzfristig bei Schüben</li></ul></div>
+        <div class="info-box">
+          <div class="ib-title">⚡ Was Schübe auslösen kann</div>
+          <ul class="ib-list">
+            <li>Rauchen — stärkster vermeidbarer Auslöser überhaupt</li>
+            <li>Zahnfleischerkrankungen — überraschend starker Zusammenhang</li>
+            <li>Dauerstress und Schlafmangel</li>
+            <li>Nachtschattengewächse (Tomaten, Paprika, Auberginen) — bei manchen</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <div class="ib-title">🌐 Zeichen außerhalb der Gelenke</div>
+          <ul class="ib-list">
+            <li><strong>Aphthen im Mund</strong> — bei erhöhter Entzündungslast</li>
+            <li>Kleine Knötchen unter der Haut (Rheumaknoten)</li>
+            <li>Trockene Augen und Mund</li>
+            <li>Erschöpfung, Konzentrationsprobleme</li>
+            <li>Erhöhtes Herzrisiko durch die systemische Entzündung</li>
+          </ul>
+        </div>
       </div>
-      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
+
+      <div style="margin:24px 0 8px;font-size:10px;text-transform:uppercase;
+        letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">1</div>
+          <div>
+            <div class="do-item-title">Schlaf schützen — das ist keine Wellness</div>
+            <div class="do-item-text">Im Tiefschlaf schaltet dein Körper die Entzündungsmaschinerie aktiv herunter. Gleichzeitig werden die sogenannten Bremszellen (regulatorische T-Zellen) aufgefüllt — das sind die Zellen die verhindern dass das Immunsystem überschießt. Schlechter Schlaf schwächt genau diese Bremse und erhöht Entzündungsbotenstoffe (IL-6, CRP) messbar — bereits nach einer einzigen schlechten Nacht.<br><br>
+            <strong>Konkret:</strong> Jeden Tag zur gleichen Zeit ins Bett — auch am Wochenende. Eine Stunde vorher kein Handy, kein TV (das Licht blockiert das Schlafhormon Melatonin). Zwei Stunden vorher nichts mehr trinken. Drei Stunden vorher nichts mehr essen. Zimmer dunkel und kühl (16–18°C). Klingt streng — verändert aber nach 2 Wochen spürbar wie du dich morgens fühlst.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">2</div>
+          <div>
+            <div class="do-item-title">Gelenkschonend bewegen — weil Muskeln Entzündung löschen</div>
+            <div class="do-item-text">Das klingt paradox wenn die Gelenke schmerzen — aber Bewegung ist einer der wirksamsten Entzündungshemmer die es gibt. Hier ist warum: Muskeln sind kein passives Gewebe. Wenn sie arbeiten, schütten sie Botenstoffe aus (sogenannte Myokine, z.B. IL-6 aus dem Muskel — anders als das entzündliche IL-6 aus Fettgewebe) die gezielt Entzündungsprozesse dämpfen. Gleichzeitig stärkt regelmäßige Bewegung die Bremszellen des Immunsystems direkt. Mehr Bremse = weniger Überreaktion gegen die eigenen Gelenke.<br><br>
+            Außerdem: Muskulatur schützt die Gelenke mechanisch. Starke Muskeln rund ums Knie oder um die Hüfte nehmen Druck weg von den Knorpelflächen.<br><br>
+            <strong>Konkret:</strong> Schwimmen, Radfahren und Yoga belasten die Gelenke minimal. Im Schub: leichte Bewegung statt Ruhe — komplett stillliegen verschlimmert die Steifheit. Krafttraining ist langfristig sehr wertvoll, aber langsam einsteigen und mit dem Arzt absprechen.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">3</div>
+          <div>
+            <div class="do-item-title">Entzündungshemmend essen — weil Fett nicht gleich Fett ist</div>
+            <div class="do-item-text">Omega-3-Fettsäuren (vor allem EPA aus fettem Fisch) werden im Körper zu sogenannten Resolvinen umgebaut — das sind aktive Entzündungslöscher. Sie sagen dem Immunsystem buchstäblich: "Angriff beenden, Gewebe reparieren." Das ist kein passives Dämpfen — es ist aktives Auflösen von Entzündung. Studien zeigen: regelmäßiges Omega-3 reduziert Gelenkschmerz und Morgensteifigkeit bei Rheuma messbar.<br><br>
+            Gleichzeitig hemmen Polyphenole aus Olivenöl und Beeren den Hauptschalter für Entzündungsgene (NF-κB) — weniger Einschalten, weniger Entzündung.<br><br>
+            <strong>Konkret:</strong> Fetter Fisch (Lachs, Makrele, Hering) 2–3x pro Woche — oder ein hochwertiges Omega-3-Präparat täglich, immer mit einer fetthaltigen Mahlzeit. Olivenöl statt Sonnenblumenöl. Viel Gemüse, Hülsenfrüchte, Beeren. Weniger rotes Fleisch, weniger Zucker, weniger Fertigprodukte.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">4</div>
+          <div>
+            <div class="do-item-title">Stress reduzieren — weil Stress direkt in die Gelenke geht</div>
+            <div class="do-item-text">Beim Stress schüttet das Gehirn ein Hormon aus (CRH) das direkt Entzündungszellen aktiviert — ohne Umweg. Chronischer Stress erhöht gleichzeitig das Stresshormon Cortisol dauerhaft, was die Bremszellen des Immunsystems schwächt. Das Ergebnis: mehr Entzündung, schlechtere Bremse — ein direkter Weg in den Schub.<br><br>
+            MBSR (Achtsamkeitstraining) ist das am besten belegte Gegenmittel. Es trainiert das Nervensystem aktiv aus dem Dauerstress-Modus heraus — messbar an Cortisol-Werten und Entzündungsmarkern.<br><br>
+            <strong>Konkret:</strong> MBSR-Kurs (8 Wochen, wird von den meisten Krankenkassen bezuschusst — Suchbegriff: "MBSR Kurs Krankenkasse"). Einfacher Einstieg: 10 Minuten täglich ruhig sitzen, tief atmen, nichts tun. Das physiologische Seufzen hilft sofort: doppelt einatmen durch die Nase, dann langsam ausatmen.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--rheu) 15%,var(--surface2));color:var(--rheu)">5</div>
+          <div>
+            <div class="do-item-title">Zähne pflegen — weil Zahnfleisch und Gelenke zusammenhängen</div>
+            <div class="do-item-text">Klingt ungewöhnlich — ist aber gut belegt: Das Bakterium das Zahnfleischentzündungen (Parodontitis) verursacht (Porphyromonas gingivalis) kann im Körper eine Reaktion auslösen die Autoantikörper gegen Gelenkgewebe bildet. Mit anderen Worten: ein entzündetes Zahnfleisch kann den Rheuma-Angriff auf die Gelenke direkt anfeuern.<br><br>
+            <strong>Konkret:</strong> Zweimal täglich Zähne putzen, täglich Zahnseide, regelmäßig zum Zahnarzt — das ist bei Rheuma kein Luxus.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--rheu) 6%,var(--surface));
+        border:1.5px solid color-mix(in srgb,var(--rheu) 25%,var(--border));
+        border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7">
+        <strong>💊 Was die Medizin tut:</strong> Methotrexat als Basistherapie · biologische Medikamente (TNF-Blocker, JAK-Hemmer) für schwerere Verläufe · Kortison kurzfristig bei Schüben. <em>Diese Medikamente sind der Kern der Behandlung — die Maßnahmen hier ergänzen sie, ersetzen sie aber nicht.</em>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direkt zu den Themen</div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
-        <button class="action-link" onclick="showPage('ernaehr')">🥗 Mediterrane Ernährung →</button>
-        <button class="action-link" onclick="showPage('bewegung')">💪 Gelenkschonende Bewegung →</button>
-        <button class="action-link" onclick="showPage('stress')">🧘 Stressreduktion →</button>
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung bei Rheuma →</button>
+        <button class="action-link" onclick="showPage('schlaf')">😴 Besser schlafen →</button>
+        <button class="action-link" onclick="showPage('bewegung')">💪 Gelenkschonend bewegen →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Stress reduzieren →</button>
       </div>
       <div class="support-row">
-        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei Rheuma</div><div class="sup-text">Mehrere Studien belegen: MBSR reduziert Schmerz und Erschöpfung bei RA unabhängig von der medikamentösen Therapie. Krankenkassen übernehmen oft die Kosten.</div></div>
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei Rheuma</div><div class="sup-text">Mehrere Studien belegen: MBSR reduziert Schmerz und Erschöpfung bei Rheuma unabhängig von der medikamentösen Therapie. Krankenkassen übernehmen oft die Kosten. Suchbegriff: "MBSR Kurs Krankenkasse".</div></div>
         <div class="sup-card gruppe"><div class="sup-title">👥 Deutsche Rheuma-Liga</div><div class="sup-text">Lokale Gruppen in fast jeder Stadt, Beratung und praktische Tipps für den Alltag. rheuma-liga.de</div></div>
       </div>
     </div>
@@ -1019,21 +1185,110 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
           <div class="ib-title">⚡ Risikofaktoren — was Entzündung in Gefäßen fördert</div>
           <ul class="ib-list">
             <li>Chronische systemische Entzündung (Rheuma, MCAS, etc.)</li>
-            <li>Rauchen — stärkster vermeidbarer Faktor für oxLDL</li>
-            <li>Bluthochdruck — schädigt Gefäßwände mechanisch</li>
-            <li>Blutzuckerspikes — fördern Oxidationsstress direkt</li>
-            <li>Bewegungsmangel, Übergewicht (viszerales Fett)</li>
-            <li>Genetisch erhöhtes LDL (familiäre Hypercholesterinämie)</li>
+            <li>Rauchen — stärkster vermeidbarer Faktor</li>
+            <li>Bluthochdruck — schädigt Gefäßwände mechanisch
+              <span onclick="toggleHowto('bp')" style="font-size:10px;color:var(--accent3);
+                cursor:pointer;margin-left:6px;border:1px solid var(--accent3);
+                border-radius:8px;padding:1px 6px">Wie messe ich das? →</span>
+            </li>
+            <li>Blutzuckerspikes — erhöhen Entzündungsbelastung direkt
+              <span onclick="toggleHowto('bz')" style="font-size:10px;color:var(--accent3);
+                cursor:pointer;margin-left:6px;border:1px solid var(--accent3);
+                border-radius:8px;padding:1px 6px">Was tun? →</span>
+            </li>
+            <li>Bewegungsmangel, Übergewicht</li>
+            <li>Genetisch erhöhtes Cholesterin</li>
           </ul>
         </div>
         <div class="info-box">
-          <div class="ib-title">🧪 Bessere Marker als nur LDL</div>
+          <div class="ib-title">🧪 Bessere Marker als nur Cholesterin</div>
           <ul class="ib-list">
-            <li><strong>hsCRP</strong> (hochsensitives CRP) — Entzündungsmarker, stärkerer Herzrisiko-Prädiktor als LDL allein</li>
-            <li><strong>oxLDL</strong> — das eigentlich gefährliche LDL, noch nicht Routine</li>
-            <li><strong>ApoB</strong> — Anzahl der LDL-Partikel, aussagekräftiger als LDL-Menge</li>
-            <li><strong>Lp(a)</strong> — genetisch erhöht, unabhängiger Risikofaktor</li>
+            <li><strong>Entzündungswert im Blut (hsCRP)</strong> — zeigt wie entzündet deine Gefäße sind. Viel aussagekräftiger als Cholesterin allein.</li>
+            <li><strong>Anzahl der Cholesterin-Partikel (ApoB)</strong> — wichtiger als die Menge des Cholesterins</li>
+            <li><strong>Lp(a)</strong> — genetisch erhöht, unabhängiger Risikofaktor. Einmalig messen lassen.</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- HOW-TO: BLUTDRUCK -->
+      <div id="howto-bp" class="howto-box" style="display:none;margin-bottom:16px">
+        <div class="howto-trigger" id="howto-bp-trigger" onclick="toggleHowto('bp')">
+          <div class="howto-icon">🩺</div>
+          <div class="howto-label">Blutdruck richtig messen — Schritt für Schritt</div>
+          <div class="howto-arrow">▼</div>
+        </div>
+        <div class="howto-content show" id="howto-bp-content">
+          <div class="howto-step">
+            <div class="howto-step-num">1</div>
+            <div class="howto-step-text"><strong>5 Minuten vorher ruhig hinsetzen.</strong> Kein Gespräch, kein Handy, kein Kaffee kurz vorher. Augen schließen, ruhig atmen. Das ist der wichtigste Schritt — viele Messungen sind falsch weil dieser fehlt.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">2</div>
+            <div class="howto-step-text"><strong>Arm auf Herzhöhe ablegen.</strong> Arm auf dem Tisch, Manschette auf Herzhöhe. Nicht in der Luft halten — das verfälscht den Wert nach oben.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">3</div>
+            <div class="howto-step-text"><strong>Manschette nach Anleitung anlegen.</strong> Zwei Finger breit über der Ellenbeuge. Weder zu fest noch zu locker — ein Finger sollte noch drunterpasssen.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">4</div>
+            <div class="howto-step-text"><strong>Messen, 2 Minuten warten, nochmal messen.</strong> Den zweiten Wert verwenden — der erste ist oft noch erhöht.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">5</div>
+            <div class="howto-step-text"><strong>Für den "echten" Wert: 2 Wochen lang messen.</strong> Morgens und abends, immer zum gleichen Zeitpunkt, aufschreiben. Einzelmessungen beim Arzt sind oft nicht repräsentativ — "Weißkitteleffekt" lässt den Druck steigen.</div>
+          </div>
+          <div class="howto-tip">
+            <strong>Was bedeuten die Zahlen?</strong> Unter 120/80 = ideal. Bis 130/85 = normal. Ab 140/90 dauerhaft = mit dem Arzt besprechen. Der obere Wert zeigt den Druck beim Herzschlag, der untere in der Entspannungsphase.
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW-TO: BLUTZUCKER -->
+      <div id="howto-bz" class="howto-box" style="display:none;margin-bottom:16px">
+        <div class="howto-trigger" id="howto-bz-trigger" onclick="toggleHowto('bz')">
+          <div class="howto-icon">🍬</div>
+          <div class="howto-label">Blutzuckerspikes verstehen und verhindern</div>
+          <div class="howto-arrow">▼</div>
+        </div>
+        <div class="howto-content show" id="howto-bz-content">
+          <div style="font-size:13px;line-height:1.7;margin-bottom:14px;
+            color:color-mix(in srgb,var(--text) 85%,var(--muted))">
+            Ein Blutzuckerspike ist wenn dein Blutzucker nach dem Essen sehr schnell sehr hoch steigt — und dann wieder schnell fällt. Wie eine Achterbahn. Das schadet den Gefäßen, erzeugt Entzündung und macht müde und hungrig.
+          </div>
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;
+            letter-spacing:0.12em;margin-bottom:10px">Ohne Gerät erkennen</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+            <li style="font-size:13px;padding-left:16px;position:relative;line-height:1.5">
+              <span style="position:absolute;left:0">😴</span> Starke Müdigkeit 30–60 Min nach dem Essen</li>
+            <li style="font-size:13px;padding-left:16px;position:relative;line-height:1.5">
+              <span style="position:absolute;left:0">🍫</span> Starker Hunger oder Süßhunger kurz danach</li>
+            <li style="font-size:13px;padding-left:16px;position:relative;line-height:1.5">
+              <span style="position:absolute;left:0">😵</span> Konzentrationsprobleme oder Stimmungsabfall nach dem Essen</li>
+            <li style="font-size:13px;padding-left:16px;position:relative;line-height:1.5">
+              <span style="position:absolute;left:0">🤤</span> Zittern oder Schwitzen wenn eine Mahlzeit ausgelassen wird</li>
+          </ul>
+          <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;
+            letter-spacing:0.12em;margin-bottom:10px">Spikes verhindern — einfache Tricks</div>
+          <div class="howto-step">
+            <div class="howto-step-num">1</div>
+            <div class="howto-step-text"><strong>Reihenfolge beim Essen ändern.</strong> Erst Gemüse, dann Eiweiß (Fleisch, Fisch, Hülsenfrüchte), zuletzt Kohlenhydrate (Brot, Nudeln, Reis). Gleiche Mahlzeit — viel flacherer Blutzuckerverlauf.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">2</div>
+            <div class="howto-step-text"><strong>10 Minuten Bewegung nach dem Essen.</strong> Spaziergang, Treppensteigen — die Muskeln verbrauchen den Zucker bevor er als Spike ankommt.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">3</div>
+            <div class="howto-step-text"><strong>Kein Fruchtsaft, keine Smoothies.</strong> Ein Glas Orangensaft enthält so viel Zucker wie 4 Orangen — ohne die Ballaststoffe die den Anstieg bremsen würden.</div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-step-num">4</div>
+            <div class="howto-step-text"><strong>Essig vor der Mahlzeit.</strong> Ein Esslöffel Apfelessig in Wasser vor dem Essen verlangsamt die Zuckeraufnahme messbar — klingt komisch, ist aber gut belegt.</div>
+          </div>
+          <div class="howto-tip">
+            <strong>Dauermessen möglich:</strong> Mit einem Blutzuckersensor am Oberarm (z.B. Freestyle Libre, ~60€/Monat, kein Rezept nötig) siehst du in Echtzeit wie dein Körper auf jede Mahlzeit reagiert. Das verändert das Bewusstsein für Essen grundlegend.
+          </div>
         </div>
       </div>
 
@@ -1336,19 +1591,421 @@ function renderGlossar(query) {
       padding:18px 20px;margin-bottom:10px">
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;
         color:var(--accent3);margin-bottom:6px">${g.term}</div>
-      <div style="font-size:13px;color:var(--text);line-height:1.7;margin-bottom:8px">${g.def}</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.7;margin-bottom:8px">${g.def.replace(/\n/g,'<br>')}</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
-        ${g.seiten.map(s=>`<span style="font-size:10px;background:var(--surface2);
-          border:1px solid var(--border);border-radius:10px;padding:2px 8px;
-          color:var(--muted)">→ ${s}</span>`).join('')}
+        ${g.seiten.map(s=>{
+          const pageMap={'Start':'home','Schlaf':'schlaf','Ernährung':'ernaehr','Bewegung':'bewegung','Stress':'stress','Erkrankungen':'erkrank','MCAS':'erkrank','Rheuma':'erkrank','Colitis':'erkrank','Atherosklerose':'erkrank'};
+          const pid=pageMap[s]||'home';
+          return `<span onclick="showPage('${pid}')" style="font-size:10px;background:var(--surface2);
+            border:1px solid var(--border);border-radius:10px;padding:2px 10px;
+            color:var(--accent3);cursor:pointer;transition:all .15s"
+            onmouseover="this.style.background='color-mix(in srgb,var(--accent3) 12%,var(--bg))';this.style.borderColor='var(--accent3)'"
+            onmouseout="this.style.background='var(--surface2)';this.style.borderColor='var(--border)'">→ ${s}</span>`;
+        }).join('')}
       </div>
     </div>`).join('');
 }
 
 function filterGlossar(q) { renderGlossar(q); }
 
+// ── STORY ─────────────────────────────────
+const STORY = [
+  {
+    scene: 'normal',
+    chars: [
+      { emoji: '🦠', name: 'Der Eindringling', color: '#c0392b' },
+    ],
+    title: 'Es beginnt mit einem Eindringling',
+    text: 'Ein Virus, ein Bakterium, eine Wunde. Etwas das nicht in deinen Körper gehört — oder etwas das dein Körper fälschlicherweise als Bedrohung eingestuft hat.',
+    note: null
+  },
+  {
+    scene: 'normal',
+    chars: [
+      { emoji: '🦠', name: 'Der Eindringling', color: '#c0392b' },
+      { emoji: '🔍', name: 'Der Späher', color: '#4a5a7a' },
+    ],
+    title: 'Der Späher entdeckt ihn',
+    text: 'Überall im Körper patrouillieren Späher. Sie scannen ständig ihre Umgebung. Sobald einer etwas Fremdes findet, nimmt er es auf — und macht ein "Fahndungsfoto".',
+    note: 'Fachname: Dendritische Zelle'
+  },
+  {
+    scene: 'normal',
+    chars: [
+      { emoji: '🔍', name: 'Der Späher', color: '#4a5a7a' },
+      { emoji: '⚔️', name: 'Der Kämpfer', color: '#7a5a2a' },
+      { emoji: '⚔️', name: 'Der Kämpfer', color: '#7a5a2a' },
+    ],
+    title: 'Der Späher ruft die Kämpfer',
+    text: 'Der Späher zeigt den Kämpfern das Fahndungsfoto. Die Kämpfer sind darauf spezialisiert genau diesen Eindringling unschädlich zu machen. Alarm geht an — Entzündung beginnt.',
+    note: 'Fachname: T-Zellen und B-Zellen'
+  },
+  {
+    scene: 'normal',
+    chars: [
+      { emoji: '⚔️', name: 'Die Kämpfer', color: '#7a5a2a' },
+      { emoji: '💥', name: 'Kampf', color: '#c0392b' },
+      { emoji: '🛑', name: 'Der Friedensstifter', color: '#4a7a5a' },
+    ],
+    title: 'Kampf — und dann Frieden',
+    text: 'Die Kämpfer erledigen den Eindringling. Dann tritt der Friedensstifter auf den Plan. Er sagt: "Genug, wir sind fertig." Die Entzündung geht zurück. Heilung.',
+    note: 'Fachname: Regulatorische T-Zelle (Treg) — die Bremse'
+  },
+  {
+    scene: 'stress',
+    chars: [
+      { emoji: '😰', name: 'Chronischer Stress', color: '#7a5a9a' },
+      { emoji: '💣', name: 'Der Überreagierer', color: '#c0392b' },
+    ],
+    title: 'Aber: Stress geht einen anderen Weg',
+    text: 'Hier kommt das Überraschende. Stress aktiviert eine ganz andere Zelle — direkt, ohne Späher, ohne Fahndungsfoto. Der Überreagierer braucht keinen echten Feind. Er feuert einfach.',
+    note: 'Stress → Stresshormon CRH → Mastzelle aktiviert. Kein Umweg über T-Zellen.',
+    highlight: true
+  },
+  {
+    scene: 'stress',
+    chars: [
+      { emoji: '💣', name: 'Der Überreagierer', color: '#c0392b' },
+      { emoji: '💣', name: 'Der Überreagierer', color: '#c0392b' },
+      { emoji: '💣', name: 'Der Überreagierer', color: '#c0392b' },
+    ],
+    title: 'Der Überreagierer ist überall',
+    text: 'Er sitzt in der Haut, im Darm, in den Gelenken, in der Nase, im Mund. Wenn er aktiviert wird — überall gleichzeitig. Deswegen sind die Symptome so vielfältig und verwirrend.',
+    note: 'Aphthen im Mund, Hautreaktionen, Darmbeschwerden, Gelenkschmerzen — oft dieselbe Wurzel.'
+  },
+  {
+    scene: 'chronic',
+    chars: [
+      { emoji: '🛑', name: 'Der Friedensstifter', color: '#8a8078' },
+      { emoji: '🔄', name: 'Kein Ende', color: '#c0392b' },
+    ],
+    title: 'Chronisch: Der Friedensstifter ist zu schwach',
+    text: 'Bei chronischer Entzündung versagt die Bremse. Der Friedensstifter ist zu wenig, zu schwach — oder er wird aktiv blockiert. Durch Schlafmangel, durch chronischen Stress, durch schlechte Ernährung.',
+    note: 'Was den Friedensstifter stärkt: Schlaf, Omega-3, Vitamin D3, Bewegung, Fermentierte Lebensmittel.'
+  },
+  {
+    scene: 'chronic',
+    chars: [
+      { emoji: '🧘', name: 'Du', color: '#4a7a5a' },
+      { emoji: '⚕️', name: 'Dein Arzt', color: '#4a5a7a' },
+    ],
+    title: 'Was du tun kannst',
+    text: 'Medikamente helfen dem Arzt die Kämpfer zu bremsen. Lebensstil hilft dir den Friedensstifter zu stärken. Beides zusammen ist mehr als die Summe der Teile.',
+    note: 'Schlaf · Ernährung · Bewegung · Stressreduktion — alle vier stärken die Bremse.'
+  },
+];
+
+let storyIdx = 0;
+
+function renderStory(idx) {
+  const s = STORY[idx];
+  const scene = document.getElementById('story-scene');
+  const dots = document.getElementById('story-dots');
+  const prev = document.getElementById('story-prev');
+  const next = document.getElementById('story-next');
+
+  // Chars row
+  const charHtml = `
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;min-height:72px;align-items:flex-end">
+      ${s.chars.map(c=>`
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;
+          animation:fadeUp .3s forwards">
+          <div style="font-size:2.2rem;line-height:1">${c.emoji}</div>
+          <div style="font-size:9px;color:${c.color};font-weight:600;
+            text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap">${c.name}</div>
+        </div>`).join('')}
+    </div>`;
+
+  // Text
+  const bg = s.highlight
+    ? 'color-mix(in srgb,var(--accent) 6%,var(--surface))'
+    : 'transparent';
+
+  scene.innerHTML = `
+    ${charHtml}
+    <div style="background:${bg};border-radius:10px;padding:${s.highlight?'14px':'0'}">
+      <div style="font-family:'Playfair Display',serif;font-size:1.15rem;
+        margin-bottom:8px;line-height:1.3">${s.title}</div>
+      <div style="font-size:14px;color:color-mix(in srgb,var(--text) 85%,var(--muted));
+        line-height:1.8;margin-bottom:${s.note?'10px':'0'}">${s.text}</div>
+      ${s.note?`<div style="font-size:11px;color:var(--muted);font-style:italic;
+        padding:6px 10px;background:var(--surface2);border-radius:6px">${s.note}</div>`:''}
+    </div>`;
+
+  // Dots
+  dots.innerHTML = STORY.map((_,i)=>`
+    <div onclick="storyJump(${i})" style="width:${i===idx?'20px':'7px'};height:7px;
+      border-radius:10px;background:${i===idx?'var(--accent)':'var(--border)'};
+      cursor:pointer;transition:all .3s"></div>`).join('');
+
+  // Buttons
+  prev.style.opacity = idx===0?'0.3':'1';
+  prev.style.pointerEvents = idx===0?'none':'auto';
+  next.textContent = idx===STORY.length-1?'Zur Erkrankungsseite →':'Weiter →';
+  next.onclick = idx===STORY.length-1
+    ? ()=>showPage('erkrank')
+    : ()=>storyNav(1);
+}
+
+function storyNav(dir) {
+  storyIdx = Math.max(0, Math.min(STORY.length-1, storyIdx+dir));
+  renderStory(storyIdx);
+}
+
+function storyJump(i) {
+  storyIdx = i;
+  renderStory(storyIdx);
+}
+
+// Init story on load
+renderStory(0);
+
+// ── WEGWEISER ─────────────────────────────
+const WW = {
+  // Symptom → Erkrankung mapping
+  symptoms: [
+    { id:'gelenk',    label:'🦴 Gelenke schmerzen oder schwellen',       scores:{rheu:3,mcas:1,coli:1,athero:0} },
+    { id:'haut',      label:'🔴 Hautprobleme (Ausschlag, Rötung, Jucken)', scores:{rheu:0,mcas:3,coli:1,athero:0} },
+    { id:'darm',      label:'🫀 Bauchschmerzen, Durchfall, Blähungen',    scores:{rheu:0,mcas:2,coli:3,athero:0} },
+    { id:'erschoepf', label:'😴 Starke Erschöpfung ohne klaren Grund',     scores:{rheu:2,mcas:3,coli:2,athero:1} },
+    { id:'aphthen',   label:'🔴 Wiederkehrende Aphthen im Mund',          scores:{rheu:1,mcas:3,coli:2,athero:0} },
+    { id:'brainfog',  label:'🧠 Konzentrationsprobleme, Gedächtnisprobleme', scores:{rheu:1,mcas:3,coli:1,athero:1} },
+    { id:'herz',      label:'❤️ Bluthochdruck oder erhöhte Cholesterinwerte', scores:{rheu:1,mcas:0,coli:0,athero:3} },
+    { id:'stress',    label:'😰 Symptome werden durch Stress schlimmer',   scores:{rheu:2,mcas:3,coli:3,athero:1} },
+    { id:'reaktion',  label:'⚡ Starke Reaktionen auf Lebensmittel oder Gerüche', scores:{rheu:0,mcas:3,coli:2,athero:0} },
+    { id:'morgen',    label:'🌅 Morgensteifigkeit länger als 30 Minuten',   scores:{rheu:3,mcas:1,coli:0,athero:0} },
+    { id:'blut',      label:'🩸 Blut im Stuhl oder häufige Bauchkrämpfe',   scores:{rheu:0,mcas:0,coli:3,athero:0} },
+    { id:'gewicht',   label:'⚖️ Übergewicht oder Bewegungsmangel seit Jahren', scores:{rheu:0,mcas:0,coli:0,athero:3} },
+  ],
+
+  diseases: {
+    rheu:   { name:'Rheumatoide Arthritis', icon:'🦴', color:'var(--rheu)',  id:'rheu' },
+    mcas:   { name:'MCAS',                  icon:'💣', color:'var(--mcas)', id:'mcas' },
+    coli:   { name:'Colitis Ulcerosa',      icon:'🫀', color:'var(--coli)', id:'coli' },
+    athero: { name:'Atherosklerose',        icon:'❤️', color:'#c0392b',     id:'athero' },
+  },
+
+  selected: new Set(),
+  step: 'start',
+};
+
+function wwRender() {
+  const el = document.getElementById('ww-content');
+  if (!el) return;
+
+  if (WW.step === 'start') {
+    el.innerHTML = `
+      <div style="text-align:center;max-width:480px;margin:0 auto">
+        <div style="font-size:2rem;margin-bottom:16px">🔍</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:10px">
+          Hast du bereits eine Diagnose?
+        </div>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7">
+          Wenn ja, springe direkt zu deiner Erkrankung. Wenn nicht, helfen wir dir die richtigen Fragen für deinen Arzt zu finden.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button onclick="wwStep('diagnose')"
+            style="background:var(--accent);color:#fff;border:none;border-radius:12px;
+              padding:14px 20px;font-family:'DM Sans',sans-serif;font-size:14px;
+              cursor:pointer;font-weight:500;transition:all .15s"
+            onmouseover="this.style.filter='brightness(1.1)'"
+            onmouseout="this.style.filter=''">
+            ✅ Ja, ich habe eine Diagnose
+          </button>
+          <button onclick="wwStep('symptoms')"
+            style="background:var(--surface2);color:var(--text);border:1.5px solid var(--border);
+              border-radius:12px;padding:14px 20px;font-family:'DM Sans',sans-serif;
+              font-size:14px;cursor:pointer;transition:all .15s"
+            onmouseover="this.style.borderColor='var(--accent3)'"
+            onmouseout="this.style.borderColor='var(--border)'">
+            ❓ Nein, ich habe bisher nur Symptome
+          </button>
+        </div>
+      </div>`;
+
+  } else if (WW.step === 'diagnose') {
+    const diseases = Object.values(WW.diseases);
+    el.innerHTML = `
+      <div style="margin-bottom:16px">
+        <button onclick="wwStep('start')" style="background:none;border:none;color:var(--muted);
+          font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">← Zurück</button>
+      </div>
+      <div style="font-weight:500;margin-bottom:6px">Welche Diagnose hast du?</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:20px">
+        Wähle deine Erkrankung — du kommst direkt zu allen Informationen und Handlungsempfehlungen.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        ${diseases.map(d=>`
+          <button onclick="showPage('erkrank');showDis('${d.id}')"
+            style="background:color-mix(in srgb,${d.color} 8%,var(--surface2));
+              border:1.5px solid color-mix(in srgb,${d.color} 25%,var(--border));
+              border-radius:12px;padding:16px;font-family:'DM Sans',sans-serif;
+              cursor:pointer;text-align:left;transition:all .2s"
+            onmouseover="this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.transform=''">
+            <div style="font-size:1.5rem;margin-bottom:6px">${d.icon}</div>
+            <div style="font-size:13px;font-weight:500;color:${d.color}">${d.name}</div>
+          </button>`).join('')}
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:16px;text-align:center">
+        Deine Erkrankung ist nicht dabei? Schreib uns — wir erweitern die Liste laufend.
+      </p>`;
+
+  } else if (WW.step === 'symptoms') {
+    el.innerHTML = `
+      <div style="margin-bottom:16px">
+        <button onclick="wwStep('start')" style="background:none;border:none;color:var(--muted);
+          font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">← Zurück</button>
+      </div>
+      <div style="font-weight:500;margin-bottom:6px">Was beschäftigt dich?</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6">
+        Wähle alles was auf dich zutrifft — auch mehreres. Je mehr du auswählst, desto gezielter der Hinweis.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+        ${WW.symptoms.map(s=>{
+          const sel = WW.selected.has(s.id);
+          return `<button onclick="wwToggle('${s.id}')" id="ww-chip-${s.id}"
+            style="background:${sel?'color-mix(in srgb,var(--accent3) 15%,var(--bg))':'var(--surface2)'};
+              border:1.5px solid ${sel?'var(--accent3)':'var(--border)'};
+              color:${sel?'var(--accent3)':'var(--text)'};
+              border-radius:30px;padding:8px 14px;font-family:'DM Sans',sans-serif;
+              font-size:13px;cursor:pointer;transition:all .15s">
+            ${s.label}
+          </button>`;
+        }).join('')}
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <span style="font-size:12px;color:var(--muted)">${WW.selected.size} ausgewählt</span>
+        <button onclick="wwStep('result')"
+          ${WW.selected.size===0?'disabled':''} 
+          style="background:${WW.selected.size>0?'var(--accent)':'var(--surface2)'};
+            color:${WW.selected.size>0?'#fff':'var(--muted)'};
+            border:none;border-radius:20px;padding:10px 24px;
+            font-family:'DM Sans',sans-serif;font-size:13px;
+            cursor:${WW.selected.size>0?'pointer':'not-allowed'};transition:all .2s">
+          Wegweiser anzeigen →
+        </button>
+      </div>`;
+
+  } else if (WW.step === 'result') {
+    // Calculate scores
+    const scores = {rheu:0,mcas:0,coli:0,athero:0};
+    WW.selected.forEach(id => {
+      const s = WW.symptoms.find(x=>x.id===id);
+      if(s) Object.keys(scores).forEach(k => scores[k] += s.scores[k]||0);
+    });
+
+    // Sort by score
+    const ranked = Object.entries(scores)
+      .sort((a,b)=>b[1]-a[1])
+      .filter(([,v])=>v>0);
+
+    const maxScore = ranked[0]?.[1]||0;
+    const relevant = ranked.filter(([,v])=>v>=maxScore*0.5);
+
+    el.innerHTML = `
+      <div style="margin-bottom:20px">
+        <button onclick="wwStep('symptoms')" style="background:none;border:none;color:var(--muted);
+          font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">← Symptome ändern</button>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface2));
+        border:1.5px solid color-mix(in srgb,var(--gold) 30%,var(--border));
+        border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7">
+        ⚕️ <strong>Wichtig:</strong> Was du hier siehst ist kein Befund — es ist ein Wegweiser. 
+        Nur ein Arzt kann eine Diagnose stellen. Aber du kannst diese Hinweise ins nächste Gespräch mitnehmen.
+      </div>
+
+      <div style="font-weight:500;margin-bottom:14px">
+        Deine Angaben passen zu folgenden Mustern:
+      </div>
+
+      ${relevant.length===0 ? `
+        <p style="color:var(--muted);font-size:14px">
+          Deine Angaben ergeben kein klares Muster — das bedeutet nicht dass alles in Ordnung ist. 
+          Sprich mit deinem Arzt über deine Symptome.
+        </p>` :
+        relevant.map(([key])=>{
+          const d = WW.diseases[key];
+          const score = scores[key];
+          const pct = Math.round((score/maxScore)*100);
+          return `
+            <div style="background:color-mix(in srgb,${d.color} 6%,var(--surface));
+              border:1.5px solid color-mix(in srgb,${d.color} 20%,var(--border));
+              border-radius:12px;padding:18px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <span style="font-size:1.4rem">${d.icon}</span>
+                <span style="font-size:15px;font-weight:500;color:${d.color}">${d.name}</span>
+                <div style="flex:1;height:4px;background:var(--surface2);border-radius:2px;overflow:hidden">
+                  <div style="width:${pct}%;height:100%;background:${d.color};border-radius:2px;transition:width .6s"></div>
+                </div>
+              </div>
+              <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">
+                ${wwDiseaseHint(key)}
+              </div>
+              <button onclick="showPage('erkrank');showDis('${d.id}')"
+                style="background:none;border:1px solid color-mix(in srgb,${d.color} 40%,var(--border));
+                  color:${d.color};border-radius:20px;padding:6px 14px;
+                  font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .15s"
+                onmouseover="this.style.background='color-mix(in srgb,${d.color} 10%,var(--bg))'"
+                onmouseout="this.style.background='none'">
+                Mehr zu ${d.name} →
+              </button>
+            </div>`;
+        }).join('')
+      }
+
+      <div style="background:var(--surface2);border-radius:12px;padding:16px 18px;
+        margin-top:8px;font-size:13px;line-height:1.7">
+        <strong>Was du jetzt tun kannst:</strong> Mach einen Arzttermin und sag: 
+        <em>"Ich habe folgende Symptome seit [Zeitraum] — ich möchte wissen ob Entzündung eine Rolle spielen könnte."</em> 
+        Das ist ein konkreter Gesprächseinstieg den Ärzte ernst nehmen.
+      </div>
+
+      <button onclick="wwStep('start');WW.selected=new Set()"
+        style="margin-top:16px;background:none;border:1px solid var(--border);
+          border-radius:20px;padding:8px 18px;font-family:'DM Sans',sans-serif;
+          font-size:12px;color:var(--muted);cursor:pointer;display:block;width:100%">
+        ↺ Nochmal von vorne
+      </button>`;
+  }
+}
+
+function wwDiseaseHint(key) {
+  const hints = {
+    rheu: 'Mehrere deiner Symptome — besonders Gelenkschmerzen, Morgensteifigkeit und Erschöpfung — sind typisch für eine Erkrankung bei der das Immunsystem das eigene Gelenkgewebe angreift. Ein Rheumatologe kann mit einem Bluttest klären ob Autoantikörper vorhanden sind.',
+    mcas: 'Deine Symptome betreffen mehrere Körperbereiche gleichzeitig und reagieren auf Stress oder bestimmte Auslöser. Das ist ein Muster das auf überaktive Gewebezellen hindeuten kann. Ein Allergologe oder Immunologe ist hier die erste Anlaufstelle.',
+    coli: 'Verdauungsbeschwerden zusammen mit Erschöpfung und stressbedingten Verschlechterungen können auf eine entzündliche Darmerkrankung hinweisen. Ein Gastroenterologe kann das mit einer Darmspiegelung abklären.',
+    athero: 'Deine Angaben zu Blutdruck, Cholesterin und Lebensstil sind Risikofaktoren für eine schleichende Entzündung der Gefäßwände. Ein einfacher Bluttest (Entzündungswert hsCRP + Blutfette) beim Hausarzt gibt erste Hinweise.',
+  };
+  return hints[key]||'';
+}
+
+function wwStep(step) {
+  WW.step = step;
+  wwRender();
+}
+
+function wwToggle(id) {
+  if (WW.selected.has(id)) WW.selected.delete(id);
+  else WW.selected.add(id);
+  wwRender();
+}
+
+// Init Wegweiser
+wwRender();
+
 // Init nav active state
 document.getElementById('nb-home').classList.add('active');
+
+// ── HOW-TO BOXES ──────────────────────────
+function toggleHowto(id) {
+  const box = document.getElementById('howto-'+id);
+  if (!box) return;
+  const isHidden = box.style.display === 'none';
+  box.style.display = isHidden ? 'block' : 'none';
+  if (isHidden) box.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
 </script>
 </body>
 </html>
