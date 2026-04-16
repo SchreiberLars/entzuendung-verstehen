@@ -2766,6 +2766,78 @@ wwRender();
 // Init nav active state
 document.getElementById('nb-home').classList.add('active');
 
+// ── DEEP LINKING via URL hash ──────────────
+const HASH_MAP = {
+  '#mcas':       ()=>{ showPage('erkrank'); showDis('mcas'); },
+  '#rheuma':     ()=>{ showPage('erkrank'); showDis('rheu'); },
+  '#rheu':       ()=>{ showPage('erkrank'); showDis('rheu'); },
+  '#colitis':    ()=>{ showPage('erkrank'); showDis('coli'); },
+  '#coli':       ()=>{ showPage('erkrank'); showDis('coli'); },
+  '#athero':     ()=>{ showPage('erkrank'); showDis('athero'); },
+  '#herz':       ()=>{ showPage('erkrank'); showDis('athero'); },
+  '#derm':       ()=>{ showPage('erkrank'); showDis('derm'); },
+  '#dermatitis': ()=>{ showPage('erkrank'); showDis('derm'); },
+  '#asthma':     ()=>{ showPage('erkrank'); showDis('asthma'); },
+  '#schlaf':     ()=>{ showPage('schlaf'); },
+  '#ernaehr':    ()=>{ showPage('ernaehr'); },
+  '#bewegung':   ()=>{ showPage('bewegung'); },
+  '#stress':     ()=>{ showPage('stress'); },
+  '#glossar':    ()=>{ showPage('glossar'); },
+};
+
+// Glossar terms that can be deep-linked via #g-quercetin etc.
+const GLOSSAR_TERMS = [
+  'quercetin','aphthen','treg','mastzelle','mikrobiom','ldl','oxidation',
+  'nf-kb','cortisol','crp','il-6','t-zelle','zytokin','leaky-gut',
+  'freie-radikale','atherosklerose','mbsr','nsdr','mcas-glossar',
+  'antikörper','antigen','b-zelle','dendritische-zelle','endothel',
+  'foxp3','hpa-achse','ige','makrophage','mhc-ii','oxldl','schaumzelle',
+  'th17','th2','tnf-alpha','tryptase','apob','crh',
+];
+
+function handleHash() {
+  const h = window.location.hash.toLowerCase();
+  if (HASH_MAP[h]) {
+    HASH_MAP[h]();
+    return;
+  }
+  // Glossar term deep link: #g-quercetin or #quercetin (if in glossar terms)
+  const term = h.startsWith('#g-') ? h.slice(3) : (GLOSSAR_TERMS.includes(h.slice(1)) ? h.slice(1) : null);
+  if (term) {
+    showPage('glossar');
+    setTimeout(() => {
+      // Filter glossar to the term
+      const searchInput = document.getElementById('glossar-search');
+      const displayTerm = term.replace(/-/g,' ');
+      if (searchInput) {
+        searchInput.value = displayTerm;
+        filterGlossar(displayTerm);
+      }
+      // Highlight matching entry
+      setTimeout(()=>{
+        const entries = document.querySelectorAll('#glossar-list > div');
+        entries.forEach(el => {
+          el.style.transition = 'background .3s';
+          el.style.background = 'color-mix(in srgb,var(--accent3) 12%,var(--surface))';
+          el.style.borderColor = 'var(--accent3)';
+          setTimeout(()=>{ el.style.background=''; el.style.borderColor=''; }, 2500);
+        });
+        if (entries[0]) entries[0].scrollIntoView({behavior:'smooth', block:'center'});
+      }, 100);
+    }, 100);
+  }
+}
+
+function handleHash() {
+  const h = window.location.hash.toLowerCase();
+  if (HASH_MAP[h]) HASH_MAP[h]();
+}
+
+// On load
+handleHash();
+// On hash change (browser back/forward)
+window.addEventListener('hashchange', handleHash);
+
 // ── HOW-TO BOXES ──────────────────────────
 function toggleHowto(id) {
   const box = document.getElementById('howto-'+id);
