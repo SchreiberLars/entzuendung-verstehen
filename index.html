@@ -229,6 +229,26 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 .foot-dis{font-size:11px;color:var(--muted);max-width:560px;margin:0 auto 14px;line-height:1.6}
 .foot-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--muted)}
 .foot-logo em{color:var(--accent);font-style:italic}
+
+/* SOURCE CITATIONS */
+.claim{position:relative;border-bottom:1px dotted var(--accent3);cursor:help}
+.source-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:0;
+  background:var(--text);color:var(--bg);font-size:10px;line-height:1.5;
+  padding:6px 10px;border-radius:8px;white-space:nowrap;z-index:50;
+  max-width:320px;white-space:normal;width:max-content;max-width:280px;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);font-style:normal}
+.claim:hover .source-tip{display:block}
+
+.sources-box{background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:14px 16px;margin-top:20px}
+.sources-title{font-size:9px;text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--muted);margin-bottom:10px}
+.source-list{display:flex;flex-direction:column;gap:5px}
+.source-item{font-size:11px;color:var(--muted);line-height:1.5;
+  padding-left:12px;position:relative}
+.source-item::before{content:'↗';position:absolute;left:0;color:var(--accent3);font-size:9px;top:2px}
+.source-item a{color:var(--accent3);text-decoration:none}
+.source-item a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -389,7 +409,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
   <div class="section">
     <div class="mech-box">
       <div class="mech-title">🔬 Warum Schlaf das Immunsystem direkt beeinflusst</div>
-      <div class="mech-text">Im Tiefschlaf schüttet der Körper entzündungshemmende Zytokine aus und regeneriert die Treg-Bremszellen. Gleichzeitig sinkt Cortisol auf den Tagesstiefstwert — der einzige Moment wo das Immunsystem wirklich zur Ruhe kommt. Schon eine einzige Nacht mit unter 6 Stunden Schlaf erhöht TNF-α und IL-6 messbar. Chronischer Schlafmangel reduziert die Treg-Aktivität nachweislich — die Bremse versagt schneller.<br><br>Melatonin — das Schlafhormon — wirkt zusätzlich direkt stabilisierend auf Mastzellen. Das erklärt warum viele Menschen mit chronischen Entzündungserkrankungen abends und nachts mehr Symptome haben: der Melatoninmangel durch Blaulicht lässt Mastzellen aktiver werden.</div>
+      <div class="mech-text">Im Tiefschlaf schüttet der Körper entzündungshemmende Zytokine aus und regeneriert die Treg-Bremszellen. Gleichzeitig sinkt Cortisol auf den Tagesstiefstwert — der einzige Moment wo das Immunsystem wirklich zur Ruhe kommt. <span class="claim">Mehrere Nächte mit reduziertem Schlaf (~4.5h) erhöhen IL-6 und CRP nachweislich.<span class="source-tip">Ballesio et al., J Sleep Research 2025 · Irwin et al., Biol Psychiatry 2016 (Meta-Analyse, n&gt;50.000)</span></span> Chronischer Schlafmangel reduziert die Treg-Aktivität — die Bremse versagt schneller.<br><br><span class="claim">Melatonin wirkt direkt stabilisierend auf Mastzellen und hemmt deren Degranulation.<span class="source-tip">Maldonado et al., J Neuroimmunol 2013 · Annals Allergy Asthma Immunol 2024</span></span> Das erklärt warum viele Menschen mit chronischen Entzündungserkrankungen abends mehr Symptome haben: Melatoninmangel durch Blaulicht lässt Mastzellen aktiver werden.</div>
     </div>
 
     <div class="sec-eyebrow" style="margin-bottom:12px">Was du konkret tun kannst</div>
@@ -450,6 +470,19 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div class="sup-text">Tracke Schlafqualität zusammen mit deinen Symptomen über 4–6 Wochen. Das Muster das dabei sichtbar wird ist oft überraschend — und gibt dir konkrete Hebel in die Hand.</div>
       </div>
     </div>
+
+    <div class="sources-box">
+      <div class="sources-title">📄 Quellen — Schlaf & Entzündung</div>
+      <div class="source-list">
+        <div class="source-item"><a href="https://onlinelibrary.wiley.com/doi/10.1111/jsr.70099" target="_blank">Ballesio et al. (2025): Effects of experimental sleep deprivation on peripheral inflammation. J Sleep Research — Meta-Analyse, 35 Studien, n=887</a></div>
+        <div class="source-item"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4666828/" target="_blank">Irwin et al. (2016): Sleep Disturbance, Sleep Duration, and Inflammation. Biological Psychiatry — systematisches Review, n&gt;50.000</a></div>
+        <div class="source-item"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3548567/" target="_blank">Irwin & Opp (2017): Sleep Health: Reciprocal Regulation of Sleep and Innate Immunity. Neuropsychopharmacology Reviews</a></div>
+        <div class="source-item"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165572813001720" target="_blank">Maldonado et al. (2013): Melatonin protects mast cells against cytotoxicity. J Neuroimmunology</a></div>
+        <div class="source-item"><a href="https://www.annallergy.org/article/S1081-1206(24)00008-5/pdf" target="_blank">Annals Allergy Asthma Immunol (2024): Melatonin inhibits mast cell activation</a></div>
+        <div class="source-item">Walker, M. (2017): Why We Sleep. Scribner — Übersichtswerk mit umfangreichem Quellenapparat</div>
+      </div>
+    </div>
+
   </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
@@ -594,6 +627,62 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div class="sup-text">Führe 4 Wochen lang ein Ernährungs- und Symptom-Tagebuch. Die Muster die dabei sichtbar werden sind oft überraschend spezifisch — und zeigen deine persönlichen Trigger.</div>
       </div>
     </div>
+
+    <!-- ANTIBIOTIKA -->
+    <div style="margin-top:8px">
+      <div class="sec-eyebrow" style="margin-bottom:12px">⚠️ Sonderfall: Nach einer Antibiotika-Einnahme</div>
+
+      <div class="mech-box" style="border-left:3px solid var(--red);margin-bottom:16px">
+        <div class="mech-title" style="color:var(--red)">Was Antibiotika mit dem Mikrobiom machen</div>
+        <div class="mech-text">Antibiotika retten Leben — aber sie unterscheiden nicht zwischen schädlichen und nützlichen Bakterien. Eine einzige Einnahme kann die Mikrobiom-Diversität um bis zu 30% reduzieren. Das Mikrobiom braucht nachweislich <strong>4–8 Wochen</strong> zur vollständigen Erholung — manchmal länger.<br><br>
+        Das ist besonders relevant bei chronischen Entzündungserkrankungen: ein geschwächtes Mikrobiom bedeutet weniger kurzkettige Fettsäuren, schwächere Tregs, durchlässigere Darmbarriere. Bei Colitis Ulcerosa können Antibiotika direkt Schübe auslösen. Bei MCAS kann die Mikrobiom-Störung die Mastzell-Schwelle senken.</div>
+      </div>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">1</div>
+          <div>
+            <div class="do-item-title">Während der Einnahme: Probiotika zeitversetzt</div>
+            <div class="do-item-text">Probiotika 2–3 Stunden nach dem Antibiotikum einnehmen — nicht gleichzeitig, sonst werden sie abgetötet. Am besten belegt: <strong>Lactobacillus rhamnosus GG</strong> und <strong>Saccharomyces boulardii</strong>. Saccharomyces ist ein Hefepilz — Antibiotika wirken nicht gegen ihn, er überlebt die Einnahme zuverlässig.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">2</div>
+          <div>
+            <div class="do-item-title">Direkt danach: Fermentierte Lebensmittel täglich</div>
+            <div class="do-item-text">Kefir, Joghurt (mit lebenden Kulturen), Sauerkraut, Kimchi — täglich und in Vielfalt. Stanford-Studie: fermentierte Lebensmittel beschleunigen die Mikrobiom-Erholung nach Antibiotika nachweislich schneller als hochfaserreiche Ernährung allein.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">3</div>
+          <div>
+            <div class="do-item-title">4–6 Wochen danach: Präbiotika hochfahren</div>
+            <div class="do-item-text">Präbiotika sind Ballaststoffe die als Nahrung für wiederaufbauende Bakterien dienen. Besonders wirksam: Inulin (Chicorée, Topinambur, Zwiebeln), FOS (Knoblauch, Lauch), resistente Stärke (abgekühlter Reis, grüne Bananen). Langsam steigern — zu viel auf einmal kann Blähungen verursachen.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">4</div>
+          <div>
+            <div class="do-item-title">Meiden: Zucker und Alkohol</div>
+            <div class="do-item-text">Beide verlangsamen die Mikrobiom-Regeneration erheblich. Zucker fördert das Wachstum von Pilzen (Candida) die das geschwächte Mikrobiom-Vakuum gerne füllen. Alkohol schädigt zusätzlich die Darmbarriere die ohnehin nach Antibiotika geschwächt ist.</div>
+          </div>
+        </div>
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--ernaehr) 15%,var(--surface2));color:var(--ernaehr)">5</div>
+          <div>
+            <div class="do-item-title">Geduld: 4–8 Wochen Erholungszeit einplanen</div>
+            <div class="do-item-text">Das Mikrobiom erholt sich — aber nicht über Nacht. Wenn in den Wochen nach Antibiotika Symptome aufflammen (Hautschübe, mehr Erschöpfung, Gelenkschmerzen) ist das häufig die Mikrobiom-Störung. Nicht in Panik verfallen — konsequent weitermachen mit fermentierten Lebensmitteln und Präbiotika.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface));
+        border:1.5px solid color-mix(in srgb,var(--gold) 30%,var(--border));
+        border-radius:12px;padding:14px 18px;font-size:13px;line-height:1.7">
+        <strong>⚕️ Wichtig:</strong> Brich eine Antibiotika-Einnahme nie vorzeitig ab — auch wenn du Nebenwirkungen hast. Sprich mit deinem Arzt über Probiotika-Empfehlungen speziell für deine Erkrankung, besonders bei Colitis.
+      </div>
+    </div>
+
   </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
@@ -865,7 +954,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--coli) 15%,var(--surface2));color:var(--coli)">4</div><div><div class="cas-name">Systemische Folgen</div><div class="cas-desc">Schlechte Nährstoffaufnahme → Erschöpfung, Eisenmangel — Entzündungsbotenstoffe betreffen auch Gelenke und Haut</div></div></div>
       </div>
       <div class="two-col">
-        <div class="info-box"><div class="ib-title">⚡ Bekannte Schub-Trigger</div><ul class="ib-list"><li>Stress — stärkster bekannter Auslöser</li><li>Antibiotika — stören Mikrobiom erheblich</li><li>NSAIDs (Ibuprofen, Diclofenac)</li><li>Individuelle Lebensmittel — sehr verschieden</li></ul></div>
+        <div class="info-box"><div class="ib-title">⚡ Bekannte Schub-Trigger</div><ul class="ib-list"><li>Stress — stärkster bekannter Auslöser</li><li>Antibiotika — stören Mikrobiom erheblich, können Schübe auslösen → siehe <em>Ernährung: Nach Antibiotika</em></li><li>NSAIDs (Ibuprofen, Diclofenac)</li><li>Individuelle Lebensmittel — sehr verschieden</li></ul></div>
         <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Mesalazin — lokale Entzündungshemmung</li><li>Azathioprin — Remissionserhaltung</li><li>Biologika (Infliximab, Vedolizumab)</li><li>Kortison — Schubtherapie</li></ul></div>
       </div>
       <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
