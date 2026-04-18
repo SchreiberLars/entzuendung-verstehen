@@ -3371,7 +3371,15 @@ id="p-stress">
         </div>
       </div>
 
-    </div>
+      <div class="mech-box" id="mech-rauchen" style="border-left:3px solid #7f8c8d">
+        <div class="mech-title" style="color:#7f8c8d">🚬 Rauchen — der stärkste vermeidbare Entzündungstreiber</div>
+        <div class="mech-text">
+          Zigarettenrauch enthält über 4.000 Chemikalien — mehr als 60 davon aktivieren direkt NF-κB, den Haupt-Entzündungsschalter. Jede Zigarette ist ein messbarer Entzündungsschub. Gleichzeitig reduziert Rauchen die Treg-Bremszellen nachweislich: die Bremse wird schwächer, genau dann wenn sie am meisten gebraucht wird.<br><br>
+          <strong>Das Paradox mit Nikotin:</strong> Nikotin allein hat über den Vagusnerv und die α7-Nikotinrezeptoren auf Makrophagen einen anti-entzündlichen Effekt — das ist derselbe cholinergische Weg den wir beim Vagusnerv besprochen haben. Es ist der Rauch der das Problem ist, nicht das Nikotin. Nikotinpflaster oder -kaugummis haben diesen Effekt ohne die 4.000 Schadstoffe — das ist biologisch relevant beim Aufhören.<br><br>
+          <strong>Beim Aufhören kurzfristig mehr Schübe?</strong> Ja — und das ist erklärbar. Der anti-entzündliche Nikotin-Effekt fällt weg, der Rauch-Schaden bleibt noch einige Wochen. Nach 3–6 Monaten ohne Rauchen sinken Entzündungsmarker messbar unter das Niveau aktiver Raucher. Der Körper erholt sich — aber nicht sofort.<br><br>
+          <strong>Was wirkt:</strong> Reduktion ist besser als nichts. Jede Zigarette weniger ist ein messbarer Unterschied. Die Morgenzigarette ist besonders ungünstig — Cortisol ist morgens ohnehin am höchsten, der Rauch-Schub trifft auf ein bereits gestresstes Immunsystem.
+        </div>
+      </div>
 
     <!-- DAS UMTRAINIEREN -->
     <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface));
@@ -3403,6 +3411,7 @@ id="p-stress">
       <div style="display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;padding:10px 16px;border-top:1px solid var(--border);font-size:13px;align-items:center"><div style="font-weight:500;display:flex;align-items:center;gap:8px">🦠 Darmgesundheit <span onclick="document.getElementById('mech-darm').scrollIntoView({behavior:'smooth'})" style="font-size:11px;color:var(--accent3);text-decoration:none;white-space:nowrap;padding:2px 7px;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));border-radius:8px;cursor:pointer">Wie? →</span></div><div style="color:var(--accent2)">✅ mittel</div><div style="color:var(--accent3)">✅ mittel</div></div>
       <div style="display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;padding:10px 16px;border-top:1px solid var(--border);font-size:13px;align-items:center"><div style="font-weight:500;display:flex;align-items:center;gap:8px">💪 Bewegung (moderat) <span onclick="showPage('bewegung')" style="font-size:11px;color:var(--accent3);text-decoration:none;white-space:nowrap;padding:2px 7px;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));border-radius:8px;cursor:pointer">Wie? →</span></div><div style="color:var(--accent2)">✅ stark</div><div style="color:var(--accent3)">🔸 leicht</div></div>
       <div style="display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;padding:10px 16px;border-top:1px solid var(--border);font-size:13px;align-items:center"><div style="font-weight:500;display:flex;align-items:center;gap:8px">🚫 Alkohol meiden <span onclick="showPage('tag')" style="font-size:11px;color:var(--accent3);text-decoration:none;white-space:nowrap;padding:2px 7px;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));border-radius:8px;cursor:pointer">Warum? →</span></div><div style="color:var(--accent2)">✅ mittel</div><div style="color:var(--accent3)">✅ mittel</div></div>
+      <div style="display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;padding:10px 16px;border-top:1px solid var(--border);font-size:13px;align-items:center"><div style="font-weight:500;display:flex;align-items:center;gap:8px">🚬 Nicht rauchen <span onclick="document.getElementById('mech-rauchen').scrollIntoView({behavior:'smooth'})" style="font-size:11px;color:var(--accent3);text-decoration:none;white-space:nowrap;padding:2px 7px;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));border-radius:8px;cursor:pointer">Warum? →</span></div><div style="color:var(--accent2)">✅ stark</div><div style="color:var(--accent3)">✅ stark</div></div>
       <div style="display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;padding:10px 16px;border-top:1px solid var(--border);font-size:13px;align-items:center"><div style="font-weight:500;display:flex;align-items:center;gap:8px">🥗 Wenig UPF/Fertigkost <span onclick="showPage('ernaehr')" style="font-size:11px;color:var(--accent3);text-decoration:none;white-space:nowrap;padding:2px 7px;border:1px solid color-mix(in srgb,var(--accent3) 30%,var(--border));border-radius:8px;cursor:pointer">Wie? →</span></div><div style="color:var(--accent2)">✅ mittel</div><div style="color:var(--accent3)">✅ mittel</div></div>
     </div>    </div>
 
@@ -3514,11 +3523,13 @@ id="p-stress">
 
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:28px;font-size:13px;line-height:1.8">
       <strong>Ein wichtiger Hinweis:</strong> Diese Zusammenhänge bedeuten nicht dass chronische Entzündung "selbst gemacht" ist oder dass du nur "positiver denken" müsstest. Das Gegenteil ist wahr — wer früh in einem stressigen Umfeld aufgewachsen ist hatte keine Wahl. Das Nervensystem hat das Beste getan was es konnte. Das anzuerkennen ist der erste Schritt. Der zweite ist zu verstehen dass sich Nervensysteme verändern können — langsam, aber messbar.
-    </div>
+    
 
     <hr class="divider">
 
   
+  </div>
+  </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
 
@@ -3632,6 +3643,26 @@ id="p-stress">
       </div>
     </div>
 
+    <!-- RAUCHEN -->
+    <div style="display:flex;gap:0;margin-bottom:4px">
+      <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+        <div style="font-size:11px;font-weight:700;color:var(--muted)">07:15</div>
+        <div style="font-size:9px;color:var(--muted)">oder<br>Pause</div>
+      </div>
+      <div style="flex:1;border-left:2px solid color-mix(in srgb,#c0392b 40%,var(--border));padding:0 0 24px 20px">
+        <div style="width:10px;height:10px;border-radius:50%;background:#c0392b;margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+        <div style="font-size:15px;font-weight:600;margin-bottom:4px">Morgens eine Zigarette. Oder in der Pause.</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px">Gehört zum Ritual. Gibt Struktur. Kurz draußen sein, kurz abschalten. Seit Jahren so — man hat es immer gut vertragen.</div>
+        <div style="background:color-mix(in srgb,#c0392b 6%,var(--surface));border-left:3px solid #c0392b;border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:10px;font-size:13px;line-height:1.7">
+          <strong>Was gerade passiert:</strong> Zigarettenrauch enthält über 4.000 Chemikalien — mehr als 60 davon aktivieren direkt NF-κB, den Entzündungshauptschalter. Jede Zigarette ist ein messbarer Entzündungsschub. Gleichzeitig reduziert Rauchen die Treg-Bremszellen nachweislich — die Bremse wird schwächer, der Körper kann Entzündung schlechter stoppen.<br><br>
+          Das Paradoxe: Nikotin allein hat über den Vagusnerv einen anti-entzündlichen Effekt — es ist der Rauch der das Problem ist, nicht das Nikotin. Wer aufhören will und Nikotinpflaster nutzt, hat diesen Effekt ohne die 4.000 Schadstoffe.
+        </div>
+        <div style="background:color-mix(in srgb,var(--accent2) 6%,var(--surface));border-left:3px solid var(--accent2);border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;line-height:1.7">
+          <strong>✅ Micro-Fix — kein sofortiger Ausstieg nötig:</strong> Weniger ist mehr. Jede Zigarette weniger ist ein messbarer Unterschied. Konkret: die Morgenzigarette als erste streichen — Cortisol ist morgens ohnehin schon hoch, der Rauch-Schub trifft auf ein bereits aufgewühltes Immunsystem. Und: Rauchen draußen in Bewegung kombinieren — der Spaziergang wirkt dem Schaden teilweise entgegen.
+        </div>
+      </div>
+    </div>
+
     <!-- NÄCHSTER MORGEN -->
     <div style="display:flex;gap:0;margin-bottom:28px">
       <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
@@ -3647,7 +3678,8 @@ id="p-stress">
           Kaffee um 15 Uhr → Tiefschlaf verschoben.<br>
           Bier am Abend → Tiefschlafphasen verkürzt.<br>
           Handy bis 22:30 → Melatonin zu spät, Mastzellen aktiver.<br>
-          Chips abends → Insulin statt Melatonin.<br><br>
+          Chips abends → Insulin statt Melatonin.<br>
+          Zigaretten tagsüber → NF-κB mehrfach aktiviert, Bremszellen geschwächt.<br><br>
           Die Bremszellen wurden nicht aufgefüllt. Die Entzündungsmarker sind erhöht. Und das seit Monaten, jeden Tag, ein bisschen.<br><br>
           <strong>Das ist kein Schicksal. Das ist ein Muster. Und Muster kann man ändern — ohne zum Dalai Lama zu werden.</strong>
         </div>
@@ -3658,13 +3690,14 @@ id="p-stress">
     <div style="background:color-mix(in srgb,var(--accent2) 8%,var(--surface));
       border:2px solid var(--accent2);border-radius:16px;padding:24px;margin-bottom:28px">
       <div style="font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:16px;
-        text-transform:uppercase;letter-spacing:.1em">Die 5 Micro-Fixes — kein Geld, kaum Zeit</div>
+        text-transform:uppercase;letter-spacing:.1em">Die 6 Micro-Fixes — kein Geld, kaum Zeit</div>
       <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.7">
         <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">1.</span><span><strong>Kaffee erst 90 Min nach dem Aufwachen</strong> — vorher ein großes Glas Wasser</span></div>
         <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">2.</span><span><strong>Reihenfolge beim Essen:</strong> Gemüse oder Protein zuerst — dann Kohlenhydrate — Süßes wenn überhaupt zuletzt</span></div>
         <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">3.</span><span><strong>Letzter Kaffee vor 13 Uhr</strong> — Nachmittagstief mit 10 Min Augen zu oder kurzem Spaziergang überbrücken</span></div>
         <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">4.</span><span><strong>Abends weniger Alkohol</strong> — das Ritual mit alkoholfreiem Bier oder Wasser mit Zitrone erhalten</span></div>
         <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">5.</span><span><strong>Handy 30 Min vor dem Schlafen weg</strong> — Ladekabel ins andere Zimmer</span></div>
+        <div style="display:flex;gap:10px"><span style="color:var(--accent2);font-weight:700;flex-shrink:0">6.</span><span><strong>Rauchen reduzieren — eine Zigarette weniger pro Tag</strong> — besonders die Morgenzigarette, wenn Cortisol ohnehin schon hoch ist</span></div>
       </div>
       <div style="margin-top:16px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--accent2) 20%,var(--border));font-size:13px;color:var(--muted);line-height:1.7">
         4 von 7 Tagen reicht. Nicht perfekt. Nur besser als gestern. Nach 3–4 Wochen merkst du den Unterschied beim Aufwachen.
