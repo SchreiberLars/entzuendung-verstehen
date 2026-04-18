@@ -290,6 +290,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
     <button class="nav-btn" id="nb-home" onclick="showPage('home')">Start</button>
     <button class="nav-btn" id="nb-lebensstil" onclick="showPage('lebensstil')">🧬 Lebensstil</button>
     <button class="nav-btn" id="nb-erkrank" onclick="showPage('erkrank')">🔬 Erkrankungen</button>
+    <button class="nav-btn" id="nb-labor" onclick="showPage('labor')">🩸 Laborwerte</button>
     <button class="nav-btn" id="nb-glossar" onclick="showPage('glossar')">📖 Glossar</button>
     <button class="nav-btn" id="nb-ueber" onclick="showPage('ueber')">ℹ️ Über</button>
   </div>
@@ -825,19 +826,32 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
     </div>
 
+    <!-- PRAKTISCHE HILFSMITTEL -->
+    <div style="background:color-mix(in srgb,var(--schlaf) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--schlaf) 20%,var(--border));border-radius:14px;padding:20px;margin-bottom:20px">
+      <div style="font-size:11px;font-weight:700;color:var(--schlaf);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">🛠️ Konkrete Hilfsmittel — kleine Investition, großer Effekt</div>
+      <div style="font-size:13px;line-height:1.8;margin-bottom:16px">Nicht jeder hat ein perfekt dunkles und ruhiges Schlafzimmer. Diese zwei Dinge kosten zusammen unter 50€ und machen einen Unterschied den man nach 2–3 Nächten merkt:</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px">
+          <div style="font-size:14px;font-weight:600;margin-bottom:6px">👁️ Augenmaske</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.7">Selbst kleinste Lichtmengen (Straßenlaterne, Standby-LED, Mondlicht durch Vorhangritze) unterdrücken Melatonin messbar. Eine konturierte Augenmaske mit Aussparungen für die Augen (nicht drückend auf den Lidern) gibt dir echte Dunkelheit — auch auf Reisen, auch bei wechselndem Umfeld. Günstigste Einzelmaßnahme mit dem größten Effekt.</div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px">
+          <div style="font-size:14px;font-weight:600;margin-bottom:6px">👂 Loop Sleep (Ohrstöpsel)</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.7">Unauffällige Silikon-Ohrstöpsel die leise genug für wichtige Geräusche bleiben (Kinder, Wecker) aber störende Hintergrundgeräusche herausfiltern (Partner-Schnarchen, Straßenlärm, Heizung). Sitzen bequem in jeder Schlafposition. Der Unterschied: du schläfst nicht nur ein — du bleibst auch durchgehend tief. Nach ein paar Nächten merkst du im Tiefschlafwert auf der Smartwatch.</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:14px;line-height:1.6;font-style:italic">Keine Werbung, keine Affiliate-Links — einfach zwei Dinge die bei mir selbst funktionieren und zusammen unter 50€ kosten.</div>
+    </div>
+
     <div class="res-box">
-      <div class="res-title">📚 Zum Weiterlesen
+      <div class="res-title">📚 Zum Weiterlesen</div>
       <div class="res-chips">
         <span class="res-chip">📖 "Das große Buch vom Schlaf" — Matthew Walker</span>
         <span class="res-chip">🎧 Huberman Lab: Master Your Sleep</span>
         <span class="res-chip"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4666828/" target="_blank" style="color:inherit">🔗 Irwin et al. 2016 — Schlaf &amp; Entzündung (PubMed)</a></span>
-      
-    
+      </div>
+    </div>
 
-  
-  </div>
-  </div>
-  </div>
   </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
@@ -1951,6 +1965,57 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
 
       <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
+        
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--mcas);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Tryptase</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Von Mastzellen freigesetzt — direktes Maß für Mastzellaktivierung. Wird bei MCAS oft normal gemessen, weil die Ausschüttung episodisch ist. Idealerweise im Schub messen.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 11,4 µg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 20 µg/L (oder 2× Basiswert + 2)</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Histamin (Plasma)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Direkte Mastzell-Ausschüttung. Schnell abbaubar — Blutabnahme muss sofort verarbeitet werden. DAO-Mangel (Abbauenzym) verstärkt Histaminwirkung.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 0,5 ng/mL</div>
+          <div style="color:#c0392b;font-size:12px">> 1 ng/mL</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">DAO-Aktivität</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Diaminoxidase baut Histamin im Darm ab. Niedriger Wert = schlechter Histaminabbau → mehr Reaktionen bei histaminreichen Lebensmitteln.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">> 10 HDU/mL</div>
+          <div style="color:#c0392b;font-size:12px">< 3 HDU/mL</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">IgE gesamt</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Antikörper der Typ-1-Allergie. Erhöht bei MCAS oft durch IgE-vermittelte Mastzellaktivierung. Isoliert wenig aussagekräftig — im Kontext mit Symptomen bewerten.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 100 kU/L</div>
+          <div style="color:#c0392b;font-size:12px">> 200 kU/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">hsCRP</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Hochsensitives CRP — misst chronische Hintergrund-Entzündung. Die Leber produziert CRP als Reaktion auf IL-6, das Mastzellen und Makrophagen ausschütten. Normales CRP reicht nicht.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 1 mg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 3 mg/L</div>
+        </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
+      <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
         letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
       <div class="do-list">
         <div class="do-item">
@@ -2063,6 +2128,57 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
 
       <div style="margin:24px 0 8px;font-size:10px;text-transform:uppercase;
+        
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--rheu);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Anti-CCP</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Antikörper gegen cyclische citrullinierte Peptide — sehr spezifisch für Rheuma. Kann Jahre vor Symptomen positiv sein. Aussagekräftiger als Rheumafaktor.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 7 U/mL</div>
+          <div style="color:#c0392b;font-size:12px">> 10 U/mL</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Rheumafaktor (RF)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Autoantikörper gegen IgG. Bei ~70% der RA-Patienten positiv — aber auch bei anderen Erkrankungen. Zusammen mit Anti-CCP deutlich aussagekräftiger.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 14 IU/mL</div>
+          <div style="color:#c0392b;font-size:12px">> 20 IU/mL</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">BSG (Blutsenkung)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Unspezifischer Entzündungsmarker — Erythrozyten sinken schneller wenn Entzündungsproteine im Blut sind. Langsam — zeigt Trends über Wochen.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 20 mm/h (Frauen < 30)</div>
+          <div style="color:#c0392b;font-size:12px">> 40 mm/h</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">hsCRP</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Schnellerer Entzündungsmarker als BSG. IL-6 (von Synovialzellen und Makrophagen im entzündeten Gelenk produziert) stimuliert Leber zur CRP-Produktion. Korreliert mit Schubaktivität.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 1 mg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 3 mg/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Vitamin D3 (25-OH)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Vitamin D3-Mangel korreliert stark mit RA-Aktivität. Bremszellen (Tregs) brauchen Vitamin D3 zur Differenzierung — Mangel schwächt die Bremse direkt.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">40–60 ng/mL</div>
+          <div style="color:#c0392b;font-size:12px">< 20 ng/mL</div>
+        </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
+      <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
         letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
 
       <div class="do-list">
@@ -2168,6 +2284,57 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div style="font-size:13px;line-height:1.7">Aphthen treten bei bis zu 20% der Colitis-Betroffenen auf — und erscheinen oft bevor der eigentliche Darmschub sichtbar wird. Der Körper zeigt damit: die systemische Entzündungslast steigt. Wer lernt seine Aphthen als Frühwarnsignal zu lesen, kann früher gegensteuern — mit mehr Schlaf, weniger Stress, angepasster Ernährung — bevor der volle Schub einsetzt.</div>
       </div>
 
+      <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
+        
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--coli);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Calprotectin (Stuhl)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Protein aus Neutrophilen — wird bei Darmschleimhautentzündung freigesetzt. Nicht-invasiver Marker der Schubaktivität. Viel aussagekräftiger als Blutmarker für Darmentzündung.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 50 µg/g</div>
+          <div style="color:#c0392b;font-size:12px">> 150 µg/g</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">CRP</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Reagiert auf IL-6 aus Darmwandmakrophagen. Steigt bei Schüben — aber normales CRP schließt aktive Colitis nicht aus. Calprotectin ist empfindlicher.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 5 mg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 10 mg/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Albumin</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Protein das die Leber produziert. Bei chronischer Darmentzündung sinkt Albumin — Zeichen für Mangelernährung und anhaltende Entzündung. Unterschätzter Marker.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">35–52 g/L</div>
+          <div style="color:#c0392b;font-size:12px">< 30 g/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Ferritin</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Eisenspeicher — aber auch Akutphaseprotein. Bei Colitis oft erhöht (Entzündung) trotz gleichzeitigem Eisenmangel. Ferritin allein reicht nicht — immer mit Transferrinsättigung messen.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">30–200 ng/mL</div>
+          <div style="color:#c0392b;font-size:12px">> 400 (Entzündung) oder < 20 (Mangel)</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Zonulin</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Marker für Darmpermeabilität (Leaky Gut). Zonulin öffnet Tight Junctions zwischen Darmzellen. Erhöhte Werte zeigen durchlässige Darmbarriere — selten gemessen, aber sehr relevant.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 40 ng/mL</div>
+          <div style="color:#c0392b;font-size:12px">> 60 ng/mL</div>
+        </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
       <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
         letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
       <div class="do-list">
@@ -2407,6 +2574,21 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <em style="font-size:11px;color:var(--muted)">⚕️ Als Supplement nur nach Rücksprache mit dem Arzt — besonders bei Einnahme von Blutverdünnern.</em>
       </div>
 
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Relevante Laborwerte</div>
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:#c0392b;padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600;font-size:13px">ApoB</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Apolipoprotein B — jedes LDL-Partikel hat genau ein ApoB. Die Partikelanzahl ist gefährlicher als die LDL-Menge. Zwei Menschen mit gleichem LDL können sehr unterschiedliches ApoB haben.</div></div><div style="color:#2e7d32;font-size:12px">&lt; 90 mg/dL</div><div style="color:#c0392b;font-size:12px">&gt; 100 mg/dL</div></div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600;font-size:13px">Lp(a)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Lipoprotein(a) — genetisch bestimmt, kaum durch Lebensstil beeinflussbar. Stark entzündungsfördernd in Gefäßwänden. Wird fast nie gemessen obwohl es einer der stärksten Herzrisikofaktoren ist.</div></div><div style="color:#2e7d32;font-size:12px">&lt; 30 mg/dL</div><div style="color:#c0392b;font-size:12px">&gt; 50 mg/dL</div></div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600;font-size:13px">hsCRP</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Entzündung macht LDL gefährlich — oxidiertes LDL in entzündeten Gefäßen aktiviert Makrophagen zu Schaumzellen. hsCRP zeigt ob das Gefäßumfeld entzündet ist. Ridker et al. NEJM 2002: hsCRP sagt Herzinfarktrisiko besser vorher als LDL.</div></div><div style="color:#2e7d32;font-size:12px">&lt; 1 mg/L</div><div style="color:#c0392b;font-size:12px">&gt; 3 mg/L</div></div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600;font-size:13px">Homocystein</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Aminosäure die bei Mangel an B6, B12, Folsäure ansteigt. Schädigt direkt Gefäßendothel und fördert Entzündung. Einfach zu senken (B-Vitamine) — selten gemessen.</div></div><div style="color:#2e7d32;font-size:12px">&lt; 10 µmol/L</div><div style="color:#c0392b;font-size:12px">&gt; 15 µmol/L</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
+
       <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Weiterführend</div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
         <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung & Entzündung →</button>
@@ -2497,6 +2679,49 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <em style="font-size:11px;color:var(--muted)">⚕️ Nahrungsergänzungsmittel — bitte mit dem Arzt besprechen.</em>
       </div>
 
+      <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
+        
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--accent);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">IgE gesamt</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Antikörper der Überreaktionen. Erhöht bei atopischer Dermatitis — zeigt IgE-vermittelte Mastzellaktivierung. Bei seborrhoischer Dermatitis meist normal — hilft zur Differenzierung.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 100 kU/L</div>
+          <div style="color:#c0392b;font-size:12px">> 200 kU/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Spezifisches IgE (Malassezia)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Misst ob Antikörper gegen Malassezia-Pilz gebildet wurden. Direkter Beweis für immunologische Sensibilisierung. Selten gemessen — muss explizit angefordert werden.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">Klasse 0 (negativ)</div>
+          <div style="color:#c0392b;font-size:12px">Klasse 2+ (> 0,7 kU/L)</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Vitamin D3 (25-OH)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Vitamin D3-Mangel schwächt Bremszellen direkt — die Th17-Reaktion auf Malassezia kann nicht gestoppt werden. Zusammenhang zwischen niedrigem Vitamin D3 und seborrhoischer Dermatitis gut belegt.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">40–60 ng/mL</div>
+          <div style="color:#c0392b;font-size:12px">< 20 ng/mL</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">hsCRP</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Aktive Hautinflamm- ation erhöht systemische Entzündungsmarker. Wenn hsCRP bei Dermatitis erhöht ist: die Haut ist nicht das einzige Problem — der ganze Körper ist im Alarm-Modus.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 1 mg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 3 mg/L</div>
+        </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
       <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
         letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
 
@@ -2602,6 +2827,49 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <em style="font-size:11px;color:var(--muted)">⚕️ Nahrungsergänzungsmittel — Inhalatoren und ärztliche Therapie immer beibehalten. Bitte mit dem Arzt besprechen.</em>
       </div>
 
+      <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
+        
+      <details style="margin-bottom:20px">
+        <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--stress);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🩸</span> Relevante Laborwerte — was du beim Arzt anfragen kannst</summary>
+        <div style="margin-top:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+            <div>Wert — was er misst</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig ab</div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">FeNO (ausgeatmetes NO)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Stickstoffmonoxid in der Ausatemluft — wird von entzündeten Atemwegszellen produziert. Direktes Maß für eosinophile Atemwegsentzündung. Hilft zu unterscheiden ob Kortison wirken wird.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 25 ppb</div>
+          <div style="color:#c0392b;font-size:12px">> 50 ppb</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Eosinophile (Blutbild)</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Immunzellen die bei allergischer Entzündung erhöht sind. Erhöhte Eosinophile + Asthma = wahrscheinlich eosinophile Entzündung → spricht gut auf Kortison an.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 0,5 × 10⁹/L</div>
+          <div style="color:#c0392b;font-size:12px">> 1,5 × 10⁹/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">IgE gesamt</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Bei allergischem Asthma erhöht. IgE bindet an Mastzellen in den Atemwegen — bei Allergen-Kontakt sofortige Degranulation → Bronchospasmus.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 100 kU/L</div>
+          <div style="color:#c0392b;font-size:12px">> 150 kU/L</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+          <div>
+            <div style="font-weight:600;font-size:13px">Tryptase</div>
+            <div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Bei schwerem Asthma-Anfall erhöht — zeigt Mastzellbeteiligung. Basale Tryptase (außerhalb des Anfalls) hilft MCAS von Asthma zu unterscheiden.</div>
+          </div>
+          <div style="color:#2e7d32;font-size:12px">< 11,4 µg/L</div>
+          <div style="color:#c0392b;font-size:12px">> 20 µg/L</div>
+        </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;padding:0 4px;line-height:1.6">Diese Werte ersetzen keine ärztliche Diagnose. Manche werden nicht automatisch gemessen — explizit danach fragen.</div>
+      </details>
       <div style="margin:20px 0 8px;font-size:10px;text-transform:uppercase;
         letter-spacing:0.15em;color:var(--muted)">Was du konkret tun kannst</div>
 
@@ -3018,6 +3286,11 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
     
 
   
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
 
@@ -3167,6 +3440,223 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span class="res-chip"><a href="https://pubmed.ncbi.nlm.nih.gov/34256014/" target="_blank" style="color:inherit">🔗 Sonnenburg et al. 2021 — fermentierte Lebensmittel (Cell)</a></span>
         <span class="res-chip"><a href="https://pubmed.ncbi.nlm.nih.gov/25849657/" target="_blank" style="color:inherit">🔗 Belkaid &amp; Hand 2014 — Mikrobiota &amp; Immunsystem (Cell)</a></span>
       </div>
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- LABORWERTE -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-labor">
+  <div class="action-hero">
+    <div class="action-icon">🩸</div>
+    <h1 class="action-title" style="color:#c0392b">Laborwerte</h1>
+    <p class="action-sub">Welche Werte bei welcher Erkrankung relevant sind — und was sie biologisch bedeuten. Informiert ins Arztgespräch.</p>
+  </div>
+
+  <div class="section">
+
+    <!-- ZYTOKIN-ERKLÄRUNG -->
+    <div style="background:color-mix(in srgb,#c0392b 7%,var(--surface));border-left:4px solid #c0392b;border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:28px">
+      <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">Was Laborwerte bei Entzündung messen</div>
+      <div style="font-size:14px;line-height:1.8">
+        Entzündung ist Kommunikation zwischen Immunzellen. Laborwerte hören dieser Kommunikation zu — indirekt. <strong>Zytokine</strong> sind die Botenstoffe: IL-6 sagt der Leber "produziere CRP". TNF-α sagt Gefäßzellen "öffne dich für Immunzellen". IL-10 sagt den Kämpfern "aufhören". Wer Zytokine misst, misst wer gerade mit wem spricht — und wie laut.<br><br>
+        <strong>Das Problem:</strong> Die meisten Standardblutbilder messen keine Zytokine direkt. Sie messen Reaktionsprodukte — CRP als Antwort auf IL-6, Ferritin als Akutphaseprotein, BSG als unspezifischen Marker. Das reicht oft nicht. hsCRP statt normalem CRP, ApoB statt LDL, Calprotectin statt BSG — kleine Änderungen im Labor-Auftrag mit großem Unterschied.
+      </div>
+    </div>
+
+    <!-- ALLGEMEINE WERTE -->
+    <div class="sec-eyebrow">Für jeden relevant</div>
+    <h2 class="sec-title" style="margin-bottom:16px;font-size:clamp(1.1rem,3vw,1.5rem)">Allgemeine Entzündungsmarker</h2>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:28px">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+        <div>Wert</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig</div><div>Relevant bei</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+        <div><div style="font-weight:600;font-size:13px">hsCRP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Hochsensitives CRP. IL-6 (von Makrophagen + Mastzellen) stimuliert die Leber zur CRP-Produktion. 10× empfindlicher als normales CRP — sieht chronische Hintergrund-Entzündung ohne akute Infektion. <strong>Explizit anfragen!</strong> Wird oft nicht automatisch gemessen.</div></div>
+        <div style="color:#2e7d32;font-size:12px">&lt; 1 mg/L</div>
+        <div style="color:#c0392b;font-size:12px">&gt; 3 mg/L</div>
+        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+        <div><div style="font-weight:600;font-size:13px">Vitamin D3 (25-OH) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Steuert direkt die Differenzierung von Bremszellen (Tregs) und dendritischen Zellen. Mangel = schwächere Bremse, misstrauischere Späher. In Mitteleuropa bei ~60% der Bevölkerung zu niedrig. Immer mit K2 kombinieren.</div></div>
+        <div style="color:#2e7d32;font-size:12px">40–60 ng/mL</div>
+        <div style="color:#c0392b;font-size:12px">&lt; 20 ng/mL</div>
+        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+        <div><div style="font-weight:600;font-size:13px">Ferritin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Eisenspeicher und Akutphaseprotein. Bei Entzündung steigt Ferritin — auch bei gleichzeitigem Eisenmangel. Deshalb: immer zusammen mit Transferrinsättigung messen. Ferritin allein kann täuschen.</div></div>
+        <div style="color:#2e7d32;font-size:12px">30–200 ng/mL</div>
+        <div style="color:#c0392b;font-size:12px">&gt; 400 oder &lt; 20</div>
+        <div style="font-size:11px;color:var(--muted)">Rheuma, Colitis, Allgemein</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+        <div><div style="font-weight:600;font-size:13px">Omega-3-Index</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">EPA + DHA als Anteil der Fettsäuren in Erythrozyten-Membranen. Direktes Maß für die anti-entzündliche Kapazität. Selten gemessen — aber einer der aussagekräftigsten Lebensstil-Marker.</div></div>
+        <div style="color:#2e7d32;font-size:12px">&gt; 8%</div>
+        <div style="color:#c0392b;font-size:12px">&lt; 4%</div>
+        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
+        <div><div style="font-weight:600;font-size:13px">IL-6 (Interleukin-6)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Zytokin das von Makrophagen, Mastzellen und Fettgewebe ausgeschüttet wird. Signalisiert der Leber CRP-Produktion, stimuliert Th17-Zellen. Direkter als CRP — aber teurer und selten im Standard.</div></div>
+        <div style="color:#2e7d32;font-size:12px">&lt; 7 pg/mL</div>
+        <div style="color:#c0392b;font-size:12px">&gt; 10 pg/mL</div>
+        <div style="font-size:11px;color:var(--muted)">Rheuma, Depression, Metabolisch</div>
+      </div>
+    </div>
+
+    <!-- ERKRANKUNGSSPEZIFISCH -->
+    <div class="sec-eyebrow">Erkrankungsspezifisch</div>
+    <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.1rem,3vw,1.5rem)">Welche Werte bei welcher Erkrankung</h2>
+
+    <!-- ASTHMA -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--stress) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--stress) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--stress)">
+        <span>🫁 Asthma</span><span style="font-size:11px;font-weight:400;color:var(--muted)">FeNO · IgE · Eosinophile · Tryptase</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">FeNO ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Ausgeatmetes Stickstoffmonoxid — von entzündeten Atemwegszellen produziert. Misst eosinophile Entzündung direkt. Hilft zu entscheiden ob Kortison-Inhalation wirken wird.</div></div><div style="color:#2e7d32">&lt; 25 ppb</div><div style="color:#c0392b">&gt; 50 ppb</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Eosinophile (Diff-BB)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Immunzellen der allergischen Entzündung. Im Differentialblutbild bestimmbar. Erhöht bei eosinophilem Asthma — wichtig für Therapieentscheidung.</div></div><div style="color:#2e7d32">&lt; 0,5 ×10⁹/L</div><div style="color:#c0392b">&gt; 1,5 ×10⁹/L</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">IgE gesamt</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper der Sofortreaktion. IgE bindet an Mastzellen in den Atemwegen — Allergen-Kontakt → sofortige Degranulation → Bronchospasmus.</div></div><div style="color:#2e7d32">&lt; 100 kU/L</div><div style="color:#c0392b">&gt; 150 kU/L</div></div>
+      </div>
+    </details>
+
+    <!-- ATHEROSKLEROSE -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,#c0392b 6%,var(--surface));border:1px solid color-mix(in srgb,#c0392b 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:#c0392b">
+        <span>❤️ Atherosklerose</span><span style="font-size:11px;font-weight:400;color:var(--muted)">ApoB · Lp(a) · hsCRP · Homocystein</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">ApoB ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Jedes LDL-Partikel hat genau ein ApoB. Partikelanzahl wichtiger als Menge — zwei Menschen mit gleichem LDL können sehr unterschiedliches Risiko haben.</div></div><div style="color:#2e7d32">&lt; 90 mg/dL</div><div style="color:#c0392b">&gt; 100 mg/dL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Lp(a) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Genetisch bestimmt, kaum durch Lebensstil beeinflussbar. Stark entzündungsfördernd in Gefäßwänden. Einer der stärksten Herzrisikofaktoren — wird fast nie gemessen.</div></div><div style="color:#2e7d32">&lt; 30 mg/dL</div><div style="color:#c0392b">&gt; 50 mg/dL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Homocystein</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Steigt bei B6/B12/Folsäure-Mangel. Schädigt Gefäßendothel direkt. Einfach zu senken mit B-Vitaminen — selten gemessen.</div></div><div style="color:#2e7d32">&lt; 10 µmol/L</div><div style="color:#c0392b">&gt; 15 µmol/L</div></div>
+      </div>
+    </details>
+
+    <!-- COLITIS -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--coli) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--coli) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--coli)">
+        <span>🫀 Colitis Ulcerosa</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Calprotectin · CRP · Albumin · Zonulin</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Calprotectin (Stuhl) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Protein aus Neutrophilen — bei Darmschleimhautentzündung freigesetzt. Nicht-invasiver Marker. Viel aussagekräftiger als Blutmarker für Darmentzündung.</div></div><div style="color:#2e7d32">&lt; 50 µg/g</div><div style="color:#c0392b">&gt; 150 µg/g</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Albumin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Protein der Leber. Bei chronischer Darmentzündung sinkt Albumin — Zeichen für Mangelernährung und anhaltende Entzündung. Unterschätzter Marker.</div></div><div style="color:#2e7d32">35–52 g/L</div><div style="color:#c0392b">&lt; 30 g/L</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Zonulin ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Marker für Darmpermeabilität (Leaky Gut). Öffnet Tight Junctions. Selten gemessen — zeigt ob die Darmbarriere durchlässig ist.</div></div><div style="color:#2e7d32">&lt; 40 ng/mL</div><div style="color:#c0392b">&gt; 60 ng/mL</div></div>
+      </div>
+    </details>
+
+    <!-- HASHIMOTO -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent2) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent2) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent2)">
+        <span>🦋 Hashimoto-Thyreoiditis</span><span style="font-size:11px;font-weight:400;color:var(--muted)">TSH · fT3 · fT4 · Anti-TPO · Anti-Tg</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Hashimoto ist eine Autoimmunerkrankung bei der das Immunsystem die eigene Schilddrüse angreift. Antikörper gegen Schilddrüsengewebe (Anti-TPO, Anti-Tg) entstehen durch einen Späherfehler — der Körper hält eigene Zellen für Feinde. Die Schilddrüse wird über Jahre zerstört, oft ohne Symptome bis sie unterfunktioniert.</div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Anti-TPO ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper gegen Thyreoidperoxidase — das Enzym das Schilddrüsenhormone produziert. Erhöht = aktiver Angriff auf die Schilddrüse. Diagnosekriterium für Hashimoto.</div></div><div style="color:#2e7d32">&lt; 34 IU/mL</div><div style="color:#c0392b">&gt; 60 IU/mL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">TSH ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Hypophysenhormon das die Schilddrüse stimuliert. Steigt wenn Schilddrüse unterfunktioniert. Optimaler Bereich bei Hashimoto oft enger als der Laborbereich.</div></div><div style="color:#2e7d32">0,5–2,5 mIU/L</div><div style="color:#c0392b">&gt; 3,5 mIU/L</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">fT3 / fT4</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Freie (aktive) Schilddrüsenhormone. fT3 ist das aktive Hormon — fT4 wird zu fT3 umgewandelt. Wichtig: TSH allein reicht nicht — fT3/fT4 muss mitgemessen werden.</div></div><div style="color:#2e7d32">fT3: 3,5–4,5 pg/mL</div><div style="color:#c0392b">&lt; 3,0 oder &gt; 4,8</div></div>
+      </div>
+    </details>
+
+    <!-- MCAS -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--mcas) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--mcas) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--mcas)">
+        <span>💣 MCAS</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Tryptase · Histamin · DAO · IgE</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Tryptase ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Direkt von Mastzellen freigesetzt. Idealerweise im Schub messen (30–60 Min nach Reaktion) + Basiswert nüchtern. MCAS-Kriterium: Schubwert &gt; Basiswert × 2 + 2.</div></div><div style="color:#2e7d32">&lt; 11,4 µg/L</div><div style="color:#c0392b">&gt; 20 oder 2×Basis+2</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">DAO-Aktivität</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Diaminoxidase baut Histamin im Darm ab. Niedrig = schlechter Abbau → mehr Reaktionen bei histaminreichen Lebensmitteln auch ohne Mastzellaktivierung.</div></div><div style="color:#2e7d32">&gt; 10 HDU/mL</div><div style="color:#c0392b">&lt; 3 HDU/mL</div></div>
+      </div>
+    </details>
+
+    <!-- PSORIASIS -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3)">
+        <span>🔴 Psoriasis (Schuppenflechte)</span><span style="font-size:11px;font-weight:400;color:var(--muted)">CRP · IL-17 · TNF-α · Vitamin D3</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Psoriasis ist wie seborrhoische Dermatitis Th17-getrieben — IL-17 und IL-23 sind die zentralen Zytokine. Hautbefund ist sichtbar, aber die Entzündung läuft systemisch: erhöhtes Herzrisiko, Gelenkbeteiligung (Psoriasis-Arthritis) bei ~30%.</div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">hsCRP</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Korreliert mit Schubstärke. Bei Psoriasis oft erhöht auch wenn Haut gerade ruhig — zeigt systemische Entzündungslast.</div></div><div style="color:#2e7d32">&lt; 1 mg/L</div><div style="color:#c0392b">&gt; 3 mg/L</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3 ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Hemmt direkt IL-17-Produktion und Th17-Differenzierung. Niedriger Vitamin D3 korreliert stark mit Psoriasis-Schüben. Auch topisch wirksam (Calcipotriol-Creme).</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+      </div>
+    </details>
+
+    <!-- RHEUMA -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--rheu) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--rheu) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--rheu)">
+        <span>🦴 Rheumatoide Arthritis</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Anti-CCP · RF · BSG · hsCRP · Vitamin D3</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Anti-CCP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper gegen citrullinierte Peptide — sehr spezifisch für RA. Kann Jahre vor Symptomen positiv sein. Aussagekräftiger als Rheumafaktor.</div></div><div style="color:#2e7d32">&lt; 7 U/mL</div><div style="color:#c0392b">&gt; 10 U/mL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Rheumafaktor (RF)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Bei ~70% der RA-Patienten positiv — aber auch bei anderen Erkrankungen erhöht. Zusammen mit Anti-CCP deutlich aussagekräftiger.</div></div><div style="color:#2e7d32">&lt; 14 IU/mL</div><div style="color:#c0392b">&gt; 20 IU/mL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">BSG</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Blutsenkungsgeschwindigkeit — unspezifisch, aber zeigt Trends über Wochen. IL-6 aus entzündetem Gelenkgewebe treibt BSG an.</div></div><div style="color:#2e7d32">&lt; 20 mm/h</div><div style="color:#c0392b">&gt; 40 mm/h</div></div>
+      </div>
+    </details>
+
+    <!-- SEBORRHOISCHE DERMATITIS -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent)">
+        <span>🧴 Seborrhoische Dermatitis</span><span style="font-size:11px;font-weight:400;color:var(--muted)">IgE · Malassezia-IgE · Vitamin D3 · hsCRP</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Spezifisches IgE (Malassezia) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Direkter Beweis für immunologische Sensibilisierung gegen Malassezia. Muss explizit angefordert werden — fast nie im Standard.</div></div><div style="color:#2e7d32">Klasse 0</div><div style="color:#c0392b">Klasse 2+ (&gt; 0,7 kU/L)</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3 ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Mangel schwächt Bremszellen direkt — die Th17-Reaktion auf Malassezia kann nicht gestoppt werden. Gut belegt bei seborrhoischer Dermatitis.</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+      </div>
+    </details>
+
+    <!-- TYP-2-DIABETES -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--gold) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--gold) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--gold)">
+        <span>🍬 Typ-2-Diabetes / Insulinresistenz</span><span style="font-size:11px;font-weight:400;color:var(--muted)">HbA1c · Nüchterninsulin · HOMA-IR · Triglyzeride</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Typ-2-Diabetes ist eine Entzündungserkrankung. Chronische NF-κB-Aktivierung durch Blutzuckerspikes führt zu Insulinresistenz — umgekehrt fördert Insulinresistenz weitere Entzündung. Ein Teufelskreis der oft Jahre vor Symptomen beginnt.</div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">HbA1c ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Glykiertes Hämoglobin — zeigt Durchschnittsblutzucker der letzten 3 Monate. Direkt mit AGE-Bildung und Entzündungsaktivierung korreliert.</div></div><div style="color:#2e7d32">&lt; 5,7% (&lt; 39 mmol/mol)</div><div style="color:#c0392b">&gt; 6,5% = Diabetes</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Nüchterninsulin ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Zeigt Insulinresistenz bevor der Blutzucker steigt. Wird fast nie gemessen. Erhöhtes Nüchterninsulin bei normalem Blutzucker = frühe Insulinresistenz.</div></div><div style="color:#2e7d32">&lt; 8 µIU/mL</div><div style="color:#c0392b">&gt; 15 µIU/mL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">HOMA-IR</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Berechnet aus Nüchterninsulin × Nüchternblutzucker ÷ 22,5. Bester einfacher Marker für Insulinresistenz. Kein eigener Laborwert — muss berechnet werden.</div></div><div style="color:#2e7d32">&lt; 1,5</div><div style="color:#c0392b">&gt; 2,5</div></div>
+      </div>
+    </details>
+
+    <!-- DEPRESSION (ENTZÜNDUNGSHYPOTHESE) -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--stress) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--stress) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--stress)">
+        <span>🧠 Depression (Entzündungshypothese)</span><span style="font-size:11px;font-weight:400;color:var(--muted)">IL-6 · TNF-α · hsCRP · Vitamin D3</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Die Entzündungshypothese der Depression ist einer der robustesten Befunde der modernen Psychiatrie: bei ~30–40% der Depressionspatienten sind Entzündungsmarker erhöht. IL-6 und TNF-α überqueren die Blut-Hirn-Schranke und verändern direkt die Neurotransmitter-Balance (Serotonin, Dopamin). Entzündungshemmende Maßnahmen können in dieser Subgruppe antidepressiv wirken.</div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">hsCRP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Erhöhtes hsCRP bei Depression zeigt entzündliche Subgruppe — diese sprechen schlechter auf klassische Antidepressiva, aber besser auf entzündungshemmende Ansätze.</div></div><div style="color:#2e7d32">&lt; 1 mg/L</div><div style="color:#c0392b">&gt; 3 mg/L</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Starke Korrelation zwischen Vitamin D3-Mangel und Depression. Kausalität noch diskutiert — aber Substitution bei Mangel schadet nicht und hilft oft.</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+      </div>
+    </details>
+
+    <!-- REIZDARM -->
+    <details style="margin-bottom:28px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--coli) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--coli) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--coli)">
+        <span>🔄 Reizdarm (IBS)</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Calprotectin · Zonulin · Histamin · DAO</span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
+        <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Reizdarm ist eine Ausschlussdiagnose — aber das bedeutet nicht dass nichts messbar ist. Calprotectin unterscheidet Reizdarm (niedrig) von Colitis (hoch). Zonulin zeigt ob Leaky Gut vorliegt. DAO-Mangel erklärt histaminbedingte Reizdarm-Symptome.</div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Calprotectin (Stuhl) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Normal bei Reizdarm, erhöht bei Colitis/Morbus Crohn. Wichtigster Differenzierungsmarker — schließt entzündliche Darmerkrankung aus.</div></div><div style="color:#2e7d32">&lt; 50 µg/g</div><div style="color:#c0392b">&gt; 150 µg/g → kein IBS</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Zonulin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Marker für Leaky Gut. Bei Reizdarm oft erhöht — durchlässige Darmbarriere löst Immunreaktionen aus die als IBS-Symptome erscheinen.</div></div><div style="color:#2e7d32">&lt; 40 ng/mL</div><div style="color:#c0392b">&gt; 60 ng/mL</div></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">DAO-Aktivität</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">DAO-Mangel erklärt warum bestimmte Lebensmittel (Wein, Käse, Tomaten) Reizdarm-Schübe auslösen — Histaminabbau gestört.</div></div><div style="color:#2e7d32">&gt; 10 HDU/mL</div><div style="color:#c0392b">&lt; 3 HDU/mL</div></div>
+      </div>
+    </details>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;font-size:12px;color:var(--muted);line-height:1.8">
+      <strong style="color:var(--text)">⭐ = besonders empfehlenswert explizit anzufragen</strong> — diese Werte werden oft nicht automatisch im Standardblutbild gemessen, sind aber für die jeweilige Erkrankung besonders aussagekräftig. Mit dem Hinweis "ich hätte gerne auch..." lässt sich das in den meisten Praxen problemlos ergänzen.
     </div>
 
   </div>
@@ -5016,6 +5506,7 @@ const HASH_MAP = {
   '#glossar':    ()=>{ showPage('glossar'); },
   '#ueber':      ()=>{ showPage('ueber'); },
   '#lebensstil':  ()=>{ showPage('lebensstil'); },
+  '#labor':       ()=>{ showPage('labor'); },
   '#darm':        ()=>{ showPage('darm'); },
   '#tag':         ()=>{ showPage('tag'); },
   '#mechanik':    ()=>{ showPage('mechanik'); },
