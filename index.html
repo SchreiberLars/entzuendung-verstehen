@@ -225,7 +225,8 @@ nav{position:sticky;top:0;z-index:100;
 
 /* FOOTER */
 footer{background:var(--surface);padding:36px 24px;text-align:center;
-  border-top:1px solid var(--border);margin-top:0}
+  border-top:1px solid var(--border);margin-top:0;display:none}
+.page.active footer{display:block}
 .foot-dis{font-size:11px;color:var(--muted);max-width:560px;margin:0 auto 14px;line-height:1.6}
 .foot-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--muted)}
 .foot-logo em{color:var(--accent);font-style:italic}
@@ -332,7 +333,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       <strong>Das Wichtigste zuerst:</strong> Chronische Entzündung muss nicht wehtun. Sie hat keinen An/Aus-Schalter. Sie zeigt sich in kleinen Signalen die man jahrelang einzeln wegerklärt — "bin halt müde", "hab halt empfindliche Haut", "bin halt stressanfällig". Erst zusammen ergibt sich ein Bild.
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px">
 
       <!-- SICHTBARE SIGNALE -->
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px">
