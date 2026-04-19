@@ -4087,7 +4087,166 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
     </details>
 
-    <!-- EBENE 3 -->
+    <!-- LEAKY GUT SCHAUBILD -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px">
+      <div style="font-size:11px;font-weight:700;color:var(--coli);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Leaky Gut — schematisch erklärt</div>
+
+      <svg viewBox="0 0 680 320" style="width:100%;max-width:680px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <!-- LEFT SIDE LABEL -->
+        <text x="160" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Gesunde Darmwand</text>
+        <text x="160" y="38" text-anchor="middle" font-size="11" fill="#2e7d32">Tight Junctions geschlossen ✓</text>
+
+        <!-- RIGHT SIDE LABEL -->
+        <text x="510" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Leaky Gut</text>
+        <text x="510" y="38" text-anchor="middle" font-size="11" fill="#c0392b">Tight Junctions geöffnet ✗</text>
+
+        <!-- DIVIDER -->
+        <line x1="340" y1="10" x2="340" y2="310" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+        <!-- ═══ LEFT SIDE — HEALTHY ═══ -->
+
+        <!-- Darmlumen label -->
+        <text x="50" y="62" font-size="10" fill="var(--muted)">Darmlumen</text>
+        <!-- Bacteria/LPS in lumen — left (stays there) -->
+        <circle cx="80" cy="85" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="80" y="88" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="130" cy="78" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="130" y="81" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="200" cy="82" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="200" y="85" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="250" cy="75" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="250" y="78" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+
+        <!-- Good bacteria -->
+        <circle cx="105" cy="90" r="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+        <circle cx="165" cy="83" r="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+        <circle cx="225" cy="88" r="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+
+        <!-- Mucus layer -->
+        <rect x="55" y="100" width="260" height="12" rx="3" fill="color-mix(in srgb,var(--coli) 20%,var(--surface))" stroke="none"/>
+        <text x="185" y="110" text-anchor="middle" font-size="9" fill="var(--coli)">Schleimschicht (Muzin)</text>
+
+        <!-- Darm cells — LEFT (closed) -->
+        <rect x="65" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,var(--coli) 15%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="111" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,var(--coli) 15%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="157" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,var(--coli) 15%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="203" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,var(--coli) 15%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="249" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,var(--coli) 15%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+
+        <!-- Tight Junctions LEFT — CLOSED (green bolt symbols) -->
+        <rect x="108" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+        <rect x="154" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+        <rect x="200" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+        <rect x="246" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+
+        <!-- Tight Junction labels -->
+        <text x="185" y="178" text-anchor="middle" font-size="9" fill="#2e7d32" font-weight="600">Tight Junctions — geschlossen</text>
+
+        <!-- Blood vessel LEFT — clean -->
+        <rect x="55" y="185" width="270" height="32" rx="8" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="190" y="197" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="600">Blutgefäß</text>
+        <text x="190" y="210" text-anchor="middle" font-size="9" fill="#2e7d32">✓ kein LPS — kein Alarm</text>
+
+        <!-- Immune cell — calm -->
+        <circle cx="185" cy="242" r="16" fill="color-mix(in srgb,var(--accent2) 15%,var(--surface))" stroke="var(--accent2)" stroke-width="1.5"/>
+        <text x="185" y="245" text-anchor="middle" font-size="9" fill="var(--accent2)" font-weight="600">Immun-</text>
+        <text x="185" y="256" text-anchor="middle" font-size="9" fill="var(--accent2)" font-weight="600">zelle 😴</text>
+
+        <!-- ═══ RIGHT SIDE — LEAKY GUT ═══ -->
+
+        <!-- LPS in lumen RIGHT -->
+        <circle cx="390" cy="85" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="390" y="88" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="440" cy="78" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="440" y="81" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="500" cy="82" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="500" y="85" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+        <circle cx="560" cy="75" r="7" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="560" y="78" text-anchor="middle" font-size="7" fill="#c0392b" font-weight="600">LPS</text>
+
+        <!-- Mucus damaged -->
+        <rect x="365" y="100" width="100" height="12" rx="3" fill="color-mix(in srgb,var(--coli) 10%,var(--surface))" stroke="none" opacity="0.4"/>
+        <rect x="480" y="100" width="80" height="12" rx="3" fill="color-mix(in srgb,var(--coli) 10%,var(--surface))" stroke="none" opacity="0.4"/>
+        <text x="510" y="110" text-anchor="middle" font-size="9" fill="#c0392b" opacity="0.7">Schleimschicht beschädigt</text>
+
+        <!-- Darm cells — RIGHT -->
+        <rect x="375" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="421" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="467" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="513" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+        <rect x="559" y="114" width="42" height="52" rx="4" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="var(--coli)" stroke-width="1.5"/>
+
+        <!-- Tight Junctions RIGHT — OPEN (red, broken) -->
+        <rect x="418" y="122" width="6" height="14" rx="1" fill="#c0392b"/>
+        <rect x="418" y="144" width="6" height="14" rx="1" fill="#c0392b"/>
+        <text x="421" y="138" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700">⚡</text>
+
+        <rect x="464" y="122" width="6" height="14" rx="1" fill="#c0392b"/>
+        <rect x="464" y="144" width="6" height="14" rx="1" fill="#c0392b"/>
+        <text x="467" y="138" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700">⚡</text>
+
+        <rect x="510" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+        <rect x="556" y="122" width="6" height="36" rx="1" fill="#2e7d32"/>
+
+        <text x="490" y="178" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="600">2 Junctions geöffnet — LPS schlüpft durch</text>
+
+        <!-- LPS crossing through gaps — arrows -->
+        <circle cx="421" cy="158" r="5" fill="#c0392b"/>
+        <text x="421" y="161" text-anchor="middle" font-size="6" fill="white" font-weight="700">LPS</text>
+        <line x1="421" y1="165" x2="421" y2="180" stroke="#c0392b" stroke-width="2" marker-end="url(#arr)"/>
+
+        <circle cx="467" cy="155" r="5" fill="#c0392b"/>
+        <text x="467" y="158" text-anchor="middle" font-size="6" fill="white" font-weight="700">LPS</text>
+        <line x1="467" y1="162" x2="467" y2="180" stroke="#c0392b" stroke-width="2" marker-end="url(#arr)"/>
+
+        <!-- Arrow marker -->
+        <defs>
+          <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#c0392b"/>
+          </marker>
+        </defs>
+
+        <!-- Blood vessel RIGHT — LPS inside -->
+        <rect x="365" y="185" width="270" height="32" rx="8" fill="color-mix(in srgb,#c0392b 15%,var(--surface))" stroke="#c0392b" stroke-width="2"/>
+        <text x="500" y="197" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="600">Blutgefäß</text>
+        <circle cx="430" cy="201" r="5" fill="#c0392b"/>
+        <text x="430" y="204" text-anchor="middle" font-size="6" fill="white" font-weight="700">LPS</text>
+        <circle cx="455" cy="201" r="5" fill="#c0392b"/>
+        <text x="455" y="204" text-anchor="middle" font-size="6" fill="white" font-weight="700">LPS</text>
+        <text x="500" y="210" text-anchor="middle" font-size="9" fill="#c0392b">⚠️ LPS im Blut → TLR-4 aktiviert</text>
+
+        <!-- Immune cell — ALARMED -->
+        <circle cx="500" cy="248" r="18" fill="color-mix(in srgb,#c0392b 20%,var(--surface))" stroke="#c0392b" stroke-width="2"/>
+        <text x="500" y="244" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="700">Immun-</text>
+        <text x="500" y="254" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="700">zelle 🚨</text>
+        <!-- Inflammation signals radiating -->
+        <line x1="500" y1="228" x2="500" y2="220" stroke="#c0392b" stroke-width="1.5"/>
+        <line x1="484" y1="234" x2="478" y2="228" stroke="#c0392b" stroke-width="1.5"/>
+        <line x1="516" y1="234" x2="522" y2="228" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="500" y="278" text-anchor="middle" font-size="9" fill="#c0392b">→ Entzündungssignale (NF-κB, IL-6, TNF-α)</text>
+
+        <!-- BOTTOM LEGEND -->
+        <rect x="55" y="290" width="570" height="1" fill="var(--border)"/>
+        <!-- Legend items -->
+        <circle cx="80" cy="305" r="6" fill="#e8b4b8" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="90" y="309" font-size="10" fill="var(--muted)">LPS (Bakterienfragment)</text>
+        <circle cx="230" cy="305" r="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+        <text x="240" y="309" font-size="10" fill="var(--muted)">Gute Bakterien</text>
+        <rect x="365" y="300" width="12" height="10" rx="1" fill="#2e7d32"/>
+        <text x="382" y="309" font-size="10" fill="var(--muted)">Tight Junction (geschlossen)</text>
+        <rect x="530" y="300" width="6" height="4" rx="1" fill="#c0392b"/>
+        <rect x="530" y="307" width="6" height="4" rx="1" fill="#c0392b"/>
+        <text x="541" y="309" font-size="10" fill="var(--muted)">geöffnet/beschädigt</text>
+
+      </svg>
+
+      <!-- TRIGGER BOX -->
+      <div style="margin-top:16px;padding:14px 16px;background:color-mix(in srgb,#c0392b 5%,var(--surface));border-radius:10px;font-size:12px;line-height:1.8">
+        <strong style="color:#c0392b">Was Tight Junctions öffnet:</strong><br>
+        <span style="color:var(--muted)">Emulgatoren (E433, E466 in UPF) · Gliadin/Zonulin (Weizen) · chronischer Stress (CRH) · Alkohol · Schlafmangel · Antibiotika ohne Mikrobiom-Aufbau</span>
+      </div>
+    </div>
     <details style="margin-bottom:28px">
       <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🔭</span> Tiefer: Butyrat, Dysbiose, SIBO, Darm-Hirn-Achse (Fachbegriffe)</summary>
       <div class="mech-box" style="margin-top:12px">
