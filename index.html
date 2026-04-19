@@ -11,14 +11,14 @@
   --bg:#faf8f4;--surface:#f2ede4;--surface2:#e8e0d4;--border:#d8d0c4;
   --text:#1a1714;--muted:#8a8078;--accent:#c4522a;--accent2:#4a7a5a;
   --accent3:#4a5a7a;--gold:#b8820a;--red:#c0392b;--purple:#7a5a9a;
-  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;
+  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;
   --schlaf:#4a5a7a;--ernaehr:#4a7a5a;--bewegung:#7a5a2a;--stress:#7a5a9a;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#0f0d0b;--surface:#181512;--surface2:#211d18;--border:#2e2820;
   --text:#f0ebe0;--muted:#9a8e7e;--accent:#e07050;--accent2:#6aaa82;
   --accent3:#7a9ab2;--gold:#d4a030;--red:#e05555;--purple:#a88bcc;
-  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;
+  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;
   --schlaf:#7a9ab2;--ernaehr:#6aaa82;--bewegung:#c4923a;--stress:#a88bcc;
 }}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -2423,6 +2423,7 @@ details summary:hover::after{
       <button class="dis-tab a-asthma" id="dt-asthma" onclick="showDis('asthma')">🫁 Asthma</button>
       <button class="dis-tab" id="dt-athero" onclick="showDis('athero')">❤️ Atherosklerose</button>
       <button class="dis-tab" id="dt-coli" onclick="showDis('coli')">🫀 Colitis Ulcerosa</button>
+      <button class="dis-tab" id="dt-hashi" onclick="showDis('hashi')">🦋 Hashimoto</button>
       <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
       <button class="dis-tab" id="dt-rheu" onclick="showDis('rheu')">🦴 Rheumatoide Arthritis</button>
       <button class="dis-tab" id="dt-derm" onclick="showDis('derm')">🧴 Seborrhoische Dermatitis</button>
@@ -2689,6 +2690,135 @@ details summary:hover::after{
       </div>
     </div>
 
+    </div>
+
+    <!-- HASHIMOTO -->
+    <div class="dis-content" id="dd-hashi">
+      <div class="dis-header">
+        <div class="dis-icon">🦋</div>
+        <div class="dis-name" style="color:var(--hashi)">Hashimoto-Thyreoiditis</div>
+        <div class="dis-tagline">Wenn das Immunsystem die eigene Schilddrüse angreift</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--hashi) 6%,var(--surface));border-left:3px solid var(--hashi)">
+        "Ich war jahrelang müde, hatte zugenommen, war reizbar — und alle sagten 'du bist halt gestresst'." Dein Körper ist nicht kaputt — dein Immunsystem greift dauerhaft die Schilddrüse an, weil es sie irrtümlich als fremd einstuft. Das ist still, schleichend, und lässt sich gut behandeln wenn man es versteht.
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--hashi) 7%,var(--surface));border-left:4px solid var(--hashi);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;font-weight:700;color:var(--hashi);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Das Wesentliche</div>
+        <div style="font-size:14px;line-height:1.8">Hashimoto ist eine Autoimmunerkrankung der Schilddrüse — die häufigste Ursache von Schilddrüsenunterfunktion in Deutschland. Etwa 5-10% der Bevölkerung betroffen, Frauen 7-10× häufiger als Männer. Der Fehler liegt nicht in der Schilddrüse selbst sondern im Immunsystem — und das ist durch Lebensstil stark beeinflussbar.</div>
+      </div>
+
+      <div class="cascade">
+        <div class="cas-label">Was in deinem Körper passiert</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">1</div><div><div class="cas-name">Das Immunsystem erkennt Schilddrüsenzellen als fremd</div><div class="cas-desc">Die dendritischen Zellen (Späher) melden: "gefährlich". Warum — niemand weiß es ganz genau. Genetische Veranlagung + Trigger (Virusinfekte, Jodexzess, Stress, Schwangerschaft, Zöliakie). Das ist nicht deine Schuld.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">2</div><div><div class="cas-name">Antikörper bilden sich gegen die Schilddrüse</div><div class="cas-desc">TPO-Antikörper (gegen Thyreoperoxidase) und TG-Antikörper (gegen Thyreoglobulin) — sie markieren die Schilddrüsenzellen als Ziel. Diese Antikörper sind oft Jahre vor den ersten Symptomen im Blut nachweisbar.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">3</div><div><div class="cas-name">Chronische Entzündung zerstört langsam Schilddrüsengewebe</div><div class="cas-desc">Über Jahre bis Jahrzehnte — die Schilddrüse wird zunehmend geschädigt. Sie produziert weniger Hormone (T3, T4). Das ist ein schleichender Prozess — lange bevor es sich wie "Krankheit" anfühlt.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">4</div><div><div class="cas-name">Unterfunktion — der Stoffwechsel fährt runter</div><div class="cas-desc">Jede Zelle im Körper braucht Schilddrüsenhormone. Wenn sie fehlen: Müdigkeit, Gewichtszunahme, Haarausfall, Frieren, Verstopfung, trockene Haut, Konzentrationsprobleme, Depression, Zyklusstörungen. "Alles geht langsamer."</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Typische Symptome</div><ul class="ib-list"><li>Erschöpfung die durch Schlaf nicht besser wird</li><li>Gewichtszunahme trotz normalem Essen</li><li>Frieren auch bei warmen Temperaturen</li><li>Haarausfall, trockene Haut, brüchige Nägel</li><li>Brain Fog, Konzentrationsprobleme</li><li>Gelenk- und Muskelschmerzen</li><li>Depressive Verstimmung, Antriebslosigkeit</li><li>Zyklusstörungen, unerfüllter Kinderwunsch</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>L-Thyroxin (Levothyroxin) — ersetzt fehlendes T4</li><li>Manchmal Kombitherapie T4 + T3 (wenn Umwandlung gestört ist)</li><li>Regelmäßige Kontrolle von TSH, fT3, fT4, Antikörpern</li><li><strong>Selen</strong> — kann TPO-Antikörper senken (200 µg täglich in Studien wirksam) <a href="https://pubmed.ncbi.nlm.nih.gov/32963989/" target="_blank" style="color:var(--accent3);font-size:10px">[Meta-Analyse 2020]</a></li></ul></div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--hashi) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--hashi) 20%,var(--border));border-radius:12px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:11px;font-weight:600;color:var(--hashi);margin-bottom:8px">🔬 Die Zöliakie-Hashimoto-Verbindung</div>
+        <div style="font-size:13px;line-height:1.7">Menschen mit Hashimoto haben ein 4-5× höheres Risiko für Zöliakie — und umgekehrt. Beide sind Autoimmunerkrankungen mit ähnlichen genetischen Mustern. Gluten kann bei Zöliakie-Betroffenen über molekulare Mimikry auch Schilddrüsen-Antikörper triggern. <strong>Praxis:</strong> Bei Hashimoto-Diagnose sollte Zöliakie ausgeschlossen werden (Transglutaminase-AK, Gliadin-AK). Viele Betroffene berichten deutliche Besserung unter glutenfreier Ernährung — auch ohne manifeste Zöliakie. <a href="https://pubmed.ncbi.nlm.nih.gov/32547762/" target="_blank" style="color:var(--accent3);font-size:11px">[Clinical Review 2020]</a></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="sec-eyebrow">Was du selbst tun kannst</div>
+      <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Lebensstil-Maßnahmen mit Evidenz</h2>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">1</div>
+          <div>
+            <div class="do-item-title">Selen — der am besten belegte Nährstoff bei Hashimoto</div>
+            <div class="do-item-text">Die Schilddrüse ist das selen-reichste Organ des Körpers. Selen ist essentiell für die Umwandlung von T4 in das aktive T3, und für die Neutralisierung freier Radikale die bei der Hormonproduktion entstehen. Bei Selenmangel: mehr oxidativer Stress in der Schilddrüse, mehr Antikörper.<br><br>
+            <strong>Konkret:</strong> 100-200 µg täglich als Selenomethionin oder Natriumselenit. Studien zeigen TPO-Antikörper-Reduktion um 30-40% nach 3-6 Monaten. Zwei Paranüsse pro Tag decken den Grundbedarf — aber für therapeutische Wirkung oft nicht genug. Spiegel im Blut kontrollieren lassen, nicht überdosieren (Obergrenze ~300 µg).</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">2</div>
+          <div>
+            <div class="do-item-title">Vitamin D3 — bei 80% der Hashimoto-Betroffenen im Mangel</div>
+            <div class="do-item-text">Vitamin D3 moduliert das Immunsystem direkt — stärkt Bremszellen (Tregs), beruhigt dendritische Zellen. Bei Hashimoto sind die Spiegel fast immer zu niedrig. Substitution zeigt in Studien oft Reduktion der TPO-Antikörper und Verbesserung der Schilddrüsenfunktion.<br><br>
+            <strong>Konkret:</strong> Spiegel messen lassen (25-OH-Vitamin D3). Zielwert 40-60 ng/ml. Typisch 2.000-4.000 IE täglich, immer mit K2 kombinieren. Im Sommer durch Sonne, im Winter substituieren.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">3</div>
+          <div>
+            <div class="do-item-title">Gluten testweise weglassen — 3 Monate</div>
+            <div class="do-item-text">Auch ohne Zöliakie-Diagnose berichten viele Hashimoto-Betroffene deutliche Besserung bei glutenfreier Ernährung — weniger Antikörper, weniger Symptome. Die Theorie: Gluten kann bei empfindlichen Personen die Darmbarriere öffnen (Leaky Gut) und systemische Entzündung triggern, die dann auch die Schilddrüse betrifft.<br><br>
+            <strong>Konkret:</strong> 3 Monate konsequent glutenfrei (nicht halb, das bringt nichts). Antikörper vorher und nachher messen. Bei deutlicher Besserung: dauerhaft umstellen. Bei keiner Veränderung: war der Versuch wert, musst nicht weiter verzichten.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">4</div>
+          <div>
+            <div class="do-item-title">Stress reduzieren — mehr als bei anderen Autoimmunerkrankungen</div>
+            <div class="do-item-text">Die Schilddrüse ist Teil der HPA-Achse (Hypothalamus-Hypophyse-Nebenniere-Schilddrüse). Chronischer Stress verschiebt die T4→T3-Umwandlung ins inaktive reverse-T3 — du hast dann genug Hormon im Blut, aber wenig aktives T3 in den Zellen. Das Laborbild sieht "gut" aus, du fühlst dich trotzdem schlecht.<br><br>
+            <strong>Konkret:</strong> MBSR-Kurs (8 Wochen, Krankenkasse bezuschusst oft), tägliche Meditation 10 Min, Abgrenzung am Arbeitsplatz, Nein sagen lernen. Der Effekt auf Hashimoto ist oft größer als erwartet.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">5</div>
+          <div>
+            <div class="do-item-title">Jod — vorsichtig sein, nicht pauschal empfehlen</div>
+            <div class="do-item-text">Jod ist ein kritischer Punkt bei Hashimoto. Bei schwerem Jodmangel ist Substitution nötig. Aber Jodexzess (hochdosierte Supplements, viel Seetang, Kelp) kann die Autoimmunreaktion triggern und die Antikörper erhöhen. Studien zeigen: in Regionen mit Jodsalz-Einführung stieg die Hashimoto-Rate.<br><br>
+            <strong>Konkret:</strong> <strong>Keine pauschalen Jod-Supplemente</strong>. Jodsalz im normalen Rahmen ok. Spiegel im Urin messen lassen wenn unklar. Besonders vorsichtig mit Algen-Supplements.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--hashi) 15%,var(--surface2));color:var(--hashi)">6</div>
+          <div>
+            <div class="do-item-title">Ferritin, B12 und Zink — die stillen Helfer</div>
+            <div class="do-item-text">Selbst mit optimaler L-Thyroxin-Einstellung fühlen sich viele Hashimoto-Betroffene müde — weil andere Nährstoffe im Mangel sind. Ferritin unter 70 ng/ml führt zu Erschöpfung trotz normalem TSH. B12-Mangel häuft sich bei Hashimoto (oft gemeinsame Autoimmun-Gastritis). Zink wird für T4→T3-Umwandlung gebraucht.<br><br>
+            <strong>Konkret:</strong> Einmal jährlich messen lassen: Ferritin (Ziel: &gt; 70), Vitamin B12 (Ziel: &gt; 500 pg/ml), Zink, Selen. Gezielt substituieren wo Mangel besteht — nicht alles auf Verdacht.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-box">
+        <div class="res-title">📚 Vertiefende Infos</div>
+        <div class="res-chips">
+          <span class="res-chip">🩸 Laborwerte bei Hashimoto (TSH, fT3, fT4, TPO, TG)</span>
+          <span class="res-chip">📖 "Hashimoto heilen" — Izabella Wentz (Pharmazeutin, selbst betroffen)</span>
+          <span class="res-chip">🎧 Podcast: "Hashimoto" von Dr. Bianca Sissinger</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Lebensstil</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('stress')">🧘 Stress reduzieren →</button>
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung bei Autoimmun →</button>
+        <button class="action-link" onclick="showPage('schlaf')">😴 Schlaf & Hormone →</button>
+        <button class="action-link" onclick="showPage('darm')">🦠 Darm & Autoimmun →</button>
+      </div>
+
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei Hashimoto</div><div class="sup-text">Stressreduktion wirkt direkt auf die HPA-Achse und die T4→T3-Umwandlung. Studien zeigen messbar reduzierte Antikörper unter MBSR. Krankenkassen bezuschussen oft.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Community</div><div class="sup-text">Deutsche Schilddrüsenliga e.V. (schilddruesenliga.de) und Online-Gruppen wie "Hashimoto Selbsthilfe" — viele Betroffene, viel praktisches Wissen aus dem Alltag.</div></div>
+      </div>
+
+      <!-- ROTE FAHNEN -->
+      <div style="background:color-mix(in srgb,#c0392b 8%,var(--surface));border:2px solid #c0392b;border-radius:14px;padding:18px 20px;margin-top:24px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">🚨 Wann zum Arzt</div>
+        <div style="font-size:13px;line-height:1.8">Hashimoto ist meist gut kontrollierbar — aber einige Zeichen brauchen ärztliche Abklärung:<br>
+          <strong>•</strong> Plötzliche Schluckbeschwerden oder sichtbare Schwellung am Hals<br>
+          <strong>•</strong> Herzrasen, starkes Zittern, plötzlicher Gewichtsverlust — kann eine Hashitoxikose sein (Übergang in kurzzeitige Überfunktion)<br>
+          <strong>•</strong> Extreme Erschöpfung, Kälteempfindlichkeit, Verwirrtheit — unzureichende Hormonversorgung<br>
+          <strong>•</strong> Depression die sich trotz normaler Therapie nicht bessert — ggf. Hormonwerte prüfen lassen<br>
+          <strong>•</strong> Neue Autoimmunsymptome (Gelenke, Haut, Darm) — Hashimoto kommt selten allein</div>
+      </div>
     </div>
 
     <!-- RHEUMA -->
