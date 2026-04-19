@@ -11,14 +11,14 @@
   --bg:#faf8f4;--surface:#f2ede4;--surface2:#e8e0d4;--border:#d8d0c4;
   --text:#1a1714;--muted:#8a8078;--accent:#c4522a;--accent2:#4a7a5a;
   --accent3:#4a5a7a;--gold:#b8820a;--red:#c0392b;--purple:#7a5a9a;
-  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;--diab:#b8820a;
+  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;--diab:#b8820a;--reizd:#8a6a3a;
   --schlaf:#4a5a7a;--ernaehr:#4a7a5a;--bewegung:#7a5a2a;--stress:#7a5a9a;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#0f0d0b;--surface:#181512;--surface2:#211d18;--border:#2e2820;
   --text:#f0ebe0;--muted:#9a8e7e;--accent:#e07050;--accent2:#6aaa82;
   --accent3:#7a9ab2;--gold:#d4a030;--red:#e05555;--purple:#a88bcc;
-  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;--diab:#d4a030;
+  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;--diab:#d4a030;--reizd:#c4a06a;
   --schlaf:#7a9ab2;--ernaehr:#6aaa82;--bewegung:#c4923a;--stress:#a88bcc;
 }}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -2425,6 +2425,7 @@ details summary:hover::after{
       <button class="dis-tab" id="dt-coli" onclick="showDis('coli')">🫀 Colitis Ulcerosa</button>
       <button class="dis-tab" id="dt-hashi" onclick="showDis('hashi')">🦋 Hashimoto</button>
       <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
+      <button class="dis-tab" id="dt-reizd" onclick="showDis('reizd')">🔄 Reizdarm</button>
       <button class="dis-tab" id="dt-rheu" onclick="showDis('rheu')">🦴 Rheumatoide Arthritis</button>
       <button class="dis-tab" id="dt-derm" onclick="showDis('derm')">🧴 Seborrhoische Dermatitis</button>
       <button class="dis-tab" id="dt-diab" onclick="showDis('diab')">🩸 Typ-2-Diabetes</button>
@@ -3717,6 +3718,8 @@ details summary:hover::after{
       </div>
     </div>
 
+    </div>
+
     <!-- TYP-2-DIABETES -->
     <div class="dis-content" id="dd-diab">
       <div class="dis-header">
@@ -3848,6 +3851,144 @@ details summary:hover::after{
           <strong>•</strong> Brustschmerz oder Atemnot — Diabetiker haben deutlich erhöhtes Herzinfarktrisiko</div>
       </div>
     </div>
+
+    <!-- REIZDARM -->
+    <div class="dis-content" id="dd-reizd">
+      <div class="dis-header">
+        <div class="dis-icon">🔄</div>
+        <div class="dis-name" style="color:var(--reizd)">Reizdarmsyndrom (IBS)</div>
+        <div class="dis-tagline">"Alles normal in der Untersuchung" — aber die Beschwerden sind real</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--reizd) 6%,var(--surface));border-left:3px solid var(--reizd)">
+        "Die Koloskopie war normal, die Blutwerte auch — aber ich hab trotzdem jeden Tag Bauchschmerzen." Dein Darm spinnt nicht. Die klassische Diagnostik sieht keine grobe Entzündung — weil Reizdarm auf der mikroskopischen und molekularen Ebene passiert. Niedriggradige Entzündung, überaktive Mastzellen in der Darmwand, gestörte Darm-Hirn-Achse. Das ist kein Einbildungsproblem.
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--reizd) 7%,var(--surface));border-left:4px solid var(--reizd);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;font-weight:700;color:var(--reizd);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Das Wesentliche</div>
+        <div style="font-size:14px;line-height:1.8">Reizdarm ist eine Ausschlussdiagnose — aber das bedeutet nicht "nichts ist los". Neuere Forschung zeigt klare biologische Grundlagen: veränderte Mastzellen in der Darmwand, niedriggradige Entzündung, Dysbiose des Mikrobioms, gestörte Darm-Hirn-Achse. 10-15% der Menschen in Deutschland betroffen. Oft über Jahre unterdiagnostiziert oder als "psychisch" abgetan.</div>
+      </div>
+
+      <div class="cascade">
+        <div class="cas-label">Was in deinem Körper passiert</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">1</div><div><div class="cas-name">Darmbarriere wird durchlässiger (Leaky Gut)</div><div class="cas-desc">Tight Junctions zwischen Darmzellen lockern sich — LPS-Bakterienfragmente und unverdaute Nahrungspartikel gelangen ins Gewebe. Das aktiviert Immunzellen die eigentlich Ruhe haben sollten.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">2</div><div><div class="cas-name">Mastzellen in der Darmwand werden überempfindlich</div><div class="cas-desc">Bei Reizdarm sitzen deutlich mehr Mastzellen in der Darmschleimhaut — und sie reagieren heftiger. Jeder Trigger (Nahrung, Stress) löst Histamin-Ausschüttung aus. Das ist die molekulare Grundlage vieler "Reizdarm"-Symptome.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">3</div><div><div class="cas-name">Darmnerven werden hypersensitiv</div><div class="cas-desc">Die Nerven in der Darmwand melden normale Vorgänge (Dehnung, Gasbildung) als schmerzhaft ans Gehirn. Gleichzeitig verstärkt das Gehirn diese Signale weiter — die Darm-Hirn-Achse ist überaktiviert. Das ist echter Schmerz — nur der Verstärker steht zu hoch.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">4</div><div><div class="cas-name">Dysbiose — das Mikrobiom kippt</div><div class="cas-desc">Weniger nützliche Bakterien (Bifidobakterien, Lactobacillus), mehr entzündungsfördernde. Reduzierte Butyrat-Produktion — damit fehlt der wichtigste Nährstoff für die Darmwand. Selbstverstärkender Kreislauf aus Durchlässigkeit und Dysbiose.</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Typische Symptome</div><ul class="ib-list"><li>Bauchschmerzen, die sich nach Stuhlgang bessern</li><li>Blähungen, Gasbildung — oft nachmittags schlimmer</li><li>Stuhl wechselt: Durchfall, Verstopfung oder beides</li><li>Völlegefühl schon nach kleinen Mahlzeiten</li><li>Schleim im Stuhl (bei Reizdarm möglich)</li><li>Verschlechterung bei Stress und bestimmten Lebensmitteln</li><li>Müdigkeit, Konzentrationsprobleme (Darm-Hirn-Achse)</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Spasmolytika (Mebeverin) bei Krämpfen</li><li>Loperamid bei Durchfalltyp</li><li>Macrogol bei Verstopfungstyp</li><li>Low-Dose-Antidepressiva (bei Darm-Hirn-Achse)</li><li>Iberogast — pflanzlich wirksam</li><li>Rifaximin bei SIBO-Verdacht</li><li>Mastzellstabilisatoren oft unterschätzt</li></ul></div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--reizd) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--reizd) 20%,var(--border));border-radius:12px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:11px;font-weight:600;color:var(--reizd);margin-bottom:8px">🔬 Die 4 häufigsten Reizdarm-Subtypen</div>
+        <div style="font-size:13px;line-height:1.7">
+          <strong>IBS-D</strong> (Diarrhö): häufiger Durchfall, dringender Stuhldrang<br>
+          <strong>IBS-C</strong> (Obstipation): Verstopfung, hartes Stuhlgang, Völlegefühl<br>
+          <strong>IBS-M</strong> (Mixed): wechselt zwischen Durchfall und Verstopfung<br>
+          <strong>IBS-U</strong> (Unclassified): Beschwerden ohne klares Stuhlmuster<br><br>
+          Zu unterscheiden ist Reizdarm auch von <strong>SIBO</strong> (Dünndarmfehlbesiedlung), <strong>Histaminintoleranz</strong> (DAO-Mangel), <strong>Fruktose-/Laktose-Malabsorption</strong>, und <strong>MCAS</strong> — die oft gleiche Symptome machen, aber andere Behandlungen brauchen. Ein Wasserstoff-Atemtest kann SIBO und Malabsorption sichtbar machen.
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="sec-eyebrow">Was du selbst tun kannst</div>
+      <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Lebensstil-Maßnahmen mit Evidenz</h2>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">1</div>
+          <div>
+            <div class="do-item-title">Low-FODMAP-Diät — die bestbelegte Ernährungstherapie</div>
+            <div class="do-item-text">FODMAPs sind fermentierbare Zucker (Fructose, Laktose, Polyole, Fruktane) die bei Reizdarm schwerer verträglich sind. Eine 4-6-wöchige Low-FODMAP-Phase reduziert Symptome bei 50-80% der Betroffenen messbar. Danach: schrittweise wieder einführen um individuelle Trigger zu finden.<br><br>
+            <strong>Konkret:</strong> Nicht auf Dauer — die Low-FODMAP-Phase ist eine Diagnostik, nicht eine lebenslange Ernährung. Am besten mit Ernährungsberatung (Monash University FODMAP App als Referenz). Nach der Testphase das 80/20-Prinzip: Hauptnahrung FODMAP-arm, gelegentliche Ausnahmen ok.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">2</div>
+          <div>
+            <div class="do-item-title">Stressregulation — die Darm-Hirn-Achse direkt beruhigen</div>
+            <div class="do-item-text">Der Vagusnerv verbindet Gehirn und Darm direkt. Stress aktiviert CRH, das Mastzellen in der Darmwand triggert. Studien zeigen: gut-directed Hypnosetherapie und MBSR haben bei Reizdarm ähnliche Effektstärke wie medikamentöse Therapien.<br><br>
+            <strong>Konkret:</strong> MBSR-Kurs (Krankenkasse bezuschusst). Darmbezogene Hypnose (7-10 Sitzungen, oft von Krankenkasse übernommen wenn ärztlich verordnet). Tägliche Vagusnerv-Übungen: tiefes Bauchatmen, kaltes Gesicht-Eintauchen, Summen/Gurgeln.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">3</div>
+          <div>
+            <div class="do-item-title">Probiotika gezielt einsetzen — nicht wahllos</div>
+            <div class="do-item-text">Nicht jedes Probiotikum hilft bei Reizdarm. Die Evidenz ist stammspezifisch. Gut belegt: Bifidobacterium infantis 35624, Lactobacillus plantarum 299v, Saccharomyces boulardii (bei Durchfalltyp). Die meisten Supermarkt-Produkte sind zu niedrig dosiert oder enthalten nicht getestete Stämme.<br><br>
+            <strong>Konkret:</strong> Produkt mit belegten Stämmen wählen (Apotheke, nicht Drogerie). 6-8 Wochen testen — wenn keine Besserung, absetzen und anderen Stamm probieren. Kombinationen oft wirksamer als Einzelstämme.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">4</div>
+          <div>
+            <div class="do-item-title">Mastzellen-Aspekt mitbehandeln</div>
+            <div class="do-item-text">Bei vielen Reizdarm-Betroffenen spielen überaktive Mastzellen eine zentrale Rolle — besonders wenn Symptome nach histaminreichen Lebensmitteln oder unter Stress schlimmer sind. Mastzellstabilisatoren können dann deutlich mehr helfen als klassische Reizdarm-Medikamente.<br><br>
+            <strong>Konkret:</strong> Bei Verdacht — Tryptase und Histamin im Urin messen lassen. Testweise 4 Wochen H1-Antihistaminika (Levocetirizin abends) + Quercetin tagsüber. Bei Besserung: MCAS als Mit-Ursache wahrscheinlich.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">5</div>
+          <div>
+            <div class="do-item-title">Essensrhythmus — wichtiger als die meisten denken</div>
+            <div class="do-item-text">Der Darm hat einen eigenen Rhythmus — den "migrating motor complex" (MMC). Er räumt den Dünndarm zwischen Mahlzeiten auf. Ständiges Snacken unterbricht diesen Reinigungsrhythmus und fördert SIBO und Dysbiose. Längere Pausen zwischen Mahlzeiten lassen den Darm arbeiten.<br><br>
+            <strong>Konkret:</strong> 4-5 Stunden Pause zwischen Mahlzeiten, keine Snacks dazwischen. Abendessen bis 19 Uhr für 12+ Stunden Nachtfasten. Kein Kaugummi und keine Zuckerersatzstoffe (Sorbit, Xylit) die den Darm zusätzlich reizen.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--reizd) 15%,var(--surface2));color:var(--reizd)">6</div>
+          <div>
+            <div class="do-item-title">Pfefferminzöl-Kapseln bei Krämpfen</div>
+            <div class="do-item-text">Enterisch umhüllte Pfefferminzöl-Kapseln (z.B. Medacalm, Buscomint) wirken direkt auf die glatte Muskulatur im Darm und entspannen sie. In Studien ähnlich wirksam wie Spasmolytika — mit weniger Nebenwirkungen. Besonders bei Schmerztyp-Reizdarm.<br><br>
+            <strong>Konkret:</strong> 2-3× täglich eine Kapsel vor den Mahlzeiten. Wichtig: magensaftresistent beschichtet, sonst nur Sodbrennen. 4 Wochen testen. Bei Reflux-Neigung vorsichtig.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-box">
+        <div class="res-title">📚 Vertiefende Infos</div>
+        <div class="res-chips">
+          <span class="res-chip">🩸 Laborwerte: Calprotectin, Zonulin, Histamin, DAO</span>
+          <span class="res-chip">📱 Monash University FODMAP App</span>
+          <span class="res-chip">📖 "Darm mit Charme" — Giulia Enders</span>
+          <span class="res-chip">🎧 Podcast: "Die Ernährungs-Docs" (NDR)</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Zusammenhänge</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('darm')">🦠 Darmgesundheit →</button>
+        <button class="action-link" onclick="showPage('stress')">🧘 Stress & Vagusnerv →</button>
+        <button class="action-link" onclick="showDis('mcas')">💣 Verbindung zu MCAS →</button>
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Entzündungsarme Ernährung →</button>
+      </div>
+
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR + Darmhypnose</div><div class="sup-text">Bei Reizdarm gehört zu den bestbelegten Therapien überhaupt — Effekte oft stärker als Medikamente. Krankenkassen zahlen meist beides wenn ärztlich empfohlen.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Community</div><div class="sup-text">Deutsche Reizdarmselbsthilfe (reizdarmselbsthilfe.de) — lokale Gruppen, Forum, gute Expertenkontakte. Viele Betroffene fühlen sich endlich verstanden.</div></div>
+      </div>
+
+      <!-- ROTE FAHNEN -->
+      <div style="background:color-mix(in srgb,#c0392b 8%,var(--surface));border:2px solid #c0392b;border-radius:14px;padding:18px 20px;margin-top:24px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">🚨 Wann zum Arzt — Reizdarm ist eine Ausschlussdiagnose</div>
+        <div style="font-size:13px;line-height:1.8">Reizdarm wird erst diagnostiziert wenn andere Ursachen ausgeschlossen sind. Bei diesen Zeichen unbedingt ärztliche Abklärung — es ist dann nicht Reizdarm:<br>
+          <strong>•</strong> Blut im Stuhl (sichtbar oder schwarzer Teerstuhl)<br>
+          <strong>•</strong> Ungewollter Gewichtsverlust<br>
+          <strong>•</strong> Nächtliche Schmerzen oder nächtlicher Stuhldrang die dich aufwecken<br>
+          <strong>•</strong> Fieber begleitet von Bauchbeschwerden<br>
+          <strong>•</strong> Symptombeginn nach dem 50. Lebensjahr (Darmkrebs-Screening dringend)<br>
+          <strong>•</strong> Erhöhtes Calprotectin im Stuhl — deutet auf echte Entzündung (Colitis, Crohn)<br>
+          <strong>•</strong> Anhaltende Veränderung des Stuhlverhaltens über Wochen<br><br>
+          Eine einmalige gründliche Diagnostik (Koloskopie, Labor, Atemtests) gibt Sicherheit — dann kann die eigentliche Reizdarm-Therapie starten.</div>
+      </div>
 
     <!-- ERKRANKUNGEN KOMMEN SELTEN ALLEIN -->
     <div style="margin-top:48px;padding-top:40px;border-top:1px solid var(--border)">
