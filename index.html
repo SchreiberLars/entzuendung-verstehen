@@ -674,6 +674,15 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
     <!-- SUBTABS -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px">
 
+      <div onclick="showPage('bauplan')" style="background:var(--surface);border:1.5px solid var(--border);
+        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--gold)';this.style.background='color-mix(in srgb,var(--gold) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.8rem;margin-bottom:6px">🕰️</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Gegen den Bauplan</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">5 Stufen vom Jäger &amp; Sammler bis heute — warum unsere Umgebung unseren Körper überfordert</div>
+      </div>
+
       <div onclick="showPage('tag')" style="background:var(--surface);border:1.5px solid var(--border);
         border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
         onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
@@ -3305,6 +3314,457 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 </div>
 
 <!-- ══════════════════════════════════════ -->
+<!-- GEGEN DEN BAUPLAN -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-bauplan">
+  <div class="action-hero">
+    <div class="action-icon">🕰️</div>
+    <h1 class="action-title" style="color:var(--gold)">Gegen den Bauplan</h1>
+    <p class="action-sub">Unser Genom hat sich in 20.000 Jahren kaum verändert. Unsere Umgebung in 100 Jahren komplett. Fünf Stufen wie wir dahin gekommen sind wo wir heute sind.</p>
+  </div>
+
+  <div class="section">
+
+    <!-- EBENE 1 — DAS WESENTLICHE -->
+    <div style="background:color-mix(in srgb,var(--gold) 7%,var(--surface));border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:28px">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">Das Wesentliche</div>
+      <div style="font-size:15px;line-height:1.8">Chronische Entzündung ist keine Krankheit der Moderne — sie ist die Antwort eines Körpers auf eine Umgebung für die er nicht gemacht wurde. Wer verstehen will warum sein Körper reagiert wie er reagiert, muss verstehen wofür er eigentlich gebaut wurde. Diese Reise geht 20.000 Jahre zurück — und dann Schritt für Schritt ins Heute.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- STUFE 1 — JÄGER & SAMMLER -->
+    <!-- ═══════════════════════════════════════ -->
+    <div style="margin-bottom:48px">
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.15em">Stufe 1 · der Bauplan</div>
+        <div style="font-size:12px;color:var(--muted)">vor ~20.000 Jahren</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;line-height:1.2">Jäger &amp; Sammler</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:640px">Wofür unser Genom optimiert ist. Keine Uhr, kein Kalender — der Körper synchronisiert mit Sonne, Jahreszeit und Hunger. Gemeinschaft ist Überlebensbedingung, nicht Optionales.</p>
+
+      <!-- TIMELINE -->
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:20px">
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:18px">🌅</div>
+            <div style="font-size:9px;color:var(--muted);margin-top:4px">mit der<br>Sonne</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--gold) 40%,var(--border));padding:0 0 24px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:4px">Aufwachen bei Morgendämmerung</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Helles Sonnenlicht direkt in die Augen — der stärkste Reiz für den zirkadianen Rhythmus. Cortisol steigt natürlich an, Melatonin wird abgebaut. Kein Wecker, keine Snooze-Taste.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:18px">🏃</div>
+            <div style="font-size:9px;color:var(--muted);margin-top:4px">Nahrungs-<br>suche</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--gold) 40%,var(--border));padding:0 0 24px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:4px">Bewegung ist kein Sport — es ist der Tag</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">6–16 Kilometer pro Tag. Gehen, klettern, tragen, werfen, heben. Keine Einheit, kein Workout — kontinuierlich niedrig- bis mittelintensiv. Muskeln produzieren dabei dauerhaft Myokine (entzündungshemmende Botenstoffe).</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:18px">🍖</div>
+            <div style="font-size:9px;color:var(--muted);margin-top:4px">1 Mahlzeit<br>abends</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--gold) 40%,var(--border));padding:0 0 24px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:4px">Eine große Mahlzeit am späten Nachmittag</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Wild, Wurzeln, Beeren, Kräuter, Nüsse, gelegentlich Honig. 16–18 Stunden natürliches Fasten zwischen den Mahlzeiten. Null Zucker-Raffinerie, null Zuckerspikes — der Körper lernt gar nicht erst wie sich Insulinresistenz anfühlt.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:18px">🔥</div>
+            <div style="font-size:9px;color:var(--muted);margin-top:4px">Feuer &amp;<br>Gemeinschaft</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--gold) 40%,var(--border));padding:0 0 24px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:4px">Abends am Feuer. Mit 20–30 Menschen.</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Erzählen, lachen, singen. Kein akuter Stress — die Gefahren des Tages sind vorbei. Oxytocin-Ausschüttung durch echten körperlichen Kontakt. Das ist keine Freizeitgestaltung — das ist neurobiologische Regulation.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:18px">🌙</div>
+            <div style="font-size:9px;color:var(--muted);margin-top:4px">9h Schlaf<br>völlig dunkel</div>
+          </div>
+          <div style="flex:1;padding:0 0 4px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:-26px;margin-bottom:12px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:4px">Schlaf bei absoluter Dunkelheit — 8–9 Stunden</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Melatonin steigt ungestört. Tiefschlaf tief, REM-Phasen vollständig. Die Bremszellen werden vollständig aufgefüllt. Keine Benachrichtigungen. Kein Licht. Nur Körpertemperatur-Abfall und Dunkelheit.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BILANZ GRÜN -->
+      <div style="background:color-mix(in srgb,#2e7d32 7%,var(--surface));border:1.5px solid color-mix(in srgb,#2e7d32 25%,var(--border));border-radius:14px;padding:18px 20px">
+        <div style="font-size:11px;font-weight:700;color:#2e7d32;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">Was der Körper dabei bekommt</div>
+        <div style="font-size:13px;line-height:1.9">
+          ☀️ Sonnenlicht den ganzen Tag → Vitamin D3 + zirkadianer Rhythmus<br>
+          🏃 Dauerhafte Bewegung → Myokine, Insulinsensitivität, Tregs stark<br>
+          🍖 Echte Nahrung, keine Spikes → Mikrobiom divers, keine NF-κB-Aktivierung<br>
+          🫂 Gemeinschaft permanent → Oxytocin hoch, Cortisol niedrig<br>
+          🌙 Ungestörter Schlaf → Bremszellen voll regeneriert
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- STUFE 2 — MITTELALTERLICHER BAUER -->
+    <!-- ═══════════════════════════════════════ -->
+    <div style="margin-bottom:48px;padding-top:36px;border-top:1px solid var(--border)">
+
+      <div style="background:var(--surface2);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:var(--muted);line-height:1.7;font-style:italic">
+        <strong style="color:var(--text);font-style:normal">Was sich geändert hat:</strong> Sesshaftigkeit. Ackerbau. Getreide wird zur Hauptkalorienquelle. Das Mikrobiom beginnt sich zu verändern. Aber: noch kein Zucker, noch keine Uhren, noch kein künstliches Licht.
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--ernaehr);text-transform:uppercase;letter-spacing:.15em">Stufe 2</div>
+        <div style="font-size:12px;color:var(--muted)">vor ~1.000 Jahren</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;line-height:1.2">Mittelalterlicher Bauer</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:640px">Ein Leben das noch ziemlich nah am Bauplan liegt — körperliche Arbeit den ganzen Tag, saisonale Nahrung, echtes Gemeinschaftsleben. Aber die erste große Entkopplung hat begonnen.</p>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:20px">
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">04:30</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--ernaehr) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--ernaehr);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Aufstehen mit dem Hahn — direkt nach draußen</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Die Tiere versorgen, dann erste Feldarbeit. 2–3 Stunden körperliche Arbeit bevor überhaupt gegessen wird. Frühes Sonnenlicht synchronisiert den Tag-Nacht-Rhythmus perfekt.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">08:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--ernaehr) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--ernaehr);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Einfaches Frühstück: Brei, Brot, etwas Käse</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Vollkorn, selbst fermentiert — ein echtes Mikrobiom-Futter. Keine industrielle Verarbeitung, keine Konservierungsstoffe, keine Emulgatoren. Das Brot ist sauerteig-fermentiert, der Käse hat lebende Kulturen.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">Tagsüber</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--ernaehr) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--ernaehr);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">10–12 Stunden körperliche Arbeit draußen</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Pflügen, säen, ernten, hauen, tragen. Nicht intensiv, aber dauerhaft. 20.000–30.000 Schritte sind normal. Die Jahreszeit bestimmt den Rhythmus — im Winter weniger, im Sommer mehr. Der Körper folgt der Natur.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">Abends</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--ernaehr) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--ernaehr);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Dorf-Gemeinschaft, Großfamilie, Kerzen &amp; Feuer</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Menschen sind physisch zusammen. Kinder, Eltern, Großeltern im selben Haus. Konflikte gibt es, aber keine Einsamkeit. Kerzenlicht ist warm (rot-orange Wellenlängen) — stört Melatonin kaum.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">21:00</div>
+          </div>
+          <div style="flex:1;padding:0 0 4px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--ernaehr);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Schlaf — 7–8 Stunden, bei echter Dunkelheit</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Kein Radio, kein Buch, kein Licht. Der Körper ist ausreichend müde von der Arbeit. Tiefschlaf ist tief, keine Durchschlafprobleme.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background:color-mix(in srgb,#2e7d32 6%,var(--surface));border:1.5px solid color-mix(in srgb,#2e7d32 20%,var(--border));border-radius:12px;padding:16px 20px">
+        <div style="font-size:13px;line-height:1.9">
+          <strong style="color:#2e7d32">Was stimmt noch:</strong> Bewegung, Sonnenlicht, fermentierte Nahrung, Gemeinschaft, ungestörter Schlaf.<br>
+          <strong style="color:#c0392b">Was sich verändert hat:</strong> Mehr Kohlenhydrate (Brot), weniger Nahrungsvielfalt, Hungerperioden im Winter.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- STUFE 3 — INDUSTRIEARBEITER -->
+    <!-- ═══════════════════════════════════════ -->
+    <div style="margin-bottom:48px;padding-top:36px;border-top:1px solid var(--border)">
+
+      <div style="background:var(--surface2);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:var(--muted);line-height:1.7;font-style:italic">
+        <strong style="color:var(--text);font-style:normal">Was sich geändert hat:</strong> Die Uhr wird Chef. Schichtarbeit desynchronisiert den zirkadianen Rhythmus zum ersten Mal massiv. Raffinierter Zucker kommt in die Haushalte. Menschen arbeiten drinnen, ohne Sonnenlicht. Die erste große Welle chronischer Volkskrankheiten beginnt — Typ-2-Diabetes, Herzinfarkt, Darmerkrankungen.
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--bewegung);text-transform:uppercase;letter-spacing:.15em">Stufe 3</div>
+        <div style="font-size:12px;color:var(--muted)">ca. 1900</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;line-height:1.2">Industriearbeiter</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:640px">Körperliche Arbeit noch vorhanden, aber im Fabrikhallenlicht. Schichtsystem bricht den Schlafrhythmus. Zucker wird plötzlich erschwinglich. Chronische Entzündungserkrankungen werden zum Massenphänomen.</p>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:20px">
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">05:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--bewegung) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--bewegung);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Aufwachen durch Werksglocke oder Mutter</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Zum ersten Mal in der Menschheitsgeschichte wacht der Körper nicht mit der Natur auf — sondern nach Uhr. Der zirkadiane Rhythmus wird zur täglichen Herausforderung.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">06:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--bewegung) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--bewegung);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Kaffee mit Zucker — ein neuer Luxus</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Industriezucker ist seit kurzem erschwinglich. Zum ersten Mal in der Evolution landen täglich 20–40 Gramm raffinierter Zucker im Körper. NF-κB-Aktivierung durch Blutzuckerspikes beginnt — aber noch niemand weiß was das ist.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">07–18</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--bewegung) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--bewegung);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">11 Stunden in der Fabrik — kein Tageslicht</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Körperliche Arbeit ist noch da — aber eintönig, repetitiv, oft gefährlich. Kein Sonnenlicht. Vitamin D3-Spiegel sinken zum ersten Mal massenhaft. Rachitis wird Volkskrankheit bei Kindern.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">19:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--bewegung) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--bewegung);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Heimkommen. Familie. Erschöpft.</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Nachbarschaft und Großfamilie noch intakt. Gasolinlampe statt Elektrolicht — wärmer, weniger Blaulicht. Aber die Menschen sind müde, nicht erschöpft-aktiviert wie heute. Chronischer Stress gibt es kaum — nur akuten.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">22:00</div>
+          </div>
+          <div style="flex:1;padding:0 0 4px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--bewegung);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Schlaf — 6–7 Stunden, oft zu wenig</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Früh aufstehen, spät ins Bett — der Schlaf verkürzt sich zum ersten Mal systematisch. Die Bremszellen bekommen nicht mehr ihre volle Regenerationszeit. Chronische Entzündung beginnt zu keimen.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--gold) 6%,var(--surface));border:1.5px solid color-mix(in srgb,var(--gold) 25%,var(--border));border-radius:12px;padding:16px 20px">
+        <div style="font-size:13px;line-height:1.9">
+          <strong style="color:#2e7d32">Was noch stimmt:</strong> Bewegung, echte Gemeinschaft, wenig Zucker (verglichen mit heute), wenig künstliches Licht abends.<br>
+          <strong style="color:#c0392b">Was neu kommt:</strong> Uhr als Taktgeber, Schichtarbeit, Raffinadezucker, kein Tageslicht tagsüber, verkürzter Schlaf.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- STUFE 4 — ANGESTELLTER 1980 -->
+    <!-- ═══════════════════════════════════════ -->
+    <div style="margin-bottom:48px;padding-top:36px;border-top:1px solid var(--border)">
+
+      <div style="background:var(--surface2);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:var(--muted);line-height:1.7;font-style:italic">
+        <strong style="color:var(--text);font-style:normal">Was sich geändert hat:</strong> Körperliche Arbeit verschwindet fast komplett. Fernseher ersetzt Gemeinschaft. Fertiggerichte werden Standard. Auto statt Fuß. Aber: noch kein Smartphone, noch keine Social Media, noch kein 24/7-Erreichbarkeits-Stress.
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--accent3);text-transform:uppercase;letter-spacing:.15em">Stufe 4</div>
+        <div style="font-size:12px;color:var(--muted)">ca. 1980</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;line-height:1.2">Büroangestellter</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:640px">Die zweite große Entkopplung. Bewegung wird optional statt unvermeidlich. Verarbeitete Lebensmittel sind Alltag. Aber ein Abend ist noch ein Abend — nach 20 Uhr ist wirklich Feierabend.</p>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:20px">
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">07:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--accent3) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--accent3);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Wecker, Kaffee, Frühstück aus der Packung</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Cornflakes mit Milch, Toast mit Marmelade. Zum ersten Mal industrialisiert und beworben. Der Zuckergehalt ist hoch, aber niemand spricht darüber. Der Blutzuckerspike am frühen Morgen wird Alltag.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">08:30</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--accent3) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--accent3);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Auto ins Büro. Sitzen bis 17 Uhr.</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Zum ersten Mal in der Evolution verbringt ein gesunder erwachsener Mensch 10+ Stunden pro Tag sitzend. Keine Myokine aus den Muskeln. Insulinsensitivität sinkt langsam. Bauchfett sammelt sich — nicht weil der Mensch viel isst, sondern weil er nichts tut.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">12:30</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--accent3) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--accent3);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Kantine: Schnitzel, Pommes, Schokopudding</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Großindustriell produziert, viel Frittierfett (Transfette). Gemüse kaum, Ballaststoffe fehlen. Nach dem Essen der Nachmittagskaffee gegen das Mittagstief — das Tief entsteht aus dem Blutzuckerspike.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">19:00</div>
+          </div>
+          <div style="flex:1;border-left:2px solid color-mix(in srgb,var(--accent3) 40%,var(--border));padding:0 0 20px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--accent3);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Abendessen vor dem Fernseher</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Die Tagesschau ersetzt das Gespräch. Familie sitzt noch zusammen, aber schaut nicht mehr einander an. Ein Bier dazu ist normal. Aber: der Fernseher geht um 23 Uhr aus — kein 24/7-Content.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0">
+          <div style="width:60px;flex-shrink:0;text-align:center;padding-top:16px">
+            <div style="font-size:11px;font-weight:700;color:var(--muted)">23:00</div>
+          </div>
+          <div style="flex:1;padding:0 0 4px 20px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--accent3);margin-left:-26px;margin-bottom:10px;flex-shrink:0;display:inline-block"></div>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Schlaf nach den Nachrichten — 7 Stunden</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.7">Noch keine Handys im Bett. Noch keine E-Mail-Benachrichtigung um 23:40. Der Schlaf ist kurz, aber ungestört. Das wird gleich anders.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--gold) 6%,var(--surface));border:1.5px solid color-mix(in srgb,var(--gold) 25%,var(--border));border-radius:12px;padding:16px 20px">
+        <div style="font-size:13px;line-height:1.9">
+          <strong style="color:#2e7d32">Was noch stimmt:</strong> Abend ist Abend, kein Smartphone im Bett, Gemeinschaft noch physisch präsent, Nachbarschaft existiert.<br>
+          <strong style="color:#c0392b">Was neu kommt:</strong> Sitzen als Alltag, Fertigfood, viel Zucker, kaum Bewegung, Fernseher statt Gespräch.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- STUFE 5 — HEUTE -->
+    <!-- ═══════════════════════════════════════ -->
+    <div style="margin-bottom:36px;padding-top:36px;border-top:1px solid var(--border)">
+
+      <div style="background:color-mix(in srgb,#c0392b 6%,var(--surface));border:1.5px solid color-mix(in srgb,#c0392b 25%,var(--border));border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:var(--muted);line-height:1.7;font-style:italic">
+        <strong style="color:#c0392b;font-style:normal">Was sich geändert hat:</strong> Die Entkopplung ist komplett. Bildschirme ersetzen Sonnenlicht. Ultra-verarbeitete Lebensmittel ersetzen echtes Essen. Social Media ersetzt Nachbarschaft. Erreichbarkeit ersetzt Feierabend. Der Körper ist derselbe wie vor 20.000 Jahren — die Umgebung ist ein anderer Planet.
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.15em">Stufe 5</div>
+        <div style="font-size:12px;color:var(--muted)">heute</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;line-height:1.2">Der moderne Tag</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px;max-width:640px">Du lebst ihn jeden Tag. Wenn du den Kontrast zu Stufe 1 bis 4 im Kopf hast, wird klar warum der Körper reagiert wie er reagiert.</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('tag')">🕐 Der moderne Tag im Detail →</button>
+      </div>
+
+      <div style="background:color-mix(in srgb,#c0392b 7%,var(--surface));border:1.5px solid color-mix(in srgb,#c0392b 25%,var(--border));border-radius:12px;padding:18px 20px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Was der Körper heute bekommt</div>
+        <div style="font-size:13px;line-height:1.9">
+          📱 Blaulicht morgens zuerst → Cortisol überaktiviert<br>
+          🪑 10+ Stunden Sitzen → keine Myokine, Insulinresistenz<br>
+          🍔 3+ Zuckerspikes täglich → NF-κB dauerhaft aktiv<br>
+          😰 24/7-Erreichbarkeit → chronischer Stress statt akuter<br>
+          💡 Künstliches Licht bis Schlaf → Melatonin unterdrückt<br>
+          🏠 Einzelhaushalt / digitale Kontakte → Oxytocin-Mangel
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- VERGLEICHSTABELLE -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="sec-eyebrow" style="margin-top:48px">Der ganze Verlauf</div>
+    <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Was wir verloren haben — auf einen Blick</h2>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:28px;overflow-x:auto">
+      <div style="min-width:640px">
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;background:var(--surface2);padding:12px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
+          <div>Faktor</div><div>Jäger &amp; Sammler</div><div>Mittelalter</div><div>1900</div><div>1980</div><div>Heute</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">☀️ Sonnenlicht/Tag</div><div style="color:#2e7d32">8–10h</div><div style="color:#2e7d32">8h</div><div style="color:var(--gold)">2h</div><div style="color:#c0392b">30min</div><div style="color:#c0392b">&lt; 20min</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🏃 Bewegung</div><div style="color:#2e7d32">6–16 km</div><div style="color:#2e7d32">Dauerhaft</div><div style="color:var(--gold)">8h Arbeit</div><div style="color:#c0392b">1 km</div><div style="color:#c0392b">&lt; 500m</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🍬 Zucker/Tag</div><div style="color:#2e7d32">~0 g</div><div style="color:#2e7d32">~0 g</div><div style="color:var(--gold)">20 g</div><div style="color:#c0392b">80 g</div><div style="color:#c0392b">100–150 g</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">😰 Stresstyp</div><div style="color:#2e7d32">Akut</div><div style="color:#2e7d32">Akut</div><div style="color:var(--gold)">Akut + Schicht</div><div style="color:#c0392b">Chronisch</div><div style="color:#c0392b">24/7 chronisch</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🌙 Schlaf</div><div style="color:#2e7d32">8–9h dunkel</div><div style="color:#2e7d32">7–8h dunkel</div><div style="color:var(--gold)">6–7h</div><div style="color:var(--gold)">7h + TV</div><div style="color:#c0392b">6h + Handy</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🫂 Gemeinschaft</div><div style="color:#2e7d32">20–30 Menschen</div><div style="color:#2e7d32">Dorf &amp; Sippe</div><div style="color:var(--gold)">Nachbarschaft</div><div style="color:var(--gold)">Familie</div><div style="color:#c0392b">Meist allein</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🍽️ Mahlzeiten</div><div style="color:#2e7d32">1×/Tag</div><div style="color:#2e7d32">2×/Tag</div><div style="color:var(--gold)">3×/Tag</div><div style="color:#c0392b">3× + Snacks</div><div style="color:#c0392b">5–8× pro Tag</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:center">
+          <div style="font-weight:600">🔬 Nahrungsvielfalt</div><div style="color:#2e7d32">100+ Arten</div><div style="color:var(--gold)">30–50 Arten</div><div style="color:var(--gold)">20–30</div><div style="color:#c0392b">15–20</div><div style="color:#c0392b">10–15 Arten</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHLUSSBOTSCHAFT -->
+    <div style="background:color-mix(in srgb,var(--gold) 8%,var(--surface));border:2px solid var(--gold);border-radius:16px;padding:24px;margin-bottom:28px">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);line-height:1.4;margin-bottom:14px">
+        Unser Genom hat sich in 20.000 Jahren nicht verändert.<br>
+        <span style="color:var(--gold)">Unsere Umgebung in 100 Jahren komplett.</span>
+      </div>
+      <div style="font-size:14px;line-height:1.8">
+        Das ist der Konflikt — mehr muss man nicht verstehen. Chronische Entzündung ist nicht Pech, nicht Alter, nicht Genetik. Sie ist die Antwort eines Körpers auf eine Umgebung die ihn ständig überfordert.<br><br>
+        <strong>Die gute Nachricht:</strong> Du musst nicht zurück in die Steinzeit. Es reicht wenn du Stück für Stück einzelne Elemente des Bauplans zurückholst — 10 Minuten Sonne morgens, eine echte Mahlzeit statt Fertigfood, ein echtes Gespräch statt Scroll, 30 Minuten früher ins Bett, kein Handy im Schlafzimmer.<br><br>
+        Jedes dieser Elemente ist einzeln klein. Zusammen sind sie der Weg zurück zum Bauplan.
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+      <button class="action-link" onclick="showPage('tag')">🕐 Dein normaler Tag heute →</button>
+      <button class="action-link" onclick="showPage('mechanik')">🧬 Wie Lebensstil wirkt →</button>
+      <button class="action-link" onclick="showPage('lebensstil')">🧬 Alle Lebensstil-Themen →</button>
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
 <!-- DARMGESUNDHEIT -->
 <!-- ══════════════════════════════════════ -->
 <div class="page" id="p-darm">
@@ -4475,7 +4935,7 @@ async function startCascade() {
 }
 
 // Pages that belong under Lebensstil nav button
-const LEBENSSTIL_PAGES = new Set(['schlaf','ernaehr','bewegung','stress','mechanik','tag','darm']);
+const LEBENSSTIL_PAGES = new Set(['schlaf','ernaehr','bewegung','stress','mechanik','tag','darm','bauplan']);
 
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -5519,6 +5979,7 @@ const HASH_MAP = {
   '#labor':       ()=>{ showPage('labor'); },
   '#darm':        ()=>{ showPage('darm'); },
   '#tag':         ()=>{ showPage('tag'); },
+  '#bauplan':     ()=>{ showPage('bauplan'); },
   '#mechanik':    ()=>{ showPage('mechanik'); },
 };
 
