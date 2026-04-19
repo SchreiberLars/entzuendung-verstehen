@@ -746,9 +746,17 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <div style="font-size:12px;color:var(--muted);line-height:1.5">70% des Immunsystems sitzt im Darm — was das bedeutet und wie du es nutzt</div>
       </div>
 
+      <div onclick="showPage('kinder')" style="background:var(--surface);border:1.5px solid var(--border);
+        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.8rem;margin-bottom:6px">🧒</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Essen mit Kindern</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">Warum Kinder auf Süß geeicht sind — und wie man sie trotzdem anders isst ohne Machtkampf</div>
+      </div>
+
     </div>
 
-  </div>
   </div>
   <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
@@ -756,7 +764,7 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 <!-- ══════════════════════════════════════ -->
 <!-- SCHLAF -->
 <!-- ══════════════════════════════════════ -->
-<div class="page" <div class="page" id="p-schlaf">
+<div class="page" id="p-schlaf">
   <div class="action-hero">
     <div class="action-icon">😴</div>
     <h1 class="action-title" style="color:var(--schlaf)">Schlaf</h1>
@@ -3765,6 +3773,191 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 </div>
 
 <!-- ══════════════════════════════════════ -->
+<!-- ESSEN MIT KINDERN -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-kinder">
+  <div class="action-hero">
+    <div class="action-icon">🧒</div>
+    <h1 class="action-title" style="color:var(--accent2)">Essen mit Kindern</h1>
+    <p class="action-sub">Warum Kinder auf Süß geeicht sind, warum die üblichen Ratschläge scheitern — und was stattdessen wirkt, ohne tägliche Machtkämpfe.</p>
+  </div>
+
+  <div class="section">
+
+    <!-- EBENE 1 -->
+    <div style="background:color-mix(in srgb,var(--accent2) 7%,var(--surface));border-left:4px solid var(--accent2);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">Das Wesentliche</div>
+      <div style="font-size:15px;line-height:1.8">Kinder sind nicht falsch gepolt — sie sind richtig gepolt für eine Welt die nicht mehr existiert. Süß war evolutionär ein Sicherheitssignal (keine Giftpflanze) und Energiequelle (selten, also wertvoll). Heute ist Süß überall. Das ist kein Erziehungsversagen sondern ein Mismatch — und er lässt sich nicht durch Regeln lösen, sondern nur durch Umgebung und Vorbild.</div>
+    </div>
+
+    <!-- EBENE 2 -->
+    <details style="margin-bottom:16px">
+      <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--accent3);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🔬</span> Mechanismus: Warum Kinder Süßes wollen — biologisch</summary>
+      <div class="mech-box" style="margin-top:12px">
+        <div class="mech-text">
+          <strong>Muttermilch ist süß:</strong> Laktose ist der dominante Zucker. Das erste Geschmackserlebnis jedes Menschen ist süß — kein Zufall, sondern Evolution. Säuglinge die nicht süß mögen, trinken schlechter. Das System ist darauf eingestellt.<br><br>
+          <strong>In der Natur bedeutete süß:</strong> (1) Keine Giftpflanze — Bittersubstanzen sind oft toxisch, Süßes fast nie. (2) Energiedicht — reife Früchte, Honig. In einer Welt in der Hungerphasen die Regel waren, war "iss jedes Süße was du findest" die richtige Strategie. Dieses Programm läuft in jedem Kind noch.<br><br>
+          <strong>Das moderne Problem:</strong> Zum ersten Mal in der Menschheitsgeschichte ist Süßes (a) immer verfügbar und (b) hochkonzentriert. Ein Apfel hat 10g Zucker über Stunden verzehrt — ein Fruchtzwerg hat 10g Zucker in 60 Sekunden. Der Körper kann das eine biologisch einordnen, das andere nicht.<br><br>
+          <strong>Warum "einfach nicht kaufen" schwer ist:</strong> Süßes wird in der Kita, bei Freunden, bei Oma, auf jedem Kindergeburtstag angeboten. Totales Verbot schafft nur Heimlich-Essen und macht Süßes zum verbotenen Paradies — noch attraktiver.
+        </div>
+      </div>
+    </details>
+
+    <details style="margin-bottom:28px">
+      <summary style="cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);padding:10px 0;list-style:none;display:flex;align-items:center;gap:8px"><span>🔭</span> Tiefer: Das "Prägungsfenster" und warum es bis zur Pubertät offen ist</summary>
+      <div class="mech-box" style="margin-top:12px">
+        <div class="mech-text">
+          <strong>Darmmikrobiom in Entwicklung:</strong> Das Mikrobiom eines Kindes ist bis etwa zum 3. Lebensjahr im Aufbau und bis zur Pubertät noch plastisch. Welche Bakterien dominieren, wird durch Ernährung geprägt — und das Muster bleibt oft lebenslang. Ein Kind das viel Ballaststoffe und Fermentiertes isst, entwickelt ein anderes Mikrobiom als eines das UPF bekommt.<br><br>
+          <strong>Geschmacksprägung:</strong> Vorlieben entstehen durch wiederholte Exposition — auch wenn ein Kind etwas beim ersten Mal ablehnt. Studien zeigen: ein Kind muss ein neues Lebensmittel 8–15 mal probieren bevor es akzeptiert wird. Die meisten Eltern geben nach 2–3 Versuchen auf und schließen daraus "mein Kind mag das nicht". Falsch — das Kind kennt es nur noch nicht.<br><br>
+          <strong>Dopamin und Süß:</strong> Zucker aktiviert das Belohnungssystem stärker als fast jedes natürliche Lebensmittel. Je häufiger ein Kind starke Dopamin-Ausschüttungen durch Zucker erfährt, desto weniger Freude bringen mildere Reize (wie der natürliche Süß einer Karotte). Umgekehrt: weniger häufige Zucker-Peaks lassen die Geschmacksnerven sich normalisieren — nach 2–3 Wochen "Zucker-reduziert" schmecken normale Lebensmittel wieder intensiv süß.<br><br>
+          <strong>Warum Pubertät kritisch ist:</strong> Bis zur Pubertät passt sich das Mikrobiom relativ leicht an Veränderungen an. Danach wird es stabiler. Was in der Kindheit aufgebaut wird, trägt oft lebenslang.
+        </div>
+      </div>
+    </details>
+
+    <hr class="divider">
+
+    <!-- WAS NICHT FUNKTIONIERT -->
+    <div class="sec-eyebrow">Ehrlich zuerst</div>
+    <h2 class="sec-title" style="margin-bottom:16px;font-size:clamp(1.2rem,3vw,1.6rem)">Was nicht funktioniert — und warum</h2>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+      <div style="background:color-mix(in srgb,#c0392b 5%,var(--surface));border-left:3px solid #c0392b;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;line-height:1.7">
+        <strong>🚫 Totales Verbot</strong><br>
+        Süßes wird zum verbotenen Paradies — das steigert den Wert. Kinder essen heimlich, lügen, fühlen sich "schlecht" beim Essen. Das Verhältnis zu Essen wird beschädigt. Außerdem unmöglich durchzuhalten — spätestens bei Oma oder auf Kindergeburtstagen bricht es.
+      </div>
+      <div style="background:color-mix(in srgb,#c0392b 5%,var(--surface));border-left:3px solid #c0392b;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;line-height:1.7">
+        <strong>🚫 Erklären warum Zucker ungesund ist</strong><br>
+        Kinder unter 10 können die Konsequenz "in 40 Jahren Herzinfarkt" nicht mit dem "jetzt Schokolade" verknüpfen. Gehirnregionen für Langzeit-Konsequenzen sind noch nicht ausgereift. Die Erklärung rutscht ab.
+      </div>
+      <div style="background:color-mix(in srgb,#c0392b 5%,var(--surface));border-left:3px solid #c0392b;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;line-height:1.7">
+        <strong>🚫 Süßes als Belohnung für "gesund gegessen"</strong><br>
+        Verstärkt genau das Gegenteil — Gemüse wird zur Pflicht, Süßes zum Ziel. Das Kind lernt: "Süßes ist wertvoller als Gemüse." Besser kein Belohnungssystem ums Essen bauen.
+      </div>
+      <div style="background:color-mix(in srgb,#c0392b 5%,var(--surface));border-left:3px solid #c0392b;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;line-height:1.7">
+        <strong>🚫 Predigen während des Essens</strong><br>
+        "Ein Tag ohne Gemüse ist wie…" Das macht Essen zum Kampfplatz. Kinder reagieren mit Boykott — nicht aus Trotz, sondern weil Essen mit negativen Gefühlen verknüpft wird. Essen soll entspannt sein.
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- WAS FUNKTIONIERT -->
+    <div class="sec-eyebrow">Was stattdessen wirkt</div>
+    <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">6 Strategien die tatsächlich etwas verändern</h2>
+
+    <div class="do-list">
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">1</div>
+        <div>
+          <div class="do-item-title">Einkauf steuert Verzehr — nicht Regeln</div>
+          <div class="do-item-text">Was nicht im Haus ist wird nicht gegessen. Das ist die mit Abstand wirksamste Strategie. Kein Streit am Frühstückstisch wenn keine Schokoflocken da sind. Keine Diskussion über den Honig wenn Nussmus daneben steht.<br><br>
+          <strong>Konkret:</strong> Einmal pro Woche 10 Minuten mehr in den Einkauf investieren. Fruchtzwerge, Kinderriegel, gesüßte Joghurts, Fruchtsäfte weglassen. Statt dessen: Vollmilchjoghurt (Kinder lernen schnell das zu mögen mit etwas Obst drauf), Haferflocken, Nussmus, Früchte. Was im Haus ist, wird normal. Was nicht da ist, ist eine Ausnahme — und das ist gut so.</div>
+        </div>
+      </div>
+
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">2</div>
+        <div>
+          <div class="do-item-title">Das "Süßigkeiten-Fach" — Ritual statt Verbot</div>
+          <div class="do-item-text">Ein festes Fach oder eine Dose mit einem klaren, positiven Deal: "Du kriegst jeden Tag eine Sache raus." Das Kind wählt. Selbstbestimmung. Kein Bettelalltag. Kein "Darf ich noch?" den ganzen Tag. Süßes bleibt ein Teil des Lebens — aber mit klarem Rahmen.<br><br>
+          <strong>Wichtig:</strong> Das Fach auffüllen wenn leer — nicht "aufbessern" als Strafe. Es muss ein stabiler Rahmen sein, kein Machtinstrument. Nach 2–3 Wochen hört die Bettel-Dynamik auf weil sie langweilig wird.</div>
+        </div>
+      </div>
+
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">3</div>
+        <div>
+          <div class="do-item-title">Reihenfolge auf dem Teller — erst Gemüse, dann Rest</div>
+          <div class="do-item-text">Das Kind kommt hungrig an den Tisch. Was zuerst auf dem Teller liegt wird zuerst gegessen. Wenn das Gurkensticks und Karotten sind — die werden mit Hunger gegessen. Wenn das Nudeln sind — auch. Nutze diesen biologischen Vorteil.<br><br>
+          <strong>Konkret:</strong> Vor jeder Mahlzeit 5 Minuten Rohkost auf den Tisch während du noch kochst. Gurkensticks, Paprikaschiffe, Karotten, Tomaten. Nicht zwingen — aber anbieten. Die meisten Kinder greifen aus Hunger zu. Wenn sie dann das Hauptgericht bekommen, ist das meiste Gemüse schon durch.</div>
+        </div>
+      </div>
+
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">4</div>
+        <div>
+          <div class="do-item-title">Vorbild schlägt alles andere — egal was du sagst</div>
+          <div class="do-item-text">Kinder lernen durch Spiegelneuronen, nicht durch Belehrung. Wenn du selbst morgens Schokocroissants isst und abends ein Bier trinkst, während du dem Kind Haferflocken verkaufst — das geht schief. Nicht weil das Kind es "merkt" (tut es meistens nicht bewusst), sondern weil das Verhalten prägt was es als "normal" abspeichert.<br><br>
+          <strong>Die ehrliche Wahrheit:</strong> Wenn du willst dass deine Kinder anders essen, musst du anders essen. Das ist unbequem aber entscheidend. Die gute Nachricht: du profitierst selbst davon.</div>
+        </div>
+      </div>
+
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">5</div>
+        <div>
+          <div class="do-item-title">8–15 Versuche — wissenschaftlich belegt</div>
+          <div class="do-item-text">Ein Kind muss ein neues Lebensmittel im Schnitt 8–15 mal angeboten bekommen bevor es akzeptiert wird. Die meisten Eltern geben nach 2–3 Versuchen auf. Das ist der Hauptgrund warum Kinder "nichts essen".<br><br>
+          <strong>Konkret:</strong> Neues Lebensmittel immer wieder auf den Tisch stellen — ohne Druck. Kein "Probier das!" Einfach da sein lassen. Irgendwann greift das Kind zu — und dann plötzlich mag es das. Nicht aufgeben nach 3 Versuchen. Das ist wie Laufen lernen — fällt auch mehrfach hin bevor es klappt.</div>
+        </div>
+      </div>
+
+      <div class="do-item">
+        <div class="do-num" style="background:color-mix(in srgb,var(--accent2) 15%,var(--surface2));color:var(--accent2)">6</div>
+        <div>
+          <div class="do-item-title">Das Süßigkeiten-Reset — 2 Wochen reichen</div>
+          <div class="do-item-text">Die Geschmacksnerven sind plastisch. Nach 2–3 Wochen mit deutlich weniger Zucker schmecken normale Lebensmittel wieder intensiv süß. Eine Banane wird zur Süßigkeit. Ein Glas Vollmilch schmeckt nach Dessert. Das ist keine Einbildung — das ist echte Rezeptor-Anpassung.<br><br>
+          <strong>Konkret:</strong> 2–3 Wochen Zucker reduzieren — nicht eliminieren. Frühstück umstellen (Haferflocken mit Obst statt Cornflakes). Keine Fruchtsäfte zu den Mahlzeiten. Nachmittag: Obst statt Keks. Nach 2 Wochen: Kinder fragen oft von selbst nicht mehr so intensiv nach Süßem — weil der normale Alltag wieder "süß genug" schmeckt.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAS FRÜHSTÜCK -->
+    <div style="background:color-mix(in srgb,var(--ernaehr) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--ernaehr) 20%,var(--border));border-radius:14px;padding:20px;margin-bottom:20px">
+      <div style="font-size:12px;font-weight:600;color:var(--ernaehr);margin-bottom:14px">🍳 Das Frühstück — der größte Hebel</div>
+      <div style="font-size:13px;line-height:1.8;margin-bottom:14px">Das Frühstück prägt den ganzen Tag. Ein Zuckerfrühstück (Nutella, Cornflakes, Honig, Fruchtsaft) führt zu einem starken Insulinspike — 90 Minuten später Heißhunger, Konzentrationsprobleme in der Schule, Reizbarkeit. Ein Frühstück mit Fett und Protein hält 3–4 Stunden satt und stabil.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px">
+        <div style="background:color-mix(in srgb,#c0392b 6%,var(--surface));border-radius:10px;padding:12px">
+          <div style="font-weight:600;color:#c0392b;margin-bottom:6px;font-size:12px">🚫 Was vermeiden</div>
+          <div style="color:var(--muted);line-height:1.6;font-size:12px">Cornflakes, Honig auf Toast, Nutella, Fruchtsäfte, Kinder-Joghurts, Milchschnitten</div>
+        </div>
+        <div style="background:color-mix(in srgb,#2e7d32 6%,var(--surface));border-radius:10px;padding:12px">
+          <div style="font-weight:600;color:#2e7d32;margin-bottom:6px;font-size:12px">✅ Was wirkt</div>
+          <div style="color:var(--muted);line-height:1.6;font-size:12px">Haferflocken + Nüsse + Beeren, Rührei, Vollkornbrot + Mandelmus, Vollmilchjoghurt + Obst</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DER WICHTIGE REALISMUS -->
+    <div style="background:color-mix(in srgb,var(--accent2) 8%,var(--surface));border:2px solid var(--accent2);border-radius:14px;padding:20px 24px;margin-bottom:20px">
+      <div style="font-size:11px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Der wichtigste Satz auf dieser Seite</div>
+      <div style="font-size:15px;line-height:1.8;margin-bottom:10px">
+        <strong>Perfektionismus zerstört das Ziel.</strong>
+      </div>
+      <div style="font-size:13px;line-height:1.8;color:var(--muted)">
+        Kindergeburtstag mit Kuchen. Eis im Urlaub. Keks bei Oma. Schokoladen-Osterhase. Das ist nicht "Versagen" — das ist Kindheit. Der Unterschied entsteht über die 70% normalen Alltagstage — nicht über perfekte Kontrolle.<br><br>
+        Wenn dein Kind 5 Tage pro Woche ohne Industriezucker frühstückt, 5 Abende daheim isst statt beim McDonald's, und Süßes als Teil aber nicht Zentrum des Tages erlebt — dann hast du den Bauplan zurückgeholt. Der Kindergeburtstag mit Gummibärchen ändert daran nichts.<br><br>
+        <strong>Die 70/30-Regel:</strong> Wenn 70% des Essens gut sind, trägt das. Die anderen 30% müssen nicht perfekt sein. Das ist realistisch und dauerhaft durchhaltbar — alles andere kippt nach 3 Wochen.
+      </div>
+    </div>
+
+    <!-- MIT PARTNER/IN -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:20px;font-size:13px;line-height:1.8">
+      <div style="font-weight:600;margin-bottom:8px">🤝 Wenn der Partner/die Partnerin anders tickt</div>
+      Ernährung bei Kindern ist oft ein Konfliktfeld zwischen Eltern. Ein Elternteil sieht das Problem, der andere findet es übertrieben. Das ist normal.<br><br>
+      <strong>Was hilft:</strong> Fange klein an. Ändere zuerst dein eigenes Verhalten (siehe Strategie 4). Gestalte nur deinen eigenen Einkaufsanteil um. Zeige Ergebnisse — bessere Konzentration, weniger Trotzphasen, ruhigerer Schlaf. Das überzeugt mehr als jede Diskussion. Nach einigen Wochen wird der andere Elternteil oft von selbst mitziehen.
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+      <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung im Detail →</button>
+      <button class="action-link" onclick="showPage('darm')">🦠 Darmgesundheit →</button>
+      <button class="action-link" onclick="showPage('bauplan')">🕰️ Gegen den Bauplan →</button>
+    </div>
+
+    <div class="res-box">
+      <div class="res-title">📚 Zum Weiterlesen</div>
+      <div class="res-chips">
+        <span class="res-chip">📖 "Das Ernährungskompass" — Bas Kast (Kapitel zu Kindern)</span>
+        <span class="res-chip">📖 "Satt und glücklich" — Edith Gätjen</span>
+        <span class="res-chip">🎧 Huberman Lab: Nutrition for Children</span>
+      </div>
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
 <!-- DARMGESUNDHEIT -->
 <!-- ══════════════════════════════════════ -->
 <div class="page" id="p-darm">
@@ -4935,7 +5128,7 @@ async function startCascade() {
 }
 
 // Pages that belong under Lebensstil nav button
-const LEBENSSTIL_PAGES = new Set(['schlaf','ernaehr','bewegung','stress','mechanik','tag','darm','bauplan']);
+const LEBENSSTIL_PAGES = new Set(['schlaf','ernaehr','bewegung','stress','mechanik','tag','darm','bauplan','kinder']);
 
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -5980,6 +6173,7 @@ const HASH_MAP = {
   '#darm':        ()=>{ showPage('darm'); },
   '#tag':         ()=>{ showPage('tag'); },
   '#bauplan':     ()=>{ showPage('bauplan'); },
+  '#kinder':      ()=>{ showPage('kinder'); },
   '#mechanik':    ()=>{ showPage('mechanik'); },
 };
 
