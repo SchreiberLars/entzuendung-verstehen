@@ -278,6 +278,48 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
 .source-item::before{content:'↗';position:absolute;left:0;color:var(--accent3);font-size:9px;top:2px}
 .source-item a{color:var(--accent3);text-decoration:none}
 .source-item a:hover{text-decoration:underline}
+
+/* Aufklappbare Details-Bereiche deutlich machen */
+details{
+  background:color-mix(in srgb,var(--accent3) 4%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));
+  border-radius:10px;
+  padding:4px 14px;
+  transition:all .2s;
+}
+details:hover{
+  border-color:color-mix(in srgb,var(--accent3) 40%,var(--border));
+  background:color-mix(in srgb,var(--accent3) 7%,var(--surface));
+}
+details[open]{
+  background:color-mix(in srgb,var(--accent3) 6%,var(--surface));
+  border-color:color-mix(in srgb,var(--accent3) 35%,var(--border));
+}
+details summary{
+  position:relative;
+  padding-right:36px !important;
+}
+details summary::after{
+  content:'▼ aufklappen';
+  position:absolute;
+  right:4px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:10px;
+  font-weight:600;
+  color:var(--accent3);
+  background:color-mix(in srgb,var(--accent3) 12%,var(--surface));
+  padding:3px 8px;
+  border-radius:12px;
+  white-space:nowrap;
+  transition:all .2s;
+}
+details[open] summary::after{
+  content:'▲ zuklappen';
+}
+details summary:hover::after{
+  background:color-mix(in srgb,var(--accent3) 25%,var(--surface));
+}
 </style>
 </head>
 <body>
@@ -801,6 +843,94 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </div>
     </details>
 
+    <!-- ZIRKADIANER RHYTHMUS SVG -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:700;color:var(--schlaf);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Der zirkadiane Rhythmus — 24 Stunden im Überblick</div>
+
+      <svg viewBox="0 0 700 520" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <text x="350" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Der zirkadiane Rhythmus</text>
+        <text x="350" y="40" text-anchor="middle" font-size="10" fill="var(--muted)">Wie Cortisol, Melatonin und Mastzell-Aktivität dem 24-Stunden-Takt folgen</text>
+
+        <rect x="60" y="70" width="150" height="190" fill="#3b5bad" opacity="0.12"/>
+        <rect x="585" y="70" width="75" height="190" fill="#3b5bad" opacity="0.12"/>
+        <rect x="210" y="70" width="375" height="190" fill="#f39c12" opacity="0.08"/>
+
+        <text x="135" y="62" text-anchor="middle" font-size="14">🌙</text>
+        <text x="397" y="62" text-anchor="middle" font-size="14">☀️</text>
+        <text x="622" y="62" text-anchor="middle" font-size="14">🌙</text>
+
+        <line x1="60" y1="260" x2="660" y2="260" stroke="var(--muted)" stroke-width="1.5"/>
+        <line x1="60" y1="70" x2="60" y2="260" stroke="var(--muted)" stroke-width="1.5"/>
+
+        <text x="54" y="75" text-anchor="end" font-size="9" fill="var(--muted)">hoch</text>
+        <text x="54" y="170" text-anchor="end" font-size="9" fill="var(--muted)">mittel</text>
+        <text x="54" y="262" text-anchor="end" font-size="9" fill="var(--muted)">niedrig</text>
+
+        <text x="60" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">0h</text>
+        <text x="135" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">3h</text>
+        <text x="210" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">6h</text>
+        <text x="285" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">9h</text>
+        <text x="360" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">12h</text>
+        <text x="435" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">15h</text>
+        <text x="510" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">18h</text>
+        <text x="585" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">21h</text>
+        <text x="660" y="275" text-anchor="middle" font-size="9" fill="var(--muted)">24h</text>
+
+        <line x1="210" y1="70" x2="210" y2="260" stroke="var(--border)" stroke-width="0.5"/>
+        <line x1="585" y1="70" x2="585" y2="260" stroke="var(--border)" stroke-width="0.5"/>
+
+        <polyline points="60,225 85,230 110,232 135,228 160,215 185,190 210,155 235,115 260,90 285,95 310,110 335,130 360,150 385,170 410,185 435,200 460,212 485,220 510,228 535,232 560,234 585,232 610,228 635,225 660,222"
+          fill="none" stroke="#f39c12" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="260" cy="90" r="4" fill="#f39c12"/>
+        <text x="260" y="82" text-anchor="middle" font-size="9" font-weight="700" fill="#f39c12">Peak 7-8h</text>
+
+        <polyline points="60,105 85,95 110,88 135,92 160,105 185,130 210,170 235,205 260,225 285,235 310,240 335,243 360,245 385,245 410,243 435,240 460,235 485,225 510,205 535,175 560,140 585,115 610,100 635,95 660,100"
+          fill="none" stroke="#9b59b6" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="110" cy="88" r="4" fill="#9b59b6"/>
+        <text x="110" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#9b59b6">Peak 2-4h</text>
+
+        <polyline points="60,165 85,160 110,165 135,170 160,180 185,195 210,210 235,220 260,225 285,225 310,223 335,220 360,218 385,215 410,212 435,210 460,205 485,195 510,180 535,165 560,150 585,140 610,145 635,155 660,160"
+          fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4,3" opacity="0.85"/>
+
+        <!-- LEGEND — horizontal, below chart -->
+        <line x1="100" y1="288" x2="120" y2="288" stroke="#f39c12" stroke-width="3"/>
+        <text x="128" y="292" font-size="10" font-weight="600" fill="#f39c12">Cortisol</text>
+
+        <line x1="280" y1="288" x2="300" y2="288" stroke="#9b59b6" stroke-width="3"/>
+        <text x="308" y="292" font-size="10" font-weight="600" fill="#9b59b6">Melatonin</text>
+
+        <line x1="470" y1="288" x2="490" y2="288" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="3,2"/>
+        <text x="498" y="292" font-size="10" font-weight="600" fill="#c0392b">Mastzell-Aktivität</text>
+
+        <rect x="20" y="300" width="660" height="56" rx="10" fill="color-mix(in srgb,#9b59b6 6%,var(--surface))" stroke="#9b59b688" stroke-width="1"/>
+        <text x="40" y="322" font-size="11" font-weight="700" fill="#9b59b6">💡  Warum Symptome oft abends/nachts schlimmer werden</text>
+        <text x="40" y="340" font-size="10" fill="var(--muted)">Sobald Melatonin ansteigt, werden Mastzellen beruhigt. Blaulicht unterdrückt Melatonin —</text>
+        <text x="40" y="352" font-size="10" fill="var(--muted)">Mastzellen bleiben aktivierbar. Deshalb: Hautjucken, Aphthen, nächtliches Aufwachen.</text>
+
+        <rect x="20" y="368" width="660" height="140" rx="12" fill="color-mix(in srgb,#c0392b 4%,var(--surface))" stroke="#c0392b55" stroke-width="1"/>
+        <text x="40" y="392" font-size="12" font-weight="700" fill="#c0392b">⚠️  Was den Rhythmus stört</text>
+
+        <text x="40" y="414" font-size="11" font-weight="700" fill="#c0392b">📱 Blaulicht abends</text>
+        <text x="40" y="432" font-size="10" fill="var(--muted)">unterdrückt Melatonin,</text>
+        <text x="40" y="446" font-size="10" fill="var(--muted)">Mastzellen bleiben aktiv</text>
+        <text x="40" y="464" font-size="10" font-weight="600" fill="#c0392b">→ Symptome nachts</text>
+
+        <text x="260" y="414" font-size="11" font-weight="700" fill="#c0392b">🕐 Schichtarbeit / Jetlag</text>
+        <text x="260" y="432" font-size="10" fill="var(--muted)">Cortisol-Kurve gestört,</text>
+        <text x="260" y="446" font-size="10" fill="var(--muted)">Tregs weniger aufgefüllt</text>
+        <text x="260" y="464" font-size="10" font-weight="600" fill="#c0392b">→ CRP, IL-6 erhöht</text>
+
+        <text x="470" y="414" font-size="11" font-weight="700" fill="#c0392b">😴 Social Jetlag</text>
+        <text x="470" y="432" font-size="10" fill="var(--muted)">WE-Schlaf 2h später</text>
+        <text x="470" y="446" font-size="10" fill="var(--muted)">= Mini-Jetlag wöchentlich</text>
+        <text x="470" y="464" font-size="10" font-weight="600" fill="#c0392b">→ Dauer-Entzündung</text>
+
+        <text x="350" y="495" text-anchor="middle" font-size="11" font-style="italic" fill="var(--text)">Feste Schlafenszeiten + dunkles Schlafzimmer + Morgenlicht → Rhythmus synchronisiert sich selbst</text>
+
+      </svg>
+    </div>
+
     <hr class="divider">
     <div class="sec-eyebrow">Was du konkret tun kannst</div>
     <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">5 Dinge die deinen Schlaf verbessern — ohne Geld auszugeben</h2>
@@ -950,6 +1080,254 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       Bei chronischer Entzündung ist das besonders relevant — der Körper ist ohnehin im Alarm-Modus, und Spikes legen noch Benzin ins Feuer.<br><br>
       <strong>Kann man Blutzucker messen?</strong><br>
       Ja — mit einem CGM (Continuous Glucose Monitor) wie Freestyle Libre. Diese kleinen Sensoren am Oberarm messen Glukose kontinuierlich, 24 Stunden am Tag. Für Menschen ohne Diabetes rezeptfrei erhältlich. Sie zeigen genau welche Lebensmittel bei dir persönlich Spikes verursachen.</div>
+
+    <!-- BLUTZUCKER SVG -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Der Blutzuckerspike — schematisch</div>
+
+      <svg viewBox="0 0 700 430" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <text x="350" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Der Blutzuckerspike — was in deinem Körper passiert</text>
+
+        <!-- LEFT — SPIKE -->
+        <rect x="20" y="36" width="320" height="260" rx="12" fill="color-mix(in srgb,#c0392b 4%,var(--surface))" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="180" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">🍞 Weißbrot / Zucker zuerst</text>
+
+        <line x1="60" y1="74" x2="60" y2="232" stroke="var(--muted)" stroke-width="1.5"/>
+        <line x1="60" y1="232" x2="320" y2="232" stroke="var(--muted)" stroke-width="1.5"/>
+
+        <text x="55" y="78" text-anchor="end" font-size="9" fill="var(--muted)">hoch</text>
+        <text x="55" y="158" text-anchor="end" font-size="9" fill="var(--muted)">normal</text>
+        <text x="55" y="232" text-anchor="end" font-size="9" fill="var(--muted)">tief</text>
+
+        <rect x="60" y="148" width="260" height="20" fill="#2e7d3222" stroke="none"/>
+        <text x="325" y="161" text-anchor="start" font-size="8" fill="#2e7d32">Normal</text>
+
+        <text x="75" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">0</text>
+        <text x="135" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">30 min</text>
+        <text x="200" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">60 min</text>
+        <text x="265" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">90 min</text>
+
+        <polyline points="75,158 100,138 120,100 145,82 165,95 185,120 200,158 215,182 230,196 250,182 270,165 300,158"
+          fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round"/>
+        <polygon points="75,158 100,138 120,100 145,82 165,95 185,120 200,158 215,182 230,196 250,182 270,165 300,158 300,232 75,232"
+          fill="#c0392b22" stroke="none"/>
+
+        <line x1="145" y1="82" x2="145" y2="68" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="145" y="64" text-anchor="middle" font-size="9" fill="#c0392b">Spike ↑</text>
+
+        <text x="210" y="90" text-anchor="middle" font-size="8" fill="var(--gold)">NF-κB aktiv</text>
+        <text x="210" y="100" text-anchor="middle" font-size="8" fill="var(--muted)">Insulin ↑↑</text>
+
+        <rect x="205" y="175" width="60" height="26" rx="4" fill="#c0392b22" stroke="#c0392b55" stroke-width="1"/>
+        <text x="235" y="187" text-anchor="middle" font-size="8" fill="#c0392b">Absturz</text>
+        <text x="235" y="197" text-anchor="middle" font-size="8" fill="var(--muted)">Heißhunger</text>
+
+        <text x="180" y="262" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Was passiert:</text>
+        <text x="180" y="275" text-anchor="middle" font-size="10" fill="var(--muted)">Glukose → NF-κB aktiv → Entzündung</text>
+        <text x="180" y="288" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin schießt hoch → Crash → Heißhunger</text>
+
+        <!-- RIGHT — FLACH -->
+        <rect x="360" y="36" width="320" height="260" rx="12" fill="color-mix(in srgb,#2e7d32 4%,var(--surface))" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="520" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">🥗 Gemüse zuerst, dann Kohlenhydrate</text>
+
+        <line x1="400" y1="74" x2="400" y2="232" stroke="var(--muted)" stroke-width="1.5"/>
+        <line x1="400" y1="232" x2="660" y2="232" stroke="var(--muted)" stroke-width="1.5"/>
+
+        <text x="395" y="78" text-anchor="end" font-size="9" fill="var(--muted)">hoch</text>
+        <text x="395" y="158" text-anchor="end" font-size="9" fill="var(--muted)">normal</text>
+        <text x="395" y="232" text-anchor="end" font-size="9" fill="var(--muted)">tief</text>
+
+        <rect x="400" y="148" width="260" height="20" fill="#2e7d3222" stroke="none"/>
+
+        <text x="415" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">0</text>
+        <text x="475" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">30 min</text>
+        <text x="540" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">60 min</text>
+        <text x="605" y="245" text-anchor="middle" font-size="9" fill="var(--muted)">90 min</text>
+
+        <polyline points="415,158 440,153 470,146 500,143 525,146 550,150 580,155 620,158 645,158"
+          fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linejoin="round"/>
+        <polygon points="415,158 440,153 470,146 500,143 525,146 550,150 580,155 620,158 645,158 645,232 415,232"
+          fill="#2e7d3222" stroke="none"/>
+
+        <line x1="500" y1="143" x2="500" y2="118" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="500" y="114" text-anchor="middle" font-size="9" fill="#2e7d32">sanfter Anstieg</text>
+        <text x="500" y="104" text-anchor="middle" font-size="8" fill="var(--muted)">NF-κB ruhig</text>
+
+        <rect x="545" y="128" width="88" height="28" rx="4" fill="#2e7d3222" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="589" y="141" text-anchor="middle" font-size="8" fill="#2e7d32">Satt &amp; stabil</text>
+        <text x="589" y="151" text-anchor="middle" font-size="8" fill="var(--muted)">3–4 Stunden</text>
+
+        <text x="520" y="262" text-anchor="middle" font-size="10" font-weight="600" fill="#2e7d32">Was passiert:</text>
+        <text x="520" y="275" text-anchor="middle" font-size="10" fill="var(--muted)">Ballaststoffe puffern Glukose → kein Spike</text>
+        <text x="520" y="288" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin bleibt niedrig → kein Crash</text>
+
+        <!-- SAME MEAL -->
+        <rect x="180" y="306" width="340" height="34" rx="10" fill="var(--surface2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="350" y="321" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text)">Gleiche Mahlzeit — andere Reihenfolge</text>
+        <text x="350" y="334" text-anchor="middle" font-size="10" fill="var(--muted)">Gemüse + Protein zuerst → halbierter Spike (Studienbefund)</text>
+
+        <!-- CHAIN -->
+        <text x="350" y="358" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text)">Was 3 Spikes täglich über Jahre bedeuten:</text>
+
+        <rect x="30" y="368" width="120" height="36" rx="8" fill="#c0392b22" stroke="#c0392b" stroke-width="1"/>
+        <text x="90" y="384" text-anchor="middle" font-size="10" fill="#c0392b">NF-κB täglich</text>
+        <text x="90" y="396" text-anchor="middle" font-size="9" fill="var(--muted)">aktiviert</text>
+
+        <line x1="152" y1="386" x2="172" y2="386" stroke="#c0392b" stroke-width="1.5"/>
+        <polygon points="170,382 178,386 170,390" fill="#c0392b"/>
+
+        <rect x="180" y="368" width="120" height="36" rx="8" fill="#c0392b22" stroke="#c0392b" stroke-width="1"/>
+        <text x="240" y="384" text-anchor="middle" font-size="10" fill="#c0392b">AGEs entstehen</text>
+        <text x="240" y="396" text-anchor="middle" font-size="9" fill="var(--muted)">als fremd erkannt</text>
+
+        <line x1="302" y1="386" x2="322" y2="386" stroke="#c0392b" stroke-width="1.5"/>
+        <polygon points="320,382 328,386 320,390" fill="#c0392b"/>
+
+        <rect x="330" y="368" width="140" height="36" rx="8" fill="#c0392b22" stroke="#c0392b" stroke-width="1"/>
+        <text x="400" y="384" text-anchor="middle" font-size="10" fill="#c0392b">Insulinresistenz</text>
+        <text x="400" y="396" text-anchor="middle" font-size="9" fill="var(--muted)">schleichend</text>
+
+        <line x1="472" y1="386" x2="492" y2="386" stroke="#c0392b" stroke-width="1.5"/>
+        <polygon points="490,382 498,386 490,390" fill="#c0392b"/>
+
+        <rect x="500" y="368" width="170" height="36" rx="8" fill="#c0392b33" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="585" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Chronische</text>
+        <text x="585" y="396" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Entzündung</text>
+
+      </svg>
+    </div>
+
+    <!-- INSULINRESISTENZ SVG -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Insulinresistenz — was das eigentlich bedeutet</div>
+
+      <svg viewBox="0 0 700 540" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <defs>
+          <marker id="arrgreen-ins" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2e7d32"/></marker>
+          <marker id="arrgold-ins" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#f39c12"/></marker>
+          <marker id="arrred-ins" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#c0392b"/></marker>
+        </defs>
+
+        <text x="350" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Insulinresistenz — was das eigentlich bedeutet</text>
+        <text x="350" y="40" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin ist der Schlüssel. Glukose will in die Zelle. Was passiert wenn das Schloss taub wird?</text>
+
+        <!-- STUFE 1 — NORMAL -->
+        <rect x="20" y="60" width="210" height="280" rx="14" fill="color-mix(in srgb,#2e7d32 6%,var(--surface))" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="125" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">😌 Normal / Gesund</text>
+        <text x="125" y="100" text-anchor="middle" font-size="10" fill="var(--muted)">wenig Zucker-Belastung</text>
+
+        <rect x="55" y="130" width="140" height="100" rx="8" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d32" stroke-width="2"/>
+        <rect x="115" y="185" width="24" height="45" rx="2" fill="#2e7d32" opacity="0.9"/>
+        <text x="127" y="213" text-anchor="middle" font-size="7" fill="white" font-weight="700">OPEN</text>
+        <rect x="75" y="150" width="20" height="20" rx="2" fill="none" stroke="#2e7d32" stroke-width="1.2"/>
+        <rect x="150" y="150" width="20" height="20" rx="2" fill="none" stroke="#2e7d32" stroke-width="1.2"/>
+
+        <text x="125" y="255" text-anchor="middle" font-size="9" fill="#2e7d32">Zelle — Tür offen ✓</text>
+
+        <text x="85" y="175" text-anchor="middle" font-size="14">🔑</text>
+        <text x="85" y="188" text-anchor="middle" font-size="7" fill="var(--muted)">Insulin</text>
+        <text x="40" y="205" font-size="14">🍬</text>
+        <line x1="55" y1="207" x2="110" y2="207" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrgreen-ins)"/>
+
+        <text x="125" y="280" text-anchor="middle" font-size="10" fill="var(--muted)">Blutzucker: normal</text>
+        <text x="125" y="295" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin: wenig nötig</text>
+        <text x="125" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#2e7d32">Glukose kommt rein → satt</text>
+
+        <!-- STUFE 2 — RESISTENZ -->
+        <rect x="245" y="60" width="210" height="280" rx="14" fill="color-mix(in srgb,#f39c12 6%,var(--surface))" stroke="#f39c12" stroke-width="1.5"/>
+        <text x="350" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#f39c12">🔶 Insulinresistenz</text>
+        <text x="350" y="100" text-anchor="middle" font-size="10" fill="var(--muted)">Jahre dauernde Spikes</text>
+
+        <rect x="280" y="130" width="140" height="100" rx="8" fill="color-mix(in srgb,#f39c12 10%,var(--surface))" stroke="#f39c12" stroke-width="2"/>
+        <rect x="340" y="195" width="24" height="35" rx="2" fill="#f39c12" opacity="0.7"/>
+        <text x="352" y="217" text-anchor="middle" font-size="6" fill="white" font-weight="700">TAUB</text>
+        <rect x="300" y="150" width="20" height="20" rx="2" fill="none" stroke="#f39c12" stroke-width="1.2"/>
+        <rect x="375" y="150" width="20" height="20" rx="2" fill="none" stroke="#f39c12" stroke-width="1.2"/>
+
+        <text x="350" y="255" text-anchor="middle" font-size="9" fill="#f39c12">Zelle — Tür reagiert kaum</text>
+
+        <text x="295" y="175" text-anchor="middle" font-size="12">🔑</text>
+        <text x="310" y="182" text-anchor="middle" font-size="12">🔑</text>
+        <text x="325" y="175" text-anchor="middle" font-size="12">🔑</text>
+        <text x="340" y="182" text-anchor="middle" font-size="12">🔑</text>
+        <text x="317" y="195" text-anchor="middle" font-size="7" fill="#f39c12">Insulin ↑↑↑</text>
+
+        <text x="265" y="180" font-size="12">🍬</text>
+        <text x="262" y="200" font-size="12">🍬</text>
+        <text x="268" y="220" font-size="12">🍬</text>
+
+        <line x1="280" y1="210" x2="335" y2="210" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="295" y="230" font-size="14" fill="#f39c12">⚠️</text>
+
+        <text x="350" y="280" text-anchor="middle" font-size="10" fill="var(--muted)">Blutzucker: bleibt erhöht</text>
+        <text x="350" y="295" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin: 3-5× mehr nötig</text>
+        <text x="350" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#f39c12">Zellen hungern trotz Überfluss</text>
+
+        <!-- STUFE 3 — DIABETES -->
+        <rect x="470" y="60" width="210" height="280" rx="14" fill="color-mix(in srgb,#c0392b 6%,var(--surface))" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="575" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">🔥 Diabetes Typ 2</text>
+        <text x="575" y="100" text-anchor="middle" font-size="10" fill="var(--muted)">Endstadium nach Jahren</text>
+
+        <rect x="505" y="130" width="140" height="100" rx="8" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b" stroke-width="2"/>
+        <rect x="565" y="185" width="24" height="45" rx="2" fill="#c0392b" opacity="0.6"/>
+        <text x="577" y="213" text-anchor="middle" font-size="6" fill="white" font-weight="700">ZU</text>
+        <rect x="525" y="150" width="20" height="20" rx="2" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+        <rect x="600" y="150" width="20" height="20" rx="2" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+        <text x="510" y="125" font-size="12">🔥</text>
+        <text x="628" y="125" font-size="12">🔥</text>
+
+        <text x="575" y="255" text-anchor="middle" font-size="9" fill="#c0392b">Zelle — Tür zu + Entzündung</text>
+
+        <text x="520" y="180" text-anchor="middle" font-size="12">🥵</text>
+        <text x="520" y="198" text-anchor="middle" font-size="7" fill="#c0392b">Pankreas</text>
+        <text x="520" y="208" text-anchor="middle" font-size="7" fill="#c0392b">erschöpft</text>
+
+        <text x="490" y="175" font-size="12">🍬</text>
+        <text x="488" y="195" font-size="12">🍬</text>
+        <text x="494" y="215" font-size="12">🍬</text>
+        <text x="486" y="235" font-size="12">🍬</text>
+
+        <text x="575" y="280" text-anchor="middle" font-size="10" fill="var(--muted)">Blutzucker: dauerhaft hoch</text>
+        <text x="575" y="295" text-anchor="middle" font-size="10" fill="var(--muted)">Insulin: kann nicht mehr</text>
+        <text x="575" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Systemische Entzündung</text>
+
+        <!-- ARROWS -->
+        <line x1="232" y1="180" x2="243" y2="180" stroke="#f39c12" stroke-width="2" marker-end="url(#arrgold-ins)"/>
+        <text x="237" y="165" text-anchor="middle" font-size="8" fill="#f39c12">Jahre</text>
+        <text x="237" y="174" text-anchor="middle" font-size="8" fill="#f39c12">Spikes</text>
+
+        <line x1="457" y1="180" x2="468" y2="180" stroke="#c0392b" stroke-width="2" marker-end="url(#arrred-ins)"/>
+        <text x="462" y="165" text-anchor="middle" font-size="8" fill="#c0392b">weitere</text>
+        <text x="462" y="174" text-anchor="middle" font-size="8" fill="#c0392b">Jahre</text>
+
+        <!-- BOTTOM -->
+        <rect x="20" y="360" width="660" height="160" rx="12" fill="color-mix(in srgb,#c0392b 4%,var(--surface))" stroke="#c0392b55" stroke-width="1"/>
+        <text x="40" y="385" font-size="12" font-weight="700" fill="#c0392b">Warum Insulinresistenz Entzündung ist — schon vor Diabetes</text>
+
+        <text x="40" y="410" font-size="11" font-weight="700" fill="#c0392b">🍬 Hoher Blutzucker</text>
+        <text x="40" y="426" font-size="9" fill="var(--muted)">AGEs entstehen · Immunsystem</text>
+        <text x="40" y="439" font-size="9" fill="var(--muted)">sieht sie als fremd · NF-κB an</text>
+
+        <text x="200" y="410" font-size="11" font-weight="700" fill="#c0392b">💉 Hohes Insulin</text>
+        <text x="200" y="426" font-size="9" fill="var(--muted)">Insulin selbst aktiviert</text>
+        <text x="200" y="439" font-size="9" fill="var(--muted)">NF-κB bei hohen Spiegeln</text>
+
+        <text x="360" y="410" font-size="11" font-weight="700" fill="#c0392b">🎈 Bauchfett</text>
+        <text x="360" y="426" font-size="9" fill="var(--muted)">wird endokrines Organ · produziert</text>
+        <text x="360" y="439" font-size="9" fill="var(--muted)">IL-6, TNF-α wie Entzündungsquelle</text>
+
+        <text x="520" y="410" font-size="11" font-weight="700" fill="#c0392b">🩸 Gefäße</text>
+        <text x="520" y="426" font-size="9" fill="var(--muted)">oxidiertes LDL + Entzündung</text>
+        <text x="520" y="439" font-size="9" fill="var(--muted)">= Atherosklerose beginnt</text>
+
+        <rect x="40" y="455" width="620" height="50" rx="8" fill="var(--surface2)" stroke="#2e7d3244" stroke-width="1"/>
+        <text x="350" y="475" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text)">Die gute Nachricht: Insulinresistenz ist umkehrbar</text>
+        <text x="350" y="492" text-anchor="middle" font-size="10" fill="var(--muted)">Bewegung &amp; weniger Spikes → Rezeptoren werden wieder empfindlich — oft in Wochen messbar</text>
+
+      </svg>
+    </div>
 
     <!-- PROXY SECTION -->
     <div style="background:color-mix(in srgb,var(--accent3) 6%,var(--surface));
@@ -2152,6 +2530,107 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
             <strong>Konkret:</strong> Nicht alles auf einmal streichen — das macht krank und überfordert. Eine Kategorie nach der anderen 2 Wochen weglassen und beobachten.</div>
           </div>
         </div>
+
+        <!-- HISTAMIN-FASS SVG -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px">
+          <div style="font-size:11px;font-weight:700;color:var(--mcas);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Das Histamin-Fass-Modell</div>
+
+          <svg viewBox="0 0 700 560" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+            <text x="350" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Das Histamin-Fass</text>
+            <text x="350" y="40" text-anchor="middle" font-size="10" fill="var(--muted)">Warum dieselbe Tomate heute Symptome auslöst — und morgen nicht</text>
+
+            <!-- LEFT BARREL — LOW -->
+            <text x="135" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">😌  Niedrige Histamin-Last</text>
+            <text x="135" y="83" text-anchor="middle" font-size="10" fill="var(--muted)">Fass halbvoll — genug Puffer</text>
+
+            <path d="M 60 110 L 210 110 L 200 350 L 70 350 Z" fill="none" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="135" cy="110" rx="75" ry="12" fill="none" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="135" cy="350" rx="65" ry="10" fill="var(--surface)" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="135" cy="180" rx="72" ry="11" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,2"/>
+            <ellipse cx="135" cy="270" rx="68" ry="10" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,2"/>
+
+            <path d="M 66 230 L 204 230 L 200 350 L 70 350 Z" fill="#2e7d32" opacity="0.4"/>
+            <ellipse cx="135" cy="230" rx="69" ry="10" fill="#2e7d32" opacity="0.6"/>
+
+            <line x1="210" y1="230" x2="245" y2="230" stroke="#2e7d32" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="248" y="234" font-size="9" fill="#2e7d32">aktuelle</text>
+            <text x="248" y="245" font-size="9" fill="#2e7d32">Last</text>
+
+            <line x1="60" y1="140" x2="245" y2="140" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="248" y="136" font-size="9" font-weight="700" fill="#c0392b">Symptom-</text>
+            <text x="248" y="146" font-size="9" font-weight="700" fill="#c0392b">schwelle</text>
+
+            <text x="135" y="100" text-anchor="middle" font-size="18">🍅</text>
+
+            <text x="135" y="395" text-anchor="middle" font-size="10" font-weight="600" fill="#2e7d32">Eine Tomate? Kein Problem.</text>
+            <text x="135" y="409" text-anchor="middle" font-size="9" fill="var(--muted)">Fass bleibt unter der Schwelle</text>
+
+            <!-- RIGHT BARREL — HIGH -->
+            <text x="475" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">🔥  Hohe Histamin-Last</text>
+            <text x="475" y="83" text-anchor="middle" font-size="10" fill="var(--muted)">Fass fast voll — läuft bei jedem Tropfen über</text>
+
+            <path d="M 400 110 L 550 110 L 540 350 L 410 350 Z" fill="none" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="475" cy="110" rx="75" ry="12" fill="none" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="475" cy="350" rx="65" ry="10" fill="var(--surface)" stroke="var(--muted)" stroke-width="2"/>
+            <ellipse cx="475" cy="180" rx="72" ry="11" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,2"/>
+            <ellipse cx="475" cy="270" rx="68" ry="10" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,2"/>
+
+            <path d="M 401 145 L 549 145 L 540 350 L 410 350 Z" fill="#c0392b" opacity="0.4"/>
+            <ellipse cx="475" cy="145" rx="74" ry="11" fill="#c0392b" opacity="0.6"/>
+
+            <!-- Overflow droplets -->
+            <circle cx="403" cy="152" r="3" fill="#c0392b" opacity="0.7"/>
+            <circle cx="398" cy="162" r="2.5" fill="#c0392b" opacity="0.6"/>
+            <circle cx="549" cy="150" r="3" fill="#c0392b" opacity="0.7"/>
+            <circle cx="553" cy="160" r="2.5" fill="#c0392b" opacity="0.6"/>
+
+            <line x1="550" y1="145" x2="585" y2="145" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="590" y="149" font-size="9" fill="#c0392b">aktuelle</text>
+            <text x="590" y="160" font-size="9" fill="#c0392b">Last</text>
+
+            <line x1="400" y1="140" x2="585" y2="140" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="350" y="136" text-anchor="end" font-size="9" font-weight="700" fill="#c0392b">Symptom-</text>
+            <text x="350" y="146" text-anchor="end" font-size="9" font-weight="700" fill="#c0392b">schwelle</text>
+
+            <text x="475" y="100" text-anchor="middle" font-size="18">🍅</text>
+
+            <text x="475" y="395" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Gleiche Tomate — Reaktion!</text>
+            <text x="475" y="409" text-anchor="middle" font-size="9" fill="var(--muted)">Fass läuft über = Symptome</text>
+
+            <!-- Divider -->
+            <line x1="310" y1="120" x2="310" y2="400" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4"/>
+
+            <!-- Key insight -->
+            <text x="350" y="420" text-anchor="middle" font-size="11" font-weight="700" font-style="italic" fill="var(--text)">Deshalb verträgst du manchmal Dinge — und manchmal nicht. Es kommt auf den Füllstand an.</text>
+
+            <!-- WHAT FILLS THE BARREL -->
+            <rect x="20" y="430" width="660" height="120" rx="12" fill="color-mix(in srgb,#c0392b 4%,var(--surface))" stroke="#c0392b55" stroke-width="1"/>
+            <text x="40" y="454" font-size="12" font-weight="700" fill="#c0392b">Was füllt das Fass?</text>
+
+            <text x="40" y="478" font-size="10" font-weight="700" fill="#c0392b">🍷 Nahrung</text>
+            <text x="40" y="494" font-size="9" fill="var(--muted)">Rotwein · Käse · Tomate</text>
+            <text x="40" y="506" font-size="9" fill="var(--muted)">Fisch · Sauerkraut · Nüsse</text>
+            <text x="40" y="520" font-size="9" fill="var(--muted)">Schokolade · Zitrusfrüchte</text>
+
+            <text x="200" y="478" font-size="10" font-weight="700" fill="#c0392b">😰 Stress</text>
+            <text x="200" y="494" font-size="9" fill="var(--muted)">CRH triggert Mastzellen</text>
+            <text x="200" y="506" font-size="9" fill="var(--muted)">direkt — auch ohne</text>
+            <text x="200" y="520" font-size="9" fill="var(--muted)">Histamin-Nahrung</text>
+
+            <text x="360" y="478" font-size="10" font-weight="700" fill="#c0392b">🩸 Hormone</text>
+            <text x="360" y="494" font-size="9" fill="var(--muted)">Zyklus (Östrogen ↑</text>
+            <text x="360" y="506" font-size="9" fill="var(--muted)">= Histamin ↑)</text>
+            <text x="360" y="520" font-size="9" fill="var(--muted)">Schwangerschaft</text>
+
+            <text x="520" y="478" font-size="10" font-weight="700" fill="#c0392b">⚡ Weitere Trigger</text>
+            <text x="520" y="494" font-size="9" fill="var(--muted)">Hitze · Kälte · Duftstoffe</text>
+            <text x="520" y="506" font-size="9" fill="var(--muted)">Medikamente · Infekte</text>
+            <text x="520" y="520" font-size="9" fill="var(--muted)">Schlafmangel · Sport übertrieben</text>
+
+          </svg>
+        </div>
+
         <div class="do-item">
           <div class="do-num" style="background:color-mix(in srgb,var(--mcas) 15%,var(--surface2));color:var(--mcas)">3</div>
           <div>
@@ -4393,41 +4872,65 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
     <div class="sec-eyebrow">Für jeden relevant</div>
     <h2 class="sec-title" style="margin-bottom:16px;font-size:clamp(1.1rem,3vw,1.5rem)">Allgemeine Entzündungsmarker</h2>
 
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:28px">
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;background:var(--surface2);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">
-        <div>Wert</div><div style="color:#2e7d32">✅ Sollbereich</div><div style="color:#c0392b">⚠️ Auffällig</div><div>Relevant bei</div>
+    <!-- hsCRP -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3);gap:12px">
+        <span style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>⭐ hsCRP</span><span style="font-size:11px;font-weight:400;color:var(--muted)">hochsensitives CRP</span></span>
+        <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 1 mg/L</span><span style="color:#c0392b">&gt; 3 mg/L</span></span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:16px 18px;margin-top:-1px;font-size:13px;line-height:1.7;color:var(--muted)">
+        IL-6 (von Makrophagen + Mastzellen) stimuliert die Leber zur CRP-Produktion. hsCRP ist 10× empfindlicher als normales CRP — sieht chronische Hintergrund-Entzündung ohne akute Infektion. <strong style="color:var(--text)">Explizit anfragen!</strong> Wird oft nicht automatisch gemessen.<br><br>
+        <strong style="color:var(--text)">Relevant bei:</strong> allen chronischen Entzündungserkrankungen.
       </div>
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
-        <div><div style="font-weight:600;font-size:13px">hsCRP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Hochsensitives CRP. IL-6 (von Makrophagen + Mastzellen) stimuliert die Leber zur CRP-Produktion. 10× empfindlicher als normales CRP — sieht chronische Hintergrund-Entzündung ohne akute Infektion. <strong>Explizit anfragen!</strong> Wird oft nicht automatisch gemessen.</div></div>
-        <div style="color:#2e7d32;font-size:12px">&lt; 1 mg/L</div>
-        <div style="color:#c0392b;font-size:12px">&gt; 3 mg/L</div>
-        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+    </details>
+
+    <!-- Vitamin D3 -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3);gap:12px">
+        <span style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>⭐ Vitamin D3 (25-OH)</span></span>
+        <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">40–60 ng/mL</span><span style="color:#c0392b">&lt; 20 ng/mL</span></span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:16px 18px;margin-top:-1px;font-size:13px;line-height:1.7;color:var(--muted)">
+        Steuert direkt die Differenzierung von Bremszellen (Tregs) und dendritischen Zellen. Mangel = schwächere Bremse, misstrauischere Späher. In Mitteleuropa bei ~60% der Bevölkerung zu niedrig. Immer mit K2 kombinieren.<br><br>
+        <strong style="color:var(--text)">Relevant bei:</strong> allen chronischen Entzündungserkrankungen.
       </div>
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
-        <div><div style="font-weight:600;font-size:13px">Vitamin D3 (25-OH) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Steuert direkt die Differenzierung von Bremszellen (Tregs) und dendritischen Zellen. Mangel = schwächere Bremse, misstrauischere Späher. In Mitteleuropa bei ~60% der Bevölkerung zu niedrig. Immer mit K2 kombinieren.</div></div>
-        <div style="color:#2e7d32;font-size:12px">40–60 ng/mL</div>
-        <div style="color:#c0392b;font-size:12px">&lt; 20 ng/mL</div>
-        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+    </details>
+
+    <!-- Ferritin -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3);gap:12px">
+        <span style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>Ferritin</span></span>
+        <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">30–200 ng/mL</span><span style="color:#c0392b">&gt; 400 od. &lt; 20</span></span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:16px 18px;margin-top:-1px;font-size:13px;line-height:1.7;color:var(--muted)">
+        Eisenspeicher und Akutphaseprotein. Bei Entzündung steigt Ferritin — auch bei gleichzeitigem Eisenmangel. Deshalb: immer zusammen mit Transferrinsättigung messen. Ferritin allein kann täuschen.<br><br>
+        <strong style="color:var(--text)">Relevant bei:</strong> Rheuma, Colitis, allgemeiner Verdacht auf Entzündung.
       </div>
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
-        <div><div style="font-weight:600;font-size:13px">Ferritin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Eisenspeicher und Akutphaseprotein. Bei Entzündung steigt Ferritin — auch bei gleichzeitigem Eisenmangel. Deshalb: immer zusammen mit Transferrinsättigung messen. Ferritin allein kann täuschen.</div></div>
-        <div style="color:#2e7d32;font-size:12px">30–200 ng/mL</div>
-        <div style="color:#c0392b;font-size:12px">&gt; 400 oder &lt; 20</div>
-        <div style="font-size:11px;color:var(--muted)">Rheuma, Colitis, Allgemein</div>
+    </details>
+
+    <!-- Omega-3-Index -->
+    <details style="margin-bottom:12px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3);gap:12px">
+        <span style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>Omega-3-Index</span></span>
+        <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&gt; 8%</span><span style="color:#c0392b">&lt; 4%</span></span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:16px 18px;margin-top:-1px;font-size:13px;line-height:1.7;color:var(--muted)">
+        EPA + DHA als Anteil der Fettsäuren in Erythrozyten-Membranen. Direktes Maß für die anti-entzündliche Kapazität. Selten gemessen — aber einer der aussagekräftigsten Lebensstil-Marker.<br><br>
+        <strong style="color:var(--text)">Relevant bei:</strong> allen chronischen Entzündungserkrankungen.
       </div>
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
-        <div><div style="font-weight:600;font-size:13px">Omega-3-Index</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">EPA + DHA als Anteil der Fettsäuren in Erythrozyten-Membranen. Direktes Maß für die anti-entzündliche Kapazität. Selten gemessen — aber einer der aussagekräftigsten Lebensstil-Marker.</div></div>
-        <div style="color:#2e7d32;font-size:12px">&gt; 8%</div>
-        <div style="color:#c0392b;font-size:12px">&lt; 4%</div>
-        <div style="font-size:11px;color:var(--muted)">Allen Erkrankungen</div>
+    </details>
+
+    <!-- IL-6 -->
+    <details style="margin-bottom:28px">
+      <summary style="cursor:pointer;background:color-mix(in srgb,var(--accent3) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--accent3) 20%,var(--border));border-radius:12px;padding:14px 18px;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--accent3);gap:12px">
+        <span style="display:flex;align-items:center;gap:10px;flex:1;min-width:0"><span>IL-6 (Interleukin-6)</span></span>
+        <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 7 pg/mL</span><span style="color:#c0392b">&gt; 10 pg/mL</span></span>
+      </summary>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:16px 18px;margin-top:-1px;font-size:13px;line-height:1.7;color:var(--muted)">
+        Zytokin das von Makrophagen, Mastzellen und Fettgewebe ausgeschüttet wird. Signalisiert der Leber CRP-Produktion, stimuliert Th17-Zellen. Direkter als CRP — aber teurer und selten im Standard.<br><br>
+        <strong style="color:var(--text)">Relevant bei:</strong> Rheuma, Depression, metabolischem Syndrom.
       </div>
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;padding:12px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px">
-        <div><div style="font-weight:600;font-size:13px">IL-6 (Interleukin-6)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:3px">Zytokin das von Makrophagen, Mastzellen und Fettgewebe ausgeschüttet wird. Signalisiert der Leber CRP-Produktion, stimuliert Th17-Zellen. Direkter als CRP — aber teurer und selten im Standard.</div></div>
-        <div style="color:#2e7d32;font-size:12px">&lt; 7 pg/mL</div>
-        <div style="color:#c0392b;font-size:12px">&gt; 10 pg/mL</div>
-        <div style="font-size:11px;color:var(--muted)">Rheuma, Depression, Metabolisch</div>
-      </div>
-    </div>
+    </details>
 
     <!-- ERKRANKUNGSSPEZIFISCH -->
     <div class="sec-eyebrow">Erkrankungsspezifisch</div>
@@ -4439,10 +4942,34 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>🫁 Asthma</span><span style="font-size:11px;font-weight:400;color:var(--muted)">FeNO · IgE · Eosinophile · Tryptase</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">FeNO ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Ausgeatmetes Stickstoffmonoxid — von entzündeten Atemwegszellen produziert. Misst eosinophile Entzündung direkt. Hilft zu entscheiden ob Kortison-Inhalation wirken wird.</div></div><div style="color:#2e7d32">&lt; 25 ppb</div><div style="color:#c0392b">&gt; 50 ppb</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Eosinophile (Diff-BB)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Immunzellen der allergischen Entzündung. Im Differentialblutbild bestimmbar. Erhöht bei eosinophilem Asthma — wichtig für Therapieentscheidung.</div></div><div style="color:#2e7d32">&lt; 0,5 ×10⁹/L</div><div style="color:#c0392b">&gt; 1,5 ×10⁹/L</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">IgE gesamt</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper der Sofortreaktion. IgE bindet an Mastzellen in den Atemwegen — Allergen-Kontakt → sofortige Degranulation → Bronchospasmus.</div></div><div style="color:#2e7d32">&lt; 100 kU/L</div><div style="color:#c0392b">&gt; 150 kU/L</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Chronisch entzündliche Erkrankung der Atemwege. Die Bronchien sind dauerhaft gereizt, bei Kontakt mit Triggern (Allergene, kalte Luft, Infekte) verengen sie sich krampfartig. IgE und Mastzellen spielen eine zentrale Rolle — deshalb profitiert Asthma oft stark von entzündungssenkenden Maßnahmen.<br>
+          <a href="#asthma" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-asthma');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">FeNO ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 25 ppb</span><span style="color:#c0392b">&gt; 50 ppb</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Ausgeatmetes Stickstoffmonoxid — von entzündeten Atemwegszellen produziert. Misst eosinophile Entzündung direkt. Hilft zu entscheiden ob Kortison-Inhalation wirken wird.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Eosinophile (Diff-BB)</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 0,5 ×10⁹/L</span><span style="color:#c0392b">&gt; 1,5 ×10⁹/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Immunzellen der allergischen Entzündung. Im Differentialblutbild bestimmbar. Erhöht bei eosinophilem Asthma — wichtig für Therapieentscheidung.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">IgE gesamt</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 100 kU/L</span><span style="color:#c0392b">&gt; 150 kU/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Antikörper der Sofortreaktion. IgE bindet an Mastzellen in den Atemwegen — Allergen-Kontakt → sofortige Degranulation → Bronchospasmus.</div>
+        </div>
       </div>
     </details>
 
@@ -4452,10 +4979,34 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>❤️ Atherosklerose</span><span style="font-size:11px;font-weight:400;color:var(--muted)">ApoB · Lp(a) · hsCRP · Homocystein</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">ApoB ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Jedes LDL-Partikel hat genau ein ApoB. Partikelanzahl wichtiger als Menge — zwei Menschen mit gleichem LDL können sehr unterschiedliches Risiko haben.</div></div><div style="color:#2e7d32">&lt; 90 mg/dL</div><div style="color:#c0392b">&gt; 100 mg/dL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Lp(a) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Genetisch bestimmt, kaum durch Lebensstil beeinflussbar. Stark entzündungsfördernd in Gefäßwänden. Einer der stärksten Herzrisikofaktoren — wird fast nie gemessen.</div></div><div style="color:#2e7d32">&lt; 30 mg/dL</div><div style="color:#c0392b">&gt; 50 mg/dL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Homocystein</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Steigt bei B6/B12/Folsäure-Mangel. Schädigt Gefäßendothel direkt. Einfach zu senken mit B-Vitaminen — selten gemessen.</div></div><div style="color:#2e7d32">&lt; 10 µmol/L</div><div style="color:#c0392b">&gt; 15 µmol/L</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Keine Verstopfung durch Fett — sondern chronische Entzündung der Gefäßwände. LDL-Cholesterin wird erst gefährlich wenn es in entzündeten Gefäßen oxidiert. hsCRP als Entzündungsmarker sagt das Herzinfarktrisiko oft besser voraus als Cholesterin allein.<br>
+          <a href="#athero" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-athero');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">ApoB ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 90 mg/dL</span><span style="color:#c0392b">&gt; 100 mg/dL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Jedes LDL-Partikel hat genau ein ApoB. Partikelanzahl wichtiger als Menge — zwei Menschen mit gleichem LDL können sehr unterschiedliches Risiko haben.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Lp(a) ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 30 mg/dL</span><span style="color:#c0392b">&gt; 50 mg/dL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Genetisch bestimmt, kaum durch Lebensstil beeinflussbar. Stark entzündungsfördernd in Gefäßwänden. Einer der stärksten Herzrisikofaktoren — wird fast nie gemessen.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Homocystein</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 10 µmol/L</span><span style="color:#c0392b">&gt; 15 µmol/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Steigt bei B6/B12/Folsäure-Mangel. Schädigt Gefäßendothel direkt. Einfach zu senken mit B-Vitaminen — selten gemessen.</div>
+        </div>
       </div>
     </details>
 
@@ -4465,10 +5016,34 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>🫀 Colitis Ulcerosa</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Calprotectin · CRP · Albumin · Zonulin</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Calprotectin (Stuhl) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Protein aus Neutrophilen — bei Darmschleimhautentzündung freigesetzt. Nicht-invasiver Marker. Viel aussagekräftiger als Blutmarker für Darmentzündung.</div></div><div style="color:#2e7d32">&lt; 50 µg/g</div><div style="color:#c0392b">&gt; 150 µg/g</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Albumin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Protein der Leber. Bei chronischer Darmentzündung sinkt Albumin — Zeichen für Mangelernährung und anhaltende Entzündung. Unterschätzter Marker.</div></div><div style="color:#2e7d32">35–52 g/L</div><div style="color:#c0392b">&lt; 30 g/L</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Zonulin ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Marker für Darmpermeabilität (Leaky Gut). Öffnet Tight Junctions. Selten gemessen — zeigt ob die Darmbarriere durchlässig ist.</div></div><div style="color:#2e7d32">&lt; 40 ng/mL</div><div style="color:#c0392b">&gt; 60 ng/mL</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Chronisch-entzündliche Darmerkrankung. Das Immunsystem greift die Darmschleimhaut an — auch in symptomfreien Phasen läuft oft Hintergrundentzündung. Calprotectin im Stuhl zeigt die aktuelle Entzündungsaktivität direkt und ist oft aussagekräftiger als Blutmarker.<br>
+          <a href="#coli" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-coli');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Calprotectin (Stuhl) ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 50 µg/g</span><span style="color:#c0392b">&gt; 150 µg/g</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Protein aus Neutrophilen — bei Darmschleimhautentzündung freigesetzt. Nicht-invasiver Marker. Viel aussagekräftiger als Blutmarker für Darmentzündung.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Albumin</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">35–52 g/L</span><span style="color:#c0392b">&lt; 30 g/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Protein der Leber. Bei chronischer Darmentzündung sinkt Albumin — Zeichen für Mangelernährung und anhaltende Entzündung. Unterschätzter Marker.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Zonulin ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 40 ng/mL</span><span style="color:#c0392b">&gt; 60 ng/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Marker für Darmpermeabilität (Leaky Gut). Öffnet Tight Junctions. Selten gemessen — zeigt ob die Darmbarriere durchlässig ist.</div>
+        </div>
       </div>
     </details>
 
@@ -4479,10 +5054,28 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
         <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Hashimoto ist eine Autoimmunerkrankung bei der das Immunsystem die eigene Schilddrüse angreift. Antikörper gegen Schilddrüsengewebe (Anti-TPO, Anti-Tg) entstehen durch einen Späherfehler — der Körper hält eigene Zellen für Feinde. Die Schilddrüse wird über Jahre zerstört, oft ohne Symptome bis sie unterfunktioniert.</div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Anti-TPO ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper gegen Thyreoidperoxidase — das Enzym das Schilddrüsenhormone produziert. Erhöht = aktiver Angriff auf die Schilddrüse. Diagnosekriterium für Hashimoto.</div></div><div style="color:#2e7d32">&lt; 34 IU/mL</div><div style="color:#c0392b">&gt; 60 IU/mL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">TSH ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Hypophysenhormon das die Schilddrüse stimuliert. Steigt wenn Schilddrüse unterfunktioniert. Optimaler Bereich bei Hashimoto oft enger als der Laborbereich.</div></div><div style="color:#2e7d32">0,5–2,5 mIU/L</div><div style="color:#c0392b">&gt; 3,5 mIU/L</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">fT3 / fT4</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Freie (aktive) Schilddrüsenhormone. fT3 ist das aktive Hormon — fT4 wird zu fT3 umgewandelt. Wichtig: TSH allein reicht nicht — fT3/fT4 muss mitgemessen werden.</div></div><div style="color:#2e7d32">fT3: 3,5–4,5 pg/mL</div><div style="color:#c0392b">&lt; 3,0 oder &gt; 4,8</div></div>
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Anti-TPO ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 34 IU/mL</span><span style="color:#c0392b">&gt; 60 IU/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Antikörper gegen Thyreoidperoxidase — das Enzym das Schilddrüsenhormone produziert. Erhöht = aktiver Angriff auf die Schilddrüse. Diagnosekriterium für Hashimoto.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">TSH ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">0,5–2,5 mIU/L</span><span style="color:#c0392b">&gt; 3,5 mIU/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Hypophysenhormon das die Schilddrüse stimuliert. Steigt wenn Schilddrüse unterfunktioniert. Optimaler Bereich bei Hashimoto oft enger als der Laborbereich.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">fT3 / fT4</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">fT3: 3,5–4,5 pg/mL</span><span style="color:#c0392b">&lt; 3,0 oder &gt; 4,8</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Freie (aktive) Schilddrüsenhormone. fT3 ist das aktive Hormon — fT4 wird zu fT3 umgewandelt. Wichtig: TSH allein reicht nicht — fT3/fT4 muss mitgemessen werden.</div>
+        </div>
       </div>
     </details>
 
@@ -4492,9 +5085,27 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>💣 MCAS</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Tryptase · Histamin · DAO · IgE</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Tryptase ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Direkt von Mastzellen freigesetzt. Idealerweise im Schub messen (30–60 Min nach Reaktion) + Basiswert nüchtern. MCAS-Kriterium: Schubwert &gt; Basiswert × 2 + 2.</div></div><div style="color:#2e7d32">&lt; 11,4 µg/L</div><div style="color:#c0392b">&gt; 20 oder 2×Basis+2</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">DAO-Aktivität</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Diaminoxidase baut Histamin im Darm ab. Niedrig = schlechter Abbau → mehr Reaktionen bei histaminreichen Lebensmitteln auch ohne Mastzellaktivierung.</div></div><div style="color:#2e7d32">&gt; 10 HDU/mL</div><div style="color:#c0392b">&lt; 3 HDU/mL</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Mastzellaktivierungssyndrom. Die Mastzellen des Immunsystems reagieren überschießend auf harmlose Reize — Lebensmittel, Duftstoffe, Stress. Klassische Allergietests sind meist negativ. Tryptase und Histamin im Urin (24h-Sammelurin) sind die wichtigsten Marker.<br>
+          <a href="#mcas" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-mcas');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Tryptase ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 11,4 µg/L</span><span style="color:#c0392b">&gt; 20 oder 2×Basis+2</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Direkt von Mastzellen freigesetzt. Idealerweise im Schub messen (30–60 Min nach Reaktion) + Basiswert nüchtern. MCAS-Kriterium: Schubwert &gt; Basiswert × 2 + 2.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">DAO-Aktivität</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&gt; 10 HDU/mL</span><span style="color:#c0392b">&lt; 3 HDU/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Diaminoxidase baut Histamin im Darm ab. Niedrig = schlechter Abbau → mehr Reaktionen bei histaminreichen Lebensmitteln auch ohne Mastzellaktivierung.</div>
+        </div>
       </div>
     </details>
 
@@ -4505,9 +5116,21 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
         <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Psoriasis ist wie seborrhoische Dermatitis Th17-getrieben — IL-17 und IL-23 sind die zentralen Zytokine. Hautbefund ist sichtbar, aber die Entzündung läuft systemisch: erhöhtes Herzrisiko, Gelenkbeteiligung (Psoriasis-Arthritis) bei ~30%.</div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">hsCRP</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Korreliert mit Schubstärke. Bei Psoriasis oft erhöht auch wenn Haut gerade ruhig — zeigt systemische Entzündungslast.</div></div><div style="color:#2e7d32">&lt; 1 mg/L</div><div style="color:#c0392b">&gt; 3 mg/L</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3 ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Hemmt direkt IL-17-Produktion und Th17-Differenzierung. Niedriger Vitamin D3 korreliert stark mit Psoriasis-Schüben. Auch topisch wirksam (Calcipotriol-Creme).</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">hsCRP</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 1 mg/L</span><span style="color:#c0392b">&gt; 3 mg/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Korreliert mit Schubstärke. Bei Psoriasis oft erhöht auch wenn Haut gerade ruhig — zeigt systemische Entzündungslast.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Vitamin D3 ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">40–60 ng/mL</span><span style="color:#c0392b">&lt; 20 ng/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Hemmt direkt IL-17-Produktion und Th17-Differenzierung. Niedriger Vitamin D3 korreliert stark mit Psoriasis-Schüben. Auch topisch wirksam (Calcipotriol-Creme).</div>
+        </div>
       </div>
     </details>
 
@@ -4517,10 +5140,34 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>🦴 Rheumatoide Arthritis</span><span style="font-size:11px;font-weight:400;color:var(--muted)">Anti-CCP · RF · BSG · hsCRP · Vitamin D3</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Anti-CCP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Antikörper gegen citrullinierte Peptide — sehr spezifisch für RA. Kann Jahre vor Symptomen positiv sein. Aussagekräftiger als Rheumafaktor.</div></div><div style="color:#2e7d32">&lt; 7 U/mL</div><div style="color:#c0392b">&gt; 10 U/mL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Rheumafaktor (RF)</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Bei ~70% der RA-Patienten positiv — aber auch bei anderen Erkrankungen erhöht. Zusammen mit Anti-CCP deutlich aussagekräftiger.</div></div><div style="color:#2e7d32">&lt; 14 IU/mL</div><div style="color:#c0392b">&gt; 20 IU/mL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">BSG</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Blutsenkungsgeschwindigkeit — unspezifisch, aber zeigt Trends über Wochen. IL-6 aus entzündetem Gelenkgewebe treibt BSG an.</div></div><div style="color:#2e7d32">&lt; 20 mm/h</div><div style="color:#c0392b">&gt; 40 mm/h</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Sammelbegriff für Autoimmunerkrankungen die Gelenke angreifen — besonders rheumatoide Arthritis. Das Immunsystem erkennt körpereigene Strukturen als fremd. Anti-CCP-Antikörper sind hochspezifisch und oft schon Jahre vor den ersten Symptomen nachweisbar.<br>
+          <a href="#rheu" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-rheu');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Anti-CCP ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 7 U/mL</span><span style="color:#c0392b">&gt; 10 U/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Antikörper gegen citrullinierte Peptide — sehr spezifisch für RA. Kann Jahre vor Symptomen positiv sein. Aussagekräftiger als Rheumafaktor.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Rheumafaktor (RF)</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 14 IU/mL</span><span style="color:#c0392b">&gt; 20 IU/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Bei ~70% der RA-Patienten positiv — aber auch bei anderen Erkrankungen erhöht. Zusammen mit Anti-CCP deutlich aussagekräftiger.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">BSG</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 20 mm/h</span><span style="color:#c0392b">&gt; 40 mm/h</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Blutsenkungsgeschwindigkeit — unspezifisch, aber zeigt Trends über Wochen. IL-6 aus entzündetem Gelenkgewebe treibt BSG an.</div>
+        </div>
       </div>
     </details>
 
@@ -4530,9 +5177,27 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
         <span>🧴 Seborrhoische Dermatitis</span><span style="font-size:11px;font-weight:400;color:var(--muted)">IgE · Malassezia-IgE · Vitamin D3 · hsCRP</span>
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Spezifisches IgE (Malassezia) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Direkter Beweis für immunologische Sensibilisierung gegen Malassezia. Muss explizit angefordert werden — fast nie im Standard.</div></div><div style="color:#2e7d32">Klasse 0</div><div style="color:#c0392b">Klasse 2+ (&gt; 0,7 kU/L)</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3 ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Mangel schwächt Bremszellen direkt — die Th17-Reaktion auf Malassezia kann nicht gestoppt werden. Gut belegt bei seborrhoischer Dermatitis.</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+        <div style="padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border);background:var(--surface2)">
+          <strong style="color:var(--text)">💡 Was ist das?</strong><br>
+          Chronische Hauterkrankung mit schuppigen, geröteten Stellen — meist Kopfhaut, Augenbrauen, Nasolabialfalte. Ursache ist eine Überreaktion des Immunsystems auf den harmlosen Hefepilz Malassezia. IgE und Eosinophile zeigen die entzündliche Komponente.<br>
+          <a href="#derm" onclick="showPage('erkrank');setTimeout(()=>{var el=document.getElementById('dd-derm');if(el){el.classList.add('show');el.scrollIntoView({behavior:'smooth'});}},100);return false;" style="color:var(--accent3);text-decoration:none;font-weight:600;margin-top:8px;display:inline-block">→ Ausführlich auf der Erkrankungsseite</a>
+        </div>
+        
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Spezifisches IgE (Malassezia) ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">Klasse 0</span><span style="color:#c0392b">Klasse 2+ (&gt; 0,7 kU/L)</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Direkter Beweis für immunologische Sensibilisierung gegen Malassezia. Muss explizit angefordert werden — fast nie im Standard.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Vitamin D3 ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">40–60 ng/mL</span><span style="color:#c0392b">&lt; 20 ng/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Mangel schwächt Bremszellen direkt — die Th17-Reaktion auf Malassezia kann nicht gestoppt werden. Gut belegt bei seborrhoischer Dermatitis.</div>
+        </div>
       </div>
     </details>
 
@@ -4543,10 +5208,28 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
         <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Typ-2-Diabetes ist eine Entzündungserkrankung. Chronische NF-κB-Aktivierung durch Blutzuckerspikes führt zu Insulinresistenz — umgekehrt fördert Insulinresistenz weitere Entzündung. Ein Teufelskreis der oft Jahre vor Symptomen beginnt.</div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">HbA1c ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Glykiertes Hämoglobin — zeigt Durchschnittsblutzucker der letzten 3 Monate. Direkt mit AGE-Bildung und Entzündungsaktivierung korreliert.</div></div><div style="color:#2e7d32">&lt; 5,7% (&lt; 39 mmol/mol)</div><div style="color:#c0392b">&gt; 6,5% = Diabetes</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Nüchterninsulin ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Zeigt Insulinresistenz bevor der Blutzucker steigt. Wird fast nie gemessen. Erhöhtes Nüchterninsulin bei normalem Blutzucker = frühe Insulinresistenz.</div></div><div style="color:#2e7d32">&lt; 8 µIU/mL</div><div style="color:#c0392b">&gt; 15 µIU/mL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">HOMA-IR</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Berechnet aus Nüchterninsulin × Nüchternblutzucker ÷ 22,5. Bester einfacher Marker für Insulinresistenz. Kein eigener Laborwert — muss berechnet werden.</div></div><div style="color:#2e7d32">&lt; 1,5</div><div style="color:#c0392b">&gt; 2,5</div></div>
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">HbA1c ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 5,7% (&lt; 39 mmol/mol)</span><span style="color:#c0392b">&gt; 6,5% = Diabetes</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Glykiertes Hämoglobin — zeigt Durchschnittsblutzucker der letzten 3 Monate. Direkt mit AGE-Bildung und Entzündungsaktivierung korreliert.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Nüchterninsulin ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 8 µIU/mL</span><span style="color:#c0392b">&gt; 15 µIU/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Zeigt Insulinresistenz bevor der Blutzucker steigt. Wird fast nie gemessen. Erhöhtes Nüchterninsulin bei normalem Blutzucker = frühe Insulinresistenz.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">HOMA-IR</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 1,5</span><span style="color:#c0392b">&gt; 2,5</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Berechnet aus Nüchterninsulin × Nüchternblutzucker ÷ 22,5. Bester einfacher Marker für Insulinresistenz. Kein eigener Laborwert — muss berechnet werden.</div>
+        </div>
       </div>
     </details>
 
@@ -4557,9 +5240,21 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
         <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Die Entzündungshypothese der Depression ist einer der robustesten Befunde der modernen Psychiatrie: bei ~30–40% der Depressionspatienten sind Entzündungsmarker erhöht. IL-6 und TNF-α überqueren die Blut-Hirn-Schranke und verändern direkt die Neurotransmitter-Balance (Serotonin, Dopamin). Entzündungshemmende Maßnahmen können in dieser Subgruppe antidepressiv wirken.</div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">hsCRP ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Erhöhtes hsCRP bei Depression zeigt entzündliche Subgruppe — diese sprechen schlechter auf klassische Antidepressiva, aber besser auf entzündungshemmende Ansätze.</div></div><div style="color:#2e7d32">&lt; 1 mg/L</div><div style="color:#c0392b">&gt; 3 mg/L</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Vitamin D3</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Starke Korrelation zwischen Vitamin D3-Mangel und Depression. Kausalität noch diskutiert — aber Substitution bei Mangel schadet nicht und hilft oft.</div></div><div style="color:#2e7d32">40–60 ng/mL</div><div style="color:#c0392b">&lt; 20 ng/mL</div></div>
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">hsCRP ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 1 mg/L</span><span style="color:#c0392b">&gt; 3 mg/L</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Erhöhtes hsCRP bei Depression zeigt entzündliche Subgruppe — diese sprechen schlechter auf klassische Antidepressiva, aber besser auf entzündungshemmende Ansätze.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Vitamin D3</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">40–60 ng/mL</span><span style="color:#c0392b">&lt; 20 ng/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Starke Korrelation zwischen Vitamin D3-Mangel und Depression. Kausalität noch diskutiert — aber Substitution bei Mangel schadet nicht und hilft oft.</div>
+        </div>
       </div>
     </details>
 
@@ -4570,10 +5265,28 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
       </summary>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:0 0 12px 12px;overflow:hidden;margin-top:-1px">
         <div style="padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;border-bottom:1px solid var(--border)">Reizdarm ist eine Ausschlussdiagnose — aber das bedeutet nicht dass nichts messbar ist. Calprotectin unterscheidet Reizdarm (niedrig) von Colitis (hoch). Zonulin zeigt ob Leaky Gut vorliegt. DAO-Mangel erklärt histaminbedingte Reizdarm-Symptome.</div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--surface2);padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)"><div>Wert</div><div style="color:#2e7d32">✅ Soll</div><div style="color:#c0392b">⚠️ Auffällig</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Calprotectin (Stuhl) ⭐</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Normal bei Reizdarm, erhöht bei Colitis/Morbus Crohn. Wichtigster Differenzierungsmarker — schließt entzündliche Darmerkrankung aus.</div></div><div style="color:#2e7d32">&lt; 50 µg/g</div><div style="color:#c0392b">&gt; 150 µg/g → kein IBS</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">Zonulin</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">Marker für Leaky Gut. Bei Reizdarm oft erhöht — durchlässige Darmbarriere löst Immunreaktionen aus die als IBS-Symptome erscheinen.</div></div><div style="color:#2e7d32">&lt; 40 ng/mL</div><div style="color:#c0392b">&gt; 60 ng/mL</div></div>
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 14px;border-top:1px solid var(--border);font-size:12px;align-items:start;gap:8px"><div><div style="font-weight:600">DAO-Aktivität</div><div style="color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px">DAO-Mangel erklärt warum bestimmte Lebensmittel (Wein, Käse, Tomaten) Reizdarm-Schübe auslösen — Histaminabbau gestört.</div></div><div style="color:#2e7d32">&gt; 10 HDU/mL</div><div style="color:#c0392b">&lt; 3 HDU/mL</div></div>
+        
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Calprotectin (Stuhl) ⭐</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 50 µg/g</span><span style="color:#c0392b">&gt; 150 µg/g → kein IBS</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Normal bei Reizdarm, erhöht bei Colitis/Morbus Crohn. Wichtigster Differenzierungsmarker — schließt entzündliche Darmerkrankung aus.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">Zonulin</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&lt; 40 ng/mL</span><span style="color:#c0392b">&gt; 60 ng/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">Marker für Leaky Gut. Bei Reizdarm oft erhöht — durchlässige Darmbarriere löst Immunreaktionen aus die als IBS-Symptome erscheinen.</div>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid var(--border);font-size:13px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px">
+            <span style="font-weight:600;font-size:14px">DAO-Aktivität</span>
+            <span style="display:flex;gap:14px;font-size:12px;font-weight:500"><span style="color:#2e7d32">&gt; 10 U/mL</span><span style="color:#c0392b">&lt; 3 U/mL</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:12px;line-height:1.6">DAO-Mangel erklärt warum bestimmte Lebensmittel (Wein, Käse, Tomaten) Reizdarm-Schübe auslösen — Histaminabbau gestört.</div>
+        </div>
       </div>
     </details>
 
@@ -4761,6 +5474,193 @@ footer{background:var(--surface);padding:36px 24px;text-align:center;
           <strong>Was hilft:</strong> Stressreduktion · wenig Zucker · kein Alkohol · Schlaf · nicht rauchen
         </div>
       </div>
+    </div>
+
+    <!-- DREI HEBEL SVG -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:32px">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Die drei Hebel — schematisch</div>
+
+      <svg viewBox="0 0 700 510" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text)">Die drei Hebel des Immunsystems</text>
+        <text x="350" y="38" text-anchor="middle" font-size="10" fill="var(--muted)">Wie Lebensstil auf drei verschiedenen Wegen Entzündung beeinflusst</text>
+
+        <!-- HEBEL 1 — BREMSZELLEN -->
+        <rect x="20" y="50" width="200" height="318" rx="14" fill="color-mix(in srgb,#2e7d32 8%,var(--surface))" stroke="#2e7d32" stroke-width="1.5"/>
+        <rect x="20" y="50" width="200" height="42" rx="14" fill="#2e7d32"/>
+        <rect x="20" y="78" width="200" height="14" fill="#2e7d32"/>
+        <text x="120" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="white">🛑  HEBEL 1</text>
+        <text x="120" y="84" text-anchor="middle" font-size="10" fill="#c8e6c9">Bremszellen (Tregs) stärken</text>
+        <circle cx="120" cy="126" r="26" fill="color-mix(in srgb,#2e7d32 15%,var(--surface))" stroke="#2e7d32" stroke-width="2"/>
+        <text x="120" y="122" text-anchor="middle" font-size="18">🛑</text>
+        <text x="120" y="138" text-anchor="middle" font-size="9" fill="#81c784">Treg · IL-10</text>
+        <text x="120" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="#81c784">Was hilft:</text>
+        <rect x="35" y="177" width="170" height="20" rx="5" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="120" y="191" text-anchor="middle" font-size="10" fill="var(--text)">😴  Tiefschlaf</text>
+        <rect x="35" y="202" width="170" height="20" rx="5" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="120" y="216" text-anchor="middle" font-size="10" fill="var(--text)">☀️  Vitamin D3</text>
+        <rect x="35" y="227" width="170" height="20" rx="5" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="120" y="241" text-anchor="middle" font-size="10" fill="var(--text)">🐟  Omega-3</text>
+        <rect x="35" y="252" width="170" height="20" rx="5" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="120" y="266" text-anchor="middle" font-size="10" fill="var(--text)">💪  Bewegung</text>
+        <rect x="35" y="277" width="170" height="20" rx="5" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d3255" stroke-width="1"/>
+        <text x="120" y="291" text-anchor="middle" font-size="10" fill="var(--text)">🦠  Darmgesundheit</text>
+        <text x="120" y="318" text-anchor="middle" font-size="9" fill="var(--muted)">Wirkung:</text>
+        <text x="120" y="332" text-anchor="middle" font-size="10" font-weight="600" fill="#81c784">Bremse wird stärker</text>
+        <text x="120" y="346" text-anchor="middle" font-size="9" fill="var(--muted)">dauerhaft · nach Wochen</text>
+        <text x="120" y="360" text-anchor="middle" font-size="9" fill="var(--muted)">Aufbau-Arbeit</text>
+
+        <!-- HEBEL 2 — SPÄHER -->
+        <rect x="250" y="50" width="200" height="318" rx="14" fill="color-mix(in srgb,var(--accent2) 8%,var(--surface))" stroke="var(--accent2)" stroke-width="1.5"/>
+        <rect x="250" y="50" width="200" height="42" rx="14" fill="var(--accent2)"/>
+        <rect x="250" y="78" width="200" height="14" fill="var(--accent2)"/>
+        <text x="350" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="white">🔬  HEBEL 2</text>
+        <text x="350" y="84" text-anchor="middle" font-size="10" fill="#dde8ff">Späher toleranter machen</text>
+        <circle cx="350" cy="126" r="26" fill="color-mix(in srgb,var(--accent2) 15%,var(--surface))" stroke="var(--accent2)" stroke-width="2"/>
+        <text x="350" y="122" text-anchor="middle" font-size="18">🔬</text>
+        <text x="350" y="138" text-anchor="middle" font-size="9" fill="var(--accent2)">Dendrit. Zelle</text>
+        <text x="350" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="var(--accent2)">Was hilft:</text>
+        <rect x="265" y="177" width="170" height="20" rx="5" fill="color-mix(in srgb,var(--accent2) 10%,var(--surface))" stroke="color-mix(in srgb,var(--accent2) 30%,transparent)" stroke-width="1"/>
+        <text x="350" y="191" text-anchor="middle" font-size="10" fill="var(--text)">☀️  Vitamin D3</text>
+        <rect x="265" y="202" width="170" height="20" rx="5" fill="color-mix(in srgb,var(--accent2) 10%,var(--surface))" stroke="color-mix(in srgb,var(--accent2) 30%,transparent)" stroke-width="1"/>
+        <text x="350" y="216" text-anchor="middle" font-size="10" fill="var(--text)">🦠  Darmgesundheit</text>
+        <rect x="265" y="227" width="170" height="20" rx="5" fill="color-mix(in srgb,var(--accent2) 10%,var(--surface))" stroke="color-mix(in srgb,var(--accent2) 30%,transparent)" stroke-width="1"/>
+        <text x="350" y="241" text-anchor="middle" font-size="10" fill="var(--text)">😴  Wenig Entzündung</text>
+        <rect x="265" y="252" width="170" height="20" rx="5" fill="color-mix(in srgb,var(--accent2) 10%,var(--surface))" stroke="color-mix(in srgb,var(--accent2) 30%,transparent)" stroke-width="1"/>
+        <text x="350" y="266" text-anchor="middle" font-size="10" fill="var(--text)">🧘  Stress senken</text>
+        <rect x="265" y="277" width="170" height="20" rx="5" fill="color-mix(in srgb,var(--accent2) 10%,var(--surface))" stroke="color-mix(in srgb,var(--accent2) 30%,transparent)" stroke-width="1"/>
+        <text x="350" y="291" text-anchor="middle" font-size="10" fill="var(--text)">🐟  Omega-3</text>
+        <text x="350" y="318" text-anchor="middle" font-size="9" fill="var(--muted)">Wirkung:</text>
+        <text x="350" y="332" text-anchor="middle" font-size="10" font-weight="600" fill="var(--accent2)">Späher wird toleranter</text>
+        <text x="350" y="346" text-anchor="middle" font-size="9" fill="var(--muted)">dauerhaft · nach Wochen</text>
+        <text x="350" y="360" text-anchor="middle" font-size="9" fill="var(--muted)">Aufbau-Arbeit</text>
+
+        <!-- HEBEL 3 — MASTZELLEN -->
+        <rect x="480" y="50" width="200" height="318" rx="14" fill="color-mix(in srgb,#c0392b 8%,var(--surface))" stroke="#c0392b" stroke-width="1.5"/>
+        <rect x="480" y="50" width="200" height="42" rx="14" fill="#c0392b"/>
+        <rect x="480" y="78" width="200" height="14" fill="#c0392b"/>
+        <text x="580" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="white">💣  HEBEL 3</text>
+        <text x="580" y="84" text-anchor="middle" font-size="10" fill="#ffcdd2">Mastzellen nicht triggern</text>
+        <circle cx="580" cy="126" r="26" fill="color-mix(in srgb,#c0392b 15%,var(--surface))" stroke="#c0392b" stroke-width="2"/>
+        <text x="580" y="122" text-anchor="middle" font-size="18">💣</text>
+        <text x="580" y="138" text-anchor="middle" font-size="9" fill="#ef9a9a">Mastzelle</text>
+        <text x="580" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="#ef9a9a">Was vermeiden:</text>
+        <rect x="495" y="177" width="170" height="20" rx="5" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b44" stroke-width="1"/>
+        <text x="580" y="191" text-anchor="middle" font-size="10" fill="var(--text)">😰  Stress / CRH</text>
+        <rect x="495" y="202" width="170" height="20" rx="5" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b44" stroke-width="1"/>
+        <text x="580" y="216" text-anchor="middle" font-size="10" fill="var(--text)">🍬  Zuckerspikes</text>
+        <rect x="495" y="227" width="170" height="20" rx="5" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b44" stroke-width="1"/>
+        <text x="580" y="241" text-anchor="middle" font-size="10" fill="var(--text)">🍺  Alkohol</text>
+        <rect x="495" y="252" width="170" height="20" rx="5" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b44" stroke-width="1"/>
+        <text x="580" y="266" text-anchor="middle" font-size="10" fill="var(--text)">🚬  Rauchen</text>
+        <rect x="495" y="277" width="170" height="20" rx="5" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b44" stroke-width="1"/>
+        <text x="580" y="291" text-anchor="middle" font-size="10" fill="var(--text)">💡  Blaulicht / Schlafmangel</text>
+        <text x="580" y="318" text-anchor="middle" font-size="9" fill="var(--muted)">Wirkung:</text>
+        <text x="580" y="332" text-anchor="middle" font-size="10" font-weight="600" fill="#ef9a9a">Alarm gar nicht erst</text>
+        <text x="580" y="346" text-anchor="middle" font-size="9" fill="var(--muted)">sofort · in Minuten</text>
+        <text x="580" y="360" text-anchor="middle" font-size="9" fill="var(--muted)">Prävention</text>
+
+        <!-- VERBINDUNGSLINIEN -->
+        <line x1="120" y1="368" x2="120" y2="415" stroke="#2e7d32" stroke-width="2"/>
+        <line x1="350" y1="368" x2="350" y2="415" stroke="var(--accent2)" stroke-width="2"/>
+        <line x1="580" y1="368" x2="580" y2="415" stroke="#c0392b" stroke-width="2"/>
+        <line x1="120" y1="415" x2="580" y2="415" stroke="var(--muted)" stroke-width="2"/>
+        <line x1="350" y1="415" x2="350" y2="437" stroke="var(--muted)" stroke-width="2"/>
+        <polygon points="343,435 357,435 350,445" fill="var(--muted)"/>
+
+        <!-- ZIEL-BOX -->
+        <rect x="185" y="445" width="330" height="52" rx="12" fill="color-mix(in srgb,var(--accent2) 6%,var(--surface))" stroke="var(--accent2)" stroke-width="1.5"/>
+        <text x="350" y="467" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Gemeinsames Ziel</text>
+        <text x="350" y="485" text-anchor="middle" font-size="11" fill="var(--muted)">Weniger chronische Entzündung — messbar, dauerhaft</text>
+
+      </svg>
+    </div>
+
+    <!-- KASKADE SVG -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:32px">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px">🔬 Die Immunzell-Kaskade — von Antigen zur Entzündung</div>
+
+      <svg viewBox="0 0 700 520" style="width:100%;max-width:700px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+
+        <defs>
+          <marker id="arrgray" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--muted)"/></marker>
+          <marker id="arrred" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#c0392b"/></marker>
+          <marker id="arrgreen" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2e7d32"/></marker>
+        </defs>
+
+        <text x="350" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">Die Immunzell-Kaskade</text>
+        <text x="350" y="40" text-anchor="middle" font-size="10" fill="var(--muted)">Von Antigen bis Entzündung — und wie die Bremse eingreift</text>
+
+        <!-- STEP 1 — ANTIGEN -->
+        <rect x="270" y="52" width="160" height="56" rx="12" fill="var(--surface2)" stroke="var(--muted)" stroke-width="1.5"/>
+        <text x="350" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text)">1. Antigen</text>
+        <text x="350" y="88" text-anchor="middle" font-size="10" fill="var(--muted)">Pilz · Bakterium · Protein</text>
+        <text x="350" y="100" text-anchor="middle" font-size="9" fill="var(--muted)">taucht auf im Körper</text>
+
+        <line x1="350" y1="108" x2="350" y2="130" stroke="var(--muted)" stroke-width="2" marker-end="url(#arrgray)"/>
+
+        <!-- STEP 2 — DC -->
+        <rect x="230" y="132" width="240" height="68" rx="12" fill="color-mix(in srgb,var(--accent2) 8%,var(--surface))" stroke="var(--accent2)" stroke-width="1.5"/>
+        <text x="350" y="153" text-anchor="middle" font-size="11" font-weight="700" fill="var(--accent2)">2. Dendritische Zelle (Späher)</text>
+        <text x="350" y="168" text-anchor="middle" font-size="10" fill="var(--muted)">erkennt das Antigen · entscheidet:</text>
+        <text x="280" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">⚠️ Gefährlich?</text>
+        <text x="420" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#2e7d32">✓ Harmlos?</text>
+
+        <line x1="280" y1="200" x2="200" y2="230" stroke="#c0392b" stroke-width="2" marker-end="url(#arrred)"/>
+        <line x1="420" y1="200" x2="500" y2="230" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrgreen)"/>
+
+        <!-- LEFT PATH — ALARM -->
+        <rect x="80" y="232" width="200" height="56" rx="12" fill="color-mix(in srgb,#c0392b 6%,var(--surface))" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="180" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#c0392b">3. T-Helferzelle aktiviert</text>
+        <text x="180" y="267" text-anchor="middle" font-size="10" fill="var(--muted)">Späher präsentiert Antigen</text>
+        <text x="180" y="280" text-anchor="middle" font-size="9" fill="var(--muted)">als "Feind" — T-Zelle springt an</text>
+
+        <line x1="180" y1="288" x2="180" y2="308" stroke="#c0392b" stroke-width="2" marker-end="url(#arrred)"/>
+
+        <rect x="80" y="310" width="200" height="56" rx="12" fill="color-mix(in srgb,#c0392b 10%,var(--surface))" stroke="#c0392b" stroke-width="2"/>
+        <text x="180" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#c0392b">4. Entzündungskaskade</text>
+        <text x="180" y="345" text-anchor="middle" font-size="10" fill="var(--muted)">IL-6 · TNF-α · Histamin</text>
+        <text x="180" y="358" text-anchor="middle" font-size="9" fill="var(--muted)">Symptome entstehen</text>
+
+        <line x1="180" y1="366" x2="180" y2="388" stroke="#c0392b" stroke-width="2" marker-end="url(#arrred)"/>
+
+        <rect x="80" y="390" width="200" height="56" rx="12" fill="color-mix(in srgb,#2e7d32 6%,var(--surface))" stroke="#2e7d32" stroke-width="2"/>
+        <text x="180" y="410" text-anchor="middle" font-size="11" font-weight="700" fill="#2e7d32">5. Treg greift ein 🛑</text>
+        <text x="180" y="425" text-anchor="middle" font-size="10" fill="var(--muted)">schüttet IL-10 aus</text>
+        <text x="180" y="438" text-anchor="middle" font-size="9" fill="var(--muted)">Entzündung wird gestoppt</text>
+
+        <!-- Treg from side -->
+        <circle cx="340" cy="418" r="22" fill="color-mix(in srgb,#2e7d32 15%,var(--surface))" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="340" y="414" text-anchor="middle" font-size="16">🛑</text>
+        <text x="340" y="428" text-anchor="middle" font-size="8" fill="#2e7d32">Treg</text>
+        <line x1="318" y1="418" x2="283" y2="418" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrgreen)"/>
+        <rect x="286" y="396" width="32" height="16" rx="3" fill="var(--surface)" stroke="#2e7d3244" stroke-width="1"/>
+        <text x="302" y="408" text-anchor="middle" font-size="10" font-weight="700" fill="#2e7d32">IL-10</text>
+
+        <!-- RIGHT PATH — TOLERANZ -->
+        <rect x="420" y="232" width="200" height="56" rx="12" fill="color-mix(in srgb,#2e7d32 6%,var(--surface))" stroke="#2e7d32" stroke-width="1.5"/>
+        <text x="520" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#2e7d32">3. Tolerante Antwort</text>
+        <text x="520" y="267" text-anchor="middle" font-size="10" fill="var(--muted)">Späher präsentiert Antigen</text>
+        <text x="520" y="280" text-anchor="middle" font-size="9" fill="var(--muted)">als "harmlos" — keine Reaktion</text>
+
+        <line x1="520" y1="288" x2="520" y2="308" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrgreen)"/>
+
+        <rect x="420" y="310" width="200" height="56" rx="12" fill="color-mix(in srgb,#2e7d32 10%,var(--surface))" stroke="#2e7d32" stroke-width="2"/>
+        <text x="520" y="332" text-anchor="middle" font-size="11" font-weight="700" fill="#2e7d32">4. Keine Kaskade</text>
+        <text x="520" y="347" text-anchor="middle" font-size="10" fill="var(--muted)">Ruhe im Immunsystem</text>
+        <text x="520" y="360" text-anchor="middle" font-size="9" fill="var(--muted)">kein Symptom</text>
+
+        <text x="350" y="260" text-anchor="middle" font-size="10" font-weight="700" fill="var(--muted)">oder</text>
+
+        <!-- BOTTOM -->
+        <rect x="60" y="462" width="580" height="48" rx="12" fill="var(--surface2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="180" y="482" text-anchor="middle" font-size="10" font-weight="600" fill="#c0392b">Schwache Bremse (Treg)</text>
+        <text x="180" y="496" text-anchor="middle" font-size="9" fill="var(--muted)">→ Entzündung bleibt länger · chronisch</text>
+        <line x1="350" y1="465" x2="350" y2="508" stroke="var(--border)" stroke-width="1"/>
+        <text x="520" y="482" text-anchor="middle" font-size="10" font-weight="600" fill="#2e7d32">Starke Bremse + toleranter Späher</text>
+        <text x="520" y="496" text-anchor="middle" font-size="9" fill="var(--muted)">→ Reaktion kurz · Heilung schnell</text>
+
+      </svg>
     </div>
 
     <!-- DER MECHANISMUS IM DETAIL -->
