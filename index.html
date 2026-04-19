@@ -11,14 +11,14 @@
   --bg:#faf8f4;--surface:#f2ede4;--surface2:#e8e0d4;--border:#d8d0c4;
   --text:#1a1714;--muted:#8a8078;--accent:#c4522a;--accent2:#4a7a5a;
   --accent3:#4a5a7a;--gold:#b8820a;--red:#c0392b;--purple:#7a5a9a;
-  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;--diab:#b8820a;--reizd:#8a6a3a;
+  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;--diab:#b8820a;--reizd:#8a6a3a;--depr:#5a7a8a;
   --schlaf:#4a5a7a;--ernaehr:#4a7a5a;--bewegung:#7a5a2a;--stress:#7a5a9a;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#0f0d0b;--surface:#181512;--surface2:#211d18;--border:#2e2820;
   --text:#f0ebe0;--muted:#9a8e7e;--accent:#e07050;--accent2:#6aaa82;
   --accent3:#7a9ab2;--gold:#d4a030;--red:#e05555;--purple:#a88bcc;
-  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;--diab:#d4a030;--reizd:#c4a06a;
+  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;--diab:#d4a030;--reizd:#c4a06a;--depr:#8ab0c2;
   --schlaf:#7a9ab2;--ernaehr:#6aaa82;--bewegung:#c4923a;--stress:#a88bcc;
 }}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -761,6 +761,24 @@ details summary:hover::after{
         <div style="font-size:12px;color:var(--muted);line-height:1.5">Was du isst bestimmt welche Immunzellen du fütterst — Lebensmittelguide, Rezepte, Trigger</div>
       </div>
 
+      <div onclick="showPage('kinder')" style="background:var(--surface);border:1.5px solid var(--border);
+        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.8rem;margin-bottom:6px">🧒</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Essen mit Kindern</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">Warum Kinder auf Süß geeicht sind — und wie man sie trotzdem anders isst ohne Machtkampf</div>
+      </div>
+
+      <div onclick="showPage('darm')" style="background:var(--surface);border:1.5px solid var(--border);
+        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--coli)';this.style.background='color-mix(in srgb,var(--coli) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.8rem;margin-bottom:6px">🦠</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Darmgesundheit</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">70% des Immunsystems sitzt im Darm — was das bedeutet und wie du es nutzt</div>
+      </div>
+
       <div onclick="showPage('bewegung')" style="background:var(--surface);border:1.5px solid var(--border);
         border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
         onmouseover="this.style.borderColor='var(--bewegung)';this.style.background='color-mix(in srgb,var(--bewegung) 5%,var(--surface))'"
@@ -777,24 +795,6 @@ details summary:hover::after{
         <div style="font-size:1.8rem;margin-bottom:6px">🧘</div>
         <div style="font-size:14px;font-weight:600;margin-bottom:4px">Stress & Nervensystem</div>
         <div style="font-size:12px;color:var(--muted);line-height:1.5">Vagusnerv, Kindheitsprägung und warum Atemübungen biologisch wirken</div>
-      </div>
-
-      <div onclick="showPage('darm')" style="background:var(--surface);border:1.5px solid var(--border);
-        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
-        onmouseover="this.style.borderColor='var(--coli)';this.style.background='color-mix(in srgb,var(--coli) 5%,var(--surface))'"
-        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
-        <div style="font-size:1.8rem;margin-bottom:6px">🦠</div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Darmgesundheit</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5">70% des Immunsystems sitzt im Darm — was das bedeutet und wie du es nutzt</div>
-      </div>
-
-      <div onclick="showPage('kinder')" style="background:var(--surface);border:1.5px solid var(--border);
-        border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
-        onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
-        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
-        <div style="font-size:1.8rem;margin-bottom:6px">🧒</div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Essen mit Kindern</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5">Warum Kinder auf Süß geeicht sind — und wie man sie trotzdem anders isst ohne Machtkampf</div>
       </div>
 
     </div>
@@ -2423,6 +2423,7 @@ details summary:hover::after{
       <button class="dis-tab a-asthma" id="dt-asthma" onclick="showDis('asthma')">🫁 Asthma</button>
       <button class="dis-tab" id="dt-athero" onclick="showDis('athero')">❤️ Atherosklerose</button>
       <button class="dis-tab" id="dt-coli" onclick="showDis('coli')">🫀 Colitis Ulcerosa</button>
+      <button class="dis-tab" id="dt-depr" onclick="showDis('depr')">🧠 Depression</button>
       <button class="dis-tab" id="dt-hashi" onclick="showDis('hashi')">🦋 Hashimoto</button>
       <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
       <button class="dis-tab" id="dt-reizd" onclick="showDis('reizd')">🔄 Reizdarm</button>
@@ -3988,6 +3989,143 @@ details summary:hover::after{
           <strong>•</strong> Erhöhtes Calprotectin im Stuhl — deutet auf echte Entzündung (Colitis, Crohn)<br>
           <strong>•</strong> Anhaltende Veränderung des Stuhlverhaltens über Wochen<br><br>
           Eine einmalige gründliche Diagnostik (Koloskopie, Labor, Atemtests) gibt Sicherheit — dann kann die eigentliche Reizdarm-Therapie starten.</div>
+      </div>
+    </div>
+
+    <!-- DEPRESSION -->
+    <div class="dis-content" id="dd-depr">
+      <div class="dis-header">
+        <div class="dis-icon">🧠</div>
+        <div class="dis-name" style="color:var(--depr)">Depression (Entzündungshypothese)</div>
+        <div class="dis-tagline">Warum eine Subgruppe von Depressionen besser auf Entzündungssenkung als auf Antidepressiva anspricht</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--depr) 6%,var(--surface));border-left:3px solid var(--depr)">
+        "Ich habe drei Antidepressiva durchprobiert — keines hat richtig geholfen." Das ist kein Versagen und keine Einbildung. Bei etwa einem Drittel der Depressionen spielt chronische Entzündung eine zentrale Rolle — und diese Gruppe spricht oft schlecht auf klassische Antidepressiva an, aber gut auf entzündungssenkende Ansätze. Wichtig: die Entzündungshypothese ergänzt die klassische Therapie, ersetzt sie nicht.
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--depr) 7%,var(--surface));border-left:4px solid var(--depr);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;font-weight:700;color:var(--depr);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Das Wesentliche</div>
+        <div style="font-size:14px;line-height:1.8">Depression ist nicht eine Erkrankung — sondern eine Gruppe von Erkrankungen mit ähnlichen Symptomen aber unterschiedlichen Ursachen. Bei etwa 30-40% der Depressionen sind Entzündungsmarker (hsCRP, IL-6, TNF-α) erhöht. Diese "inflammatorische Subgruppe" spricht schlechter auf SSRIs an, aber besser auf entzündungshemmende Ansätze. Das Konzept ist neu, belastbar, und verändert gerade die Psychiatrie.</div>
+      </div>
+
+      <div class="cascade">
+        <div class="cas-label">Wie Entzündung Depression auslösen kann</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">1</div><div><div class="cas-name">Chronische Entzündung produziert IL-6 und TNF-α</div><div class="cas-desc">Egal aus welcher Quelle — Darm, Gelenke, Fettgewebe, Autoimmun — diese Botenstoffe zirkulieren im Blut. Sie können die Blut-Hirn-Schranke überqueren und direkt auf Neurone einwirken.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">2</div><div><div class="cas-name">Tryptophan wird in falsche Richtung umgeleitet</div><div class="cas-desc">Tryptophan ist normalerweise Baustein für Serotonin (Wohlbefinden). Entzündung aktiviert ein Enzym namens IDO, das Tryptophan stattdessen in Kynurenin umleitet — und davon in neurotoxische Stoffe. Weniger Serotonin, mehr Neurotoxizität.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">3</div><div><div class="cas-name">Mikroglia im Gehirn werden überaktiv</div><div class="cas-desc">Mikroglia sind die Immunzellen des Gehirns. Bei chronischer Entzündung werden sie überaktiv, schütten weitere Entzündungsbotenstoffe aus, stören Synapsen. Das beeinflusst Stimmung, Motivation und kognitive Funktionen direkt.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">4</div><div><div class="cas-name">Typische Depressions-Symptome entstehen</div><div class="cas-desc">Erschöpfung, Antriebslosigkeit, Konzentrationsprobleme, Schlafstörungen, Appetitveränderung, sozialer Rückzug — das sind genau die Symptome die das Immunsystem auch bei akuten Infekten auslöst ("sickness behavior"). Bei chronischer Entzündung werden sie dauerhaft.</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Warnzeichen für inflammatorische Subgruppe</div><ul class="ib-list"><li>hsCRP über 3 mg/L bei Depression</li><li>Depression nach Infekt, OP oder chronischer Erkrankung</li><li>Gleichzeitige Autoimmunerkrankung oder Rheuma</li><li>Metabolisches Syndrom, Übergewicht</li><li>Schlechtes oder kein Ansprechen auf mehrere Antidepressiva</li><li>Depression mit körperlichen Entzündungsymptomen (Gelenkschmerzen, Darmprobleme)</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut (und ergänzen kann)</div><ul class="ib-list"><li><strong>Psychotherapie</strong> — die Basis, für alle Subgruppen wirksam</li><li>SSRIs und andere Antidepressiva</li><li>Bei inflammatorischer Subgruppe werden erforscht: Entzündungshemmer als Zusatz (Minocyclin, Celecoxib)</li><li><strong>EPA-Omega-3</strong> — in Studien bei Depression wirksam, besonders bei erhöhtem hsCRP <a href="https://pubmed.ncbi.nlm.nih.gov/31383846/" target="_blank" style="color:var(--accent3);font-size:10px">[Meta-Analyse 2019]</a></li></ul></div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--depr) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--depr) 20%,var(--border));border-radius:12px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:11px;font-weight:600;color:var(--depr);margin-bottom:8px">🔬 Die Studienlage — kurz und ehrlich</div>
+        <div style="font-size:13px;line-height:1.7">Die Entzündungshypothese ist gut belegt — aber sie erklärt <strong>nicht alle</strong> Depressionen. Klare Evidenz: erhöhte Entzündungsmarker bei 30-40% der Depressiven, bessere Wirkung von Anti-Entzündung bei dieser Subgruppe (Köhler et al. 2014, JAMA Psychiatry), Zusammenhang zwischen chronischen Entzündungserkrankungen und Depressionsrisiko. Offen: welche Betroffenen genau davon profitieren, und wann genau Entzündung Ursache oder Folge der Depression ist. <strong>Takeaway:</strong> Bei Depression lohnt sich der Blick auf hsCRP — wenn erhöht, sind Lebensstil-Maßnahmen besonders vielversprechend. <a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2674757" target="_blank" style="color:var(--accent3);font-size:11px">[Miller &amp; Raison 2017 — "The role of inflammation in depression"]</a></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="sec-eyebrow">Was du selbst tun kannst</div>
+      <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Lebensstil-Maßnahmen die Entzündung senken und Stimmung verbessern</h2>
+
+      <div style="background:color-mix(in srgb,#c0392b 5%,var(--surface));border:1px solid color-mix(in srgb,#c0392b 20%,var(--border));border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:13px;line-height:1.7">
+        <strong style="color:#c0392b">Wichtig vorab:</strong> Diese Maßnahmen ersetzen keine Therapie. Bei Depression immer zuerst professionelle Hilfe suchen (Hausarzt, Psychiater, Psychotherapeut). Lebensstil-Änderungen wirken als <strong>Ergänzung</strong> — in Kombination mit Therapie potenzieren sie sich oft gegenseitig.
+      </div>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">1</div>
+          <div>
+            <div class="do-item-title">Omega-3 — der am besten belegte Nährstoff bei Depression</div>
+            <div class="do-item-text">Insbesondere EPA (nicht DHA allein) senkt Entzündungsmarker und hat in Meta-Analysen antidepressive Wirkung — besonders deutlich bei Betroffenen mit erhöhtem hsCRP. Effektstärke teilweise vergleichbar mit SSRIs bei dieser Subgruppe.<br><br>
+            <strong>Konkret:</strong> 1-2 g EPA täglich (nicht DHA allein) über mindestens 3 Monate. Omega-3-Index messen lassen (Ziel &gt; 8%). Immer mit einer fetthaltigen Mahlzeit einnehmen für Aufnahme. Hochwertige Hersteller bevorzugen (Sunday Natural, NORSAN).</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">2</div>
+          <div>
+            <div class="do-item-title">Bewegung — messbar antidepressiv, mehrfach wirksam</div>
+            <div class="do-item-text">Bewegung wirkt bei leichter bis mittelschwerer Depression ähnlich stark wie Antidepressiva (Cochrane-Review 2023). Der Effekt kommt über drei Wege: Bewegung senkt systemische Entzündung, Muskeln produzieren stimmungsaufhellende Myokine, und BDNF (Nervenwachstumsfaktor) wird ausgeschüttet.<br><br>
+            <strong>Konkret:</strong> Nicht gleich Leistungssport — Spaziergänge, Radfahren, Schwimmen reichen. Studien zeigen 3x 30 Min pro Woche mit mittlerer Intensität als Minimum für antidepressive Wirkung. Bei schwerer Depression oft erstmal unmöglich — dann mit 5 Min vor der Tür gehen beginnen. Jeder Schritt zählt.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">3</div>
+          <div>
+            <div class="do-item-title">Darm pflegen — die Darm-Hirn-Achse</div>
+            <div class="do-item-text">Etwa 90% des körpereigenen Serotonins wird im Darm produziert. Dysbiose und Leaky Gut senken Serotonin und erhöhen systemische Entzündung — beides drückt die Stimmung. Studien zeigen dass Probiotika ("Psychobiotika") bei leichter Depression messbar helfen können.<br><br>
+            <strong>Konkret:</strong> Ballaststoffreich essen (30 g/Tag), fermentierte Lebensmittel (Sauerkraut, Kefir, Kimchi), Zuckerreduktion, Probiotika mit Lactobacillus rhamnosus und Bifidobacterium longum. Bei gleichzeitigem Reizdarm: Darm zuerst sanieren — oft bessert sich die Stimmung mit.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">4</div>
+          <div>
+            <div class="do-item-title">Schlaf priorisieren — nicht verhandelbar</div>
+            <div class="do-item-text">Schlafstörungen sind bei Depression fast immer dabei — und sie sind nicht nur Symptom, sondern auch Ursache. Eine einzige Nacht mit weniger als 6 Stunden Schlaf erhöht Entzündungsmarker messbar. Chronischer Schlafmangel ist einer der stärksten unabhängigen Risikofaktoren für Depression.<br><br>
+            <strong>Konkret:</strong> Fester Schlafrhythmus (wichtiger als Länge), dunkles Zimmer, kein Blaulicht 1h vor Schlaf, Alkohol und Koffein beachten. Bei hartnäckigen Schlafstörungen als Teil der Depression: CBT-I (kognitive Verhaltenstherapie für Schlafstörungen) ist oft wirksamer als Schlafmittel.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">5</div>
+          <div>
+            <div class="do-item-title">Vitamin D3 prüfen — der oft übersehene Faktor</div>
+            <div class="do-item-text">Vitamin D3 moduliert das Immunsystem und beeinflusst direkt die Neurotransmitterbildung im Gehirn. Starke Korrelation zwischen Mangel und Depression. Kausalität ist diskutiert, aber Substitution bei nachgewiesenem Mangel ist unbedenklich und hilft oft.<br><br>
+            <strong>Konkret:</strong> Spiegel messen lassen (25-OH-Vitamin D3). Bei Werten unter 30 ng/ml substituieren (typisch 2000-4000 IE/Tag), immer mit K2. Zielwert 40-60 ng/ml. Im Winter fast alle in Mitteleuropa im Mangel.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--depr) 15%,var(--surface2));color:var(--depr)">6</div>
+          <div>
+            <div class="do-item-title">Soziale Verbindung — biologisch wirksam</div>
+            <div class="do-item-text">Einsamkeit aktiviert chronisch das Stresssystem und erhöht Entzündungsmarker — messbar, robust belegt. Umgekehrt: soziale Verbindungen senken Entzündung und sind ein starker Schutzfaktor gegen Depression. Das ist Biologie, nicht Psychologie-Gefühl.<br><br>
+            <strong>Konkret:</strong> Bei Depression ist sozialer Rückzug ein Kernsymptom — das macht es paradox schwer. Erster Schritt: eine Person anrufen die du magst, ohne viel Aufwand. Ehrenamt, Sportgruppe, Kurs — Kontexte wo man ohne "Sozialdruck" trifft. Bei starker Depression ist das oft erst nach Therapiebeginn möglich.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-box">
+        <div class="res-title">📚 Vertiefende Infos</div>
+        <div class="res-chips">
+          <span class="res-chip">🩸 Laborwerte: hsCRP, IL-6, Vitamin D3, Omega-3-Index</span>
+          <span class="res-chip">📖 "Die Entzündungshypothese der Depression" — Edward Bullmore</span>
+          <span class="res-chip">📖 "Kompass Depression" — Ulrich Hegerl (Stiftung Deutsche Depressionshilfe)</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Zusammenhänge</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('bewegung')">💪 Bewegung als Anti-Depressivum →</button>
+        <button class="action-link" onclick="showPage('darm')">🦠 Darm-Hirn-Achse →</button>
+        <button class="action-link" onclick="showPage('schlaf')">😴 Schlaf & Stimmung →</button>
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung & Entzündung →</button>
+      </div>
+
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 MBSR bei Depression</div><div class="sup-text">MBCT (Mindfulness-Based Cognitive Therapy) ist eigens für depressive Episoden entwickelt. Studien zeigen vergleichbare Rückfallprävention wie Erhaltungs-Antidepressiva. Viele Krankenkassen bezahlen.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Deutsche Depressionshilfe</div><div class="sup-text">Stiftung Deutsche Depressionshilfe (deutsche-depressionshilfe.de), Deutschland-Barometer Depression, Info-Telefon 0800 33 44 533. Hilfe beim Finden von Therapeuten, gute Infos für Angehörige.</div></div>
+      </div>
+
+      <!-- ROTE FAHNEN -->
+      <div style="background:color-mix(in srgb,#c0392b 8%,var(--surface));border:2px solid #c0392b;border-radius:14px;padding:18px 20px;margin-top:24px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">🚨 Wann sofort Hilfe holen — nicht alleine durchstehen</div>
+        <div style="font-size:13px;line-height:1.8">Depression ist eine ernsthafte Erkrankung. Bei diesen Zeichen nicht warten:<br>
+          <strong>•</strong> Suizidgedanken oder konkrete Pläne — sofort ärztliche Hilfe<br>
+          <strong>•</strong> Gefühl völliger Hoffnungslosigkeit oder innerer Leere<br>
+          <strong>•</strong> Alkohol- oder Medikamentenmissbrauch als Selbstbehandlung<br>
+          <strong>•</strong> Starke Schlafstörungen oder extreme Erschöpfung die deinen Alltag blockieren<br>
+          <strong>•</strong> Keine Besserung trotz Bemühungen — dann andere Therapieformen probieren<br><br>
+          <strong>Telefonseelsorge:</strong> 0800 111 0 111 / 0800 111 0 222 (kostenlos, 24/7, anonym)<br>
+          <strong>Notarzt / Psychiatrischer Notdienst:</strong> 112<br>
+          <strong>Krisendienst</strong> (vor Ort): viele Städte haben 24/7-Dienste — im Internet nach "Krisendienst + Stadt" suchen<br><br>
+          Es ist keine Schwäche Hilfe zu holen — es ist der wichtigste und mutigste Schritt.</div>
       </div>
     </div>
 
