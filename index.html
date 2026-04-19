@@ -11,14 +11,14 @@
   --bg:#faf8f4;--surface:#f2ede4;--surface2:#e8e0d4;--border:#d8d0c4;
   --text:#1a1714;--muted:#8a8078;--accent:#c4522a;--accent2:#4a7a5a;
   --accent3:#4a5a7a;--gold:#b8820a;--red:#c0392b;--purple:#7a5a9a;
-  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;
+  --mcas:#c4522a;--rheu:#4a5a7a;--coli:#4a7a5a;--hashi:#8a4a7a;--diab:#b8820a;
   --schlaf:#4a5a7a;--ernaehr:#4a7a5a;--bewegung:#7a5a2a;--stress:#7a5a9a;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#0f0d0b;--surface:#181512;--surface2:#211d18;--border:#2e2820;
   --text:#f0ebe0;--muted:#9a8e7e;--accent:#e07050;--accent2:#6aaa82;
   --accent3:#7a9ab2;--gold:#d4a030;--red:#e05555;--purple:#a88bcc;
-  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;
+  --mcas:#e07050;--rheu:#7a9ab2;--coli:#6aaa82;--hashi:#c88bb8;--diab:#d4a030;
   --schlaf:#7a9ab2;--ernaehr:#6aaa82;--bewegung:#c4923a;--stress:#a88bcc;
 }}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -2427,6 +2427,7 @@ details summary:hover::after{
       <button class="dis-tab" id="dt-mcas" onclick="showDis('mcas')">💣 MCAS</button>
       <button class="dis-tab" id="dt-rheu" onclick="showDis('rheu')">🦴 Rheumatoide Arthritis</button>
       <button class="dis-tab" id="dt-derm" onclick="showDis('derm')">🧴 Seborrhoische Dermatitis</button>
+      <button class="dis-tab" id="dt-diab" onclick="showDis('diab')">🩸 Typ-2-Diabetes</button>
     </div>
 
     <!-- MCAS -->
@@ -3713,6 +3714,138 @@ details summary:hover::after{
           <strong>•</strong> Sehr schneller Puls, zunehmende Unruhe oder Verwirrtheit<br>
           <strong>•</strong> "Stummes Giemen" — plötzlich werden die Atemgeräusche leiser trotz Anstrengung — hochgefährlich<br><br>
           Auch wichtig: zunehmender Verbrauch des Notfallsprays über Wochen ist ein Warnzeichen dass die Dauermedikation angepasst werden muss — Termin beim Pneumologen.</div>
+      </div>
+    </div>
+
+    <!-- TYP-2-DIABETES -->
+    <div class="dis-content" id="dd-diab">
+      <div class="dis-header">
+        <div class="dis-icon">🩸</div>
+        <div class="dis-name" style="color:var(--diab)">Typ-2-Diabetes</div>
+        <div class="dis-tagline">Eine Entzündungserkrankung — nicht (nur) eine Zuckerkrankheit</div>
+      </div>
+      <div class="dis-friend" style="background:color-mix(in srgb,var(--diab) 6%,var(--surface));border-left:3px solid var(--diab)">
+        "Ich hab Diabetes — aber ich esse doch gar nicht so viel Zucker!" Dein Körper ist nicht kaputt. Typ-2-Diabetes ist nicht die Folge von "zu viel Zucker" — er ist die Folge von jahrelanger chronischer Entzündung die deine Zellen taub gegen Insulin gemacht hat. Und das ist umkehrbar.
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--diab) 7%,var(--surface));border-left:4px solid var(--diab);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;font-weight:700;color:var(--diab);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Das Wesentliche</div>
+        <div style="font-size:14px;line-height:1.8">Typ-2-Diabetes ist eigentlich das Endstadium einer Entzündungserkrankung — Insulinresistenz entsteht durch chronische Hintergrund-Entzündung, Insulin selbst wird pro-entzündlich wenn die Spiegel dauerhaft hoch sind, Bauchfett wird zur Entzündungsquelle. Der hohe Blutzucker ist Symptom, nicht Ursache. Frühe Phase ist vollständig umkehrbar — späte Phase zumindest stabilisierbar.</div>
+      </div>
+
+      <div class="cascade">
+        <div class="cas-label">Wie Typ-2-Diabetes entsteht — über Jahre</div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">1</div><div><div class="cas-name">Dauerhafte Blutzuckerspikes durch Lebensstil</div><div class="cas-desc">3-5 Spikes täglich über Jahre. Jeder Spike aktiviert NF-κB (Entzündungsschalter) und erzeugt AGEs die vom Immunsystem als fremd erkannt werden. Chronische Hintergrund-Entzündung entsteht.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">2</div><div><div class="cas-name">Zellen werden taub gegen Insulin</div><div class="cas-desc">Ständig hohes Insulin = Rezeptoren auf den Zellen reagieren immer schwächer. Wie ein Telefon das dauernd klingelt — irgendwann hörst du nicht mehr hin. Insulinresistenz. Die Bauchspeicheldrüse muss mehr Insulin produzieren für denselben Effekt.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">3</div><div><div class="cas-name">Bauchfett wird zur Entzündungsquelle</div><div class="cas-desc">Viszerales Fett (um die Organe herum) ist kein passiver Speicher — es produziert aktiv IL-6, TNF-α und andere Entzündungsbotenstoffe. Je mehr Bauchfett, desto mehr Entzündung, desto mehr Insulinresistenz — eine sich selbst verstärkende Schleife.</div></div></div>
+        <div class="cas-step"><div class="cas-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">4</div><div><div class="cas-name">Bauchspeicheldrüse erschöpft</div><div class="cas-desc">Nach Jahren der Hochleistung kann die Bauchspeicheldrüse nicht mehr genug Insulin produzieren. Blutzucker steigt dauerhaft. Jetzt erst wird "Diabetes" diagnostiziert — aber die Entzündungserkrankung existiert oft schon 10-15 Jahre vorher.</div></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-box"><div class="ib-title">⚡ Frühe Warnzeichen (Prädiabetes)</div><ul class="ib-list"><li>Mittagstief nach kohlenhydratreichen Mahlzeiten</li><li>Heißhunger auf Süßes 2-3h nach Essen</li><li>Bauchumfang > 94 cm (Männer) / > 80 cm (Frauen)</li><li>Müdigkeit die sich durch Kaffee "löst"</li><li>Nüchtern-Insulin oder HOMA-IR erhöht</li><li>HbA1c 5,7–6,4% (Graubereich)</li></ul></div>
+        <div class="info-box"><div class="ib-title">💊 Was die Medizin tut</div><ul class="ib-list"><li>Metformin — senkt Glukoseproduktion der Leber, wirkt auch entzündungshemmend</li><li>GLP-1-Agonisten (Semaglutid/Ozempic) — Blutzucker + Gewicht</li><li>SGLT2-Hemmer — Zucker über Urin ausscheiden</li><li>Insulin — wenn eigene Produktion nicht mehr reicht</li><li>In frühen Stadien: Lebensstil oft wirksamer als Medikamente</li></ul></div>
+      </div>
+
+      <div style="background:color-mix(in srgb,var(--diab) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--diab) 20%,var(--border));border-radius:12px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:11px;font-weight:600;color:var(--diab);margin-bottom:8px">🔬 Die DiRECT-Studie — Diabetes ist umkehrbar</div>
+        <div style="font-size:13px;line-height:1.7">Die britische DiRECT-Studie (2018) zeigte etwas Revolutionäres: 46% der Typ-2-Diabetiker kamen nach einer kalorienreduzierten Phase in Remission — sie brauchten keine Medikamente mehr. Nach 2 Jahren waren noch 36% in Remission, nach 5 Jahren ca. 13%. Je kürzer die Diabetes-Dauer und je größer die Gewichtsabnahme (besonders am Bauch), desto höher die Chance. <strong>Takeaway:</strong> Diabetes ist keine lebenslängliche Diagnose — früh erkannt und konsequent angegangen ist Remission möglich. <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)33102-1/fulltext" target="_blank" style="color:var(--accent3);font-size:11px">[Lancet 2018]</a></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="sec-eyebrow">Was du selbst tun kannst</div>
+      <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Lebensstil-Maßnahmen mit Evidenz</h2>
+
+      <div class="do-list">
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">1</div>
+          <div>
+            <div class="do-item-title">Blutzuckerspikes reduzieren — die mechanische Hauptschraube</div>
+            <div class="do-item-text">Jeder vermiedene Spike ist ein weniger aktivierter NF-κB-Impuls, ein weniger gebildetes AGE, eine weniger gestresste Bauchspeicheldrüse. Das ist keine Wunderkur — das ist Biochemie.<br><br>
+            <strong>Konkret:</strong> (1) Essensreihenfolge: erst Gemüse/Protein, dann Kohlenhydrate — halbiert den Spike in Studien. (2) Weiße Kohlenhydrate ersetzen (Vollkorn, Hülsenfrüchte). (3) Essig vor Mahlzeiten (1 EL in Wasser) senkt Spikes um 20-30%. (4) Nach dem Essen 10 Min bewegen — Muskeln schlucken Glukose auch ohne Insulin.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">2</div>
+          <div>
+            <div class="do-item-title">Muskeln aufbauen — die stärkste Anti-Diabetes-Maßnahme</div>
+            <div class="do-item-text">Muskeln sind die größten Glukose-Abnehmer des Körpers. Jedes Gramm Muskel macht dich insulinsensitiver — auch im Ruhezustand. Kraftsport ist bei Typ-2-Diabetes nachweislich wirksamer als reines Ausdauertraining. Bonus: Muskeln produzieren Myokine (entzündungshemmende Botenstoffe).<br><br>
+            <strong>Konkret:</strong> 2-3× pro Woche Krafttraining, auch daheim mit Körpergewicht oder Kurzhanteln. Kniebeugen, Liegestütze, Rudern. Nicht bis zur Erschöpfung — kontinuierlich über Monate. Nach 8-12 Wochen sind Verbesserungen messbar.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">3</div>
+          <div>
+            <div class="do-item-title">Essensfenster verkürzen (Zeitfenster-Essen)</div>
+            <div class="do-item-text">Jede Mahlzeit aktiviert das Insulinsystem. Je mehr Pausen, desto mehr Zeit für Insulinrezeptoren sich zu erholen. Ein Essensfenster von 8-10 Stunden (z.B. 10-20 Uhr) statt 14-16 Stunden senkt den Insulinspiegel messbar — auch bei gleicher Kalorienmenge.<br><br>
+            <strong>Konkret:</strong> Nicht radikal starten — Schritt für Schritt. Erste Woche: Frühstück 30 Min nach hinten, Abendessen 30 Min nach vorn. Nach 2-3 Wochen: 12 Stunden Essenspause (inkl. Nachtschlaf) normal. Für viele ist das der größte metabolische Hebel.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">4</div>
+          <div>
+            <div class="do-item-title">Bauchfett gezielt reduzieren — nicht Gesamtgewicht</div>
+            <div class="do-item-text">5-10% Gewichtsverlust (besonders Bauchfett) kann Insulinresistenz dramatisch verbessern. Bauchfett ist metabolisch der gefährlichste Fetttyp — weil es aktiv Entzündungsbotenstoffe produziert. Je weniger Bauchfett, desto weniger IL-6, desto weniger Insulinresistenz.<br><br>
+            <strong>Konkret:</strong> Bauchumfang messen (nicht Waage!). Ziel: unter 94 cm (Männer) / unter 80 cm (Frauen). Gewichtsverlust über Zuckerreduktion + Bewegung + Schlafverbesserung funktioniert oft von selbst. Wer den "harten" Weg gehen kann: 3-5 Monate konsequente Low-Carb-Phase (wie DiRECT).</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">5</div>
+          <div>
+            <div class="do-item-title">Schlaf verbessern — massiv unterschätzter Faktor</div>
+            <div class="do-item-text">Eine einzige Nacht mit weniger als 6 Stunden Schlaf macht messbar insulinresistenter. Chronischer Schlafmangel verdoppelt das Diabetes-Risiko. Warum: Cortisol steigt, Ghrelin (Hunger) steigt, Leptin (Sättigung) sinkt. Du isst mehr und deine Zellen reagieren schlechter auf Insulin.<br><br>
+            <strong>Konkret:</strong> 7-9 Stunden pro Nacht, fester Rhythmus, dunkles Zimmer, kein Blaulicht 1h vor Schlaf. Wer nachts 3× auf Toilette muss (häufig bei Prädiabetes): das ist oft ein Zeichen für zu späte Kohlenhydrate.</div>
+          </div>
+        </div>
+
+        <div class="do-item">
+          <div class="do-num" style="background:color-mix(in srgb,var(--diab) 15%,var(--surface2));color:var(--diab)">6</div>
+          <div>
+            <div class="do-item-title">Omega-3, Magnesium, Vitamin D — die metabolischen Helfer</div>
+            <div class="do-item-text">Omega-3 senkt Entzündungsmarker und verbessert Insulinsensitivität messbar. Magnesium ist Co-Faktor für über 300 Stoffwechselreaktionen — bei Diabetikern fast immer im Mangel. Vitamin D3-Mangel verdoppelt das Diabetes-Risiko.<br><br>
+            <strong>Konkret:</strong> Omega-3-Index messen (Ziel > 8%), Magnesium 300-400 mg abends (Glycinat oder Citrat), Vitamin D3 auf 40-60 ng/mL bringen. Keine Wunderpillen — aber wenn im Mangel, dann kritisch.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-box">
+        <div class="res-title">📚 Vertiefende Infos</div>
+        <div class="res-chips">
+          <span class="res-chip">🩸 Laborwerte bei Diabetes (HbA1c, Nüchtern-Insulin, HOMA-IR)</span>
+          <span class="res-chip">📖 "Zucker — die süße Verführung" — Robert Lustig</span>
+          <span class="res-chip">📖 "Der Ernährungskompass" — Bas Kast</span>
+          <span class="res-chip">🎧 Glucose Goddess / Jessie Inchauspé</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Lebensstil</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+        <button class="action-link" onclick="showPage('ernaehr')">🥗 Blutzucker-Ernährung →</button>
+        <button class="action-link" onclick="showPage('bewegung')">💪 Muskeln & Metabolismus →</button>
+        <button class="action-link" onclick="showPage('schlaf')">😴 Schlaf & Insulin →</button>
+        <button class="action-link" onclick="showDis('athero')">❤️ Zusammenhang Atherosklerose →</button>
+      </div>
+
+      <div class="support-row">
+        <div class="sup-card mbsr"><div class="sup-title">🧘 Stress & Blutzucker</div><div class="sup-text">Cortisol treibt den Blutzucker hoch — direkt. Chronischer Stress verschlechtert Diabetes messbar. MBSR-Programme können Blutzuckerwerte bei Typ-2-Diabetikern signifikant senken, unabhängig von Ernährung.</div></div>
+        <div class="sup-card gruppe"><div class="sup-title">👥 Community</div><div class="sup-text">Deutsche Diabetes Hilfe (diabetesde.org), diabetesDE-Selbsthilfegruppen vor Ort. Online: das Forum von diabetes-online.de — viele Betroffene mit langer Erfahrung.</div></div>
+      </div>
+
+      <!-- ROTE FAHNEN -->
+      <div style="background:color-mix(in srgb,#c0392b 8%,var(--surface));border:2px solid #c0392b;border-radius:14px;padding:18px 20px;margin-top:24px">
+        <div style="font-size:11px;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">🚨 Wann sofort zum Arzt oder Notarzt</div>
+        <div style="font-size:13px;line-height:1.8">Diabetes kann akut lebensbedrohlich werden. Bei diesen Zeichen nicht abwarten:<br>
+          <strong>•</strong> Sehr hoher Blutzucker &gt; 400 mg/dL mit starkem Durst, häufigem Urinieren, Übelkeit — drohende Entgleisung<br>
+          <strong>•</strong> Unterzuckerung unter 50 mg/dL mit Zittern, Schwitzen, Verwirrtheit — sofort Traubenzucker<br>
+          <strong>•</strong> Unterzuckerung mit Bewusstseinstrübung oder Krampfanfall — <strong>112</strong><br>
+          <strong>•</strong> Plötzliche Sehverschlechterung — kann diabetische Retinopathie sein<br>
+          <strong>•</strong> Nicht heilende Wunde am Fuß — diabetisches Fußsyndrom, sofort zum Arzt<br>
+          <strong>•</strong> Neue starke Taubheitsgefühle oder Schmerzen in Beinen — Polyneuropathie entwickelt sich<br>
+          <strong>•</strong> Brustschmerz oder Atemnot — Diabetiker haben deutlich erhöhtes Herzinfarktrisiko</div>
       </div>
     </div>
 
