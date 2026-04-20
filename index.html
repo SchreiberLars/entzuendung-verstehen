@@ -330,6 +330,7 @@ details summary:hover::after{
   <div class="nav-logo" onclick="showPage('home')">entzündung<em>verstehen</em></div>
   <div class="nav-links">
     <button class="nav-btn" id="nb-home" onclick="showPage('home')">Start</button>
+    <button class="nav-btn" id="nb-essentials" onclick="showPage('essentials')">✨ Das Wichtigste</button>
     <button class="nav-btn" id="nb-lebensstil" onclick="showPage('lebensstil')">🧬 Lebensstil</button>
     <button class="nav-btn" id="nb-erkrank" onclick="showPage('erkrank')">🔬 Erkrankungen</button>
     <button class="nav-btn" id="nb-labor" onclick="showPage('labor')">🩸 Laborwerte</button>
@@ -691,6 +692,204 @@ details summary:hover::after{
     <p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p>
     <div class="foot-logo">entzündung<em>verstehen</em>.de</div>
   </footer>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- ESSENTIALS — DAS WICHTIGSTE AUF EINEN BLICK -->
+<!-- ══════════════════════════════════════ -->
+<div class="page" id="p-essentials">
+  <div class="action-hero">
+    <div class="action-icon">✨</div>
+    <h1 class="action-title" style="color:var(--accent)">Das Wichtigste</h1>
+    <p class="action-sub">Die ganze Seite in Kurzform — für alle die nicht 15 Unterseiten lesen wollen. Sieben Empfehlungen mit konkreten Schritten, mehr braucht es fürs Erste nicht.</p>
+  </div>
+
+  <div class="section">
+
+    <!-- EINLEITUNG -->
+    <div style="background:color-mix(in srgb,var(--accent) 6%,var(--surface));border-left:4px solid var(--accent);border-radius:0 14px 14px 0;padding:20px 24px;margin-bottom:32px">
+      <div style="font-size:15px;line-height:1.8">
+        <strong>Du musst nicht alles gleichzeitig machen.</strong> Such dir eine oder zwei Sachen aus dieser Liste. Mach sie zwei Wochen lang. Dann schau wie es dir geht. Die anderen folgen von selbst, wenn du merkst dass es dir besser geht.<br><br>
+        Niemand lebt diesen Plan zu 100%. Die 70/30-Regel reicht: wenn du an 5 von 7 Tagen das meiste davon einhältst, bist du besser aufgestellt als die allermeisten.
+      </div>
+    </div>
+
+    <!-- DIE 7 EMPFEHLUNGEN -->
+
+    <!-- 1: SCHLAF -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--schlaf);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--schlaf);letter-spacing:.12em">01</div>
+        <div style="font-size:18px;font-weight:700">😴 Schlaf als Priorität</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Tiefschlaf ist die Zeit in der dein Immunsystem seine Bremszellen (Tregs) regeneriert. Ohne Tiefschlaf weniger Bremskraft gegen Entzündung — am nächsten Tag und auf Dauer.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • Gleiche Schlafzeit ± 30 Min, auch am Wochenende<br>
+        • Schlafzimmer dunkel und kühl (17–19°C)<br>
+        • Kein Blaulicht 1h vor Schlaf (Blaulichtfilterbrille oder Bildschirmmodus)<br>
+        • Alkohol reduziert die Tiefschlafphasen deutlich — merkbar schon ab einem Glas
+      </div>
+      <button class="action-link" onclick="showPage('schlaf')" style="margin-top:12px">Mehr zu Schlaf →</button>
+    </div>
+
+    <!-- 2: ESSENSFENSTER -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--ernaehr);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--ernaehr);letter-spacing:.12em">02</div>
+        <div style="font-size:18px;font-weight:700">🕐 Iss in einem Zeitfenster</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Dein Darm braucht Pausen zum Aufräumen. Der "migrating motor complex" arbeitet zwischen den Mahlzeiten — bei ständigem Essen kommt er nicht zum Zug. Längere Essenspausen senken Insulin und Entzündungsmarker messbar.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • Essensfenster auf 8–10 Stunden begrenzen (z.B. 11–19 oder 12–19 Uhr)<br>
+        • Nach dem Abendessen bis zum Frühstück nichts Kalorisches<br>
+        • Tee und schwarzer Kaffee brechen das Fasten nicht<br>
+        • Nicht radikal starten — Schritt für Schritt das Fenster verkürzen
+      </div>
+      <button class="action-link" onclick="showPage('ernaehr')" style="margin-top:12px">Mehr zu Ernährung →</button>
+    </div>
+
+    <!-- 3: ESSENSREIHENFOLGE -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--ernaehr);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--ernaehr);letter-spacing:.12em">03</div>
+        <div style="font-size:18px;font-weight:700">🥗 Protein zuerst, Kohlenhydrate danach</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Jeder starke Blutzuckerspike aktiviert den Entzündungsschalter NF-κB. Die Reihenfolge deiner Mahlzeit entscheidet wie hoch der Spike geht — ohne dass du etwas streichen musst.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • Erst Gemüse, Protein und Fett — dann Kohlenhydrate<br>
+        • Nach dem Essen 10 Min gehen — halbiert den Spike<br>
+        • Vollkorn statt weißes Mehl, wenn Kohlenhydrate<br>
+        • Ein Esslöffel Apfelessig in Wasser vor der Mahlzeit wirkt ähnlich
+      </div>
+    </div>
+
+    <!-- 4: BEWEGUNG -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--bewegung);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--bewegung);letter-spacing:.12em">04</div>
+        <div style="font-size:18px;font-weight:700">💪 Bewege dich regelmäßig</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Muskeln produzieren entzündungshemmende Myokine — sie sind biologisch ein Organ, nicht nur Motor. Jede Bewegung zählt, Konsistenz schlägt Intensität.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • 2–3× pro Woche Krafttraining (auch zu Hause, 20–30 Min reichen)<br>
+        • Täglich 8.000–10.000 Schritte<br>
+        • Nach dem Essen spazieren statt sitzen<br>
+        • Intensives Training nicht nach 18 Uhr (stört Schlaf)
+      </div>
+      <button class="action-link" onclick="showPage('bewegung')" style="margin-top:12px">Mehr zu Bewegung →</button>
+    </div>
+
+    <!-- 5: STRESS -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--stress);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--stress);letter-spacing:.12em">05</div>
+        <div style="font-size:18px;font-weight:700">🧘 Stress bewusst reduzieren</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Chronischer Stress aktiviert über CRH direkt Mastzellen und treibt Entzündung — unabhängig von Ernährung. Stress ist keine "weiche" Variable, sondern ein biochemischer Auslöser.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • Täglich 10 Min Meditation oder Atemübungen<br>
+        • MBSR-Kurs (8 Wochen, oft von Krankenkasse bezuschusst)<br>
+        • Bildschirm-Pausen am Arbeitstag<br>
+        • Natur und Sonnenlicht — auch 15 Min wirken messbar
+      </div>
+      <button class="action-link" onclick="showPage('stress')" style="margin-top:12px">Mehr zu Stress →</button>
+    </div>
+
+    <!-- 6: ALKOHOL -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--gold);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:18px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.12em">06</div>
+        <div style="font-size:18px;font-weight:700">🍷 Alkohol deutlich reduzieren</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Alkohol stört den Darm (Leaky Gut), belastet die Leber, blockiert den Histaminabbau und reduziert Tiefschlaf. Bei chronischen Entzündungserkrankungen ist das ein klarer Trigger — oft spürbar im Finger, in der Haut oder in den Gelenken am nächsten Tag.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret:</strong>
+        • Ziel: maximal 1–2 Glas pro Woche<br>
+        • Bei MCAS/Dermatitis/Reizdarm: idealerweise ganz weglassen<br>
+        • Bier enthält besonders viel Histamin und Hefe — problematischer als Wein<br>
+        • Alkoholfreie Alternativen finden: Kombucha, Kräutertees, Sprudelwasser mit Zitrone
+      </div>
+    </div>
+
+    <!-- 7: LABORWERTE -->
+    <div style="background:var(--surface);border:1.5px solid var(--border);border-left:5px solid var(--accent3);border-radius:0 14px 14px 0;padding:22px 24px;margin-bottom:32px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="font-size:11px;font-weight:700;color:var(--accent3);letter-spacing:.12em">07</div>
+        <div style="font-size:18px;font-weight:700">🩸 Einmal gezielt messen lassen</div>
+      </div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);margin-bottom:12px">
+        Chronische Entzündung zeigt sich im Labor — wenn man die richtigen Werte misst. Die meisten werden nicht automatisch bestimmt. Einmal gezielt messen gibt eine Basis zum Vergleichen.
+      </div>
+      <div style="background:var(--surface2);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+        <strong>Konkret beim Hausarzt anfragen:</strong>
+        • <strong>hsCRP</strong> (hochsensitives CRP) — chronische Hintergrundentzündung<br>
+        • <strong>Vitamin D3</strong> (25-OH) — moduliert Immunsystem direkt<br>
+        • <strong>Omega-3-Index</strong> (ggf. selbst bezahlen, ~30 €)<br>
+        • Je nach Beschwerden: Ferritin, IL-6, TSH, HbA1c
+      </div>
+      <button class="action-link" onclick="showPage('labor')" style="margin-top:12px">Mehr zu Laborwerten →</button>
+    </div>
+
+    <!-- ABSCHLUSSGEDANKE -->
+    <div style="background:color-mix(in srgb,var(--accent2) 7%,var(--surface));border:1.5px solid color-mix(in srgb,var(--accent2) 25%,var(--border));border-radius:14px;padding:24px;margin-bottom:32px">
+      <div style="font-size:12px;font-weight:600;color:var(--accent2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Eine letzte Sache</div>
+      <div style="font-size:15px;line-height:1.8;color:var(--text)">
+        Dein Körper hat einen eigenen Indikator: achte auf Energie, Schlaf, Hautbild, Gelenke, Verdauung. Das sind Signale die dir täglich Feedback geben — oft genauer als jeder Laborwert.<br><br>
+        <strong>Und wenn du eine Diagnose hast:</strong> diese Empfehlungen ersetzen keine Therapie. Sie verstärken sie. Sprich Änderungen an Ernährung, Sport oder Supplements immer mit deinem Arzt oder deiner Ärztin ab.
+      </div>
+    </div>
+
+    <!-- WO GEHT ES WEITER -->
+    <div class="sec-eyebrow">Weitergehen</div>
+    <h2 class="sec-title" style="margin-bottom:20px;font-size:clamp(1.2rem,3vw,1.6rem)">Wenn du tiefer einsteigen willst</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:32px">
+
+      <div onclick="showPage('mechanik')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.6rem;margin-bottom:6px">🧬</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Wie das biologisch funktioniert</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">Die zwei Hebel des Immunsystems verstehen</div>
+      </div>
+
+      <div onclick="showPage('erkrank')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--mcas)';this.style.background='color-mix(in srgb,var(--mcas) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.6rem;margin-bottom:6px">🔬</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Deine Erkrankung</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">10 chronische Entzündungserkrankungen — Mechanismen und Hebel</div>
+      </div>
+
+      <div onclick="showPage('tag')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--gold)';this.style.background='color-mix(in srgb,var(--gold) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.6rem;margin-bottom:6px">🕐</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Ein normaler Tag</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">Wie sieht das alles im Alltag aus — von morgens bis abends</div>
+      </div>
+
+    </div>
+
+  </div>
+  <footer><p class="foot-dis">Diese Seite dient der Wissensvermittlung und ersetzt keine ärztliche Diagnose oder Behandlung.</p><div class="foot-logo">entzündung<em>verstehen</em>.de</div></footer>
 </div>
 
 <!-- ══════════════════════════════════════ -->
