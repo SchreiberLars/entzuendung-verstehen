@@ -331,7 +331,7 @@ details summary:hover::after{
   <div class="nav-links">
     <button class="nav-btn" id="nb-home" onclick="showPage('home')">Start</button>
     <button class="nav-btn" id="nb-essentials" onclick="showPage('essentials')">✨ Das Wichtigste</button>
-    <button class="nav-btn" id="nb-lebensstil" onclick="showPage('lebensstil')">🧬 Lebensstil</button>
+    <button class="nav-btn" id="nb-lebensstil" onclick="showPage('lebensstil')">🌱 Lebensstil</button>
     <button class="nav-btn" id="nb-erkrank" onclick="showPage('erkrank')">🔬 Erkrankungen</button>
     <button class="nav-btn" id="nb-labor" onclick="showPage('labor')">🩸 Laborwerte</button>
     <button class="nav-btn" id="nb-glossar" onclick="showPage('glossar')">📖 Glossar</button>
@@ -865,9 +865,17 @@ details summary:hover::after{
       <div onclick="showPage('mechanik')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
         onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
         onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
-        <div style="font-size:1.6rem;margin-bottom:6px">🧬</div>
+        <div style="font-size:1.6rem;margin-bottom:6px">🌱</div>
         <div style="font-size:14px;font-weight:600;margin-bottom:4px">Wie das biologisch funktioniert</div>
         <div style="font-size:12px;color:var(--muted);line-height:1.5">Die zwei Hebel des Immunsystems verstehen</div>
+      </div>
+
+      <div onclick="showPage('bauplan')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
+        onmouseover="this.style.borderColor='var(--gold)';this.style.background='color-mix(in srgb,var(--gold) 5%,var(--surface))'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
+        <div style="font-size:1.6rem;margin-bottom:6px">🧬</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Bauplan</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">Wofür wir eigentlich gemacht sind — und wo unser Alltag heute davon abweicht</div>
       </div>
 
       <div onclick="showPage('erkrank')" style="background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
@@ -897,7 +905,7 @@ details summary:hover::after{
 <!-- ══════════════════════════════════════ -->
 <div class="page" id="p-lebensstil">
   <div class="action-hero">
-    <div class="action-icon">🧬</div>
+    <div class="action-icon">🌱</div>
     <h1 class="action-title" style="color:var(--accent2)">Lebensstil</h1>
     <p class="action-sub">Sechs Bereiche. Jeder einzeln wirksam. Zusammen verändern sie wie dein Immunsystem funktioniert — auf beiden Ebenen.</p>
   </div>
@@ -919,8 +927,8 @@ details summary:hover::after{
         border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
         onmouseover="this.style.borderColor='var(--gold)';this.style.background='color-mix(in srgb,var(--gold) 5%,var(--surface))'"
         onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
-        <div style="font-size:1.8rem;margin-bottom:6px">🕰️</div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Gegen den Bauplan</div>
+        <div style="font-size:1.8rem;margin-bottom:6px">🧬</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:4px">Bauplan</div>
         <div style="font-size:12px;color:var(--muted);line-height:1.5">5 Stufen vom Jäger &amp; Sammler bis heute — warum unsere Umgebung unseren Körper überfordert</div>
       </div>
 
@@ -937,7 +945,7 @@ details summary:hover::after{
         border-radius:14px;padding:18px;cursor:pointer;transition:all .2s"
         onmouseover="this.style.borderColor='var(--accent2)';this.style.background='color-mix(in srgb,var(--accent2) 5%,var(--surface))'"
         onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--surface)'">
-        <div style="font-size:1.8rem;margin-bottom:6px">🧬</div>
+        <div style="font-size:1.8rem;margin-bottom:6px">🌱</div>
         <div style="font-size:14px;font-weight:600;margin-bottom:4px">Wie Lebensstil wirkt</div>
         <div style="font-size:12px;color:var(--muted);line-height:1.5">Die zwei Hebel — Bremse stärken und Späher beruhigen — mit vollem Mechanismus</div>
       </div>
@@ -4706,7 +4714,7 @@ details summary:hover::after{
 <!-- ══════════════════════════════════════ -->
 <div class="page" id="p-bauplan">
   <div class="action-hero">
-    <div class="action-icon">🕰️</div>
+    <div class="action-icon">🧬</div>
     <h1 class="action-title" style="color:var(--gold)">Gegen den Bauplan</h1>
     <p class="action-sub">Unser Genom hat sich in 20.000 Jahren kaum verändert. Unsere Umgebung in 100 Jahren komplett. Fünf Stufen wie wir dahin gekommen sind wo wir heute sind.</p>
   </div>
@@ -5144,8 +5152,8 @@ details summary:hover::after{
 
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
       <button class="action-link" onclick="showPage('tag')">🕐 Dein normaler Tag heute →</button>
-      <button class="action-link" onclick="showPage('mechanik')">🧬 Wie Lebensstil wirkt →</button>
-      <button class="action-link" onclick="showPage('lebensstil')">🧬 Alle Lebensstil-Themen →</button>
+      <button class="action-link" onclick="showPage('mechanik')">🌱 Wie Lebensstil wirkt →</button>
+      <button class="action-link" onclick="showPage('lebensstil')">🌱 Alle Lebensstil-Themen →</button>
     </div>
 
   </div>
@@ -5321,7 +5329,7 @@ details summary:hover::after{
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
       <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung im Detail →</button>
       <button class="action-link" onclick="showPage('darm')">🦠 Darmgesundheit →</button>
-      <button class="action-link" onclick="showPage('bauplan')">🕰️ Gegen den Bauplan →</button>
+      <button class="action-link" onclick="showPage('bauplan')">🧬 Gegen den Bauplan →</button>
     </div>
 
     <div class="res-box">
@@ -6197,7 +6205,7 @@ details summary:hover::after{
 <!-- ══════════════════════════════════════ -->
 <div class="page" id="p-mechanik">
   <div class="action-hero">
-    <div class="action-icon">🧬</div>
+    <div class="action-icon">🌱</div>
     <h1 class="action-title" style="color:var(--accent2)">Wie Lebensstil wirkt</h1>
     <p class="action-sub">Nicht nur die Bremse aufladen — auch den Späher beruhigen. Das ist der Unterschied den die meisten nicht kennen.</p>
   </div>
@@ -6886,7 +6894,7 @@ details summary:hover::after{
       <button class="action-link" onclick="showPage('schlaf')">😴 Schlaf im Detail →</button>
       <button class="action-link" onclick="showPage('ernaehr')">🥗 Ernährung im Detail →</button>
       <button class="action-link" onclick="showPage('stress')">🧘 Stress im Detail →</button>
-      <button class="action-link" onclick="showPage('mechanik')">🧬 Wie Lebensstil wirkt →</button>
+      <button class="action-link" onclick="showPage('mechanik')">🌱 Wie Lebensstil wirkt →</button>
     </div>
 
   </div>
